@@ -1,0 +1,14 @@
+TAP version 13
+ok 1 - Eloquent\Endec\Encoding\Base64DecoderTest::testConstructor
+ok 2 - Eloquent\Endec\Encoding\Base64DecoderTest::testConstructorDefaults
+ok 3 - Eloquent\Endec\Encoding\Base64DecoderTest::testEnd
+ok 4 - Eloquent\Endec\Encoding\Base64EncoderTest::testConstructor
+ok 5 - Eloquent\Endec\Encoding\Base64EncoderTest::testConstructorDefaults
+ok 6 - Eloquent\Endec\Encoding\Base64EncoderTest::testEnd
+ok 7 - Eloquent\Endec\Encoding\HexDecoderTest::testConstructor
+ok 8 - Eloquent\Endec\Encoding\HexDecoderTest::testConstructorDefaults
+ok 9 - Eloquent\Endec\Encoding\HexDecoderTest::testEnd
+ok 10 - Eloquent\Endec\Encoding\HexEncoderTest::testConstructor
+ok 11 - Eloquent\Endec\Encoding\HexEncoderTest::testConstructorDefaults
+ok 12 - Eloquent\Endec\Encoding\HexEncoderTest::testEnd
+1..12

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1394779963">
+  <project timestamp="1394779963">
+    <package name="Eloquent\Endec\Encoding">
+      <file name="/home/travis/build/ezzatron/endec/src/Encoding/AbstractCodec.php">
+        <class name="AbstractCodec" namespace="Eloquent\Endec\Encoding">
+          <metrics methods="13" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="56" coveredstatements="0" elements="69" coveredelements="0"/>
+        </class>
+        <line num="25" type="method" name="__construct" crap="6" count="0"/>
+        <line num="27" type="stmt" count="0"/>
+        <line num="28" type="stmt" count="0"/>
+        <line num="31" type="stmt" count="0"/>
+        <line num="33" type="stmt" count="0"/>
+        <line num="34" type="stmt" count="0"/>
+        <line num="35" type="stmt" count="0"/>
+        <line num="42" type="method" name="bufferSize" crap="2" count="0"/>
+        <line num="44" type="stmt" count="0"/>
+        <line num="47" type="method" name="isWritable" crap="2" count="0"/>
+        <line num="49" type="stmt" count="0"/>
+        <line num="52" type="method" name="isReadable" crap="2" count="0"/>
+        <line num="54" type="stmt" count="0"/>
+        <line num="57" type="method" name="write" crap="6" count="0"/>
+        <line num="59" type="stmt" count="0"/>
+        <line num="60" type="stmt" count="0"/>
+        <line num="63" type="stmt" count="0"/>
+        <line num="64" type="stmt" count="0"/>
+        <line num="66" type="stmt" count="0"/>
+        <line num="69" type="method" name="end" crap="12" count="0"/>
+        <line num="71" type="stmt" count="0"/>
+        <line num="72" type="stmt" count="0"/>
+        <line num="75" type="stmt" count="0"/>
+        <line num="77" type="stmt" count="0"/>
+        <line num="78" type="stmt" count="0"/>
+        <line num="80" type="stmt" count="0"/>
+        <line num="81" type="stmt" count="0"/>
+        <line num="83" type="method" name="close" crap="6" count="0"/>
+        <line num="85" type="stmt" count="0"/>
+        <line num="86" type="stmt" count="0"/>
+        <line num="89" type="stmt" count="0"/>
+        <line num="90" type="stmt" count="0"/>
+        <line num="92" type="method" name="pause" crap="2" count="0"/>
+        <line num="94" type="stmt" count="0"/>
+        <line num="95" type="stmt" count="0"/>
+        <line num="97" type="method" name="resume" crap="2" count="0"/>
+        <line num="99" type="stmt" count="0"/>
+        <line num="100" type="stmt" count="0"/>
+        <line num="101" type="stmt" count="0"/>
+        <line num="103" type="method" name="pipe" crap="2" count="0"/>
+        <line num="107" type="stmt" count="0"/>
+        <line num="109" type="stmt" count="0"/>
+        <line num="112" type="method" name="processBuffer" crap="72" count="0"/>
+        <line num="114" type="stmt" count="0"/>
+        <line num="115" type="stmt" count="0"/>
+        <line num="116" type="stmt" count="0"/>
+        <line num="117" type="stmt" count="0"/>
+        <line num="118" type="stmt" count="0"/>
+        <line num="121" type="stmt" count="0"/>
+        <line num="124" type="stmt" count="0"/>
+        <line num="125" type="stmt" count="0"/>
+        <line num="128" type="stmt" count="0"/>
+        <line num="129" type="stmt" count="0"/>
+        <line num="133" type="stmt" count="0"/>
+        <line num="135" type="stmt" count="0"/>
+        <line num="136" type="stmt" count="0"/>
+        <line num="137" type="stmt" count="0"/>
+        <line num="138" type="stmt" count="0"/>
+        <line num="141" type="stmt" count="0"/>
+        <line num="142" type="stmt" count="0"/>
+        <line num="143" type="stmt" count="0"/>
+        <line num="145" type="method" name="doClose" crap="2" count="0"/>
+        <line num="147" type="stmt" count="0"/>
+        <line num="148" type="stmt" count="0"/>
+        <line num="150" type="stmt" count="0"/>
+        <line num="151" type="stmt" count="0"/>
+        <line num="152" type="stmt" count="0"/>
+        <line num="153" type="stmt" count="0"/>
+        <line num="155" type="method" name="processInput" crap="1" count="0"/>
+        <line num="163" type="stmt" count="0"/>
+        <metrics loc="162" ncloc="146" classes="1" methods="12" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="56" coveredstatements="0" elements="68" coveredelements="0"/>
+      </file>
+      <file name="/home/travis/build/ezzatron/endec/src/Encoding/Base64Decoder.php">
+        <class name="Base64Decoder" namespace="Eloquent\Endec\Encoding">
+          <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="6" elements="8" coveredelements="7"/>
+        </class>
+        <line num="19" type="method" name="processInput" crap="2.01" count="1"/>
+        <line num="21" type="stmt" count="1"/>
+        <line num="22" type="stmt" count="1"/>
+        <line num="23" type="stmt" count="1"/>
+        <line num="24" type="stmt" count="1"/>
+        <line num="25" type="stmt" count="0"/>
+        <line num="29" type="stmt" count="1"/>
+        <line num="31" type="stmt" count="1"/>
+        <line num="34" type="stmt" count="0"/>
+        <metrics loc="33" ncloc="22" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="6" elements="8" coveredelements="6"/>
+      </file>
+      <file name="/home/travis/build/ezzatron/endec/src/Encoding/Base64Encoder.php">
+        <class name="Base64Encoder" namespace="Eloquent\Endec\Encoding">
+          <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="6" elements="8" coveredelements="7"/>
+        </class>
+        <line num="19" type="method" name="processInput" crap="2.01" count="1"/>
+        <line num="21" type="stmt" count="1"/>
+        <line num="22" type="stmt" count="1"/>
+        <line num="23" type="stmt" count="1"/>
+        <line num="24" type="stmt" count="1"/>
+        <line num="25" type="stmt" count="0"/>
+        <line num="29" type="stmt" count="1"/>
+        <line num="31" type="stmt" count="1"/>
+        <line num="34" type="stmt" count="0"/>
+        <metrics loc="33" ncloc="22" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="6" elements="8" coveredelements="6"/>
+      </file>
+      <file name="/home/travis/build/ezzatron/endec/src/Encoding/HexDecoder.php">
+        <class name="HexDecoder" namespace="Eloquent\Endec\Encoding">
+          <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="5" elements="7" coveredelements="6"/>
+        </class>
+        <line num="19" type="method" name="processInput" crap="2.02" count="1"/>
+        <line num="21" type="stmt" count="1"/>
+        <line num="22" type="stmt" count="1"/>
+        <line num="23" type="stmt" count="1"/>
+        <line num="24" type="stmt" count="1"/>
+        <line num="25" type="stmt" count="0"/>
+        <line num="28" type="stmt" count="1"/>
+        <line num="31" type="stmt" count="0"/>
+        <metrics loc="30" ncloc="19" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="5" elements="7" coveredelements="5"/>
+      </file>
+      <file name="/home/travis/build/ezzatron/endec/src/Encoding/HexEncoder.php">
+        <class name="HexEncoder" namespace="Eloquent\Endec\Encoding">
+          <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+        </class>
+        <line num="19" type="method" name="processInput" crap="1" count="1"/>
+        <line num="21" type="stmt" count="1"/>
+        <line num="24" type="stmt" count="0"/>
+        <metrics loc="23" ncloc="12" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+      </file>
+    </package>
+    <file name="/home/travis/build/ezzatron/endec/src/Encoding/CodecInterface.php">
+      <line num="31" type="stmt" count="0"/>
+      <metrics loc="30" ncloc="14" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <metrics files="6" loc="311" ncloc="235" classes="5" methods="16" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="77" coveredstatements="18" elements="93" coveredelements="19"/>
+  </project>
+</coverage>
