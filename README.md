@@ -6,10 +6,12 @@
 [![Current build status image][build-image]][Current build status]
 [![Current coverage status image][coverage-image]][Current coverage status]
 
+<!--
 ## Installation and documentation
 
 * Available as [Composer] package [eloquent/endec].
 * [API documentation] available.
+-->
 
 <!-- References -->
 
