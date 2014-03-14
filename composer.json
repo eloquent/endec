@@ -1,0 +1,26 @@
+{
+    "name": "eloquent/endec",
+    "description": "Streaming encoding and serialization for PHP.",
+    "keywords": ["encoding", "decoding", "encode", "decode", "codec", "hex", "hex", "base64", "base64url", "base32", "stream", "streaming", "react"],
+    "homepage": "https://github.com/eloquent/endec",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Erin Millard",
+            "email": "ezzatron@gmail.com",
+            "homepage": "http://ezzatron.com/"
+        }
+    ],
+    "require": {
+        "php": ">=5.3",
+        "react/stream": "~0.4.0"
+    },
+    "require-dev": {
+        "icecave/archer": "~1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Eloquent\\Endec\\": "src"
+        }
+    }
+}
