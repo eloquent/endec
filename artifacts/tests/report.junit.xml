@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="" tests="12" assertions="12" failures="0" errors="0" time="0.045707">
-    <testsuite name="Eloquent\Endec\Encoding\Base64DecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64DecoderTest.php" namespace="Eloquent\Endec\Encoding" fullPackage="Eloquent.Endec.Encoding" tests="3" assertions="3" failures="0" errors="0" time="0.016639">
-      <testcase name="testConstructor" class="Eloquent\Endec\Encoding\Base64DecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64DecoderTest.php" line="25" assertions="1" time="0.010238"/>
-      <testcase name="testConstructorDefaults" class="Eloquent\Endec\Encoding\Base64DecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64DecoderTest.php" line="30" assertions="1" time="0.003080"/>
-      <testcase name="testEnd" class="Eloquent\Endec\Encoding\Base64DecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64DecoderTest.php" line="37" assertions="1" time="0.003321"/>
+  <testsuite name="" tests="12" assertions="12" failures="0" errors="0" time="0.058433">
+    <testsuite name="Eloquent\Endec\Encoding\Base64DecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64DecoderTest.php" namespace="Eloquent\Endec\Encoding" fullPackage="Eloquent.Endec.Encoding" tests="3" assertions="3" failures="0" errors="0" time="0.021012">
+      <testcase name="testConstructor" class="Eloquent\Endec\Encoding\Base64DecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64DecoderTest.php" line="25" assertions="1" time="0.012978"/>
+      <testcase name="testConstructorDefaults" class="Eloquent\Endec\Encoding\Base64DecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64DecoderTest.php" line="30" assertions="1" time="0.003879"/>
+      <testcase name="testEnd" class="Eloquent\Endec\Encoding\Base64DecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64DecoderTest.php" line="37" assertions="1" time="0.004155"/>
     </testsuite>
-    <testsuite name="Eloquent\Endec\Encoding\Base64EncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64EncoderTest.php" namespace="Eloquent\Endec\Encoding" fullPackage="Eloquent.Endec.Encoding" tests="3" assertions="3" failures="0" errors="0" time="0.009874">
-      <testcase name="testConstructor" class="Eloquent\Endec\Encoding\Base64EncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64EncoderTest.php" line="25" assertions="1" time="0.003619"/>
-      <testcase name="testConstructorDefaults" class="Eloquent\Endec\Encoding\Base64EncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64EncoderTest.php" line="30" assertions="1" time="0.002971"/>
-      <testcase name="testEnd" class="Eloquent\Endec\Encoding\Base64EncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64EncoderTest.php" line="37" assertions="1" time="0.003284"/>
+    <testsuite name="Eloquent\Endec\Encoding\Base64EncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64EncoderTest.php" namespace="Eloquent\Endec\Encoding" fullPackage="Eloquent.Endec.Encoding" tests="3" assertions="3" failures="0" errors="0" time="0.011962">
+      <testcase name="testConstructor" class="Eloquent\Endec\Encoding\Base64EncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64EncoderTest.php" line="25" assertions="1" time="0.004386"/>
+      <testcase name="testConstructorDefaults" class="Eloquent\Endec\Encoding\Base64EncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64EncoderTest.php" line="30" assertions="1" time="0.003459"/>
+      <testcase name="testEnd" class="Eloquent\Endec\Encoding\Base64EncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64EncoderTest.php" line="37" assertions="1" time="0.004117"/>
     </testsuite>
-    <testsuite name="Eloquent\Endec\Encoding\HexDecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/HexDecoderTest.php" namespace="Eloquent\Endec\Encoding" fullPackage="Eloquent.Endec.Encoding" tests="3" assertions="3" failures="0" errors="0" time="0.009622">
-      <testcase name="testConstructor" class="Eloquent\Endec\Encoding\HexDecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/HexDecoderTest.php" line="25" assertions="1" time="0.003376"/>
-      <testcase name="testConstructorDefaults" class="Eloquent\Endec\Encoding\HexDecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/HexDecoderTest.php" line="30" assertions="1" time="0.002964"/>
-      <testcase name="testEnd" class="Eloquent\Endec\Encoding\HexDecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/HexDecoderTest.php" line="37" assertions="1" time="0.003282"/>
+    <testsuite name="Eloquent\Endec\Encoding\HexDecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/HexDecoderTest.php" namespace="Eloquent\Endec\Encoding" fullPackage="Eloquent.Endec.Encoding" tests="3" assertions="3" failures="0" errors="0" time="0.012651">
+      <testcase name="testConstructor" class="Eloquent\Endec\Encoding\HexDecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/HexDecoderTest.php" line="25" assertions="1" time="0.004470"/>
+      <testcase name="testConstructorDefaults" class="Eloquent\Endec\Encoding\HexDecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/HexDecoderTest.php" line="30" assertions="1" time="0.003883"/>
+      <testcase name="testEnd" class="Eloquent\Endec\Encoding\HexDecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/HexDecoderTest.php" line="37" assertions="1" time="0.004298"/>
     </testsuite>
-    <testsuite name="Eloquent\Endec\Encoding\HexEncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/HexEncoderTest.php" namespace="Eloquent\Endec\Encoding" fullPackage="Eloquent.Endec.Encoding" tests="3" assertions="3" failures="0" errors="0" time="0.009572">
-      <testcase name="testConstructor" class="Eloquent\Endec\Encoding\HexEncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/HexEncoderTest.php" line="25" assertions="1" time="0.003405"/>
-      <testcase name="testConstructorDefaults" class="Eloquent\Endec\Encoding\HexEncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/HexEncoderTest.php" line="30" assertions="1" time="0.002944"/>
-      <testcase name="testEnd" class="Eloquent\Endec\Encoding\HexEncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/HexEncoderTest.php" line="37" assertions="1" time="0.003223"/>
+    <testsuite name="Eloquent\Endec\Encoding\HexEncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/HexEncoderTest.php" namespace="Eloquent\Endec\Encoding" fullPackage="Eloquent.Endec.Encoding" tests="3" assertions="3" failures="0" errors="0" time="0.012808">
+      <testcase name="testConstructor" class="Eloquent\Endec\Encoding\HexEncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/HexEncoderTest.php" line="25" assertions="1" time="0.004544"/>
+      <testcase name="testConstructorDefaults" class="Eloquent\Endec\Encoding\HexEncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/HexEncoderTest.php" line="30" assertions="1" time="0.003990"/>
+      <testcase name="testEnd" class="Eloquent\Endec\Encoding\HexEncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/HexEncoderTest.php" line="37" assertions="1" time="0.004274"/>
     </testsuite>
   </testsuite>
 </testsuites>
