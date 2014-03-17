@@ -25,8 +25,8 @@ class TransformStream implements TransformStreamInterface
     /**
      * Construct a new data transform.
      *
-     * @param DataTransformInterface $transform The data transform to use.
-     * @param integer|null $bufferSize The buffer size in bytes.
+     * @param DataTransformInterface $transform  The data transform to use.
+     * @param integer|null           $bufferSize The buffer size in bytes.
      */
     public function __construct(
         DataTransformInterface $transform,
