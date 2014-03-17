@@ -1,12 +1,12 @@
 
 
 Code Coverage Report 
-  2014-03-17 10:35:35
+  2014-03-17 10:42:17
 
  Summary: 
-  Classes: 100.00% (9/9)
-  Methods: 100.00% (32/32)
-  Lines:   100.00% (122/122)
+  Classes: 100.00% (10/10)
+  Methods: 100.00% (34/34)
+  Lines:   100.00% (131/131)
 
 \Eloquent\Endec::AbstractCodec
   Methods: 100.00% ( 5/ 5)   Lines: 100.00% (  9/  9)
@@ -18,9 +18,11 @@ Code Coverage Report
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  6/  6)
 \Eloquent\Endec\Exception::InvalidEncodedDataException
   Methods: 100.00% ( 3/ 3)   Lines: 100.00% ( 11/ 11)
-\Eloquent\Endec\Hex::HexDecodeTransform
+\Eloquent\Endec\Hexadecimal::Hexadecimal
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  9/  9)
-\Eloquent\Endec\Hex::HexEncodeTransform
+\Eloquent\Endec\Hexadecimal::HexadecimalDecodeTransform
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  9/  9)
+\Eloquent\Endec\Hexadecimal::HexadecimalEncodeTransform
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  4/  4)
 \Eloquent\Endec\Transform::AbstractDataTransform
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  6/  6)

@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="robots" content="index, follow, all" />
-        <title>Eloquent\Endec\Hex\HexDecodeTransform | eloquent/endec API</title>
+        <title>Eloquent\Endec\Hexadecimal\HexadecimalEncodeTransform | eloquent/endec API</title>
                     <link rel="stylesheet" type="text/css" href="../../../stylesheet.css">
                             </head>
         <body id="class">
@@ -19,13 +19,14 @@
         <div id="title">eloquent/endec API</div>
 
             <div class="type">Class</div>
-    <h1><a href="../../../Eloquent/Endec/Hex.html">Eloquent\Endec\Hex</a>\HexDecodeTransform</h1>
+    <h1><a href="../../../Eloquent/Endec/Hexadecimal.html">Eloquent\Endec\Hexadecimal</a>\HexadecimalEncodeTransform</h1>
     </div>
         <div class="content">
-                <p>class    <strong>HexDecodeTransform</strong>        extends <a href="../../../Eloquent/Endec/Transform/AbstractDataTransform.html"><abbr title="Eloquent\Endec\Transform\AbstractDataTransform">AbstractDataTransform</abbr></a></p>
+                <p>class    <strong>HexadecimalEncodeTransform</strong>        implements
+        <a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a></p>
 
             <div class="description">
-            <p>Decodes data using hexadecimal encoding.</p>
+            <p>Encodes data using hexadecimal encoding.</p>
             <p>
 </p>
         </div>
@@ -37,7 +38,7 @@
             <table>
                     <tr>
                 <td class="type">
-                    static&nbsp;<abbr title="Eloquent\Endec\Hex\DataTransformInterface">DataTransformInterface</abbr>
+                    static&nbsp;<a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a>
                 </td>
                 <td class="last">
                     <a href="#method_instance">instance</a>()
@@ -47,7 +48,7 @@
             </tr>
                     <tr>
                 <td class="type">
-                    <abbr title="Eloquent\Endec\Hex\tuple&lt;string,integer&gt;">tuple&lt;string,integer&gt;</abbr>
+                    <abbr title="Eloquent\Endec\Hexadecimal\tuple&lt;string,integer&gt;">tuple&lt;string,integer&gt;</abbr>
                 </td>
                 <td class="last">
                     <a href="#method_transform">transform</a>(string $data, boolean $isEnd = false)
@@ -61,8 +62,8 @@
         <h2>Details</h2>
 
                         <h3 id="method_instance">
-        <div class="location">at line 28</div>
-        <code>        static    public            <abbr title="Eloquent\Endec\Hex\DataTransformInterface">DataTransformInterface</abbr>
+        <div class="location">at line 27</div>
+        <code>        static    public            <a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a>
     <strong>instance</strong>()</code>
     </h3>
     <div class="details">
@@ -75,7 +76,7 @@
 
                     <table>
         <tr>
-            <td><abbr title="Eloquent\Endec\Hex\DataTransformInterface">DataTransformInterface</abbr></td>
+            <td><a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a></td>
             <td>The transform.</td>
         </tr>
     </table>
@@ -86,8 +87,8 @@
     </div>
 
                 <h3 id="method_transform">
-        <div class="location">at line 51</div>
-        <code>            public            <abbr title="Eloquent\Endec\Hex\tuple&lt;string,integer&gt;">tuple&lt;string,integer&gt;</abbr>
+        <div class="location">at line 50</div>
+        <code>            public            <abbr title="Eloquent\Endec\Hexadecimal\tuple&lt;string,integer&gt;">tuple&lt;string,integer&gt;</abbr>
     <strong>transform</strong>(string $data, boolean $isEnd = false)</code>
     </h3>
     <div class="details">
@@ -117,7 +118,7 @@ the second argument.</p>
 
                     <table>
         <tr>
-            <td><abbr title="Eloquent\Endec\Hex\tuple&lt;string,integer&gt;">tuple&lt;string,integer&gt;</abbr></td>
+            <td><abbr title="Eloquent\Endec\Hexadecimal\tuple&lt;string,integer&gt;">tuple&lt;string,integer&gt;</abbr></td>
             <td>A 2-tuple of the transformed data, and the number of bytes consumed.</td>
         </tr>
     </table>
