@@ -54,7 +54,8 @@ abstract class AbstractDataTransform implements DataTransformInterface
      *
      * @param string $data The data to transform.
      *
-     * @return string The transformed data.
+     * @return string                                The transformed data.
+     * @throws Exception\TransformExceptionInterface If the data cannot be transformed.
      */
     public function transform($data)
     {
@@ -88,7 +89,8 @@ abstract class AbstractDataTransform implements DataTransformInterface
      *
      * @param string $data The data to transform.
      *
-     * @return boolean True if this transform is ready for more data.
+     * @return boolean                               True if this transform is ready for more data.
+     * @throws Exception\TransformExceptionInterface If the data cannot be transformed.
      */
     public function write($data)
     {
@@ -106,6 +108,8 @@ abstract class AbstractDataTransform implements DataTransformInterface
      * Transform and finalize any remaining buffered data.
      *
      * @param string|null $data Additional data to transform before finalizing.
+     *
+     * @throws Exception\TransformExceptionInterface If the data cannot be transformed.
      */
     public function end($data = null)
     {
@@ -143,6 +147,8 @@ abstract class AbstractDataTransform implements DataTransformInterface
 
     /**
      * Resume this transform.
+     *
+     * @throws Exception\TransformExceptionInterface If the data cannot be transformed.
      */
     public function resume()
     {
@@ -172,6 +178,8 @@ abstract class AbstractDataTransform implements DataTransformInterface
      *
      * This method abstracts some common implementation details so that the
      * concrete data transforms can be simplified.
+     *
+     * @throws Exception\TransformExceptionInterface If the data cannot be transformed.
      */
     protected function transformBuffer()
     {
@@ -248,7 +256,8 @@ abstract class AbstractDataTransform implements DataTransformInterface
      * @param string  $data  The data to process.
      * @param boolean $isEnd True if all data should be consumed.
      *
-     * @return tuple<string,integer> A 2-tuple of the transformed data, and the number of bytes consumed.
+     * @return tuple<string,integer>                 A 2-tuple of the transformed data, and the number of bytes consumed.
+     * @throws Exception\TransformExceptionInterface If the data cannot be transformed.
      */
     abstract protected function doTransform($data, $isEnd);
 

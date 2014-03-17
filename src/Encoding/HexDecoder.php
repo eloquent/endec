@@ -12,6 +12,7 @@
 namespace Eloquent\Endec\Encoding;
 
 use Eloquent\Endec\Transform\AbstractDataTransform;
+use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
 
 /**
  * Decodes data using hexadecimal encoding.
@@ -24,12 +25,22 @@ class HexDecoder extends AbstractDataTransform
      * @param string  $data  The data to process.
      * @param boolean $isEnd True if all data should be consumed.
      *
-     * @return tuple<string,integer> A 2-tuple of the transformed data, and the number of bytes consumed.
+     * @return tuple<string,integer>       A 2-tuple of the transformed data, and the number of bytes consumed.
+     * @throws TransformExceptionInterface If the data cannot be transformed.
      */
     protected function doTransform($data, $isEnd)
     {
         $consumedBytes = $this->calculateConsumedBytes($data, $isEnd, 2);
 
-        return array(hex2bin(substr($data, 0, $consumedBytes)), $consumedBytes);
+        $consumedData = substr($data, 0, $consumedBytes);
+        $outputBuffer = @hex2bin($consumedData);
+        if (false === $outputBuffer) {
+            throw new Exception\InvalidEncodedDataException(
+                'hexadecimal',
+                $consumedData
+            );
+        }
+
+        return array($outputBuffer, $consumedBytes);
     }
 }

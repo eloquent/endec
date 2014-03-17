@@ -12,6 +12,7 @@
 namespace Eloquent\Endec\Encoding;
 
 use Eloquent\Endec\Transform\AbstractDataTransform;
+use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
 
 /**
  * Decodes data using base64 encoding.
@@ -24,15 +25,22 @@ class Base64Decoder extends AbstractDataTransform
      * @param string  $data  The data to process.
      * @param boolean $isEnd True if all data should be consumed.
      *
-     * @return tuple<string,integer> A 2-tuple of the transformed data, and the number of bytes consumed.
+     * @return tuple<string,integer>       A 2-tuple of the transformed data, and the number of bytes consumed.
+     * @throws TransformExceptionInterface If the data cannot be transformed.
      */
     protected function doTransform($data, $isEnd)
     {
         $consumedBytes = $this->calculateConsumedBytes($data, $isEnd, 4);
 
-        return array(
-            base64_decode(substr($data, 0, $consumedBytes)),
-            $consumedBytes
-        );
+        $consumedData = substr($data, 0, $consumedBytes);
+        $outputBuffer = base64_decode($consumedData, true);
+        if (false === $outputBuffer) {
+            throw new Exception\InvalidEncodedDataException(
+                'base64',
+                $consumedData
+            );
+        }
+
+        return array($outputBuffer, $consumedBytes);
     }
 }

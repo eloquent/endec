@@ -26,7 +26,8 @@ interface DataTransformInterface extends
      *
      * @param string $data The data to transform.
      *
-     * @return string The transformed data.
+     * @return string                                The transformed data.
+     * @throws Exception\TransformExceptionInterface If the data cannot be transformed.
      */
     public function transform($data);
 }

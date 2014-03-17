@@ -15,14 +15,14 @@ use Eloquent\Endec\Stream\TestWritableStream;
 use Eloquent\Endec\TestCase\AbstractDataTransformTestCase;
 
 /**
- * @covers \Eloquent\Endec\Encoding\Base64Decoder
+ * @covers \Eloquent\Endec\Encoding\HexDecoder
  * @covers \Eloquent\Endec\Transform\AbstractDataTransform
  */
-class Base64DecoderTest extends AbstractDataTransformTestCase
+class HexDecoderTest extends AbstractDataTransformTestCase
 {
     protected function setUp()
     {
-        $this->transform = new Base64Decoder(10);
+        $this->transform = new HexDecoder(10);
 
         parent::setUp();
     }
@@ -36,7 +36,7 @@ class Base64DecoderTest extends AbstractDataTransformTestCase
 
     public function testConstructorDefaults()
     {
-        $this->transform = new Base64Decoder;
+        $this->transform = new HexDecoder;
 
         $this->assertSame(8192, $this->transform->bufferSize());
     }
@@ -46,10 +46,16 @@ class Base64DecoderTest extends AbstractDataTransformTestCase
      */
     public function testTransform($data)
     {
-        $this->assertSame($data, $this->transform->transform(base64_encode($data)));
+        $this->assertSame($data, $this->transform->transform(bin2hex($data)));
         $this->assertSame('', $this->output);
         $this->assertSame(0, $this->endsEmitted);
         $this->assertSame(0, $this->closesEmitted);
+    }
+
+    public function testTransformFailure()
+    {
+        $this->setExpectedException('Eloquent\Endec\Encoding\Exception\InvalidEncodedDataException');
+        $this->transform->transform('$');
     }
 
     /**
@@ -57,7 +63,7 @@ class Base64DecoderTest extends AbstractDataTransformTestCase
      */
     public function testWriteEnd($data)
     {
-        $writeReturn = $this->transform->write(base64_encode($data));
+        $writeReturn = $this->transform->write(bin2hex($data));
         $this->transform->end();
 
         $this->assertTrue($writeReturn);
@@ -71,7 +77,7 @@ class Base64DecoderTest extends AbstractDataTransformTestCase
      */
     public function testEnd($data)
     {
-        $this->transform->end(base64_encode($data));
+        $this->transform->end(bin2hex($data));
 
         $this->assertSame($data, $this->output);
         $this->assertSame(1, $this->endsEmitted);
@@ -87,12 +93,12 @@ class Base64DecoderTest extends AbstractDataTransformTestCase
 
     public function testClose()
     {
-        $this->transform->write(base64_encode('foobarbazqux'));
+        $this->transform->write(bin2hex('foobarbazqux'));
         $this->transform->close();
         $this->transform->close();
-        $this->transform->end(base64_encode('doom'));
+        $this->transform->end(bin2hex('doom'));
 
-        $this->assertFalse($this->transform->write(base64_encode('splat')));
+        $this->assertFalse($this->transform->write(bin2hex('splat')));
         $this->assertSame('foobarbazqux', $this->output);
         $this->assertSame(1, $this->endsEmitted);
         $this->assertSame(1, $this->closesEmitted);
@@ -102,12 +108,12 @@ class Base64DecoderTest extends AbstractDataTransformTestCase
     {
         $this->transform->pause();
 
-        $this->assertFalse($this->transform->write(base64_encode('foobarbazqux')));
+        $this->assertFalse($this->transform->write(bin2hex('foobarbazqux')));
         $this->assertSame('', $this->output);
 
         $this->transform->resume();
 
-        $this->assertTrue($this->transform->write(base64_encode('doom')));
+        $this->assertTrue($this->transform->write(bin2hex('doom')));
         $this->assertSame('foobarbazqux', $this->output);
 
         $this->transform->end();
@@ -119,7 +125,7 @@ class Base64DecoderTest extends AbstractDataTransformTestCase
     {
         $destination = new TestWritableStream;
         $this->transform->pipe($destination);
-        $this->transform->end(base64_encode('foobarbazquxdoom'));
+        $this->transform->end(bin2hex('foobarbazquxdoom'));
 
         $this->assertSame('foobarbazquxdoom', $destination->data);
     }
