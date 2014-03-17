@@ -18,12 +18,7 @@ class Base64Decoder extends AbstractCodec
 {
     protected function processInput($data, $isEnding)
     {
-        $length = strlen($data);
-        if ($isEnding) {
-            $consumedBytes = $length;
-        } else {
-            $consumedBytes = $length - ($length % 3);
-        }
+        $consumedBytes = $this->calculateConsumedBytes($data, $isEnding, 4);
 
         return array(
             base64_decode(substr($data, 0, $consumedBytes)),

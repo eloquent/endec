@@ -152,6 +152,18 @@ abstract class AbstractCodec implements CodecInterface
         $this->removeAllListeners();
     }
 
+    protected function calculateConsumedBytes($data, $isEnding, $chunkSize)
+    {
+        $length = strlen($data);
+        if ($isEnding) {
+            $consumedBytes = $length;
+        } else {
+            $consumedBytes = $length - ($length % $chunkSize);
+        }
+
+        return $consumedBytes;
+    }
+
     abstract protected function processInput($data, $isEnding);
 
     protected $bufferSize;
