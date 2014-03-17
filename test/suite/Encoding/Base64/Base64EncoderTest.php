@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Eloquent\Endec\Encoding;
+namespace Eloquent\Endec\Encoding\Base64;
 
 use Eloquent\Endec\Stream\TestWritableStream;
 use Eloquent\Endec\TestCase\AbstractDataTransformTestCase;
 
 /**
- * @covers \Eloquent\Endec\Encoding\Base64Encoder
+ * @covers \Eloquent\Endec\Encoding\Base64\Base64Encoder
  * @covers \Eloquent\Endec\Transform\AbstractDataTransform
  */
 class Base64EncoderTest extends AbstractDataTransformTestCase

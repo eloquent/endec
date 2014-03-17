@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace Eloquent\Endec\Encoding;
+namespace Eloquent\Endec\Encoding\Base64;
 
 use Eloquent\Endec\Transform\AbstractDataTransform;
 use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
 
 /**
- * Decodes data using hexadecimal encoding.
+ * Encodes data using base64 encoding.
  */
-class HexDecoder extends AbstractDataTransform
+class Base64Encoder extends AbstractDataTransform
 {
     /**
      * Transform the supplied data chunk.
@@ -30,17 +30,11 @@ class HexDecoder extends AbstractDataTransform
      */
     protected function doTransform($data, $isEnd)
     {
-        $consumedBytes = $this->calculateConsumedBytes($data, $isEnd, 2);
+        $consumedBytes = $this->calculateConsumedBytes($data, $isEnd, 3);
 
-        $consumedData = substr($data, 0, $consumedBytes);
-        $outputBuffer = @hex2bin($consumedData);
-        if (false === $outputBuffer) {
-            throw new Exception\InvalidEncodedDataException(
-                'hexadecimal',
-                $consumedData
-            );
-        }
-
-        return array($outputBuffer, $consumedBytes);
+        return array(
+            base64_encode(substr($data, 0, $consumedBytes)),
+            $consumedBytes
+        );
     }
 }

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Eloquent\Endec\Encoding;
+namespace Eloquent\Endec\Encoding\Hex;
 
 use Eloquent\Endec\Transform\AbstractDataTransform;
 use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;

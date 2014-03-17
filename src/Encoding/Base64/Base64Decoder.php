@@ -9,8 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Eloquent\Endec\Encoding;
+namespace Eloquent\Endec\Encoding\Base64;
 
+use Eloquent\Endec\Encoding\Exception\InvalidEncodedDataException;
 use Eloquent\Endec\Transform\AbstractDataTransform;
 use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
 
@@ -35,10 +36,7 @@ class Base64Decoder extends AbstractDataTransform
         $consumedData = substr($data, 0, $consumedBytes);
         $outputBuffer = base64_decode($consumedData, true);
         if (false === $outputBuffer) {
-            throw new Exception\InvalidEncodedDataException(
-                'base64',
-                $consumedData
-            );
+            throw new InvalidEncodedDataException('base64', $consumedData);
         }
 
         return array($outputBuffer, $consumedBytes);

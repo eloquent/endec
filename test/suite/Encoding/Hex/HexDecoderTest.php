@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Eloquent\Endec\Encoding;
+namespace Eloquent\Endec\Encoding\Hex;
 
 use Eloquent\Endec\Stream\TestWritableStream;
 use Eloquent\Endec\TestCase\AbstractDataTransformTestCase;
 
 /**
- * @covers \Eloquent\Endec\Encoding\HexDecoder
+ * @covers \Eloquent\Endec\Encoding\Hex\HexDecoder
  * @covers \Eloquent\Endec\Transform\AbstractDataTransform
  */
 class HexDecoderTest extends AbstractDataTransformTestCase
