@@ -9,13 +9,30 @@
  * file that was distributed with this source code.
  */
 
-namespace Eloquent\Endec\Transform;
+namespace Eloquent\Endec\Hex;
+
+use Eloquent\Endec\Transform\DataTransformInterface;
+use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
 
 /**
- * The interface implemented by data transforms.
+ * Encodes data using hexadecimal encoding.
  */
-interface DataTransformInterface
+class HexEncodeTransform implements DataTransformInterface
 {
+    /**
+     * Get the static instance of this transform.
+     *
+     * @return DataTransformInterface The transform.
+     */
+    public static function instance()
+    {
+        if (null === self::$instance) {
+            self::$instance = new self;
+        }
+
+        return self::$instance;
+    }
+
     /**
      * Transform the supplied data.
      *
@@ -28,7 +45,12 @@ interface DataTransformInterface
      * @param boolean $isEnd True if all supplied data must be transformed.
      *
      * @return tuple<string,integer>                 A 2-tuple of the transformed data, and the number of bytes consumed.
-     * @throws Exception\TransformExceptionInterface If the data cannot be transformed.
+     * @throws TransformExceptionInterface If the data cannot be transformed.
      */
-    public function transform($data, $isEnd = false);
+    public function transform($data, $isEnd = false)
+    {
+        return array(bin2hex($data), strlen($data));
+    }
+
+    private static $instance;
 }

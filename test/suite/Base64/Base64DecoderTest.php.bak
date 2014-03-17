@@ -54,8 +54,13 @@ class Base64DecoderTest extends AbstractDataTransformTestCase
 
     public function testTransformFailure()
     {
+        $this->assertNull($this->transform->transform('$'));
+    }
+
+    public function testTransformStrictFailure()
+    {
         $this->setExpectedException('Eloquent\Endec\Encoding\Exception\InvalidEncodedDataException');
-        $this->transform->transform('$');
+        $this->transform->transformStrict('$');
     }
 
     /**
