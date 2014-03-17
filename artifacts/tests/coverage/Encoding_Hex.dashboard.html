@@ -2,7 +2,7 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8">
-  <title>Dashboard for /home/travis/build/ezzatron/endec/src/Transform/Exception</title>
+  <title>Dashboard for /home/travis/build/ezzatron/endec/src/Encoding/Hex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
@@ -19,8 +19,8 @@
      <div class="span12">
       <ul class="breadcrumb">
         <li><a href="index.html">/home/travis/build/ezzatron/endec/src</a> <span class="divider">/</span></li>
-        <li><a href="Transform.html">Transform</a> <span class="divider">/</span></li>
-        <li><a href="Transform_Exception.html">Exception</a></li>
+        <li><a href="Encoding.html">Encoding</a> <span class="divider">/</span></li>
+        <li><a href="Encoding_Hex.html">Hex</a></li>
         <li class="active">(Dashboard)</li>
 
       </ul>
@@ -79,7 +79,7 @@ $(document).ready(function() {
       .yAxis.tickFormat(d3.format('d'));
 
     d3.select('#classCoverageDistribution svg')
-      .datum(getCoverageDistributionData([0,0,0,0,0,0,0,0,0,0,0,0], "Class Coverage"))
+      .datum(getCoverageDistributionData([0,0,0,0,0,0,0,0,0,0,0,2], "Class Coverage"))
       .transition().duration(500).call(chart);
 
     nv.utils.windowResize(chart.update);
@@ -131,7 +131,7 @@ $(document).ready(function() {
     chart.yAxis.axisLabel('Cyclomatic Complexity');
 
     d3.select('#classComplexity svg')
-      .datum(getComplexityData([], 'Class Complexity'))
+      .datum(getComplexityData([[100,2,"<a href=\"Encoding_Hex_HexDecoder.php.html#21\">HexDecoder<\/a>"],[100,1,"<a href=\"Encoding_Hex_HexEncoder.php.html#20\">HexEncoder<\/a>"]], 'Class Complexity'))
       .transition()
       .duration(500)
       .call(chart);

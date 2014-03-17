@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1395033938">
-  <project timestamp="1395033938">
-    <package name="Eloquent\Endec\Encoding">
-      <file name="/home/travis/build/ezzatron/endec/src/Encoding/Base64Decoder.php">
-        <class name="Base64Decoder" namespace="Eloquent\Endec\Encoding">
-          <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="9" coveredelements="9"/>
+<coverage generated="1395034371">
+  <project timestamp="1395034371">
+    <package name="Eloquent\Endec\Encoding\Base64">
+      <file name="/home/travis/build/ezzatron/endec/src/Encoding/Base64/Base64Decoder.php">
+        <class name="Base64Decoder" namespace="Eloquent\Endec\Encoding\Base64">
+          <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="7" coveredelements="7"/>
         </class>
-        <line num="31" type="method" name="doTransform" crap="2" count="49"/>
-        <line num="33" type="stmt" count="49"/>
-        <line num="35" type="stmt" count="49"/>
+        <line num="32" type="method" name="doTransform" crap="2" count="49"/>
+        <line num="34" type="stmt" count="49"/>
         <line num="36" type="stmt" count="49"/>
         <line num="37" type="stmt" count="49"/>
-        <line num="38" type="stmt" count="1"/>
+        <line num="38" type="stmt" count="49"/>
         <line num="39" type="stmt" count="1"/>
-        <line num="41" type="stmt" count="1"/>
-        <line num="44" type="stmt" count="48"/>
-        <line num="47" type="stmt" count="0"/>
-        <metrics loc="46" ncloc="26" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="9" coveredelements="9"/>
+        <line num="42" type="stmt" count="48"/>
+        <line num="45" type="stmt" count="0"/>
+        <metrics loc="44" ncloc="24" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="7" coveredelements="7"/>
       </file>
-      <file name="/home/travis/build/ezzatron/endec/src/Encoding/Base64Encoder.php">
-        <class name="Base64Encoder" namespace="Eloquent\Endec\Encoding">
+      <file name="/home/travis/build/ezzatron/endec/src/Encoding/Base64/Base64Encoder.php">
+        <class name="Base64Encoder" namespace="Eloquent\Endec\Encoding\Base64">
           <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="4" coveredelements="4"/>
         </class>
         <line num="31" type="method" name="doTransform" crap="1" count="48"/>
@@ -28,31 +26,6 @@
         <line num="38" type="stmt" count="48"/>
         <line num="41" type="stmt" count="0"/>
         <metrics loc="40" ncloc="20" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="4" coveredelements="4"/>
-      </file>
-      <file name="/home/travis/build/ezzatron/endec/src/Encoding/HexDecoder.php">
-        <class name="HexDecoder" namespace="Eloquent\Endec\Encoding">
-          <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="9" coveredelements="9"/>
-        </class>
-        <line num="31" type="method" name="doTransform" crap="2" count="49"/>
-        <line num="33" type="stmt" count="49"/>
-        <line num="35" type="stmt" count="49"/>
-        <line num="36" type="stmt" count="49"/>
-        <line num="37" type="stmt" count="49"/>
-        <line num="38" type="stmt" count="1"/>
-        <line num="39" type="stmt" count="1"/>
-        <line num="41" type="stmt" count="1"/>
-        <line num="44" type="stmt" count="48"/>
-        <line num="47" type="stmt" count="0"/>
-        <metrics loc="46" ncloc="26" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="9" coveredelements="9"/>
-      </file>
-      <file name="/home/travis/build/ezzatron/endec/src/Encoding/HexEncoder.php">
-        <class name="HexEncoder" namespace="Eloquent\Endec\Encoding">
-          <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
-        </class>
-        <line num="31" type="method" name="doTransform" crap="1" count="48"/>
-        <line num="33" type="stmt" count="48"/>
-        <line num="36" type="stmt" count="0"/>
-        <metrics loc="35" ncloc="15" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
       </file>
     </package>
     <package name="Eloquent\Endec\Encoding\Exception">
@@ -76,6 +49,31 @@
         <line num="65" type="stmt" count="1"/>
         <line num="71" type="stmt" count="0"/>
         <metrics loc="70" ncloc="42" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="11" elements="14" coveredelements="14"/>
+      </file>
+    </package>
+    <package name="Eloquent\Endec\Encoding\Hex">
+      <file name="/home/travis/build/ezzatron/endec/src/Encoding/Hex/HexDecoder.php">
+        <class name="HexDecoder" namespace="Eloquent\Endec\Encoding\Hex">
+          <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="7" coveredelements="7"/>
+        </class>
+        <line num="32" type="method" name="doTransform" crap="2" count="49"/>
+        <line num="34" type="stmt" count="49"/>
+        <line num="36" type="stmt" count="49"/>
+        <line num="37" type="stmt" count="49"/>
+        <line num="38" type="stmt" count="49"/>
+        <line num="39" type="stmt" count="1"/>
+        <line num="42" type="stmt" count="48"/>
+        <line num="45" type="stmt" count="0"/>
+        <metrics loc="44" ncloc="24" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="7" coveredelements="7"/>
+      </file>
+      <file name="/home/travis/build/ezzatron/endec/src/Encoding/Hex/HexEncoder.php">
+        <class name="HexEncoder" namespace="Eloquent\Endec\Encoding\Hex">
+          <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+        </class>
+        <line num="31" type="method" name="doTransform" crap="1" count="48"/>
+        <line num="33" type="stmt" count="48"/>
+        <line num="36" type="stmt" count="0"/>
+        <metrics loc="35" ncloc="15" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
       </file>
     </package>
     <package name="Eloquent\Endec\Transform">
@@ -175,6 +173,6 @@
       <line num="20" type="stmt" count="0"/>
       <metrics loc="19" ncloc="8" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <metrics files="8" loc="558" ncloc="317" classes="6" methods="21" coveredmethods="21" conditionals="0" coveredconditionals="0" statements="96" coveredstatements="96" elements="117" coveredelements="117"/>
+    <metrics files="8" loc="554" ncloc="313" classes="6" methods="21" coveredmethods="21" conditionals="0" coveredconditionals="0" statements="92" coveredstatements="92" elements="113" coveredelements="113"/>
   </project>
 </coverage>
