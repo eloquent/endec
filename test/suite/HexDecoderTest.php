@@ -11,6 +11,7 @@
 
 namespace Eloquent\Endec\Encoding;
 
+use Eloquent\Endec\Stream\TestWritableStream;
 use Eloquent\Endec\TestCase\AbstractDataTransformTestCase;
 
 /**
@@ -21,23 +22,23 @@ class HexDecoderTest extends AbstractDataTransformTestCase
 {
     protected function setUp()
     {
-        $this->codec = new HexDecoder(10);
+        $this->transform = new HexDecoder(10);
 
         parent::setUp();
     }
 
     public function testConstructor()
     {
-        $this->assertSame(10, $this->codec->bufferSize());
-        $this->assertTrue($this->codec->isWritable());
-        $this->assertTrue($this->codec->isReadable());
+        $this->assertSame(10, $this->transform->bufferSize());
+        $this->assertTrue($this->transform->isWritable());
+        $this->assertTrue($this->transform->isReadable());
     }
 
     public function testConstructorDefaults()
     {
-        $this->codec = new HexDecoder;
+        $this->transform = new HexDecoder;
 
-        $this->assertSame(8192, $this->codec->bufferSize());
+        $this->assertSame(8192, $this->transform->bufferSize());
     }
 
     /**
@@ -45,12 +46,13 @@ class HexDecoderTest extends AbstractDataTransformTestCase
      */
     public function testWriteEnd($data)
     {
-        $this->codec->write(bin2hex($data));
-        $this->codec->end();
+        $writeReturn = $this->transform->write(bin2hex($data));
+        $this->transform->end();
 
+        $this->assertTrue($writeReturn);
         $this->assertSame($data, $this->output);
-        $this->assertTrue($this->endEmitted);
-        $this->assertTrue($this->closeEmitted);
+        $this->assertSame(1, $this->endsEmitted);
+        $this->assertSame(1, $this->closesEmitted);
     }
 
     /**
@@ -58,17 +60,56 @@ class HexDecoderTest extends AbstractDataTransformTestCase
      */
     public function testEnd($data)
     {
-        $this->codec->end(bin2hex($data));
+        $this->transform->end(bin2hex($data));
 
         $this->assertSame($data, $this->output);
-        $this->assertTrue($this->endEmitted);
-        $this->assertTrue($this->closeEmitted);
+        $this->assertSame(1, $this->endsEmitted);
+        $this->assertSame(1, $this->closesEmitted);
     }
 
     public function testEndEmptyString()
     {
-        $this->codec->end('');
+        $this->transform->end('');
 
         $this->assertSame('', $this->output);
+    }
+
+    public function testClose()
+    {
+        $this->transform->write(bin2hex('foobarbazqux'));
+        $this->transform->close();
+        $this->transform->close();
+        $this->transform->end(bin2hex('doom'));
+
+        $this->assertFalse($this->transform->write(bin2hex('splat')));
+        $this->assertSame('foobarbazqux', $this->output);
+        $this->assertSame(1, $this->endsEmitted);
+        $this->assertSame(1, $this->closesEmitted);
+    }
+
+    public function testPauseResume()
+    {
+        $this->transform->pause();
+
+        $this->assertFalse($this->transform->write(bin2hex('foobarbazqux')));
+        $this->assertSame('', $this->output);
+
+        $this->transform->resume();
+
+        $this->assertTrue($this->transform->write(bin2hex('doom')));
+        $this->assertSame('foobarbazqux', $this->output);
+
+        $this->transform->end();
+
+        $this->assertSame('foobarbazquxdoom', $this->output);
+    }
+
+    public function testPipe()
+    {
+        $destination = new TestWritableStream;
+        $this->transform->pipe($destination);
+        $this->transform->end(bin2hex('foobarbazquxdoom'));
+
+        $this->assertSame('foobarbazquxdoom', $destination->data);
     }
 }

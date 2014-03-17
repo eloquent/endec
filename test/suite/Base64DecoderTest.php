@@ -11,6 +11,7 @@
 
 namespace Eloquent\Endec\Encoding;
 
+use Eloquent\Endec\Stream\TestWritableStream;
 use Eloquent\Endec\TestCase\AbstractDataTransformTestCase;
 
 /**
@@ -21,23 +22,23 @@ class Base64DecoderTest extends AbstractDataTransformTestCase
 {
     protected function setUp()
     {
-        $this->codec = new Base64Decoder(10);
+        $this->transform = new Base64Decoder(10);
 
         parent::setUp();
     }
 
     public function testConstructor()
     {
-        $this->assertSame(10, $this->codec->bufferSize());
-        $this->assertTrue($this->codec->isWritable());
-        $this->assertTrue($this->codec->isReadable());
+        $this->assertSame(10, $this->transform->bufferSize());
+        $this->assertTrue($this->transform->isWritable());
+        $this->assertTrue($this->transform->isReadable());
     }
 
     public function testConstructorDefaults()
     {
-        $this->codec = new Base64Decoder;
+        $this->transform = new Base64Decoder;
 
-        $this->assertSame(8192, $this->codec->bufferSize());
+        $this->assertSame(8192, $this->transform->bufferSize());
     }
 
     /**
@@ -45,12 +46,13 @@ class Base64DecoderTest extends AbstractDataTransformTestCase
      */
     public function testWriteEnd($data)
     {
-        $this->codec->write(base64_encode($data));
-        $this->codec->end();
+        $writeReturn = $this->transform->write(base64_encode($data));
+        $this->transform->end();
 
+        $this->assertTrue($writeReturn);
         $this->assertSame($data, $this->output);
-        $this->assertTrue($this->endEmitted);
-        $this->assertTrue($this->closeEmitted);
+        $this->assertSame(1, $this->endsEmitted);
+        $this->assertSame(1, $this->closesEmitted);
     }
 
     /**
@@ -58,17 +60,56 @@ class Base64DecoderTest extends AbstractDataTransformTestCase
      */
     public function testEnd($data)
     {
-        $this->codec->end(base64_encode($data));
+        $this->transform->end(base64_encode($data));
 
         $this->assertSame($data, $this->output);
-        $this->assertTrue($this->endEmitted);
-        $this->assertTrue($this->closeEmitted);
+        $this->assertSame(1, $this->endsEmitted);
+        $this->assertSame(1, $this->closesEmitted);
     }
 
     public function testEndEmptyString()
     {
-        $this->codec->end('');
+        $this->transform->end('');
 
         $this->assertSame('', $this->output);
+    }
+
+    public function testClose()
+    {
+        $this->transform->write(base64_encode('foobarbazqux'));
+        $this->transform->close();
+        $this->transform->close();
+        $this->transform->end(base64_encode('doom'));
+
+        $this->assertFalse($this->transform->write(base64_encode('splat')));
+        $this->assertSame('foobarbazqux', $this->output);
+        $this->assertSame(1, $this->endsEmitted);
+        $this->assertSame(1, $this->closesEmitted);
+    }
+
+    public function testPauseResume()
+    {
+        $this->transform->pause();
+
+        $this->assertFalse($this->transform->write(base64_encode('foobarbazqux')));
+        $this->assertSame('', $this->output);
+
+        $this->transform->resume();
+
+        $this->assertTrue($this->transform->write(base64_encode('doom')));
+        $this->assertSame('foobarbazqux', $this->output);
+
+        $this->transform->end();
+
+        $this->assertSame('foobarbazquxdoom', $this->output);
+    }
+
+    public function testPipe()
+    {
+        $destination = new TestWritableStream;
+        $this->transform->pipe($destination);
+        $this->transform->end(base64_encode('foobarbazquxdoom'));
+
+        $this->assertSame('foobarbazquxdoom', $destination->data);
     }
 }

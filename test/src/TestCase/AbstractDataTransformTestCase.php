@@ -20,24 +20,24 @@ abstract class AbstractDataTransformTestCase extends PHPUnit_Framework_TestCase
         parent::setUp();
 
         $this->output = '';
-        $this->codec->on(
+        $this->transform->on(
             'data',
             function ($data, $codec) {
                 $this->output .= $data;
             }
         );
 
-        $this->endEmitted = $this->closeEmitted = false;
-        $this->codec->on(
+        $this->endsEmitted = $this->closesEmitted = 0;
+        $this->transform->on(
             'end',
             function ($codec) {
-                $this->endEmitted = true;
+                $this->endsEmitted++;
             }
         );
-        $this->codec->on(
+        $this->transform->on(
             'close',
             function ($codec) {
-                $this->closeEmitted = true;
+                $this->closesEmitted++;
             }
         );
     }
