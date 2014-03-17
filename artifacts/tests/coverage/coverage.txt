@@ -1,18 +1,22 @@
 
 
 Code Coverage Report 
-  2014-03-17 09:02:03
+  2014-03-17 10:35:35
 
  Summary: 
-  Classes: 100.00% (7/7)
-  Methods: 100.00% (25/25)
-  Lines:   97.20% (104/107)
+  Classes: 100.00% (9/9)
+  Methods: 100.00% (32/32)
+  Lines:   100.00% (122/122)
 
+\Eloquent\Endec::AbstractCodec
+  Methods: 100.00% ( 5/ 5)   Lines: 100.00% (  9/  9)
+\Eloquent\Endec\Base64::Base64
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  9/  9)
 \Eloquent\Endec\Base64::Base64DecodeTransform
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  9/  9)
 \Eloquent\Endec\Base64::Base64EncodeTransform
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  6/  6)
-\Eloquent\Endec\Encoding\Exception::InvalidEncodedDataException
+\Eloquent\Endec\Exception::InvalidEncodedDataException
   Methods: 100.00% ( 3/ 3)   Lines: 100.00% ( 11/ 11)
 \Eloquent\Endec\Hex::HexDecodeTransform
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  9/  9)
