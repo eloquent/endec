@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1395019324">
-  <project timestamp="1395019324">
+<coverage generated="1395024619">
+  <project timestamp="1395024619">
     <package name="Eloquent\Endec\Encoding">
       <file name="/home/travis/build/ezzatron/endec/src/Encoding/AbstractCodec.php">
         <class name="AbstractCodec" namespace="Eloquent\Endec\Encoding">
-          <metrics methods="14" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="62" coveredstatements="46" elements="76" coveredelements="53"/>
+          <metrics methods="14" coveredmethods="9" conditionals="0" coveredconditionals="0" statements="62" coveredstatements="48" elements="76" coveredelements="57"/>
         </class>
         <line num="25" type="method" name="__construct" crap="2" count="136"/>
         <line num="27" type="stmt" count="136"/>
@@ -15,10 +15,10 @@
         <line num="35" type="stmt" count="136"/>
         <line num="42" type="method" name="bufferSize" crap="1" count="8"/>
         <line num="44" type="stmt" count="8"/>
-        <line num="47" type="method" name="isWritable" crap="2" count="0"/>
-        <line num="49" type="stmt" count="0"/>
-        <line num="52" type="method" name="isReadable" crap="2" count="0"/>
-        <line num="54" type="stmt" count="0"/>
+        <line num="47" type="method" name="isWritable" crap="1" count="4"/>
+        <line num="49" type="stmt" count="4"/>
+        <line num="52" type="method" name="isReadable" crap="1" count="4"/>
+        <line num="54" type="stmt" count="4"/>
         <line num="57" type="method" name="write" crap="2.03" count="64"/>
         <line num="59" type="stmt" count="64"/>
         <line num="60" type="stmt" count="0"/>
@@ -83,7 +83,7 @@
         <line num="164" type="stmt" count="90"/>
         <line num="167" type="method" name="processInput" crap="1" count="0"/>
         <line num="175" type="stmt" count="0"/>
-        <metrics loc="174" ncloc="158" classes="1" methods="13" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="62" coveredstatements="46" elements="75" coveredelements="50"/>
+        <metrics loc="174" ncloc="158" classes="1" methods="13" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="62" coveredstatements="48" elements="75" coveredelements="54"/>
       </file>
       <file name="/home/travis/build/ezzatron/endec/src/Encoding/Base64Decoder.php">
         <class name="Base64Decoder" namespace="Eloquent\Endec\Encoding">
@@ -131,6 +131,6 @@
       <line num="31" type="stmt" count="0"/>
       <metrics loc="30" ncloc="14" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <metrics files="6" loc="308" ncloc="232" classes="5" methods="17" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="71" coveredstatements="55" elements="88" coveredelements="63"/>
+    <metrics files="6" loc="308" ncloc="232" classes="5" methods="17" coveredmethods="10" conditionals="0" coveredconditionals="0" statements="71" coveredstatements="57" elements="88" coveredelements="67"/>
   </project>
 </coverage>
