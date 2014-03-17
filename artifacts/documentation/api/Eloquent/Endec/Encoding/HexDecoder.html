@@ -22,7 +22,7 @@
     <h1><a href="../../../Eloquent/Endec/Encoding.html">Eloquent\Endec\Encoding</a>\HexDecoder</h1>
     </div>
         <div class="content">
-                <p>class    <strong>HexDecoder</strong>        extends <a href="../../../Eloquent/Endec/Encoding/AbstractCodec.html"><abbr title="Eloquent\Endec\Encoding\AbstractCodec">AbstractCodec</abbr></a></p>
+                <p>class    <strong>HexDecoder</strong>        extends <a href="../../../Eloquent/Endec/Transform/AbstractDataTransform.html"><abbr title="Eloquent\Endec\Transform\AbstractDataTransform">AbstractDataTransform</abbr></a></p>
 
             <div class="description">
             <p>Decodes data using hexadecimal encoding.</p>
@@ -40,11 +40,10 @@
                     
                 </td>
                 <td class="last">
-                    <a href="#method___construct">__construct</a>($bufferSize = null)
-                    <p>
-</p>
+                    <a href="#method___construct">__construct</a>(integer|null $bufferSize = null)
+                    <p>Construct a new data transform.</p>
                 </td>
-                <td><small>from&nbsp;<a href="../../../Eloquent/Endec/Encoding/AbstractCodec.html#method___construct"><abbr title="Eloquent\Endec\Encoding\AbstractCodec">AbstractCodec</abbr></a></small></td>
+                <td><small>from&nbsp;<a href="../../../Eloquent/Endec/Transform/AbstractDataTransform.html#method___construct"><abbr title="Eloquent\Endec\Transform\AbstractDataTransform">AbstractDataTransform</abbr></a></small></td>
             </tr>
                     <tr>
                 <td class="type">
@@ -54,51 +53,47 @@
                     <a href="#method_bufferSize">bufferSize</a>()
                     <p>Get the buffer size.</p>
                 </td>
-                <td><small>from&nbsp;<a href="../../../Eloquent/Endec/Encoding/AbstractCodec.html#method_bufferSize"><abbr title="Eloquent\Endec\Encoding\AbstractCodec">AbstractCodec</abbr></a></small></td>
+                <td><small>from&nbsp;<a href="../../../Eloquent/Endec/Transform/AbstractDataTransform.html#method_bufferSize"><abbr title="Eloquent\Endec\Transform\AbstractDataTransform">AbstractDataTransform</abbr></a></small></td>
             </tr>
                     <tr>
                 <td class="type">
-                    
+                    boolean
                 </td>
                 <td class="last">
                     <a href="#method_isWritable">isWritable</a>()
-                    <p>
-</p>
+                    <p>Returns true if this transform is writable.</p>
                 </td>
-                <td><small>from&nbsp;<a href="../../../Eloquent/Endec/Encoding/AbstractCodec.html#method_isWritable"><abbr title="Eloquent\Endec\Encoding\AbstractCodec">AbstractCodec</abbr></a></small></td>
+                <td><small>from&nbsp;<a href="../../../Eloquent/Endec/Transform/AbstractDataTransform.html#method_isWritable"><abbr title="Eloquent\Endec\Transform\AbstractDataTransform">AbstractDataTransform</abbr></a></small></td>
             </tr>
                     <tr>
                 <td class="type">
-                    
+                    boolean
                 </td>
                 <td class="last">
                     <a href="#method_isReadable">isReadable</a>()
-                    <p>
-</p>
+                    <p>Returns true if this transform is readable.</p>
                 </td>
-                <td><small>from&nbsp;<a href="../../../Eloquent/Endec/Encoding/AbstractCodec.html#method_isReadable"><abbr title="Eloquent\Endec\Encoding\AbstractCodec">AbstractCodec</abbr></a></small></td>
+                <td><small>from&nbsp;<a href="../../../Eloquent/Endec/Transform/AbstractDataTransform.html#method_isReadable"><abbr title="Eloquent\Endec\Transform\AbstractDataTransform">AbstractDataTransform</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    boolean
+                </td>
+                <td class="last">
+                    <a href="#method_write">write</a>(string $data)
+                    <p>Write some data to this transform.</p>
+                </td>
+                <td><small>from&nbsp;<a href="../../../Eloquent/Endec/Transform/AbstractDataTransform.html#method_write"><abbr title="Eloquent\Endec\Transform\AbstractDataTransform">AbstractDataTransform</abbr></a></small></td>
             </tr>
                     <tr>
                 <td class="type">
                     
                 </td>
                 <td class="last">
-                    <a href="#method_write">write</a>($data)
-                    <p>
-</p>
+                    <a href="#method_end">end</a>(string|null $data = null)
+                    <p>Transform and finalize any remaining buffered data.</p>
                 </td>
-                <td><small>from&nbsp;<a href="../../../Eloquent/Endec/Encoding/AbstractCodec.html#method_write"><abbr title="Eloquent\Endec\Encoding\AbstractCodec">AbstractCodec</abbr></a></small></td>
-            </tr>
-                    <tr>
-                <td class="type">
-                    
-                </td>
-                <td class="last">
-                    <a href="#method_end">end</a>($data = null)
-                    <p>
-</p>
-                </td>
-                <td><small>from&nbsp;<a href="../../../Eloquent/Endec/Encoding/AbstractCodec.html#method_end"><abbr title="Eloquent\Endec\Encoding\AbstractCodec">AbstractCodec</abbr></a></small></td>
+                <td><small>from&nbsp;<a href="../../../Eloquent/Endec/Transform/AbstractDataTransform.html#method_end"><abbr title="Eloquent\Endec\Transform\AbstractDataTransform">AbstractDataTransform</abbr></a></small></td>
             </tr>
                     <tr>
                 <td class="type">
@@ -106,10 +101,9 @@
                 </td>
                 <td class="last">
                     <a href="#method_close">close</a>()
-                    <p>
-</p>
+                    <p>Close this transform.</p>
                 </td>
-                <td><small>from&nbsp;<a href="../../../Eloquent/Endec/Encoding/AbstractCodec.html#method_close"><abbr title="Eloquent\Endec\Encoding\AbstractCodec">AbstractCodec</abbr></a></small></td>
+                <td><small>from&nbsp;<a href="../../../Eloquent/Endec/Transform/AbstractDataTransform.html#method_close"><abbr title="Eloquent\Endec\Transform\AbstractDataTransform">AbstractDataTransform</abbr></a></small></td>
             </tr>
                     <tr>
                 <td class="type">
@@ -117,10 +111,9 @@
                 </td>
                 <td class="last">
                     <a href="#method_pause">pause</a>()
-                    <p>
-</p>
+                    <p>Pause this transform.</p>
                 </td>
-                <td><small>from&nbsp;<a href="../../../Eloquent/Endec/Encoding/AbstractCodec.html#method_pause"><abbr title="Eloquent\Endec\Encoding\AbstractCodec">AbstractCodec</abbr></a></small></td>
+                <td><small>from&nbsp;<a href="../../../Eloquent/Endec/Transform/AbstractDataTransform.html#method_pause"><abbr title="Eloquent\Endec\Transform\AbstractDataTransform">AbstractDataTransform</abbr></a></small></td>
             </tr>
                     <tr>
                 <td class="type">
@@ -128,21 +121,19 @@
                 </td>
                 <td class="last">
                     <a href="#method_resume">resume</a>()
-                    <p>
-</p>
+                    <p>Resume this transform.</p>
                 </td>
-                <td><small>from&nbsp;<a href="../../../Eloquent/Endec/Encoding/AbstractCodec.html#method_resume"><abbr title="Eloquent\Endec\Encoding\AbstractCodec">AbstractCodec</abbr></a></small></td>
+                <td><small>from&nbsp;<a href="../../../Eloquent/Endec/Transform/AbstractDataTransform.html#method_resume"><abbr title="Eloquent\Endec\Transform\AbstractDataTransform">AbstractDataTransform</abbr></a></small></td>
             </tr>
                     <tr>
                 <td class="type">
-                    
+                    <abbr title="React\Stream\WritableStreamInterface">WritableStreamInterface</abbr>
                 </td>
                 <td class="last">
                     <a href="#method_pipe">pipe</a>(<abbr title="React\Stream\WritableStreamInterface">WritableStreamInterface</abbr> $destination, array $options = array())
-                    <p>
-</p>
+                    <p>Pipe the output of this transform to another stream.</p>
                 </td>
-                <td><small>from&nbsp;<a href="../../../Eloquent/Endec/Encoding/AbstractCodec.html#method_pipe"><abbr title="Eloquent\Endec\Encoding\AbstractCodec">AbstractCodec</abbr></a></small></td>
+                <td><small>from&nbsp;<a href="../../../Eloquent/Endec/Transform/AbstractDataTransform.html#method_pipe"><abbr title="Eloquent\Endec\Transform\AbstractDataTransform">AbstractDataTransform</abbr></a></small></td>
             </tr>
             </table>
 
@@ -150,13 +141,12 @@
         <h2>Details</h2>
 
                         <h3 id="method___construct">
-        <div class="location">in <a href="../../../Eloquent/Endec/Encoding/AbstractCodec.html#method___construct"><abbr title="Eloquent\Endec\Encoding\AbstractCodec">AbstractCodec</abbr></a> at line 25</div>
+        <div class="location">in <a href="../../../Eloquent/Endec/Transform/AbstractDataTransform.html#method___construct"><abbr title="Eloquent\Endec\Transform\AbstractDataTransform">AbstractDataTransform</abbr></a> at line 30</div>
         <code>            public            
-    <strong>__construct</strong>($bufferSize = null)</code>
+    <strong>__construct</strong>(integer|null $bufferSize = null)</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Construct a new data transform.</p>
         <p>
 </p>
         <div class="tags">
@@ -164,10 +154,9 @@
 
                     <table>
                     <tr>
-                <td></td>
+                <td>integer|null</td>
                 <td>$bufferSize</td>
-                <td>
-</td>
+                <td>The buffer size in bytes.</td>
             </tr>
             </table>
 
@@ -178,7 +167,7 @@
     </div>
 
                 <h3 id="method_bufferSize">
-        <div class="location">in <a href="../../../Eloquent/Endec/Encoding/AbstractCodec.html#method_bufferSize"><abbr title="Eloquent\Endec\Encoding\AbstractCodec">AbstractCodec</abbr></a> at line 42</div>
+        <div class="location">in <a href="../../../Eloquent/Endec/Transform/AbstractDataTransform.html#method_bufferSize"><abbr title="Eloquent\Endec\Transform\AbstractDataTransform">AbstractDataTransform</abbr></a> at line 47</div>
         <code>            public            integer
     <strong>bufferSize</strong>()</code>
     </h3>
@@ -203,47 +192,62 @@
     </div>
 
                 <h3 id="method_isWritable">
-        <div class="location">in <a href="../../../Eloquent/Endec/Encoding/AbstractCodec.html#method_isWritable"><abbr title="Eloquent\Endec\Encoding\AbstractCodec">AbstractCodec</abbr></a> at line 47</div>
-        <code>            public            
+        <div class="location">in <a href="../../../Eloquent/Endec/Transform/AbstractDataTransform.html#method_isWritable"><abbr title="Eloquent\Endec\Transform\AbstractDataTransform">AbstractDataTransform</abbr></a> at line 57</div>
+        <code>            public            boolean
     <strong>isWritable</strong>()</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Returns true if this transform is writable.</p>
         <p>
 </p>
         <div class="tags">
             
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>boolean</td>
+            <td>True if writable.</td>
+        </tr>
+    </table>
+
             
             
                     </div>
     </div>
 
                 <h3 id="method_isReadable">
-        <div class="location">in <a href="../../../Eloquent/Endec/Encoding/AbstractCodec.html#method_isReadable"><abbr title="Eloquent\Endec\Encoding\AbstractCodec">AbstractCodec</abbr></a> at line 52</div>
-        <code>            public            
+        <div class="location">in <a href="../../../Eloquent/Endec/Transform/AbstractDataTransform.html#method_isReadable"><abbr title="Eloquent\Endec\Transform\AbstractDataTransform">AbstractDataTransform</abbr></a> at line 67</div>
+        <code>            public            boolean
     <strong>isReadable</strong>()</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Returns true if this transform is readable.</p>
         <p>
 </p>
         <div class="tags">
             
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>boolean</td>
+            <td>True if readable.</td>
+        </tr>
+    </table>
+
             
             
                     </div>
     </div>
 
                 <h3 id="method_write">
-        <div class="location">in <a href="../../../Eloquent/Endec/Encoding/AbstractCodec.html#method_write"><abbr title="Eloquent\Endec\Encoding\AbstractCodec">AbstractCodec</abbr></a> at line 57</div>
-        <code>            public            
-    <strong>write</strong>($data)</code>
+        <div class="location">in <a href="../../../Eloquent/Endec/Transform/AbstractDataTransform.html#method_write"><abbr title="Eloquent\Endec\Transform\AbstractDataTransform">AbstractDataTransform</abbr></a> at line 79</div>
+        <code>            public            boolean
+    <strong>write</strong>(string $data)</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Write some data to this transform.</p>
         <p>
 </p>
         <div class="tags">
@@ -251,27 +255,34 @@
 
                     <table>
                     <tr>
-                <td></td>
+                <td>string</td>
                 <td>$data</td>
-                <td>
-</td>
+                <td>The data to transform.</td>
             </tr>
             </table>
 
             
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>boolean</td>
+            <td>True if this transform is ready for more data.</td>
+        </tr>
+    </table>
+
             
             
                     </div>
     </div>
 
                 <h3 id="method_end">
-        <div class="location">in <a href="../../../Eloquent/Endec/Encoding/AbstractCodec.html#method_end"><abbr title="Eloquent\Endec\Encoding\AbstractCodec">AbstractCodec</abbr></a> at line 69</div>
+        <div class="location">in <a href="../../../Eloquent/Endec/Transform/AbstractDataTransform.html#method_end"><abbr title="Eloquent\Endec\Transform\AbstractDataTransform">AbstractDataTransform</abbr></a> at line 96</div>
         <code>            public            
-    <strong>end</strong>($data = null)</code>
+    <strong>end</strong>(string|null $data = null)</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Transform and finalize any remaining buffered data.</p>
         <p>
 </p>
         <div class="tags">
@@ -279,10 +290,9 @@
 
                     <table>
                     <tr>
-                <td></td>
+                <td>string|null</td>
                 <td>$data</td>
-                <td>
-</td>
+                <td>Additional data to transform before finalizing.</td>
             </tr>
             </table>
 
@@ -293,13 +303,12 @@
     </div>
 
                 <h3 id="method_close">
-        <div class="location">in <a href="../../../Eloquent/Endec/Encoding/AbstractCodec.html#method_close"><abbr title="Eloquent\Endec\Encoding\AbstractCodec">AbstractCodec</abbr></a> at line 83</div>
+        <div class="location">in <a href="../../../Eloquent/Endec/Transform/AbstractDataTransform.html#method_close"><abbr title="Eloquent\Endec\Transform\AbstractDataTransform">AbstractDataTransform</abbr></a> at line 113</div>
         <code>            public            
     <strong>close</strong>()</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Close this transform.</p>
         <p>
 </p>
         <div class="tags">
@@ -310,13 +319,12 @@
     </div>
 
                 <h3 id="method_pause">
-        <div class="location">in <a href="../../../Eloquent/Endec/Encoding/AbstractCodec.html#method_pause"><abbr title="Eloquent\Endec\Encoding\AbstractCodec">AbstractCodec</abbr></a> at line 92</div>
+        <div class="location">in <a href="../../../Eloquent/Endec/Transform/AbstractDataTransform.html#method_pause"><abbr title="Eloquent\Endec\Transform\AbstractDataTransform">AbstractDataTransform</abbr></a> at line 125</div>
         <code>            public            
     <strong>pause</strong>()</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Pause this transform.</p>
         <p>
 </p>
         <div class="tags">
@@ -327,13 +335,12 @@
     </div>
 
                 <h3 id="method_resume">
-        <div class="location">in <a href="../../../Eloquent/Endec/Encoding/AbstractCodec.html#method_resume"><abbr title="Eloquent\Endec\Encoding\AbstractCodec">AbstractCodec</abbr></a> at line 97</div>
+        <div class="location">in <a href="../../../Eloquent/Endec/Transform/AbstractDataTransform.html#method_resume"><abbr title="Eloquent\Endec\Transform\AbstractDataTransform">AbstractDataTransform</abbr></a> at line 133</div>
         <code>            public            
     <strong>resume</strong>()</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Resume this transform.</p>
         <p>
 </p>
         <div class="tags">
@@ -344,13 +351,12 @@
     </div>
 
                 <h3 id="method_pipe">
-        <div class="location">in <a href="../../../Eloquent/Endec/Encoding/AbstractCodec.html#method_pipe"><abbr title="Eloquent\Endec\Encoding\AbstractCodec">AbstractCodec</abbr></a> at line 103</div>
-        <code>            public            
+        <div class="location">in <a href="../../../Eloquent/Endec/Transform/AbstractDataTransform.html#method_pipe"><abbr title="Eloquent\Endec\Transform\AbstractDataTransform">AbstractDataTransform</abbr></a> at line 147</div>
+        <code>            public            <abbr title="React\Stream\WritableStreamInterface">WritableStreamInterface</abbr>
     <strong>pipe</strong>(<abbr title="React\Stream\WritableStreamInterface">WritableStreamInterface</abbr> $destination, array $options = array())</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Pipe the output of this transform to another stream.</p>
         <p>
 </p>
         <div class="tags">
@@ -360,18 +366,25 @@
                     <tr>
                 <td><abbr title="React\Stream\WritableStreamInterface">WritableStreamInterface</abbr></td>
                 <td>$destination</td>
-                <td>
-</td>
+                <td>The destination stream.</td>
             </tr>
                     <tr>
                 <td>array</td>
                 <td>$options</td>
-                <td>
-</td>
+                <td>A set of options for the piping process.</td>
             </tr>
             </table>
 
             
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="React\Stream\WritableStreamInterface">WritableStreamInterface</abbr></td>
+            <td>The destination stream.</td>
+        </tr>
+    </table>
+
             
             
                     </div>

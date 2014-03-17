@@ -2,7 +2,7 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8">
-  <title>Dashboard for /home/travis/build/ezzatron/endec/src</title>
+  <title>Dashboard for /home/travis/build/ezzatron/endec/src/Encoding</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
@@ -18,7 +18,8 @@
     <div class="row">
      <div class="span12">
       <ul class="breadcrumb">
-        <li><a href="index.html">/home/travis/build/ezzatron/endec/src</a></li>
+        <li><a href="index.html">/home/travis/build/ezzatron/endec/src</a> <span class="divider">/</span></li>
+        <li><a href="Encoding.html">Encoding</a></li>
         <li class="active">(Dashboard)</li>
 
       </ul>
@@ -45,20 +46,12 @@
     <div class="span6">
      <h2>Top Project Risks</h2>
      <ul>
-              <li><a href="Transform_AbstractDataTransform.php.html#21">AbstractDataTransform</a> (35)</li>
 
      </ul>
     </div>
     <div class="span6">
      <h2>Least Tested Methods</h2>
      <ul>
-              <li><a href="Transform_AbstractDataTransform.php.html#147">AbstractDataTransform::pipe</a> (0%)</li>
-              <li><a href="Transform_AbstractDataTransform.php.html#133">AbstractDataTransform::resume</a> (0%)</li>
-              <li><a href="Transform_AbstractDataTransform.php.html#125">AbstractDataTransform::pause</a> (0%)</li>
-              <li><a href="Transform_AbstractDataTransform.php.html#113">AbstractDataTransform::close</a> (0%)</li>
-              <li><a href="Transform_AbstractDataTransform.php.html#79">AbstractDataTransform::write</a> (80%)</li>
-              <li><a href="Transform_AbstractDataTransform.php.html#96">AbstractDataTransform::end</a> (85%)</li>
-              <li><a href="Transform_AbstractDataTransform.php.html#162">AbstractDataTransform::transformBuffer</a> (94%)</li>
 
      </ul>
     </div>
@@ -85,7 +78,7 @@ $(document).ready(function() {
       .yAxis.tickFormat(d3.format('d'));
 
     d3.select('#classCoverageDistribution svg')
-      .datum(getCoverageDistributionData([0,0,0,0,0,0,0,0,1,0,0,4], "Class Coverage"))
+      .datum(getCoverageDistributionData([0,0,0,0,0,0,0,0,0,0,0,4], "Class Coverage"))
       .transition().duration(500).call(chart);
 
     nv.utils.windowResize(chart.update);
@@ -137,7 +130,7 @@ $(document).ready(function() {
     chart.yAxis.axisLabel('Cyclomatic Complexity');
 
     d3.select('#classComplexity svg')
-      .datum(getComplexityData([[100,1,"<a href=\"Encoding_Base64Decoder.php.html#19\">Base64Decoder<\/a>"],[100,1,"<a href=\"Encoding_Base64Encoder.php.html#19\">Base64Encoder<\/a>"],[100,1,"<a href=\"Encoding_HexDecoder.php.html#19\">HexDecoder<\/a>"],[100,1,"<a href=\"Encoding_HexEncoder.php.html#19\">HexEncoder<\/a>"],[77.777777777778,27,"<a href=\"Transform_AbstractDataTransform.php.html#21\">AbstractDataTransform<\/a>"]], 'Class Complexity'))
+      .datum(getComplexityData([[100,1,"<a href=\"Encoding_Base64Decoder.php.html#19\">Base64Decoder<\/a>"],[100,1,"<a href=\"Encoding_Base64Encoder.php.html#19\">Base64Encoder<\/a>"],[100,1,"<a href=\"Encoding_HexDecoder.php.html#19\">HexDecoder<\/a>"],[100,1,"<a href=\"Encoding_HexEncoder.php.html#19\">HexEncoder<\/a>"]], 'Class Complexity'))
       .transition()
       .duration(500)
       .call(chart);

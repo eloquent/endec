@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="robots" content="index, follow, all" />
-        <title>Eloquent\Endec\Encoding\AbstractCodec | eloquent/endec API</title>
+        <title>Eloquent\Endec\Transform\AbstractDataTransform | eloquent/endec API</title>
                     <link rel="stylesheet" type="text/css" href="../../../stylesheet.css">
                             </head>
         <body id="class">
@@ -19,14 +19,14 @@
         <div id="title">eloquent/endec API</div>
 
             <div class="type">Class</div>
-    <h1><a href="../../../Eloquent/Endec/Encoding.html">Eloquent\Endec\Encoding</a>\AbstractCodec</h1>
+    <h1><a href="../../../Eloquent/Endec/Transform.html">Eloquent\Endec\Transform</a>\AbstractDataTransform</h1>
     </div>
         <div class="content">
-                <p>abstract class    <strong>AbstractCodec</strong>        implements
-        <a href="../../../Eloquent/Endec/Encoding/CodecInterface.html"><abbr title="Eloquent\Endec\Encoding\CodecInterface">CodecInterface</abbr></a></p>
+                <p>abstract class    <strong>AbstractDataTransform</strong>        implements
+        <a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a></p>
 
             <div class="description">
-            <p>An abstract base class for implementing codecs.</p>
+            <p>An abstract base class for implementing data transforms.</p>
             <p>
 </p>
         </div>
@@ -41,9 +41,8 @@
                     
                 </td>
                 <td class="last">
-                    <a href="#method___construct">__construct</a>($bufferSize = null)
-                    <p>
-</p>
+                    <a href="#method___construct">__construct</a>(integer|null $bufferSize = null)
+                    <p>Construct a new data transform.</p>
                 </td>
                 <td></td>
             </tr>
@@ -59,23 +58,31 @@
             </tr>
                     <tr>
                 <td class="type">
-                    
+                    boolean
                 </td>
                 <td class="last">
                     <a href="#method_isWritable">isWritable</a>()
-                    <p>
-</p>
+                    <p>Returns true if this transform is writable.</p>
                 </td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    
+                    boolean
                 </td>
                 <td class="last">
                     <a href="#method_isReadable">isReadable</a>()
-                    <p>
-</p>
+                    <p>Returns true if this transform is readable.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    boolean
+                </td>
+                <td class="last">
+                    <a href="#method_write">write</a>(string $data)
+                    <p>Write some data to this transform.</p>
                 </td>
                 <td></td>
             </tr>
@@ -84,20 +91,8 @@
                     
                 </td>
                 <td class="last">
-                    <a href="#method_write">write</a>($data)
-                    <p>
-</p>
-                </td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td class="type">
-                    
-                </td>
-                <td class="last">
-                    <a href="#method_end">end</a>($data = null)
-                    <p>
-</p>
+                    <a href="#method_end">end</a>(string|null $data = null)
+                    <p>Transform and finalize any remaining buffered data.</p>
                 </td>
                 <td></td>
             </tr>
@@ -107,8 +102,7 @@
                 </td>
                 <td class="last">
                     <a href="#method_close">close</a>()
-                    <p>
-</p>
+                    <p>Close this transform.</p>
                 </td>
                 <td></td>
             </tr>
@@ -118,8 +112,7 @@
                 </td>
                 <td class="last">
                     <a href="#method_pause">pause</a>()
-                    <p>
-</p>
+                    <p>Pause this transform.</p>
                 </td>
                 <td></td>
             </tr>
@@ -129,19 +122,17 @@
                 </td>
                 <td class="last">
                     <a href="#method_resume">resume</a>()
-                    <p>
-</p>
+                    <p>Resume this transform.</p>
                 </td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    
+                    <abbr title="React\Stream\WritableStreamInterface">WritableStreamInterface</abbr>
                 </td>
                 <td class="last">
                     <a href="#method_pipe">pipe</a>(<abbr title="React\Stream\WritableStreamInterface">WritableStreamInterface</abbr> $destination, array $options = array())
-                    <p>
-</p>
+                    <p>Pipe the output of this transform to another stream.</p>
                 </td>
                 <td></td>
             </tr>
@@ -151,13 +142,12 @@
         <h2>Details</h2>
 
                         <h3 id="method___construct">
-        <div class="location">at line 25</div>
+        <div class="location">at line 30</div>
         <code>            public            
-    <strong>__construct</strong>($bufferSize = null)</code>
+    <strong>__construct</strong>(integer|null $bufferSize = null)</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Construct a new data transform.</p>
         <p>
 </p>
         <div class="tags">
@@ -165,10 +155,9 @@
 
                     <table>
                     <tr>
-                <td></td>
+                <td>integer|null</td>
                 <td>$bufferSize</td>
-                <td>
-</td>
+                <td>The buffer size in bytes.</td>
             </tr>
             </table>
 
@@ -179,7 +168,7 @@
     </div>
 
                 <h3 id="method_bufferSize">
-        <div class="location">at line 42</div>
+        <div class="location">at line 47</div>
         <code>            public            integer
     <strong>bufferSize</strong>()</code>
     </h3>
@@ -204,47 +193,62 @@
     </div>
 
                 <h3 id="method_isWritable">
-        <div class="location">at line 47</div>
-        <code>            public            
+        <div class="location">at line 57</div>
+        <code>            public            boolean
     <strong>isWritable</strong>()</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Returns true if this transform is writable.</p>
         <p>
 </p>
         <div class="tags">
             
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>boolean</td>
+            <td>True if writable.</td>
+        </tr>
+    </table>
+
             
             
                     </div>
     </div>
 
                 <h3 id="method_isReadable">
-        <div class="location">at line 52</div>
-        <code>            public            
+        <div class="location">at line 67</div>
+        <code>            public            boolean
     <strong>isReadable</strong>()</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Returns true if this transform is readable.</p>
         <p>
 </p>
         <div class="tags">
             
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>boolean</td>
+            <td>True if readable.</td>
+        </tr>
+    </table>
+
             
             
                     </div>
     </div>
 
                 <h3 id="method_write">
-        <div class="location">at line 57</div>
-        <code>            public            
-    <strong>write</strong>($data)</code>
+        <div class="location">at line 79</div>
+        <code>            public            boolean
+    <strong>write</strong>(string $data)</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Write some data to this transform.</p>
         <p>
 </p>
         <div class="tags">
@@ -252,27 +256,34 @@
 
                     <table>
                     <tr>
-                <td></td>
+                <td>string</td>
                 <td>$data</td>
-                <td>
-</td>
+                <td>The data to transform.</td>
             </tr>
             </table>
 
             
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>boolean</td>
+            <td>True if this transform is ready for more data.</td>
+        </tr>
+    </table>
+
             
             
                     </div>
     </div>
 
                 <h3 id="method_end">
-        <div class="location">at line 69</div>
+        <div class="location">at line 96</div>
         <code>            public            
-    <strong>end</strong>($data = null)</code>
+    <strong>end</strong>(string|null $data = null)</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Transform and finalize any remaining buffered data.</p>
         <p>
 </p>
         <div class="tags">
@@ -280,10 +291,9 @@
 
                     <table>
                     <tr>
-                <td></td>
+                <td>string|null</td>
                 <td>$data</td>
-                <td>
-</td>
+                <td>Additional data to transform before finalizing.</td>
             </tr>
             </table>
 
@@ -294,13 +304,12 @@
     </div>
 
                 <h3 id="method_close">
-        <div class="location">at line 83</div>
+        <div class="location">at line 113</div>
         <code>            public            
     <strong>close</strong>()</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Close this transform.</p>
         <p>
 </p>
         <div class="tags">
@@ -311,13 +320,12 @@
     </div>
 
                 <h3 id="method_pause">
-        <div class="location">at line 92</div>
+        <div class="location">at line 125</div>
         <code>            public            
     <strong>pause</strong>()</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Pause this transform.</p>
         <p>
 </p>
         <div class="tags">
@@ -328,13 +336,12 @@
     </div>
 
                 <h3 id="method_resume">
-        <div class="location">at line 97</div>
+        <div class="location">at line 133</div>
         <code>            public            
     <strong>resume</strong>()</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Resume this transform.</p>
         <p>
 </p>
         <div class="tags">
@@ -345,13 +352,12 @@
     </div>
 
                 <h3 id="method_pipe">
-        <div class="location">at line 103</div>
-        <code>            public            
+        <div class="location">at line 147</div>
+        <code>            public            <abbr title="React\Stream\WritableStreamInterface">WritableStreamInterface</abbr>
     <strong>pipe</strong>(<abbr title="React\Stream\WritableStreamInterface">WritableStreamInterface</abbr> $destination, array $options = array())</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Pipe the output of this transform to another stream.</p>
         <p>
 </p>
         <div class="tags">
@@ -361,18 +367,25 @@
                     <tr>
                 <td><abbr title="React\Stream\WritableStreamInterface">WritableStreamInterface</abbr></td>
                 <td>$destination</td>
-                <td>
-</td>
+                <td>The destination stream.</td>
             </tr>
                     <tr>
                 <td>array</td>
                 <td>$options</td>
-                <td>
-</td>
+                <td>A set of options for the piping process.</td>
             </tr>
             </table>
 
             
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="React\Stream\WritableStreamInterface">WritableStreamInterface</abbr></td>
+            <td>The destination stream.</td>
+        </tr>
+    </table>
+
             
             
                     </div>
