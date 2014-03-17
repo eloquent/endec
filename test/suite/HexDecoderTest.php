@@ -44,6 +44,17 @@ class HexDecoderTest extends AbstractDataTransformTestCase
     /**
      * @dataProvider encodingData
      */
+    public function testTransform($data)
+    {
+        $this->assertSame($data, $this->transform->transform(bin2hex($data)));
+        $this->assertSame('', $this->output);
+        $this->assertSame(0, $this->endsEmitted);
+        $this->assertSame(0, $this->closesEmitted);
+    }
+
+    /**
+     * @dataProvider encodingData
+     */
     public function testWriteEnd($data)
     {
         $writeReturn = $this->transform->write(bin2hex($data));

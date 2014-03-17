@@ -22,9 +22,11 @@ interface DataTransformInterface extends
     WritableStreamInterface
 {
     /**
-     * Get the buffer size.
+     * Transform the supplied data synchronously.
      *
-     * @return integer The buffer size in bytes.
+     * @param string $data The data to transform.
+     *
+     * @return string The transformed data.
      */
-    public function bufferSize();
+    public function transform($data);
 }

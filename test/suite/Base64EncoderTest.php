@@ -44,6 +44,17 @@ class Base64EncoderTest extends AbstractDataTransformTestCase
     /**
      * @dataProvider encodingData
      */
+    public function testTransform($data)
+    {
+        $this->assertSame(base64_encode($data), $this->transform->transform($data));
+        $this->assertSame('', $this->output);
+        $this->assertSame(0, $this->endsEmitted);
+        $this->assertSame(0, $this->closesEmitted);
+    }
+
+    /**
+     * @dataProvider encodingData
+     */
     public function testWriteEnd($data)
     {
         $writeReturn = $this->transform->write($data);

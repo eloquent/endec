@@ -50,6 +50,20 @@ abstract class AbstractDataTransform implements DataTransformInterface
     }
 
     /**
+     * Transform the supplied data synchronously.
+     *
+     * @param string $data The data to transform.
+     *
+     * @return string The transformed data.
+     */
+    public function transform($data)
+    {
+        list($data) = $this->doTransform($data, true);
+
+        return $data;
+    }
+
+    /**
      * Returns true if this transform is writable.
      *
      * @return boolean True if writable.
@@ -211,15 +225,15 @@ abstract class AbstractDataTransform implements DataTransformInterface
      * size and the size of the available data.
      *
      * @param string  $data      The data to consume.
-     * @param boolean $isEnding  True if all data should be consumed.
+     * @param boolean $isEnd     True if all data should be consumed.
      * @param integer $chunkSize The encoding chunk size.
      *
      * @return integer The amount of data to consume in bytes.
      */
-    protected function calculateConsumedBytes($data, $isEnding, $chunkSize)
+    protected function calculateConsumedBytes($data, $isEnd, $chunkSize)
     {
         $length = strlen($data);
-        if ($isEnding) {
+        if ($isEnd) {
             $consumedBytes = $length;
         } else {
             $consumedBytes = $length - ($length % $chunkSize);
@@ -231,12 +245,12 @@ abstract class AbstractDataTransform implements DataTransformInterface
     /**
      * Transform the supplied data chunk.
      *
-     * @param string  $data     The data to process.
-     * @param boolean $isEnding True if all data should be consumed.
+     * @param string  $data  The data to process.
+     * @param boolean $isEnd True if all data should be consumed.
      *
      * @return tuple<string,integer> A 2-tuple of the transformed data, and the number of bytes consumed.
      */
-    abstract protected function doTransform($data, $isEnding);
+    abstract protected function doTransform($data, $isEnd);
 
     protected $bufferSize;
     protected $isClosed;
