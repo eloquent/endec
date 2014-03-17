@@ -1,12 +1,12 @@
 
 
 Code Coverage Report 
-  2014-03-17 08:41:19
+  2014-03-17 09:02:03
 
  Summary: 
-  Classes: 85.71% (6/7)
-  Methods: 46.15% (12/26)
-  Lines:   27.11% (45/166)
+  Classes: 100.00% (7/7)
+  Methods: 100.00% (25/25)
+  Lines:   97.20% (104/107)
 
 \Eloquent\Endec\Base64::Base64DecodeTransform
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  9/  9)
@@ -20,3 +20,5 @@ Code Coverage Report
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  4/  4)
 \Eloquent\Endec\Transform::AbstractDataTransform
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  6/  6)
+\Eloquent\Endec\Transform::TransformStream
+  Methods: 100.00% (13/13)   Lines: 100.00% ( 59/ 59)

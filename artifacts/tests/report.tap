@@ -63,4 +63,20 @@ ok 61 - Eloquent\Endec\Hex\HexEncodeTransformTest::testTransformEnd with data se
 ok 62 - Eloquent\Endec\Hex\HexEncodeTransformTest::testTransformEnd with data set "5 bytes" ('fooba', '666f6f6261', 5)
 ok 63 - Eloquent\Endec\Hex\HexEncodeTransformTest::testTransformEnd with data set "6 bytes" ('foobar', '666f6f626172', 6)
 ok 64 - Eloquent\Endec\Hex\HexEncodeTransformTest::testInstance
-1..64
+ok 65 - Eloquent\Endec\Transform\TransformStreamTest::testConstructor
+ok 66 - Eloquent\Endec\Transform\TransformStreamTest::testConstructorDefaults
+ok 67 - Eloquent\Endec\Transform\TransformStreamTest::testWriteEnd with data set "1 byte(s)" ('f')
+ok 68 - Eloquent\Endec\Transform\TransformStreamTest::testWriteEnd with data set "2 byte(s)" ('fo')
+ok 69 - Eloquent\Endec\Transform\TransformStreamTest::testWriteEnd with data set "3 byte(s)" ('foo')
+ok 70 - Eloquent\Endec\Transform\TransformStreamTest::testWriteEnd with data set "4 byte(s)" ('foob')
+ok 71 - Eloquent\Endec\Transform\TransformStreamTest::testWriteEnd with data set "5 byte(s)" ('fooba')
+ok 72 - Eloquent\Endec\Transform\TransformStreamTest::testEnd with data set "1 byte(s)" ('f')
+ok 73 - Eloquent\Endec\Transform\TransformStreamTest::testEnd with data set "2 byte(s)" ('fo')
+ok 74 - Eloquent\Endec\Transform\TransformStreamTest::testEnd with data set "3 byte(s)" ('foo')
+ok 75 - Eloquent\Endec\Transform\TransformStreamTest::testEnd with data set "4 byte(s)" ('foob')
+ok 76 - Eloquent\Endec\Transform\TransformStreamTest::testEnd with data set "5 byte(s)" ('fooba')
+ok 77 - Eloquent\Endec\Transform\TransformStreamTest::testEndEmptyString
+ok 78 - Eloquent\Endec\Transform\TransformStreamTest::testClose
+ok 79 - Eloquent\Endec\Transform\TransformStreamTest::testPauseResume
+ok 80 - Eloquent\Endec\Transform\TransformStreamTest::testPipe
+1..80

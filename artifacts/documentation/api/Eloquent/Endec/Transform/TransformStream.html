@@ -42,7 +42,7 @@
                 </td>
                 <td class="last">
                     <a href="#method___construct">__construct</a>(<a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a> $transform, integer|null $bufferSize = null)
-                    <p>Construct a new data transform.</p>
+                    <p>Construct a new data transform stream wrapper.</p>
                 </td>
                 <td></td>
             </tr>
@@ -72,7 +72,7 @@
                 </td>
                 <td class="last">
                     <a href="#method_isWritable">isWritable</a>()
-                    <p>Returns true if this transform is writable.</p>
+                    <p>Returns true if this stream is writable.</p>
                 </td>
                 <td></td>
             </tr>
@@ -82,7 +82,7 @@
                 </td>
                 <td class="last">
                     <a href="#method_isReadable">isReadable</a>()
-                    <p>Returns true if this transform is readable.</p>
+                    <p>Returns true if this stream is readable.</p>
                 </td>
                 <td></td>
             </tr>
@@ -92,7 +92,7 @@
                 </td>
                 <td class="last">
                     <a href="#method_write">write</a>(string $data)
-                    <p>Write some data to this transform.</p>
+                    <p>Write some data to be transformed.</p>
                 </td>
                 <td></td>
             </tr>
@@ -112,7 +112,7 @@
                 </td>
                 <td class="last">
                     <a href="#method_close">close</a>()
-                    <p>Close this transform.</p>
+                    <p>Close this stream.</p>
                 </td>
                 <td></td>
             </tr>
@@ -122,7 +122,7 @@
                 </td>
                 <td class="last">
                     <a href="#method_pause">pause</a>()
-                    <p>Pause this transform.</p>
+                    <p>Pause this stream.</p>
                 </td>
                 <td></td>
             </tr>
@@ -132,7 +132,7 @@
                 </td>
                 <td class="last">
                     <a href="#method_resume">resume</a>()
-                    <p>Resume this transform.</p>
+                    <p>Resume this stream.</p>
                 </td>
                 <td></td>
             </tr>
@@ -142,7 +142,7 @@
                 </td>
                 <td class="last">
                     <a href="#method_pipe">pipe</a>(<abbr title="React\Stream\WritableStreamInterface">WritableStreamInterface</abbr> $destination, array $options = array())
-                    <p>Pipe the output of this transform to another stream.</p>
+                    <p>Pipe the output of this stream to another stream.</p>
                 </td>
                 <td></td>
             </tr>
@@ -157,7 +157,7 @@
     <strong>__construct</strong>(<a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a> $transform, integer|null $bufferSize = null)</code>
     </h3>
     <div class="details">
-        <p>Construct a new data transform.</p>
+        <p>Construct a new data transform stream wrapper.</p>
         <p>
 </p>
         <div class="tags">
@@ -238,7 +238,7 @@
     <strong>isWritable</strong>()</code>
     </h3>
     <div class="details">
-        <p>Returns true if this transform is writable.</p>
+        <p>Returns true if this stream is writable.</p>
         <p>
 </p>
         <div class="tags">
@@ -263,7 +263,7 @@
     <strong>isReadable</strong>()</code>
     </h3>
     <div class="details">
-        <p>Returns true if this transform is readable.</p>
+        <p>Returns true if this stream is readable.</p>
         <p>
 </p>
         <div class="tags">
@@ -288,7 +288,7 @@
     <strong>write</strong>(string $data)</code>
     </h3>
     <div class="details">
-        <p>Write some data to this transform.</p>
+        <p>Write some data to be transformed.</p>
         <p>
 </p>
         <div class="tags">
@@ -308,7 +308,7 @@
                     <table>
         <tr>
             <td>boolean</td>
-            <td>True if this transform is ready for more data.</td>
+            <td>True if this stream is ready for more data.</td>
         </tr>
     </table>
 
@@ -367,7 +367,7 @@
     <strong>close</strong>()</code>
     </h3>
     <div class="details">
-        <p>Close this transform.</p>
+        <p>Close this stream.</p>
         <p>
 </p>
         <div class="tags">
@@ -383,7 +383,7 @@
     <strong>pause</strong>()</code>
     </h3>
     <div class="details">
-        <p>Pause this transform.</p>
+        <p>Pause this stream.</p>
         <p>
 </p>
         <div class="tags">
@@ -399,7 +399,7 @@
     <strong>resume</strong>()</code>
     </h3>
     <div class="details">
-        <p>Resume this transform.</p>
+        <p>Resume this stream.</p>
         <p>
 </p>
         <div class="tags">
@@ -424,7 +424,7 @@
     <strong>pipe</strong>(<abbr title="React\Stream\WritableStreamInterface">WritableStreamInterface</abbr> $destination, array $options = array())</code>
     </h3>
     <div class="details">
-        <p>Pipe the output of this transform to another stream.</p>
+        <p>Pipe the output of this stream to another stream.</p>
         <p>
 </p>
         <div class="tags">
