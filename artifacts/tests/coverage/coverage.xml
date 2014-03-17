@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1395040918">
-  <project timestamp="1395040918">
+<coverage generated="1395045679">
+  <project timestamp="1395045679">
     <package name="Eloquent\Endec\Base64">
       <file name="/home/travis/build/ezzatron/endec/src/Base64/Base64DecodeTransform.php">
         <class name="Base64DecodeTransform" namespace="Eloquent\Endec\Base64">
@@ -74,45 +74,34 @@
     <package name="Eloquent\Endec\Hex">
       <file name="/home/travis/build/ezzatron/endec/src/Hex/HexDecodeTransform.php">
         <class name="HexDecodeTransform" namespace="Eloquent\Endec\Hex">
-          <metrics methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="0" elements="19" coveredelements="0"/>
+          <metrics methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="11" coveredelements="11"/>
         </class>
-        <line num="10" type="stmt" count="0"/>
-        <line num="28" type="method" name="instance" crap="6" count="0"/>
-        <line num="29" type="stmt" count="0"/>
-        <line num="30" type="stmt" count="0"/>
-        <line num="31" type="stmt" count="0"/>
-        <line num="32" type="stmt" count="0"/>
-        <line num="34" type="stmt" count="0"/>
-        <line num="35" type="stmt" count="0"/>
-        <line num="51" type="method" name="transform" crap="6" count="0"/>
-        <line num="52" type="stmt" count="0"/>
-        <line num="53" type="stmt" count="0"/>
-        <line num="55" type="stmt" count="0"/>
-        <line num="56" type="stmt" count="0"/>
-        <line num="57" type="stmt" count="0"/>
-        <line num="58" type="stmt" count="0"/>
-        <line num="59" type="stmt" count="0"/>
-        <line num="61" type="stmt" count="0"/>
-        <line num="62" type="stmt" count="0"/>
-        <metrics loc="65" ncloc="35" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="0" elements="20" coveredelements="0"/>
+        <line num="28" type="method" name="instance" crap="2" count="1"/>
+        <line num="30" type="stmt" count="1"/>
+        <line num="31" type="stmt" count="1"/>
+        <line num="34" type="stmt" count="1"/>
+        <line num="51" type="method" name="transform" crap="2" count="12"/>
+        <line num="53" type="stmt" count="12"/>
+        <line num="55" type="stmt" count="12"/>
+        <line num="56" type="stmt" count="12"/>
+        <line num="57" type="stmt" count="12"/>
+        <line num="58" type="stmt" count="1"/>
+        <line num="61" type="stmt" count="11"/>
+        <line num="66" type="stmt" count="0"/>
+        <metrics loc="65" ncloc="35" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="11" coveredelements="11"/>
       </file>
       <file name="/home/travis/build/ezzatron/endec/src/Hex/HexEncodeTransform.php">
         <class name="HexEncodeTransform" namespace="Eloquent\Endec\Hex">
-          <metrics methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="0" elements="13" coveredelements="0"/>
+          <metrics methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
         </class>
-        <line num="10" type="stmt" count="0"/>
-        <line num="27" type="method" name="instance" crap="6" count="0"/>
-        <line num="28" type="stmt" count="0"/>
-        <line num="29" type="stmt" count="0"/>
-        <line num="30" type="stmt" count="0"/>
-        <line num="31" type="stmt" count="0"/>
-        <line num="33" type="stmt" count="0"/>
-        <line num="34" type="stmt" count="0"/>
-        <line num="50" type="method" name="transform" crap="2" count="0"/>
-        <line num="51" type="stmt" count="0"/>
-        <line num="52" type="stmt" count="0"/>
-        <line num="53" type="stmt" count="0"/>
-        <metrics loc="56" ncloc="26" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="0" elements="14" coveredelements="0"/>
+        <line num="27" type="method" name="instance" crap="2" count="1"/>
+        <line num="29" type="stmt" count="1"/>
+        <line num="30" type="stmt" count="1"/>
+        <line num="33" type="stmt" count="1"/>
+        <line num="50" type="method" name="transform" crap="1" count="14"/>
+        <line num="52" type="stmt" count="14"/>
+        <line num="57" type="stmt" count="0"/>
+        <metrics loc="56" ncloc="26" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
       </file>
     </package>
     <package name="Eloquent\Endec\Transform">
@@ -120,13 +109,13 @@
         <class name="AbstractDataTransform" namespace="Eloquent\Endec\Transform">
           <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="7" coveredelements="7"/>
         </class>
-        <line num="29" type="method" name="calculateConsumeBytes" crap="2" count="33"/>
-        <line num="31" type="stmt" count="33"/>
-        <line num="32" type="stmt" count="33"/>
-        <line num="33" type="stmt" count="17"/>
-        <line num="34" type="stmt" count="17"/>
-        <line num="35" type="stmt" count="16"/>
-        <line num="38" type="stmt" count="33"/>
+        <line num="29" type="method" name="calculateConsumeBytes" crap="2" count="45"/>
+        <line num="31" type="stmt" count="45"/>
+        <line num="32" type="stmt" count="45"/>
+        <line num="33" type="stmt" count="22"/>
+        <line num="34" type="stmt" count="22"/>
+        <line num="35" type="stmt" count="23"/>
+        <line num="38" type="stmt" count="45"/>
         <line num="41" type="stmt" count="0"/>
         <metrics loc="40" ncloc="19" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="7" coveredelements="7"/>
       </file>
@@ -266,6 +255,6 @@
       <line num="10" type="stmt" count="0"/>
       <metrics loc="30" ncloc="14" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="1" coveredelements="0"/>
     </file>
-    <metrics files="13" loc="778" ncloc="416" classes="7" methods="26" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="183" coveredstatements="32" elements="209" coveredelements="40"/>
+    <metrics files="13" loc="778" ncloc="416" classes="7" methods="26" coveredmethods="12" conditionals="0" coveredconditionals="0" statements="166" coveredstatements="45" elements="192" coveredelements="57"/>
   </project>
 </coverage>

@@ -35,4 +35,32 @@ ok 33 - Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransformEnd with d
 ok 34 - Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransformEnd with data set "6 bytes" ('foobar', 'Zm9vYmFy', 6)
 ok 35 - Eloquent\Endec\Base64\Base64EncodeTransformTest::testInstance
 ok 36 - Eloquent\Endec\Encoding\Exception\InvalidEncodedDataExceptionTest::testException
-1..36
+ok 37 - Eloquent\Endec\Hex\HexDecodeTransformTest::testTransform with data set "Empty" ('', '', 0)
+ok 38 - Eloquent\Endec\Hex\HexDecodeTransformTest::testTransform with data set "1 bytes" ('6', '', 0)
+ok 39 - Eloquent\Endec\Hex\HexDecodeTransformTest::testTransform with data set "2 bytes" ('66', 'f', 2)
+ok 40 - Eloquent\Endec\Hex\HexDecodeTransformTest::testTransform with data set "3 bytes" ('666', 'f', 2)
+ok 41 - Eloquent\Endec\Hex\HexDecodeTransformTest::testTransform with data set "4 bytes" ('666f', 'fo', 4)
+ok 42 - Eloquent\Endec\Hex\HexDecodeTransformTest::testTransform with data set "5 bytes" ('666f6', 'fo', 4)
+ok 43 - Eloquent\Endec\Hex\HexDecodeTransformTest::testTransform with data set "6 bytes" ('666f6f', 'foo', 6)
+ok 44 - Eloquent\Endec\Hex\HexDecodeTransformTest::testTransformEnd with data set "Empty" ('', '', 0)
+ok 45 - Eloquent\Endec\Hex\HexDecodeTransformTest::testTransformEnd with data set "2 bytes" ('66', 'f', 2)
+ok 46 - Eloquent\Endec\Hex\HexDecodeTransformTest::testTransformEnd with data set "4 bytes" ('666f', 'fo', 4)
+ok 47 - Eloquent\Endec\Hex\HexDecodeTransformTest::testTransformEnd with data set "6 bytes" ('666f6f', 'foo', 6)
+ok 48 - Eloquent\Endec\Hex\HexDecodeTransformTest::testTransformFailure
+ok 49 - Eloquent\Endec\Hex\HexDecodeTransformTest::testInstance
+ok 50 - Eloquent\Endec\Hex\HexEncodeTransformTest::testTransform with data set "Empty" ('', '', 0)
+ok 51 - Eloquent\Endec\Hex\HexEncodeTransformTest::testTransform with data set "1 byte" ('f', '66', 1)
+ok 52 - Eloquent\Endec\Hex\HexEncodeTransformTest::testTransform with data set "2 bytes" ('fo', '666f', 2)
+ok 53 - Eloquent\Endec\Hex\HexEncodeTransformTest::testTransform with data set "3 bytes" ('foo', '666f6f', 3)
+ok 54 - Eloquent\Endec\Hex\HexEncodeTransformTest::testTransform with data set "4 bytes" ('foob', '666f6f62', 4)
+ok 55 - Eloquent\Endec\Hex\HexEncodeTransformTest::testTransform with data set "5 bytes" ('fooba', '666f6f6261', 5)
+ok 56 - Eloquent\Endec\Hex\HexEncodeTransformTest::testTransform with data set "6 bytes" ('foobar', '666f6f626172', 6)
+ok 57 - Eloquent\Endec\Hex\HexEncodeTransformTest::testTransformEnd with data set "Empty" ('', '', 0)
+ok 58 - Eloquent\Endec\Hex\HexEncodeTransformTest::testTransformEnd with data set "1 byte" ('f', '66', 1)
+ok 59 - Eloquent\Endec\Hex\HexEncodeTransformTest::testTransformEnd with data set "2 bytes" ('fo', '666f', 2)
+ok 60 - Eloquent\Endec\Hex\HexEncodeTransformTest::testTransformEnd with data set "3 bytes" ('foo', '666f6f', 3)
+ok 61 - Eloquent\Endec\Hex\HexEncodeTransformTest::testTransformEnd with data set "4 bytes" ('foob', '666f6f62', 4)
+ok 62 - Eloquent\Endec\Hex\HexEncodeTransformTest::testTransformEnd with data set "5 bytes" ('fooba', '666f6f6261', 5)
+ok 63 - Eloquent\Endec\Hex\HexEncodeTransformTest::testTransformEnd with data set "6 bytes" ('foobar', '666f6f626172', 6)
+ok 64 - Eloquent\Endec\Hex\HexEncodeTransformTest::testInstance
+1..64
