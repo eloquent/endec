@@ -70,7 +70,7 @@ class HexDecodeTransformTest extends PHPUnit_Framework_TestCase
 
     public function testTransformFailure()
     {
-        $this->setExpectedException('Eloquent\Endec\Encoding\Exception\InvalidEncodedDataException');
+        $this->setExpectedException('Eloquent\Endec\Exception\InvalidEncodedDataException');
         $this->transform->transform('$', true);
     }
 

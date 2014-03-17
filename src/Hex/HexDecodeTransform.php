@@ -11,7 +11,7 @@
 
 namespace Eloquent\Endec\Hex;
 
-use Eloquent\Endec\Encoding\Exception\InvalidEncodedDataException;
+use Eloquent\Endec\Exception\InvalidEncodedDataException;
 use Eloquent\Endec\Transform\AbstractDataTransform;
 use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
 

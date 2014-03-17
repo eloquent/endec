@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Eloquent\Endec\Encoding\Exception;
+namespace Eloquent\Endec\Exception;
 
 use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
 use Exception;
