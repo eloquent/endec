@@ -12,6 +12,7 @@
 namespace Eloquent\Endec;
 
 use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
+use Eloquent\Endec\Transform\TransformStreamInterface;
 
 /**
  * The interface implemented by decoders.
@@ -27,4 +28,13 @@ interface DecoderInterface
      * @throws TransformExceptionInterface If the data cannot be decoded.
      */
     public function decode($data);
+
+    /**
+     * Create a new decode stream.
+     *
+     * @param integer|null $bufferSize The buffer size in bytes.
+     *
+     * @return TransformStreamInterface The newly created decode stream.
+     */
+    public function createDecodeStream($bufferSize = null);
 }

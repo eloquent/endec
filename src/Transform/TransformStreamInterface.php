@@ -15,7 +15,7 @@ use React\Stream\ReadableStreamInterface;
 use React\Stream\WritableStreamInterface;
 
 /**
- * The interface implemented by transform stream wrappers.
+ * The interface implemented by data transform streams.
  */
 interface TransformStreamInterface extends
     ReadableStreamInterface,

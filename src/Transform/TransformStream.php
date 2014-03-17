@@ -16,14 +16,14 @@ use React\Stream\Util;
 use React\Stream\WritableStreamInterface;
 
 /**
- * A stream wrapper for data transforms.
+ * A stream that applies a data transform.
  */
 class TransformStream implements TransformStreamInterface
 {
     use EventEmitterTrait;
 
     /**
-     * Construct a new data transform stream wrapper.
+     * Construct a new data transform stream.
      *
      * @param DataTransformInterface $transform  The data transform to use.
      * @param integer|null           $bufferSize The buffer size in bytes.

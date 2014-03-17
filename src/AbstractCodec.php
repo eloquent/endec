@@ -13,6 +13,8 @@ namespace Eloquent\Endec;
 
 use Eloquent\Endec\Transform\DataTransformInterface;
 use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
+use Eloquent\Endec\Transform\TransformStream;
+use Eloquent\Endec\Transform\TransformStreamInterface;
 
 /**
  * An abstract base class for implementing codecs.
@@ -25,7 +27,7 @@ abstract class AbstractCodec implements CodecInterface
      * @param DataTransformInterface $encodeTransform The encode transform to use.
      * @param DataTransformInterface $decodeTransform The decode transform to use.
      */
-    public function __construct(
+    protected function __construct(
         DataTransformInterface $encodeTransform,
         DataTransformInterface $decodeTransform
     ) {
@@ -81,6 +83,30 @@ abstract class AbstractCodec implements CodecInterface
         list($data) = $this->decodeTransform->transform($data, true);
 
         return $data;
+    }
+
+    /**
+     * Create a new encode stream.
+     *
+     * @param integer|null $bufferSize The buffer size in bytes.
+     *
+     * @return TransformStreamInterface The newly created encode stream.
+     */
+    public function createEncodeStream($bufferSize = null)
+    {
+        return new TransformStream($this->encodeTransform, $bufferSize);
+    }
+
+    /**
+     * Create a new decode stream.
+     *
+     * @param integer|null $bufferSize The buffer size in bytes.
+     *
+     * @return TransformStreamInterface The newly created decode stream.
+     */
+    public function createDecodeStream($bufferSize = null)
+    {
+        return new TransformStream($this->decodeTransform, $bufferSize);
     }
 
     private $encodeTransform;

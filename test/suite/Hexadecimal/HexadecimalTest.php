@@ -11,6 +11,7 @@
 
 namespace Eloquent\Endec\Hexadecimal;
 
+use Eloquent\Endec\Transform\TransformStream;
 use Eloquent\Liberator\Liberator;
 use PHPUnit_Framework_TestCase;
 
@@ -71,6 +72,16 @@ class HexadecimalTest extends PHPUnit_Framework_TestCase
     public function testDecode($decoded, $encoded)
     {
         $this->assertSame($decoded, $this->codec->decode($encoded));
+    }
+
+    public function testCreateEncodeStream()
+    {
+        $this->assertEquals(new TransformStream($this->encodeTransform, 111), $this->codec->createEncodeStream(111));
+    }
+
+    public function testCreateDecodeStream()
+    {
+        $this->assertEquals(new TransformStream($this->decodeTransform, 111), $this->codec->createDecodeStream(111));
     }
 
     public function testInstance()
