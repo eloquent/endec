@@ -11,11 +11,13 @@
 
 namespace Eloquent\Endec\Encoding;
 
+use Eloquent\Endec\TestCase\AbstractDataTransformTestCase;
+
 /**
  * @covers \Eloquent\Endec\Encoding\HexEncoder
- * @covers \Eloquent\Endec\Encoding\AbstractCodec
+ * @covers \Eloquent\Endec\Transform\AbstractDataTransform
  */
-class HexEncoderTest extends AbstractCodecTest
+class HexEncoderTest extends AbstractDataTransformTestCase
 {
     protected function setUp()
     {
@@ -38,16 +40,6 @@ class HexEncoderTest extends AbstractCodecTest
         $this->assertSame(8192, $this->codec->bufferSize());
     }
 
-    public function encodingData()
-    {
-        $data = array('Empty' => array(''));
-        for ($i = 1; $i < 16; $i++) {
-            $data[sprintf('%d byte(s)', $i)] = array(substr('foobarbazquxdoom', 0, $i));
-        }
-
-        return $data;
-    }
-
     /**
      * @dataProvider encodingData
      */
@@ -67,5 +59,12 @@ class HexEncoderTest extends AbstractCodecTest
         $this->codec->end($data);
 
         $this->assertSame(bin2hex($data), $this->output);
+    }
+
+    public function testEndEmptyString()
+    {
+        $this->codec->end('');
+
+        $this->assertSame('', $this->output);
     }
 }

@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace Eloquent\Endec\Encoding;
+namespace Eloquent\Endec\Transform;
 
 use React\Stream\ReadableStreamInterface;
 use React\Stream\WritableStreamInterface;
 
 /**
- * The interface implemented by codecs.
+ * The interface implemented by data transforms.
  */
-interface CodecInterface extends
+interface DataTransformInterface extends
     ReadableStreamInterface,
     WritableStreamInterface
 {

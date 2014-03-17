@@ -11,12 +11,22 @@
 
 namespace Eloquent\Endec\Encoding;
 
+use Eloquent\Endec\Transform\AbstractDataTransform;
+
 /**
  * Encodes data using hexadecimal encoding.
  */
-class HexEncoder extends AbstractCodec
+class HexEncoder extends AbstractDataTransform
 {
-    protected function processInput($data, $isEnding)
+    /**
+     * Transform the supplied data chunk.
+     *
+     * @param string  $data     The data to process.
+     * @param boolean $isEnding True if all data should be consumed.
+     *
+     * @return tuple<string,integer> A 2-tuple of the transformed data, and the number of bytes consumed.
+     */
+    protected function doTransform($data, $isEnding)
     {
         return array(bin2hex($data), strlen($data));
     }

@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Eloquent\Endec\Encoding;
+namespace Eloquent\Endec\TestCase;
 
 use PHPUnit_Framework_TestCase;
 
-abstract class AbstractCodecTest extends PHPUnit_Framework_TestCase
+abstract class AbstractDataTransformTestCase extends PHPUnit_Framework_TestCase
 {
     protected function setUp()
     {
@@ -44,7 +44,7 @@ abstract class AbstractCodecTest extends PHPUnit_Framework_TestCase
 
     public function encodingData()
     {
-        $data = array('Empty' => array(''));
+        $data = array();
         for ($i = 1; $i < 16; $i++) {
             $data[sprintf('%d byte(s)', $i)] = array(substr('foobarbazquxdoom', 0, $i));
         }

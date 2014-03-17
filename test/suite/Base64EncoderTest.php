@@ -11,11 +11,13 @@
 
 namespace Eloquent\Endec\Encoding;
 
+use Eloquent\Endec\TestCase\AbstractDataTransformTestCase;
+
 /**
  * @covers \Eloquent\Endec\Encoding\Base64Encoder
- * @covers \Eloquent\Endec\Encoding\AbstractCodec
+ * @covers \Eloquent\Endec\Transform\AbstractDataTransform
  */
-class Base64EncoderTest extends AbstractCodecTest
+class Base64EncoderTest extends AbstractDataTransformTestCase
 {
     protected function setUp()
     {
@@ -61,5 +63,12 @@ class Base64EncoderTest extends AbstractCodecTest
         $this->assertSame(base64_encode($data), $this->output);
         $this->assertTrue($this->endEmitted);
         $this->assertTrue($this->closeEmitted);
+    }
+
+    public function testEndEmptyString()
+    {
+        $this->codec->end('');
+
+        $this->assertSame('', $this->output);
     }
 }
