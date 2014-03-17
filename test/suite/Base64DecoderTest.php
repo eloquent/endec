@@ -11,32 +11,24 @@
 
 namespace Eloquent\Endec\Encoding;
 
-use PHPUnit_Framework_TestCase;
-
 /**
  * @covers \Eloquent\Endec\Encoding\Base64Decoder
  * @covers \Eloquent\Endec\Encoding\AbstractCodec
  */
-class Base64DecoderTest extends PHPUnit_Framework_TestCase
+class Base64DecoderTest extends AbstractCodecTest
 {
     protected function setUp()
     {
-        parent::setUp();
-
         $this->codec = new Base64Decoder(10);
 
-        $this->output = '';
-        $this->codec->on(
-            'data',
-            function ($data, $codec) {
-                $this->output .= $data;
-            }
-        );
+        parent::setUp();
     }
 
     public function testConstructor()
     {
         $this->assertSame(10, $this->codec->bufferSize());
+        $this->assertTrue($this->codec->isWritable());
+        $this->assertTrue($this->codec->isReadable());
     }
 
     public function testConstructorDefaults()
@@ -44,16 +36,6 @@ class Base64DecoderTest extends PHPUnit_Framework_TestCase
         $this->codec = new Base64Decoder;
 
         $this->assertSame(8192, $this->codec->bufferSize());
-    }
-
-    public function encodingData()
-    {
-        $data = array('Empty' => array(''));
-        for ($i = 1; $i < 16; $i++) {
-            $data[sprintf('%d byte(s)', $i)] = array(substr('foobarbazquxdoom', 0, $i));
-        }
-
-        return $data;
     }
 
     /**
@@ -65,6 +47,8 @@ class Base64DecoderTest extends PHPUnit_Framework_TestCase
         $this->codec->end();
 
         $this->assertSame($data, $this->output);
+        $this->assertTrue($this->endEmitted);
+        $this->assertTrue($this->closeEmitted);
     }
 
     /**
@@ -75,5 +59,7 @@ class Base64DecoderTest extends PHPUnit_Framework_TestCase
         $this->codec->end(base64_encode($data));
 
         $this->assertSame($data, $this->output);
+        $this->assertTrue($this->endEmitted);
+        $this->assertTrue($this->closeEmitted);
     }
 }

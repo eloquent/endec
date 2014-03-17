@@ -11,32 +11,24 @@
 
 namespace Eloquent\Endec\Encoding;
 
-use PHPUnit_Framework_TestCase;
-
 /**
  * @covers \Eloquent\Endec\Encoding\HexDecoder
  * @covers \Eloquent\Endec\Encoding\AbstractCodec
  */
-class HexDecoderTest extends PHPUnit_Framework_TestCase
+class HexDecoderTest extends AbstractCodecTest
 {
     protected function setUp()
     {
-        parent::setUp();
-
         $this->codec = new HexDecoder(10);
 
-        $this->output = '';
-        $this->codec->on(
-            'data',
-            function ($data, $codec) {
-                $this->output .= $data;
-            }
-        );
+        parent::setUp();
     }
 
     public function testConstructor()
     {
         $this->assertSame(10, $this->codec->bufferSize());
+        $this->assertTrue($this->codec->isWritable());
+        $this->assertTrue($this->codec->isReadable());
     }
 
     public function testConstructorDefaults()
@@ -65,6 +57,8 @@ class HexDecoderTest extends PHPUnit_Framework_TestCase
         $this->codec->end();
 
         $this->assertSame($data, $this->output);
+        $this->assertTrue($this->endEmitted);
+        $this->assertTrue($this->closeEmitted);
     }
 
     /**
@@ -75,5 +69,7 @@ class HexDecoderTest extends PHPUnit_Framework_TestCase
         $this->codec->end(bin2hex($data));
 
         $this->assertSame($data, $this->output);
+        $this->assertTrue($this->endEmitted);
+        $this->assertTrue($this->closeEmitted);
     }
 }

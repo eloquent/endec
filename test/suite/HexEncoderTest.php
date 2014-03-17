@@ -11,32 +11,24 @@
 
 namespace Eloquent\Endec\Encoding;
 
-use PHPUnit_Framework_TestCase;
-
 /**
  * @covers \Eloquent\Endec\Encoding\HexEncoder
  * @covers \Eloquent\Endec\Encoding\AbstractCodec
  */
-class HexEncoderTest extends PHPUnit_Framework_TestCase
+class HexEncoderTest extends AbstractCodecTest
 {
     protected function setUp()
     {
-        parent::setUp();
-
         $this->codec = new HexEncoder(10);
 
-        $this->output = '';
-        $this->codec->on(
-            'data',
-            function ($data, $codec) {
-                $this->output .= $data;
-            }
-        );
+        parent::setUp();
     }
 
     public function testConstructor()
     {
         $this->assertSame(10, $this->codec->bufferSize());
+        $this->assertTrue($this->codec->isWritable());
+        $this->assertTrue($this->codec->isReadable());
     }
 
     public function testConstructorDefaults()
