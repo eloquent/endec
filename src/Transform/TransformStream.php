@@ -23,7 +23,7 @@ class TransformStream implements TransformStreamInterface
     use EventEmitterTrait;
 
     /**
-     * Construct a new data transform.
+     * Construct a new data transform stream wrapper.
      *
      * @param DataTransformInterface $transform  The data transform to use.
      * @param integer|null           $bufferSize The buffer size in bytes.
@@ -64,7 +64,7 @@ class TransformStream implements TransformStreamInterface
     }
 
     /**
-     * Returns true if this transform is writable.
+     * Returns true if this stream is writable.
      *
      * @return boolean True if writable.
      */
@@ -74,7 +74,7 @@ class TransformStream implements TransformStreamInterface
     }
 
     /**
-     * Returns true if this transform is readable.
+     * Returns true if this stream is readable.
      *
      * @return boolean True if readable.
      */
@@ -84,11 +84,11 @@ class TransformStream implements TransformStreamInterface
     }
 
     /**
-     * Write some data to this transform.
+     * Write some data to be transformed.
      *
      * @param string $data The data to transform.
      *
-     * @return boolean                               True if this transform is ready for more data.
+     * @return boolean                               True if this stream is ready for more data.
      * @throws Exception\TransformExceptionInterface If the data cannot be transformed.
      */
     public function write($data)
@@ -125,7 +125,7 @@ class TransformStream implements TransformStreamInterface
     }
 
     /**
-     * Close this transform.
+     * Close this stream.
      */
     public function close()
     {
@@ -137,7 +137,7 @@ class TransformStream implements TransformStreamInterface
     }
 
     /**
-     * Pause this transform.
+     * Pause this stream.
      */
     public function pause()
     {
@@ -145,7 +145,7 @@ class TransformStream implements TransformStreamInterface
     }
 
     /**
-     * Resume this transform.
+     * Resume this stream.
      *
      * @throws Exception\TransformExceptionInterface If the data cannot be transformed.
      */
@@ -156,7 +156,7 @@ class TransformStream implements TransformStreamInterface
     }
 
     /**
-     * Pipe the output of this transform to another stream.
+     * Pipe the output of this stream to another stream.
      *
      * @param WritableStreamInterface $destination The destination stream.
      * @param array                   $options     A set of options for the piping process.
@@ -174,9 +174,6 @@ class TransformStream implements TransformStreamInterface
 
     /**
      * Transform the internal data buffer.
-     *
-     * This method abstracts some common implementation details so that the
-     * concrete data transforms can be simplified.
      *
      * @throws Exception\TransformExceptionInterface If the data cannot be transformed.
      */
@@ -214,7 +211,7 @@ class TransformStream implements TransformStreamInterface
     }
 
     /**
-     * Perform the actual work of closing this transform.
+     * Perform the actual work of closing this stream.
      */
     protected function doClose()
     {
@@ -225,28 +222,6 @@ class TransformStream implements TransformStreamInterface
         $this->emit('end', array($this));
         $this->emit('close', array($this));
         $this->removeAllListeners();
-    }
-
-    /**
-     * Calculate the number of bytes to consume based on the encoding's block
-     * size and the size of the available data.
-     *
-     * @param string  $data      The data to consume.
-     * @param boolean $isEnd     True if all data should be consumed.
-     * @param integer $chunkSize The encoding chunk size.
-     *
-     * @return integer The amount of data to consume in bytes.
-     */
-    protected function calculateConsumedBytes($data, $isEnd, $chunkSize)
-    {
-        $length = strlen($data);
-        if ($isEnd) {
-            $consumedBytes = $length;
-        } else {
-            $consumedBytes = $length - ($length % $chunkSize);
-        }
-
-        return $consumedBytes;
     }
 
     private $transform;
