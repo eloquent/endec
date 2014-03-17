@@ -1,18 +1,20 @@
 
 
 Code Coverage Report 
-  2014-03-14 07:04:04
+  2014-03-17 01:22:04
 
  Summary: 
-  Classes: 20.00% (1/5)
-  Methods: 6.25% (1/16)
-  Lines:   23.38% (18/77)
+  Classes: 80.00% (4/5)
+  Methods: 47.06% (8/17)
+  Lines:   77.46% (55/71)
 
+\Eloquent\Endec\Encoding::AbstractCodec
+  Methods:  50.00% ( 7/14)   Lines:  74.19% ( 46/ 62)
 \Eloquent\Endec\Encoding::Base64Decoder
-  Methods: 100.00% ( 1/ 1)   Lines:  85.71% (  6/  7)
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  3/  3)
 \Eloquent\Endec\Encoding::Base64Encoder
-  Methods: 100.00% ( 1/ 1)   Lines:  85.71% (  6/  7)
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  3/  3)
 \Eloquent\Endec\Encoding::HexDecoder
-  Methods: 100.00% ( 1/ 1)   Lines:  83.33% (  5/  6)
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  2/  2)
 \Eloquent\Endec\Encoding::HexEncoder
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
