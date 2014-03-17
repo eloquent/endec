@@ -1,47 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1395032021">
-  <project timestamp="1395032021">
+<coverage generated="1395033938">
+  <project timestamp="1395033938">
     <package name="Eloquent\Endec\Encoding">
       <file name="/home/travis/build/ezzatron/endec/src/Encoding/Base64Decoder.php">
         <class name="Base64Decoder" namespace="Eloquent\Endec\Encoding">
-          <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="4" coveredelements="4"/>
+          <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="9" coveredelements="9"/>
         </class>
-        <line num="29" type="method" name="doTransform" crap="1" count="48"/>
-        <line num="31" type="stmt" count="48"/>
-        <line num="34" type="stmt" count="48"/>
-        <line num="36" type="stmt" count="48"/>
-        <line num="39" type="stmt" count="0"/>
-        <metrics loc="38" ncloc="19" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="4" coveredelements="4"/>
+        <line num="31" type="method" name="doTransform" crap="2" count="49"/>
+        <line num="33" type="stmt" count="49"/>
+        <line num="35" type="stmt" count="49"/>
+        <line num="36" type="stmt" count="49"/>
+        <line num="37" type="stmt" count="49"/>
+        <line num="38" type="stmt" count="1"/>
+        <line num="39" type="stmt" count="1"/>
+        <line num="41" type="stmt" count="1"/>
+        <line num="44" type="stmt" count="48"/>
+        <line num="47" type="stmt" count="0"/>
+        <metrics loc="46" ncloc="26" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="9" coveredelements="9"/>
       </file>
       <file name="/home/travis/build/ezzatron/endec/src/Encoding/Base64Encoder.php">
         <class name="Base64Encoder" namespace="Eloquent\Endec\Encoding">
           <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="4" coveredelements="4"/>
         </class>
-        <line num="29" type="method" name="doTransform" crap="1" count="48"/>
-        <line num="31" type="stmt" count="48"/>
-        <line num="34" type="stmt" count="48"/>
+        <line num="31" type="method" name="doTransform" crap="1" count="48"/>
+        <line num="33" type="stmt" count="48"/>
         <line num="36" type="stmt" count="48"/>
-        <line num="39" type="stmt" count="0"/>
-        <metrics loc="38" ncloc="19" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="4" coveredelements="4"/>
+        <line num="38" type="stmt" count="48"/>
+        <line num="41" type="stmt" count="0"/>
+        <metrics loc="40" ncloc="20" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="4" coveredelements="4"/>
       </file>
       <file name="/home/travis/build/ezzatron/endec/src/Encoding/HexDecoder.php">
         <class name="HexDecoder" namespace="Eloquent\Endec\Encoding">
-          <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
+          <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="9" coveredelements="9"/>
         </class>
-        <line num="29" type="method" name="doTransform" crap="1" count="48"/>
-        <line num="31" type="stmt" count="48"/>
-        <line num="33" type="stmt" count="48"/>
-        <line num="36" type="stmt" count="0"/>
-        <metrics loc="35" ncloc="16" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
+        <line num="31" type="method" name="doTransform" crap="2" count="49"/>
+        <line num="33" type="stmt" count="49"/>
+        <line num="35" type="stmt" count="49"/>
+        <line num="36" type="stmt" count="49"/>
+        <line num="37" type="stmt" count="49"/>
+        <line num="38" type="stmt" count="1"/>
+        <line num="39" type="stmt" count="1"/>
+        <line num="41" type="stmt" count="1"/>
+        <line num="44" type="stmt" count="48"/>
+        <line num="47" type="stmt" count="0"/>
+        <metrics loc="46" ncloc="26" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="9" coveredelements="9"/>
       </file>
       <file name="/home/travis/build/ezzatron/endec/src/Encoding/HexEncoder.php">
         <class name="HexEncoder" namespace="Eloquent\Endec\Encoding">
           <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
         </class>
-        <line num="29" type="method" name="doTransform" crap="1" count="48"/>
-        <line num="31" type="stmt" count="48"/>
-        <line num="34" type="stmt" count="0"/>
-        <metrics loc="33" ncloc="14" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+        <line num="31" type="method" name="doTransform" crap="1" count="48"/>
+        <line num="33" type="stmt" count="48"/>
+        <line num="36" type="stmt" count="0"/>
+        <metrics loc="35" ncloc="15" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+      </file>
+    </package>
+    <package name="Eloquent\Endec\Encoding\Exception">
+      <file name="/home/travis/build/ezzatron/endec/src/Encoding/Exception/InvalidEncodedDataException.php">
+        <class name="InvalidEncodedDataException" namespace="Eloquent\Endec\Encoding\Exception">
+          <metrics methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="11" elements="14" coveredelements="14"/>
+        </class>
+        <line num="30" type="method" name="__construct" crap="1" count="1"/>
+        <line num="35" type="stmt" count="1"/>
+        <line num="36" type="stmt" count="1"/>
+        <line num="38" type="stmt" count="1"/>
+        <line num="39" type="stmt" count="1"/>
+        <line num="40" type="stmt" count="1"/>
+        <line num="42" type="stmt" count="1"/>
+        <line num="43" type="stmt" count="1"/>
+        <line num="45" type="stmt" count="1"/>
+        <line num="46" type="stmt" count="1"/>
+        <line num="53" type="method" name="encoding" crap="1" count="1"/>
+        <line num="55" type="stmt" count="1"/>
+        <line num="63" type="method" name="data" crap="1" count="1"/>
+        <line num="65" type="stmt" count="1"/>
+        <line num="71" type="stmt" count="0"/>
+        <metrics loc="70" ncloc="42" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="11" elements="14" coveredelements="14"/>
       </file>
     </package>
     <package name="Eloquent\Endec\Transform">
@@ -49,94 +83,98 @@
         <class name="AbstractDataTransform" namespace="Eloquent\Endec\Transform">
           <metrics methods="15" coveredmethods="14" conditionals="0" coveredconditionals="0" statements="65" coveredstatements="65" elements="80" coveredelements="79"/>
         </class>
-        <line num="30" type="method" name="__construct" crap="2" count="204"/>
-        <line num="32" type="stmt" count="204"/>
+        <line num="30" type="method" name="__construct" crap="2" count="206"/>
+        <line num="32" type="stmt" count="206"/>
         <line num="33" type="stmt" count="4"/>
-        <line num="36" type="stmt" count="204"/>
-        <line num="38" type="stmt" count="204"/>
-        <line num="39" type="stmt" count="204"/>
-        <line num="40" type="stmt" count="204"/>
+        <line num="36" type="stmt" count="206"/>
+        <line num="38" type="stmt" count="206"/>
+        <line num="39" type="stmt" count="206"/>
+        <line num="40" type="stmt" count="206"/>
         <line num="47" type="method" name="bufferSize" crap="1" count="8"/>
         <line num="49" type="stmt" count="8"/>
-        <line num="59" type="method" name="transform" crap="1" count="60"/>
-        <line num="61" type="stmt" count="60"/>
-        <line num="63" type="stmt" count="60"/>
-        <line num="71" type="method" name="isWritable" crap="1" count="4"/>
-        <line num="73" type="stmt" count="4"/>
-        <line num="81" type="method" name="isReadable" crap="1" count="4"/>
-        <line num="83" type="stmt" count="4"/>
-        <line num="93" type="method" name="write" crap="2" count="68"/>
-        <line num="95" type="stmt" count="68"/>
-        <line num="96" type="stmt" count="4"/>
-        <line num="99" type="stmt" count="68"/>
-        <line num="100" type="stmt" count="68"/>
+        <line num="60" type="method" name="transform" crap="1" count="62"/>
+        <line num="62" type="stmt" count="62"/>
+        <line num="64" type="stmt" count="60"/>
+        <line num="72" type="method" name="isWritable" crap="1" count="4"/>
+        <line num="74" type="stmt" count="4"/>
+        <line num="82" type="method" name="isReadable" crap="1" count="4"/>
+        <line num="84" type="stmt" count="4"/>
+        <line num="95" type="method" name="write" crap="2" count="68"/>
+        <line num="97" type="stmt" count="68"/>
+        <line num="98" type="stmt" count="4"/>
+        <line num="101" type="stmt" count="68"/>
         <line num="102" type="stmt" count="68"/>
-        <line num="110" type="method" name="end" crap="3" count="136"/>
-        <line num="112" type="stmt" count="136"/>
-        <line num="113" type="stmt" count="4"/>
-        <line num="116" type="stmt" count="132"/>
-        <line num="118" type="stmt" count="132"/>
-        <line num="119" type="stmt" count="68"/>
-        <line num="121" type="stmt" count="132"/>
+        <line num="104" type="stmt" count="68"/>
+        <line num="114" type="method" name="end" crap="3" count="136"/>
+        <line num="116" type="stmt" count="136"/>
+        <line num="117" type="stmt" count="4"/>
+        <line num="120" type="stmt" count="132"/>
         <line num="122" type="stmt" count="132"/>
-        <line num="127" type="method" name="close" crap="2" count="4"/>
-        <line num="129" type="stmt" count="4"/>
-        <line num="130" type="stmt" count="4"/>
+        <line num="123" type="stmt" count="68"/>
+        <line num="125" type="stmt" count="132"/>
+        <line num="126" type="stmt" count="132"/>
+        <line num="131" type="method" name="close" crap="2" count="4"/>
         <line num="133" type="stmt" count="4"/>
         <line num="134" type="stmt" count="4"/>
-        <line num="139" type="method" name="pause" crap="1" count="4"/>
-        <line num="141" type="stmt" count="4"/>
-        <line num="142" type="stmt" count="4"/>
-        <line num="147" type="method" name="resume" crap="1" count="4"/>
-        <line num="149" type="stmt" count="4"/>
-        <line num="150" type="stmt" count="4"/>
-        <line num="151" type="stmt" count="4"/>
-        <line num="161" type="method" name="pipe" crap="1" count="4"/>
-        <line num="165" type="stmt" count="4"/>
-        <line num="167" type="stmt" count="4"/>
-        <line num="176" type="method" name="transformBuffer" crap="8" count="136"/>
-        <line num="178" type="stmt" count="136"/>
-        <line num="179" type="stmt" count="136"/>
-        <line num="180" type="stmt" count="136"/>
-        <line num="181" type="stmt" count="136"/>
-        <line num="182" type="stmt" count="132"/>
-        <line num="185" type="stmt" count="136"/>
-        <line num="188" type="stmt" count="132"/>
-        <line num="189" type="stmt" count="4"/>
-        <line num="192" type="stmt" count="132"/>
-        <line num="193" type="stmt" count="36"/>
-        <line num="197" type="stmt" count="132"/>
-        <line num="199" type="stmt" count="132"/>
+        <line num="137" type="stmt" count="4"/>
+        <line num="138" type="stmt" count="4"/>
+        <line num="143" type="method" name="pause" crap="1" count="4"/>
+        <line num="145" type="stmt" count="4"/>
+        <line num="146" type="stmt" count="4"/>
+        <line num="153" type="method" name="resume" crap="1" count="4"/>
+        <line num="155" type="stmt" count="4"/>
+        <line num="156" type="stmt" count="4"/>
+        <line num="157" type="stmt" count="4"/>
+        <line num="167" type="method" name="pipe" crap="1" count="4"/>
+        <line num="171" type="stmt" count="4"/>
+        <line num="173" type="stmt" count="4"/>
+        <line num="184" type="method" name="transformBuffer" crap="8" count="136"/>
+        <line num="186" type="stmt" count="136"/>
+        <line num="187" type="stmt" count="136"/>
+        <line num="188" type="stmt" count="136"/>
+        <line num="189" type="stmt" count="136"/>
+        <line num="190" type="stmt" count="132"/>
+        <line num="193" type="stmt" count="136"/>
+        <line num="196" type="stmt" count="132"/>
+        <line num="197" type="stmt" count="4"/>
         <line num="200" type="stmt" count="132"/>
-        <line num="201" type="stmt" count="132"/>
-        <line num="202" type="stmt" count="4"/>
+        <line num="201" type="stmt" count="36"/>
         <line num="205" type="stmt" count="132"/>
-        <line num="206" type="stmt" count="132"/>
-        <line num="207" type="stmt" count="136"/>
-        <line num="212" type="method" name="doClose" crap="1" count="136"/>
-        <line num="214" type="stmt" count="136"/>
+        <line num="207" type="stmt" count="132"/>
+        <line num="208" type="stmt" count="132"/>
+        <line num="209" type="stmt" count="132"/>
+        <line num="210" type="stmt" count="4"/>
+        <line num="213" type="stmt" count="132"/>
+        <line num="214" type="stmt" count="132"/>
         <line num="215" type="stmt" count="136"/>
-        <line num="216" type="stmt" count="136"/>
-        <line num="218" type="stmt" count="136"/>
-        <line num="219" type="stmt" count="136"/>
-        <line num="220" type="stmt" count="136"/>
-        <line num="221" type="stmt" count="136"/>
-        <line num="233" type="method" name="calculateConsumedBytes" crap="2" count="144"/>
-        <line num="235" type="stmt" count="144"/>
-        <line num="236" type="stmt" count="144"/>
-        <line num="237" type="stmt" count="119"/>
-        <line num="238" type="stmt" count="119"/>
-        <line num="239" type="stmt" count="32"/>
-        <line num="242" type="stmt" count="144"/>
-        <line num="253" type="method" name="doTransform" crap="1" count="0"/>
-        <line num="261" type="stmt" count="0"/>
-        <metrics loc="260" ncloc="166" classes="1" methods="14" coveredmethods="14" conditionals="0" coveredconditionals="0" statements="65" coveredstatements="65" elements="79" coveredelements="79"/>
+        <line num="220" type="method" name="doClose" crap="1" count="136"/>
+        <line num="222" type="stmt" count="136"/>
+        <line num="223" type="stmt" count="136"/>
+        <line num="224" type="stmt" count="136"/>
+        <line num="226" type="stmt" count="136"/>
+        <line num="227" type="stmt" count="136"/>
+        <line num="228" type="stmt" count="136"/>
+        <line num="229" type="stmt" count="136"/>
+        <line num="241" type="method" name="calculateConsumedBytes" crap="2" count="146"/>
+        <line num="243" type="stmt" count="146"/>
+        <line num="244" type="stmt" count="146"/>
+        <line num="245" type="stmt" count="121"/>
+        <line num="246" type="stmt" count="121"/>
+        <line num="247" type="stmt" count="32"/>
+        <line num="250" type="stmt" count="146"/>
+        <line num="262" type="method" name="doTransform" crap="1" count="0"/>
+        <line num="270" type="stmt" count="0"/>
+        <metrics loc="269" ncloc="166" classes="1" methods="14" coveredmethods="14" conditionals="0" coveredconditionals="0" statements="65" coveredstatements="65" elements="79" coveredelements="79"/>
       </file>
     </package>
     <file name="/home/travis/build/ezzatron/endec/src/Transform/DataTransformInterface.php">
-      <line num="33" type="stmt" count="0"/>
-      <metrics loc="32" ncloc="14" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      <line num="34" type="stmt" count="0"/>
+      <metrics loc="33" ncloc="14" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <metrics files="6" loc="436" ncloc="248" classes="5" methods="18" coveredmethods="18" conditionals="0" coveredconditionals="0" statements="74" coveredstatements="74" elements="92" coveredelements="92"/>
+    <file name="/home/travis/build/ezzatron/endec/src/Transform/Exception/TransformExceptionInterface.php">
+      <line num="20" type="stmt" count="0"/>
+      <metrics loc="19" ncloc="8" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <metrics files="8" loc="558" ncloc="317" classes="6" methods="21" coveredmethods="21" conditionals="0" coveredconditionals="0" statements="96" coveredstatements="96" elements="117" coveredelements="117"/>
   </project>
 </coverage>

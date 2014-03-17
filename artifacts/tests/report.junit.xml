@@ -1,241 +1,246 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="" tests="204" assertions="720" failures="0" errors="0" time="1.038949">
-    <testsuite name="Eloquent\Endec\Encoding\Base64DecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64DecoderTest.php" namespace="Eloquent\Endec\Encoding" fullPackage="Eloquent.Endec.Encoding" tests="51" assertions="180" failures="0" errors="0" time="0.262449">
-      <testcase name="testConstructor" class="Eloquent\Endec\Encoding\Base64DecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64DecoderTest.php" line="30" assertions="3" time="0.014750"/>
-      <testcase name="testConstructorDefaults" class="Eloquent\Endec\Encoding\Base64DecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64DecoderTest.php" line="37" assertions="1" time="0.004040"/>
-      <testsuite name="Eloquent\Endec\Encoding\Base64DecoderTest::testTransform" tests="15" assertions="60" failures="0" errors="0" time="0.068299">
-        <testcase name="testTransform with data set &quot;1 byte(s)&quot;" assertions="4" time="0.004578"/>
-        <testcase name="testTransform with data set &quot;2 byte(s)&quot;" assertions="4" time="0.004573"/>
-        <testcase name="testTransform with data set &quot;3 byte(s)&quot;" assertions="4" time="0.004551"/>
-        <testcase name="testTransform with data set &quot;4 byte(s)&quot;" assertions="4" time="0.004535"/>
-        <testcase name="testTransform with data set &quot;5 byte(s)&quot;" assertions="4" time="0.004531"/>
-        <testcase name="testTransform with data set &quot;6 byte(s)&quot;" assertions="4" time="0.004564"/>
-        <testcase name="testTransform with data set &quot;7 byte(s)&quot;" assertions="4" time="0.004555"/>
-        <testcase name="testTransform with data set &quot;8 byte(s)&quot;" assertions="4" time="0.004533"/>
-        <testcase name="testTransform with data set &quot;9 byte(s)&quot;" assertions="4" time="0.004549"/>
-        <testcase name="testTransform with data set &quot;10 byte(s)&quot;" assertions="4" time="0.004559"/>
-        <testcase name="testTransform with data set &quot;11 byte(s)&quot;" assertions="4" time="0.004533"/>
-        <testcase name="testTransform with data set &quot;12 byte(s)&quot;" assertions="4" time="0.004549"/>
-        <testcase name="testTransform with data set &quot;13 byte(s)&quot;" assertions="4" time="0.004545"/>
-        <testcase name="testTransform with data set &quot;14 byte(s)&quot;" assertions="4" time="0.004567"/>
-        <testcase name="testTransform with data set &quot;15 byte(s)&quot;" assertions="4" time="0.004576"/>
+  <testsuite name="" tests="207" assertions="727" failures="0" errors="0" time="0.817230">
+    <testsuite name="Eloquent\Endec\Encoding\Base64DecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Encoding/Base64DecoderTest.php" namespace="Eloquent\Endec\Encoding" fullPackage="Eloquent.Endec.Encoding" tests="52" assertions="181" failures="0" errors="0" time="0.208312">
+      <testcase name="testConstructor" class="Eloquent\Endec\Encoding\Base64DecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Encoding/Base64DecoderTest.php" line="30" assertions="3" time="0.011369"/>
+      <testcase name="testConstructorDefaults" class="Eloquent\Endec\Encoding\Base64DecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Encoding/Base64DecoderTest.php" line="37" assertions="1" time="0.003254"/>
+      <testsuite name="Eloquent\Endec\Encoding\Base64DecoderTest::testTransform" tests="15" assertions="60" failures="0" errors="0" time="0.052801">
+        <testcase name="testTransform with data set &quot;1 byte(s)&quot;" assertions="4" time="0.003546"/>
+        <testcase name="testTransform with data set &quot;2 byte(s)&quot;" assertions="4" time="0.003524"/>
+        <testcase name="testTransform with data set &quot;3 byte(s)&quot;" assertions="4" time="0.003502"/>
+        <testcase name="testTransform with data set &quot;4 byte(s)&quot;" assertions="4" time="0.003517"/>
+        <testcase name="testTransform with data set &quot;5 byte(s)&quot;" assertions="4" time="0.003483"/>
+        <testcase name="testTransform with data set &quot;6 byte(s)&quot;" assertions="4" time="0.003538"/>
+        <testcase name="testTransform with data set &quot;7 byte(s)&quot;" assertions="4" time="0.003467"/>
+        <testcase name="testTransform with data set &quot;8 byte(s)&quot;" assertions="4" time="0.003523"/>
+        <testcase name="testTransform with data set &quot;9 byte(s)&quot;" assertions="4" time="0.003688"/>
+        <testcase name="testTransform with data set &quot;10 byte(s)&quot;" assertions="4" time="0.003515"/>
+        <testcase name="testTransform with data set &quot;11 byte(s)&quot;" assertions="4" time="0.003509"/>
+        <testcase name="testTransform with data set &quot;12 byte(s)&quot;" assertions="4" time="0.003522"/>
+        <testcase name="testTransform with data set &quot;13 byte(s)&quot;" assertions="4" time="0.003451"/>
+        <testcase name="testTransform with data set &quot;14 byte(s)&quot;" assertions="4" time="0.003516"/>
+        <testcase name="testTransform with data set &quot;15 byte(s)&quot;" assertions="4" time="0.003500"/>
       </testsuite>
-      <testsuite name="Eloquent\Endec\Encoding\Base64DecoderTest::testWriteEnd" tests="15" assertions="60" failures="0" errors="0" time="0.077209">
-        <testcase name="testWriteEnd with data set &quot;1 byte(s)&quot;" assertions="4" time="0.005142"/>
-        <testcase name="testWriteEnd with data set &quot;2 byte(s)&quot;" assertions="4" time="0.005130"/>
-        <testcase name="testWriteEnd with data set &quot;3 byte(s)&quot;" assertions="4" time="0.005117"/>
-        <testcase name="testWriteEnd with data set &quot;4 byte(s)&quot;" assertions="4" time="0.005132"/>
-        <testcase name="testWriteEnd with data set &quot;5 byte(s)&quot;" assertions="4" time="0.005131"/>
-        <testcase name="testWriteEnd with data set &quot;6 byte(s)&quot;" assertions="4" time="0.005138"/>
-        <testcase name="testWriteEnd with data set &quot;7 byte(s)&quot;" assertions="4" time="0.005156"/>
-        <testcase name="testWriteEnd with data set &quot;8 byte(s)&quot;" assertions="4" time="0.005147"/>
-        <testcase name="testWriteEnd with data set &quot;9 byte(s)&quot;" assertions="4" time="0.005140"/>
-        <testcase name="testWriteEnd with data set &quot;10 byte(s)&quot;" assertions="4" time="0.005160"/>
-        <testcase name="testWriteEnd with data set &quot;11 byte(s)&quot;" assertions="4" time="0.005138"/>
-        <testcase name="testWriteEnd with data set &quot;12 byte(s)&quot;" assertions="4" time="0.005175"/>
-        <testcase name="testWriteEnd with data set &quot;13 byte(s)&quot;" assertions="4" time="0.005168"/>
-        <testcase name="testWriteEnd with data set &quot;14 byte(s)&quot;" assertions="4" time="0.005173"/>
-        <testcase name="testWriteEnd with data set &quot;15 byte(s)&quot;" assertions="4" time="0.005162"/>
+      <testcase name="testTransformFailure" class="Eloquent\Endec\Encoding\Base64DecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Encoding/Base64DecoderTest.php" line="55" assertions="1" time="0.005501"/>
+      <testsuite name="Eloquent\Endec\Encoding\Base64DecoderTest::testWriteEnd" tests="15" assertions="60" failures="0" errors="0" time="0.060005">
+        <testcase name="testWriteEnd with data set &quot;1 byte(s)&quot;" assertions="4" time="0.003991"/>
+        <testcase name="testWriteEnd with data set &quot;2 byte(s)&quot;" assertions="4" time="0.004069"/>
+        <testcase name="testWriteEnd with data set &quot;3 byte(s)&quot;" assertions="4" time="0.003934"/>
+        <testcase name="testWriteEnd with data set &quot;4 byte(s)&quot;" assertions="4" time="0.003947"/>
+        <testcase name="testWriteEnd with data set &quot;5 byte(s)&quot;" assertions="4" time="0.004004"/>
+        <testcase name="testWriteEnd with data set &quot;6 byte(s)&quot;" assertions="4" time="0.003963"/>
+        <testcase name="testWriteEnd with data set &quot;7 byte(s)&quot;" assertions="4" time="0.004089"/>
+        <testcase name="testWriteEnd with data set &quot;8 byte(s)&quot;" assertions="4" time="0.003955"/>
+        <testcase name="testWriteEnd with data set &quot;9 byte(s)&quot;" assertions="4" time="0.003964"/>
+        <testcase name="testWriteEnd with data set &quot;10 byte(s)&quot;" assertions="4" time="0.004094"/>
+        <testcase name="testWriteEnd with data set &quot;11 byte(s)&quot;" assertions="4" time="0.003958"/>
+        <testcase name="testWriteEnd with data set &quot;12 byte(s)&quot;" assertions="4" time="0.003971"/>
+        <testcase name="testWriteEnd with data set &quot;13 byte(s)&quot;" assertions="4" time="0.004082"/>
+        <testcase name="testWriteEnd with data set &quot;14 byte(s)&quot;" assertions="4" time="0.003982"/>
+        <testcase name="testWriteEnd with data set &quot;15 byte(s)&quot;" assertions="4" time="0.004002"/>
       </testsuite>
-      <testsuite name="Eloquent\Endec\Encoding\Base64DecoderTest::testEnd" tests="15" assertions="45" failures="0" errors="0" time="0.073883">
-        <testcase name="testEnd with data set &quot;1 byte(s)&quot;" assertions="3" time="0.004926"/>
-        <testcase name="testEnd with data set &quot;2 byte(s)&quot;" assertions="3" time="0.004897"/>
-        <testcase name="testEnd with data set &quot;3 byte(s)&quot;" assertions="3" time="0.004924"/>
-        <testcase name="testEnd with data set &quot;4 byte(s)&quot;" assertions="3" time="0.004910"/>
-        <testcase name="testEnd with data set &quot;5 byte(s)&quot;" assertions="3" time="0.004897"/>
-        <testcase name="testEnd with data set &quot;6 byte(s)&quot;" assertions="3" time="0.004915"/>
-        <testcase name="testEnd with data set &quot;7 byte(s)&quot;" assertions="3" time="0.004910"/>
-        <testcase name="testEnd with data set &quot;8 byte(s)&quot;" assertions="3" time="0.004930"/>
-        <testcase name="testEnd with data set &quot;9 byte(s)&quot;" assertions="3" time="0.004928"/>
-        <testcase name="testEnd with data set &quot;10 byte(s)&quot;" assertions="3" time="0.004936"/>
-        <testcase name="testEnd with data set &quot;11 byte(s)&quot;" assertions="3" time="0.004940"/>
-        <testcase name="testEnd with data set &quot;12 byte(s)&quot;" assertions="3" time="0.004942"/>
-        <testcase name="testEnd with data set &quot;13 byte(s)&quot;" assertions="3" time="0.004944"/>
-        <testcase name="testEnd with data set &quot;14 byte(s)&quot;" assertions="3" time="0.004946"/>
-        <testcase name="testEnd with data set &quot;15 byte(s)&quot;" assertions="3" time="0.004938"/>
+      <testsuite name="Eloquent\Endec\Encoding\Base64DecoderTest::testEnd" tests="15" assertions="45" failures="0" errors="0" time="0.057099">
+        <testcase name="testEnd with data set &quot;1 byte(s)&quot;" assertions="3" time="0.003785"/>
+        <testcase name="testEnd with data set &quot;2 byte(s)&quot;" assertions="3" time="0.003771"/>
+        <testcase name="testEnd with data set &quot;3 byte(s)&quot;" assertions="3" time="0.003819"/>
+        <testcase name="testEnd with data set &quot;4 byte(s)&quot;" assertions="3" time="0.003776"/>
+        <testcase name="testEnd with data set &quot;5 byte(s)&quot;" assertions="3" time="0.003838"/>
+        <testcase name="testEnd with data set &quot;6 byte(s)&quot;" assertions="3" time="0.003781"/>
+        <testcase name="testEnd with data set &quot;7 byte(s)&quot;" assertions="3" time="0.003833"/>
+        <testcase name="testEnd with data set &quot;8 byte(s)&quot;" assertions="3" time="0.003791"/>
+        <testcase name="testEnd with data set &quot;9 byte(s)&quot;" assertions="3" time="0.003784"/>
+        <testcase name="testEnd with data set &quot;10 byte(s)&quot;" assertions="3" time="0.003807"/>
+        <testcase name="testEnd with data set &quot;11 byte(s)&quot;" assertions="3" time="0.003803"/>
+        <testcase name="testEnd with data set &quot;12 byte(s)&quot;" assertions="3" time="0.003865"/>
+        <testcase name="testEnd with data set &quot;13 byte(s)&quot;" assertions="3" time="0.003778"/>
+        <testcase name="testEnd with data set &quot;14 byte(s)&quot;" assertions="3" time="0.003869"/>
+        <testcase name="testEnd with data set &quot;15 byte(s)&quot;" assertions="3" time="0.003799"/>
       </testsuite>
-      <testcase name="testEndEmptyString" class="Eloquent\Endec\Encoding\Base64DecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64DecoderTest.php" line="81" assertions="1" time="0.004367"/>
-      <testcase name="testClose" class="Eloquent\Endec\Encoding\Base64DecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64DecoderTest.php" line="88" assertions="4" time="0.006305"/>
-      <testcase name="testPauseResume" class="Eloquent\Endec\Encoding\Base64DecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64DecoderTest.php" line="101" assertions="5" time="0.005973"/>
-      <testcase name="testPipe" class="Eloquent\Endec\Encoding\Base64DecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64DecoderTest.php" line="118" assertions="1" time="0.007623"/>
+      <testcase name="testEndEmptyString" class="Eloquent\Endec\Encoding\Base64DecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Encoding/Base64DecoderTest.php" line="87" assertions="1" time="0.003388"/>
+      <testcase name="testClose" class="Eloquent\Endec\Encoding\Base64DecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Encoding/Base64DecoderTest.php" line="94" assertions="4" time="0.004779"/>
+      <testcase name="testPauseResume" class="Eloquent\Endec\Encoding\Base64DecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Encoding/Base64DecoderTest.php" line="107" assertions="5" time="0.004456"/>
+      <testcase name="testPipe" class="Eloquent\Endec\Encoding\Base64DecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Encoding/Base64DecoderTest.php" line="124" assertions="1" time="0.005660"/>
     </testsuite>
-    <testsuite name="Eloquent\Endec\Encoding\Base64EncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64EncoderTest.php" namespace="Eloquent\Endec\Encoding" fullPackage="Eloquent.Endec.Encoding" tests="51" assertions="180" failures="0" errors="0" time="0.256838">
-      <testcase name="testConstructor" class="Eloquent\Endec\Encoding\Base64EncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64EncoderTest.php" line="30" assertions="3" time="0.005200"/>
-      <testcase name="testConstructorDefaults" class="Eloquent\Endec\Encoding\Base64EncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64EncoderTest.php" line="37" assertions="1" time="0.004090"/>
-      <testsuite name="Eloquent\Endec\Encoding\Base64EncoderTest::testTransform" tests="15" assertions="60" failures="0" errors="0" time="0.070417">
-        <testcase name="testTransform with data set &quot;1 byte(s)&quot;" assertions="4" time="0.004668"/>
-        <testcase name="testTransform with data set &quot;2 byte(s)&quot;" assertions="4" time="0.004680"/>
-        <testcase name="testTransform with data set &quot;3 byte(s)&quot;" assertions="4" time="0.004685"/>
-        <testcase name="testTransform with data set &quot;4 byte(s)&quot;" assertions="4" time="0.004697"/>
-        <testcase name="testTransform with data set &quot;5 byte(s)&quot;" assertions="4" time="0.004722"/>
-        <testcase name="testTransform with data set &quot;6 byte(s)&quot;" assertions="4" time="0.004684"/>
-        <testcase name="testTransform with data set &quot;7 byte(s)&quot;" assertions="4" time="0.004685"/>
-        <testcase name="testTransform with data set &quot;8 byte(s)&quot;" assertions="4" time="0.004683"/>
-        <testcase name="testTransform with data set &quot;9 byte(s)&quot;" assertions="4" time="0.004681"/>
-        <testcase name="testTransform with data set &quot;10 byte(s)&quot;" assertions="4" time="0.004687"/>
-        <testcase name="testTransform with data set &quot;11 byte(s)&quot;" assertions="4" time="0.004708"/>
-        <testcase name="testTransform with data set &quot;12 byte(s)&quot;" assertions="4" time="0.004734"/>
-        <testcase name="testTransform with data set &quot;13 byte(s)&quot;" assertions="4" time="0.004693"/>
-        <testcase name="testTransform with data set &quot;14 byte(s)&quot;" assertions="4" time="0.004725"/>
-        <testcase name="testTransform with data set &quot;15 byte(s)&quot;" assertions="4" time="0.004685"/>
+    <testsuite name="Eloquent\Endec\Encoding\Base64EncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Encoding/Base64EncoderTest.php" namespace="Eloquent\Endec\Encoding" fullPackage="Eloquent.Endec.Encoding" tests="51" assertions="180" failures="0" errors="0" time="0.199461">
+      <testcase name="testConstructor" class="Eloquent\Endec\Encoding\Base64EncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Encoding/Base64EncoderTest.php" line="30" assertions="3" time="0.003983"/>
+      <testcase name="testConstructorDefaults" class="Eloquent\Endec\Encoding\Base64EncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Encoding/Base64EncoderTest.php" line="37" assertions="1" time="0.003203"/>
+      <testsuite name="Eloquent\Endec\Encoding\Base64EncoderTest::testTransform" tests="15" assertions="60" failures="0" errors="0" time="0.054374">
+        <testcase name="testTransform with data set &quot;1 byte(s)&quot;" assertions="4" time="0.003674"/>
+        <testcase name="testTransform with data set &quot;2 byte(s)&quot;" assertions="4" time="0.003628"/>
+        <testcase name="testTransform with data set &quot;3 byte(s)&quot;" assertions="4" time="0.003619"/>
+        <testcase name="testTransform with data set &quot;4 byte(s)&quot;" assertions="4" time="0.003652"/>
+        <testcase name="testTransform with data set &quot;5 byte(s)&quot;" assertions="4" time="0.003633"/>
+        <testcase name="testTransform with data set &quot;6 byte(s)&quot;" assertions="4" time="0.003619"/>
+        <testcase name="testTransform with data set &quot;7 byte(s)&quot;" assertions="4" time="0.003614"/>
+        <testcase name="testTransform with data set &quot;8 byte(s)&quot;" assertions="4" time="0.003644"/>
+        <testcase name="testTransform with data set &quot;9 byte(s)&quot;" assertions="4" time="0.003626"/>
+        <testcase name="testTransform with data set &quot;10 byte(s)&quot;" assertions="4" time="0.003593"/>
+        <testcase name="testTransform with data set &quot;11 byte(s)&quot;" assertions="4" time="0.003642"/>
+        <testcase name="testTransform with data set &quot;12 byte(s)&quot;" assertions="4" time="0.003615"/>
+        <testcase name="testTransform with data set &quot;13 byte(s)&quot;" assertions="4" time="0.003620"/>
+        <testcase name="testTransform with data set &quot;14 byte(s)&quot;" assertions="4" time="0.003595"/>
+        <testcase name="testTransform with data set &quot;15 byte(s)&quot;" assertions="4" time="0.003600"/>
       </testsuite>
-      <testsuite name="Eloquent\Endec\Encoding\Base64EncoderTest::testWriteEnd" tests="15" assertions="60" failures="0" errors="0" time="0.080158">
-        <testcase name="testWriteEnd with data set &quot;1 byte(s)&quot;" assertions="4" time="0.005281"/>
-        <testcase name="testWriteEnd with data set &quot;2 byte(s)&quot;" assertions="4" time="0.005274"/>
-        <testcase name="testWriteEnd with data set &quot;3 byte(s)&quot;" assertions="4" time="0.005272"/>
-        <testcase name="testWriteEnd with data set &quot;4 byte(s)&quot;" assertions="4" time="0.005281"/>
-        <testcase name="testWriteEnd with data set &quot;5 byte(s)&quot;" assertions="4" time="0.005278"/>
-        <testcase name="testWriteEnd with data set &quot;6 byte(s)&quot;" assertions="4" time="0.005286"/>
-        <testcase name="testWriteEnd with data set &quot;7 byte(s)&quot;" assertions="4" time="0.005285"/>
-        <testcase name="testWriteEnd with data set &quot;8 byte(s)&quot;" assertions="4" time="0.005311"/>
-        <testcase name="testWriteEnd with data set &quot;9 byte(s)&quot;" assertions="4" time="0.005289"/>
-        <testcase name="testWriteEnd with data set &quot;10 byte(s)&quot;" assertions="4" time="0.005496"/>
-        <testcase name="testWriteEnd with data set &quot;11 byte(s)&quot;" assertions="4" time="0.005483"/>
-        <testcase name="testWriteEnd with data set &quot;12 byte(s)&quot;" assertions="4" time="0.005281"/>
-        <testcase name="testWriteEnd with data set &quot;13 byte(s)&quot;" assertions="4" time="0.005516"/>
-        <testcase name="testWriteEnd with data set &quot;14 byte(s)&quot;" assertions="4" time="0.005507"/>
-        <testcase name="testWriteEnd with data set &quot;15 byte(s)&quot;" assertions="4" time="0.005318"/>
+      <testsuite name="Eloquent\Endec\Encoding\Base64EncoderTest::testWriteEnd" tests="15" assertions="60" failures="0" errors="0" time="0.062140">
+        <testcase name="testWriteEnd with data set &quot;1 byte(s)&quot;" assertions="4" time="0.004206"/>
+        <testcase name="testWriteEnd with data set &quot;2 byte(s)&quot;" assertions="4" time="0.004041"/>
+        <testcase name="testWriteEnd with data set &quot;3 byte(s)&quot;" assertions="4" time="0.004032"/>
+        <testcase name="testWriteEnd with data set &quot;4 byte(s)&quot;" assertions="4" time="0.004110"/>
+        <testcase name="testWriteEnd with data set &quot;5 byte(s)&quot;" assertions="4" time="0.004054"/>
+        <testcase name="testWriteEnd with data set &quot;6 byte(s)&quot;" assertions="4" time="0.004136"/>
+        <testcase name="testWriteEnd with data set &quot;7 byte(s)&quot;" assertions="4" time="0.004058"/>
+        <testcase name="testWriteEnd with data set &quot;8 byte(s)&quot;" assertions="4" time="0.004074"/>
+        <testcase name="testWriteEnd with data set &quot;9 byte(s)&quot;" assertions="4" time="0.004205"/>
+        <testcase name="testWriteEnd with data set &quot;10 byte(s)&quot;" assertions="4" time="0.004198"/>
+        <testcase name="testWriteEnd with data set &quot;11 byte(s)&quot;" assertions="4" time="0.004218"/>
+        <testcase name="testWriteEnd with data set &quot;12 byte(s)&quot;" assertions="4" time="0.004144"/>
+        <testcase name="testWriteEnd with data set &quot;13 byte(s)&quot;" assertions="4" time="0.004360"/>
+        <testcase name="testWriteEnd with data set &quot;14 byte(s)&quot;" assertions="4" time="0.004220"/>
+        <testcase name="testWriteEnd with data set &quot;15 byte(s)&quot;" assertions="4" time="0.004084"/>
       </testsuite>
-      <testsuite name="Eloquent\Endec\Encoding\Base64EncoderTest::testEnd" tests="15" assertions="45" failures="0" errors="0" time="0.075730">
-        <testcase name="testEnd with data set &quot;1 byte(s)&quot;" assertions="3" time="0.005051"/>
-        <testcase name="testEnd with data set &quot;2 byte(s)&quot;" assertions="3" time="0.005073"/>
-        <testcase name="testEnd with data set &quot;3 byte(s)&quot;" assertions="3" time="0.005047"/>
-        <testcase name="testEnd with data set &quot;4 byte(s)&quot;" assertions="3" time="0.005049"/>
-        <testcase name="testEnd with data set &quot;5 byte(s)&quot;" assertions="3" time="0.005059"/>
-        <testcase name="testEnd with data set &quot;6 byte(s)&quot;" assertions="3" time="0.005047"/>
-        <testcase name="testEnd with data set &quot;7 byte(s)&quot;" assertions="3" time="0.005028"/>
-        <testcase name="testEnd with data set &quot;8 byte(s)&quot;" assertions="3" time="0.005049"/>
-        <testcase name="testEnd with data set &quot;9 byte(s)&quot;" assertions="3" time="0.005030"/>
-        <testcase name="testEnd with data set &quot;10 byte(s)&quot;" assertions="3" time="0.005061"/>
-        <testcase name="testEnd with data set &quot;11 byte(s)&quot;" assertions="3" time="0.005048"/>
-        <testcase name="testEnd with data set &quot;12 byte(s)&quot;" assertions="3" time="0.005041"/>
-        <testcase name="testEnd with data set &quot;13 byte(s)&quot;" assertions="3" time="0.005043"/>
-        <testcase name="testEnd with data set &quot;14 byte(s)&quot;" assertions="3" time="0.005062"/>
-        <testcase name="testEnd with data set &quot;15 byte(s)&quot;" assertions="3" time="0.005041"/>
+      <testsuite name="Eloquent\Endec\Encoding\Base64EncoderTest::testEnd" tests="15" assertions="45" failures="0" errors="0" time="0.059237">
+        <testcase name="testEnd with data set &quot;1 byte(s)&quot;" assertions="3" time="0.003965"/>
+        <testcase name="testEnd with data set &quot;2 byte(s)&quot;" assertions="3" time="0.004338"/>
+        <testcase name="testEnd with data set &quot;3 byte(s)&quot;" assertions="3" time="0.004051"/>
+        <testcase name="testEnd with data set &quot;4 byte(s)&quot;" assertions="3" time="0.004057"/>
+        <testcase name="testEnd with data set &quot;5 byte(s)&quot;" assertions="3" time="0.003874"/>
+        <testcase name="testEnd with data set &quot;6 byte(s)&quot;" assertions="3" time="0.003867"/>
+        <testcase name="testEnd with data set &quot;7 byte(s)&quot;" assertions="3" time="0.003968"/>
+        <testcase name="testEnd with data set &quot;8 byte(s)&quot;" assertions="3" time="0.003882"/>
+        <testcase name="testEnd with data set &quot;9 byte(s)&quot;" assertions="3" time="0.003879"/>
+        <testcase name="testEnd with data set &quot;10 byte(s)&quot;" assertions="3" time="0.003920"/>
+        <testcase name="testEnd with data set &quot;11 byte(s)&quot;" assertions="3" time="0.003872"/>
+        <testcase name="testEnd with data set &quot;12 byte(s)&quot;" assertions="3" time="0.003884"/>
+        <testcase name="testEnd with data set &quot;13 byte(s)&quot;" assertions="3" time="0.003883"/>
+        <testcase name="testEnd with data set &quot;14 byte(s)&quot;" assertions="3" time="0.003886"/>
+        <testcase name="testEnd with data set &quot;15 byte(s)&quot;" assertions="3" time="0.003911"/>
       </testsuite>
-      <testcase name="testEndEmptyString" class="Eloquent\Endec\Encoding\Base64EncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64EncoderTest.php" line="81" assertions="1" time="0.004488"/>
-      <testcase name="testClose" class="Eloquent\Endec\Encoding\Base64EncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64EncoderTest.php" line="88" assertions="4" time="0.005418"/>
-      <testcase name="testPauseResume" class="Eloquent\Endec\Encoding\Base64EncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64EncoderTest.php" line="101" assertions="5" time="0.005953"/>
-      <testcase name="testPipe" class="Eloquent\Endec\Encoding\Base64EncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64EncoderTest.php" line="118" assertions="1" time="0.005385"/>
+      <testcase name="testEndEmptyString" class="Eloquent\Endec\Encoding\Base64EncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Encoding/Base64EncoderTest.php" line="81" assertions="1" time="0.003476"/>
+      <testcase name="testClose" class="Eloquent\Endec\Encoding\Base64EncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Encoding/Base64EncoderTest.php" line="88" assertions="4" time="0.004145"/>
+      <testcase name="testPauseResume" class="Eloquent\Endec\Encoding\Base64EncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Encoding/Base64EncoderTest.php" line="101" assertions="5" time="0.004619"/>
+      <testcase name="testPipe" class="Eloquent\Endec\Encoding\Base64EncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Encoding/Base64EncoderTest.php" line="118" assertions="1" time="0.004284"/>
     </testsuite>
-    <testsuite name="Eloquent\Endec\Encoding\HexDecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/HexDecoderTest.php" namespace="Eloquent\Endec\Encoding" fullPackage="Eloquent.Endec.Encoding" tests="51" assertions="180" failures="0" errors="0" time="0.260053">
-      <testcase name="testConstructor" class="Eloquent\Endec\Encoding\HexDecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/HexDecoderTest.php" line="30" assertions="3" time="0.005384"/>
-      <testcase name="testConstructorDefaults" class="Eloquent\Endec\Encoding\HexDecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/HexDecoderTest.php" line="37" assertions="1" time="0.004187"/>
-      <testsuite name="Eloquent\Endec\Encoding\HexDecoderTest::testTransform" tests="15" assertions="60" failures="0" errors="0" time="0.071784">
-        <testcase name="testTransform with data set &quot;1 byte(s)&quot;" assertions="4" time="0.004799"/>
-        <testcase name="testTransform with data set &quot;2 byte(s)&quot;" assertions="4" time="0.004782"/>
-        <testcase name="testTransform with data set &quot;3 byte(s)&quot;" assertions="4" time="0.004797"/>
-        <testcase name="testTransform with data set &quot;4 byte(s)&quot;" assertions="4" time="0.004788"/>
-        <testcase name="testTransform with data set &quot;5 byte(s)&quot;" assertions="4" time="0.004774"/>
-        <testcase name="testTransform with data set &quot;6 byte(s)&quot;" assertions="4" time="0.004781"/>
-        <testcase name="testTransform with data set &quot;7 byte(s)&quot;" assertions="4" time="0.004808"/>
-        <testcase name="testTransform with data set &quot;8 byte(s)&quot;" assertions="4" time="0.004790"/>
-        <testcase name="testTransform with data set &quot;9 byte(s)&quot;" assertions="4" time="0.004775"/>
-        <testcase name="testTransform with data set &quot;10 byte(s)&quot;" assertions="4" time="0.004764"/>
-        <testcase name="testTransform with data set &quot;11 byte(s)&quot;" assertions="4" time="0.004773"/>
-        <testcase name="testTransform with data set &quot;12 byte(s)&quot;" assertions="4" time="0.004796"/>
-        <testcase name="testTransform with data set &quot;13 byte(s)&quot;" assertions="4" time="0.004799"/>
-        <testcase name="testTransform with data set &quot;14 byte(s)&quot;" assertions="4" time="0.004777"/>
-        <testcase name="testTransform with data set &quot;15 byte(s)&quot;" assertions="4" time="0.004781"/>
-      </testsuite>
-      <testsuite name="Eloquent\Endec\Encoding\HexDecoderTest::testWriteEnd" tests="15" assertions="60" failures="0" errors="0" time="0.080726">
-        <testcase name="testWriteEnd with data set &quot;1 byte(s)&quot;" assertions="4" time="0.005382"/>
-        <testcase name="testWriteEnd with data set &quot;2 byte(s)&quot;" assertions="4" time="0.005359"/>
-        <testcase name="testWriteEnd with data set &quot;3 byte(s)&quot;" assertions="4" time="0.005381"/>
-        <testcase name="testWriteEnd with data set &quot;4 byte(s)&quot;" assertions="4" time="0.005378"/>
-        <testcase name="testWriteEnd with data set &quot;5 byte(s)&quot;" assertions="4" time="0.005383"/>
-        <testcase name="testWriteEnd with data set &quot;6 byte(s)&quot;" assertions="4" time="0.005366"/>
-        <testcase name="testWriteEnd with data set &quot;7 byte(s)&quot;" assertions="4" time="0.005378"/>
-        <testcase name="testWriteEnd with data set &quot;8 byte(s)&quot;" assertions="4" time="0.005390"/>
-        <testcase name="testWriteEnd with data set &quot;9 byte(s)&quot;" assertions="4" time="0.005372"/>
-        <testcase name="testWriteEnd with data set &quot;10 byte(s)&quot;" assertions="4" time="0.005368"/>
-        <testcase name="testWriteEnd with data set &quot;11 byte(s)&quot;" assertions="4" time="0.005398"/>
-        <testcase name="testWriteEnd with data set &quot;12 byte(s)&quot;" assertions="4" time="0.005395"/>
-        <testcase name="testWriteEnd with data set &quot;13 byte(s)&quot;" assertions="4" time="0.005389"/>
-        <testcase name="testWriteEnd with data set &quot;14 byte(s)&quot;" assertions="4" time="0.005396"/>
-        <testcase name="testWriteEnd with data set &quot;15 byte(s)&quot;" assertions="4" time="0.005391"/>
-      </testsuite>
-      <testsuite name="Eloquent\Endec\Encoding\HexDecoderTest::testEnd" tests="15" assertions="45" failures="0" errors="0" time="0.076535">
-        <testcase name="testEnd with data set &quot;1 byte(s)&quot;" assertions="3" time="0.005100"/>
-        <testcase name="testEnd with data set &quot;2 byte(s)&quot;" assertions="3" time="0.005105"/>
-        <testcase name="testEnd with data set &quot;3 byte(s)&quot;" assertions="3" time="0.005097"/>
-        <testcase name="testEnd with data set &quot;4 byte(s)&quot;" assertions="3" time="0.005093"/>
-        <testcase name="testEnd with data set &quot;5 byte(s)&quot;" assertions="3" time="0.005088"/>
-        <testcase name="testEnd with data set &quot;6 byte(s)&quot;" assertions="3" time="0.005097"/>
-        <testcase name="testEnd with data set &quot;7 byte(s)&quot;" assertions="3" time="0.005107"/>
-        <testcase name="testEnd with data set &quot;8 byte(s)&quot;" assertions="3" time="0.005098"/>
-        <testcase name="testEnd with data set &quot;9 byte(s)&quot;" assertions="3" time="0.005108"/>
-        <testcase name="testEnd with data set &quot;10 byte(s)&quot;" assertions="3" time="0.005094"/>
-        <testcase name="testEnd with data set &quot;11 byte(s)&quot;" assertions="3" time="0.005084"/>
-        <testcase name="testEnd with data set &quot;12 byte(s)&quot;" assertions="3" time="0.005110"/>
-        <testcase name="testEnd with data set &quot;13 byte(s)&quot;" assertions="3" time="0.005134"/>
-        <testcase name="testEnd with data set &quot;14 byte(s)&quot;" assertions="3" time="0.005099"/>
-        <testcase name="testEnd with data set &quot;15 byte(s)&quot;" assertions="3" time="0.005121"/>
-      </testsuite>
-      <testcase name="testEndEmptyString" class="Eloquent\Endec\Encoding\HexDecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/HexDecoderTest.php" line="81" assertions="1" time="0.004535"/>
-      <testcase name="testClose" class="Eloquent\Endec\Encoding\HexDecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/HexDecoderTest.php" line="88" assertions="4" time="0.005478"/>
-      <testcase name="testPauseResume" class="Eloquent\Endec\Encoding\HexDecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/HexDecoderTest.php" line="101" assertions="5" time="0.006012"/>
-      <testcase name="testPipe" class="Eloquent\Endec\Encoding\HexDecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/HexDecoderTest.php" line="118" assertions="1" time="0.005413"/>
+    <testsuite name="Eloquent\Endec\Encoding\Exception\InvalidEncodedDataExceptionTest" file="/home/travis/build/ezzatron/endec/test/suite/Encoding/Exception/InvalidEncodedDataExceptionTest.php" namespace="Eloquent\Endec\Encoding\Exception" fullPackage="Eloquent.Endec.Encoding.Exception" tests="1" assertions="5" failures="0" errors="0" time="0.003715">
+      <testcase name="testException" class="Eloquent\Endec\Encoding\Exception\InvalidEncodedDataExceptionTest" file="/home/travis/build/ezzatron/endec/test/suite/Encoding/Exception/InvalidEncodedDataExceptionTest.php" line="19" assertions="5" time="0.003715"/>
     </testsuite>
-    <testsuite name="Eloquent\Endec\Encoding\HexEncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/HexEncoderTest.php" namespace="Eloquent\Endec\Encoding" fullPackage="Eloquent.Endec.Encoding" tests="51" assertions="180" failures="0" errors="0" time="0.259609">
-      <testcase name="testConstructor" class="Eloquent\Endec\Encoding\HexEncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/HexEncoderTest.php" line="30" assertions="3" time="0.005307"/>
-      <testcase name="testConstructorDefaults" class="Eloquent\Endec\Encoding\HexEncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/HexEncoderTest.php" line="37" assertions="1" time="0.004260"/>
-      <testsuite name="Eloquent\Endec\Encoding\HexEncoderTest::testTransform" tests="15" assertions="60" failures="0" errors="0" time="0.071382">
-        <testcase name="testTransform with data set &quot;1 byte(s)&quot;" assertions="4" time="0.004772"/>
-        <testcase name="testTransform with data set &quot;2 byte(s)&quot;" assertions="4" time="0.004757"/>
-        <testcase name="testTransform with data set &quot;3 byte(s)&quot;" assertions="4" time="0.004727"/>
-        <testcase name="testTransform with data set &quot;4 byte(s)&quot;" assertions="4" time="0.004757"/>
-        <testcase name="testTransform with data set &quot;5 byte(s)&quot;" assertions="4" time="0.004765"/>
-        <testcase name="testTransform with data set &quot;6 byte(s)&quot;" assertions="4" time="0.004764"/>
-        <testcase name="testTransform with data set &quot;7 byte(s)&quot;" assertions="4" time="0.004795"/>
-        <testcase name="testTransform with data set &quot;8 byte(s)&quot;" assertions="4" time="0.004763"/>
-        <testcase name="testTransform with data set &quot;9 byte(s)&quot;" assertions="4" time="0.004759"/>
-        <testcase name="testTransform with data set &quot;10 byte(s)&quot;" assertions="4" time="0.004763"/>
-        <testcase name="testTransform with data set &quot;11 byte(s)&quot;" assertions="4" time="0.004763"/>
-        <testcase name="testTransform with data set &quot;12 byte(s)&quot;" assertions="4" time="0.004755"/>
-        <testcase name="testTransform with data set &quot;13 byte(s)&quot;" assertions="4" time="0.004753"/>
-        <testcase name="testTransform with data set &quot;14 byte(s)&quot;" assertions="4" time="0.004752"/>
-        <testcase name="testTransform with data set &quot;15 byte(s)&quot;" assertions="4" time="0.004737"/>
+    <testsuite name="Eloquent\Endec\Encoding\HexDecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Encoding/HexDecoderTest.php" namespace="Eloquent\Endec\Encoding" fullPackage="Eloquent.Endec.Encoding" tests="52" assertions="181" failures="0" errors="0" time="0.205702">
+      <testcase name="testConstructor" class="Eloquent\Endec\Encoding\HexDecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Encoding/HexDecoderTest.php" line="30" assertions="3" time="0.004308"/>
+      <testcase name="testConstructorDefaults" class="Eloquent\Endec\Encoding\HexDecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Encoding/HexDecoderTest.php" line="37" assertions="1" time="0.003240"/>
+      <testsuite name="Eloquent\Endec\Encoding\HexDecoderTest::testTransform" tests="15" assertions="60" failures="0" errors="0" time="0.055454">
+        <testcase name="testTransform with data set &quot;1 byte(s)&quot;" assertions="4" time="0.003706"/>
+        <testcase name="testTransform with data set &quot;2 byte(s)&quot;" assertions="4" time="0.003681"/>
+        <testcase name="testTransform with data set &quot;3 byte(s)&quot;" assertions="4" time="0.003683"/>
+        <testcase name="testTransform with data set &quot;4 byte(s)&quot;" assertions="4" time="0.003694"/>
+        <testcase name="testTransform with data set &quot;5 byte(s)&quot;" assertions="4" time="0.003692"/>
+        <testcase name="testTransform with data set &quot;6 byte(s)&quot;" assertions="4" time="0.003631"/>
+        <testcase name="testTransform with data set &quot;7 byte(s)&quot;" assertions="4" time="0.003721"/>
+        <testcase name="testTransform with data set &quot;8 byte(s)&quot;" assertions="4" time="0.003728"/>
+        <testcase name="testTransform with data set &quot;9 byte(s)&quot;" assertions="4" time="0.003749"/>
+        <testcase name="testTransform with data set &quot;10 byte(s)&quot;" assertions="4" time="0.003706"/>
+        <testcase name="testTransform with data set &quot;11 byte(s)&quot;" assertions="4" time="0.003699"/>
+        <testcase name="testTransform with data set &quot;12 byte(s)&quot;" assertions="4" time="0.003715"/>
+        <testcase name="testTransform with data set &quot;13 byte(s)&quot;" assertions="4" time="0.003689"/>
+        <testcase name="testTransform with data set &quot;14 byte(s)&quot;" assertions="4" time="0.003683"/>
+        <testcase name="testTransform with data set &quot;15 byte(s)&quot;" assertions="4" time="0.003678"/>
       </testsuite>
-      <testsuite name="Eloquent\Endec\Encoding\HexEncoderTest::testWriteEnd" tests="15" assertions="60" failures="0" errors="0" time="0.080893">
-        <testcase name="testWriteEnd with data set &quot;1 byte(s)&quot;" assertions="4" time="0.005368"/>
-        <testcase name="testWriteEnd with data set &quot;2 byte(s)&quot;" assertions="4" time="0.005361"/>
-        <testcase name="testWriteEnd with data set &quot;3 byte(s)&quot;" assertions="4" time="0.005371"/>
-        <testcase name="testWriteEnd with data set &quot;4 byte(s)&quot;" assertions="4" time="0.005374"/>
-        <testcase name="testWriteEnd with data set &quot;5 byte(s)&quot;" assertions="4" time="0.005345"/>
-        <testcase name="testWriteEnd with data set &quot;6 byte(s)&quot;" assertions="4" time="0.005361"/>
-        <testcase name="testWriteEnd with data set &quot;7 byte(s)&quot;" assertions="4" time="0.005371"/>
-        <testcase name="testWriteEnd with data set &quot;8 byte(s)&quot;" assertions="4" time="0.005634"/>
-        <testcase name="testWriteEnd with data set &quot;9 byte(s)&quot;" assertions="4" time="0.005385"/>
-        <testcase name="testWriteEnd with data set &quot;10 byte(s)&quot;" assertions="4" time="0.005360"/>
-        <testcase name="testWriteEnd with data set &quot;11 byte(s)&quot;" assertions="4" time="0.005373"/>
-        <testcase name="testWriteEnd with data set &quot;12 byte(s)&quot;" assertions="4" time="0.005384"/>
-        <testcase name="testWriteEnd with data set &quot;13 byte(s)&quot;" assertions="4" time="0.005402"/>
-        <testcase name="testWriteEnd with data set &quot;14 byte(s)&quot;" assertions="4" time="0.005389"/>
-        <testcase name="testWriteEnd with data set &quot;15 byte(s)&quot;" assertions="4" time="0.005415"/>
+      <testcase name="testTransformFailure" class="Eloquent\Endec\Encoding\HexDecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Encoding/HexDecoderTest.php" line="55" assertions="1" time="0.003739"/>
+      <testsuite name="Eloquent\Endec\Encoding\HexDecoderTest::testWriteEnd" tests="15" assertions="60" failures="0" errors="0" time="0.063242">
+        <testcase name="testWriteEnd with data set &quot;1 byte(s)&quot;" assertions="4" time="0.004145"/>
+        <testcase name="testWriteEnd with data set &quot;2 byte(s)&quot;" assertions="4" time="0.004168"/>
+        <testcase name="testWriteEnd with data set &quot;3 byte(s)&quot;" assertions="4" time="0.004113"/>
+        <testcase name="testWriteEnd with data set &quot;4 byte(s)&quot;" assertions="4" time="0.004175"/>
+        <testcase name="testWriteEnd with data set &quot;5 byte(s)&quot;" assertions="4" time="0.004096"/>
+        <testcase name="testWriteEnd with data set &quot;6 byte(s)&quot;" assertions="4" time="0.004117"/>
+        <testcase name="testWriteEnd with data set &quot;7 byte(s)&quot;" assertions="4" time="0.004192"/>
+        <testcase name="testWriteEnd with data set &quot;8 byte(s)&quot;" assertions="4" time="0.004209"/>
+        <testcase name="testWriteEnd with data set &quot;9 byte(s)&quot;" assertions="4" time="0.004118"/>
+        <testcase name="testWriteEnd with data set &quot;10 byte(s)&quot;" assertions="4" time="0.004325"/>
+        <testcase name="testWriteEnd with data set &quot;11 byte(s)&quot;" assertions="4" time="0.004407"/>
+        <testcase name="testWriteEnd with data set &quot;12 byte(s)&quot;" assertions="4" time="0.004399"/>
+        <testcase name="testWriteEnd with data set &quot;13 byte(s)&quot;" assertions="4" time="0.004364"/>
+        <testcase name="testWriteEnd with data set &quot;14 byte(s)&quot;" assertions="4" time="0.004268"/>
+        <testcase name="testWriteEnd with data set &quot;15 byte(s)&quot;" assertions="4" time="0.004146"/>
       </testsuite>
-      <testsuite name="Eloquent\Endec\Encoding\HexEncoderTest::testEnd" tests="15" assertions="45" failures="0" errors="0" time="0.076399">
-        <testcase name="testEnd with data set &quot;1 byte(s)&quot;" assertions="3" time="0.005090"/>
-        <testcase name="testEnd with data set &quot;2 byte(s)&quot;" assertions="3" time="0.005064"/>
-        <testcase name="testEnd with data set &quot;3 byte(s)&quot;" assertions="3" time="0.005087"/>
-        <testcase name="testEnd with data set &quot;4 byte(s)&quot;" assertions="3" time="0.005080"/>
-        <testcase name="testEnd with data set &quot;5 byte(s)&quot;" assertions="3" time="0.005077"/>
-        <testcase name="testEnd with data set &quot;6 byte(s)&quot;" assertions="3" time="0.005088"/>
-        <testcase name="testEnd with data set &quot;7 byte(s)&quot;" assertions="3" time="0.005111"/>
-        <testcase name="testEnd with data set &quot;8 byte(s)&quot;" assertions="3" time="0.005097"/>
-        <testcase name="testEnd with data set &quot;9 byte(s)&quot;" assertions="3" time="0.005085"/>
-        <testcase name="testEnd with data set &quot;10 byte(s)&quot;" assertions="3" time="0.005098"/>
-        <testcase name="testEnd with data set &quot;11 byte(s)&quot;" assertions="3" time="0.005113"/>
-        <testcase name="testEnd with data set &quot;12 byte(s)&quot;" assertions="3" time="0.005109"/>
-        <testcase name="testEnd with data set &quot;13 byte(s)&quot;" assertions="3" time="0.005103"/>
-        <testcase name="testEnd with data set &quot;14 byte(s)&quot;" assertions="3" time="0.005104"/>
-        <testcase name="testEnd with data set &quot;15 byte(s)&quot;" assertions="3" time="0.005094"/>
+      <testsuite name="Eloquent\Endec\Encoding\HexDecoderTest::testEnd" tests="15" assertions="45" failures="0" errors="0" time="0.059197">
+        <testcase name="testEnd with data set &quot;1 byte(s)&quot;" assertions="3" time="0.003920"/>
+        <testcase name="testEnd with data set &quot;2 byte(s)&quot;" assertions="3" time="0.003999"/>
+        <testcase name="testEnd with data set &quot;3 byte(s)&quot;" assertions="3" time="0.003925"/>
+        <testcase name="testEnd with data set &quot;4 byte(s)&quot;" assertions="3" time="0.003919"/>
+        <testcase name="testEnd with data set &quot;5 byte(s)&quot;" assertions="3" time="0.003920"/>
+        <testcase name="testEnd with data set &quot;6 byte(s)&quot;" assertions="3" time="0.003907"/>
+        <testcase name="testEnd with data set &quot;7 byte(s)&quot;" assertions="3" time="0.003986"/>
+        <testcase name="testEnd with data set &quot;8 byte(s)&quot;" assertions="3" time="0.003946"/>
+        <testcase name="testEnd with data set &quot;9 byte(s)&quot;" assertions="3" time="0.003920"/>
+        <testcase name="testEnd with data set &quot;10 byte(s)&quot;" assertions="3" time="0.003950"/>
+        <testcase name="testEnd with data set &quot;11 byte(s)&quot;" assertions="3" time="0.003986"/>
+        <testcase name="testEnd with data set &quot;12 byte(s)&quot;" assertions="3" time="0.003924"/>
+        <testcase name="testEnd with data set &quot;13 byte(s)&quot;" assertions="3" time="0.003925"/>
+        <testcase name="testEnd with data set &quot;14 byte(s)&quot;" assertions="3" time="0.004039"/>
+        <testcase name="testEnd with data set &quot;15 byte(s)&quot;" assertions="3" time="0.003931"/>
       </testsuite>
-      <testcase name="testEndEmptyString" class="Eloquent\Endec\Encoding\HexEncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/HexEncoderTest.php" line="81" assertions="1" time="0.004555"/>
-      <testcase name="testClose" class="Eloquent\Endec\Encoding\HexEncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/HexEncoderTest.php" line="88" assertions="4" time="0.005475"/>
-      <testcase name="testPauseResume" class="Eloquent\Endec\Encoding\HexEncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/HexEncoderTest.php" line="101" assertions="5" time="0.005952"/>
-      <testcase name="testPipe" class="Eloquent\Endec\Encoding\HexEncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/HexEncoderTest.php" line="118" assertions="1" time="0.005387"/>
+      <testcase name="testEndEmptyString" class="Eloquent\Endec\Encoding\HexDecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Encoding/HexDecoderTest.php" line="87" assertions="1" time="0.003428"/>
+      <testcase name="testClose" class="Eloquent\Endec\Encoding\HexDecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Encoding/HexDecoderTest.php" line="94" assertions="4" time="0.004180"/>
+      <testcase name="testPauseResume" class="Eloquent\Endec\Encoding\HexDecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Encoding/HexDecoderTest.php" line="107" assertions="5" time="0.004647"/>
+      <testcase name="testPipe" class="Eloquent\Endec\Encoding\HexDecoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Encoding/HexDecoderTest.php" line="124" assertions="1" time="0.004266"/>
+    </testsuite>
+    <testsuite name="Eloquent\Endec\Encoding\HexEncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Encoding/HexEncoderTest.php" namespace="Eloquent\Endec\Encoding" fullPackage="Eloquent.Endec.Encoding" tests="51" assertions="180" failures="0" errors="0" time="0.200040">
+      <testcase name="testConstructor" class="Eloquent\Endec\Encoding\HexEncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Encoding/HexEncoderTest.php" line="30" assertions="3" time="0.004210"/>
+      <testcase name="testConstructorDefaults" class="Eloquent\Endec\Encoding\HexEncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Encoding/HexEncoderTest.php" line="37" assertions="1" time="0.003242"/>
+      <testsuite name="Eloquent\Endec\Encoding\HexEncoderTest::testTransform" tests="15" assertions="60" failures="0" errors="0" time="0.055270">
+        <testcase name="testTransform with data set &quot;1 byte(s)&quot;" assertions="4" time="0.003657"/>
+        <testcase name="testTransform with data set &quot;2 byte(s)&quot;" assertions="4" time="0.003756"/>
+        <testcase name="testTransform with data set &quot;3 byte(s)&quot;" assertions="4" time="0.003658"/>
+        <testcase name="testTransform with data set &quot;4 byte(s)&quot;" assertions="4" time="0.003696"/>
+        <testcase name="testTransform with data set &quot;5 byte(s)&quot;" assertions="4" time="0.003660"/>
+        <testcase name="testTransform with data set &quot;6 byte(s)&quot;" assertions="4" time="0.003699"/>
+        <testcase name="testTransform with data set &quot;7 byte(s)&quot;" assertions="4" time="0.003687"/>
+        <testcase name="testTransform with data set &quot;8 byte(s)&quot;" assertions="4" time="0.003662"/>
+        <testcase name="testTransform with data set &quot;9 byte(s)&quot;" assertions="4" time="0.003672"/>
+        <testcase name="testTransform with data set &quot;10 byte(s)&quot;" assertions="4" time="0.003708"/>
+        <testcase name="testTransform with data set &quot;11 byte(s)&quot;" assertions="4" time="0.003667"/>
+        <testcase name="testTransform with data set &quot;12 byte(s)&quot;" assertions="4" time="0.003721"/>
+        <testcase name="testTransform with data set &quot;13 byte(s)&quot;" assertions="4" time="0.003654"/>
+        <testcase name="testTransform with data set &quot;14 byte(s)&quot;" assertions="4" time="0.003682"/>
+        <testcase name="testTransform with data set &quot;15 byte(s)&quot;" assertions="4" time="0.003691"/>
+      </testsuite>
+      <testsuite name="Eloquent\Endec\Encoding\HexEncoderTest::testWriteEnd" tests="15" assertions="60" failures="0" errors="0" time="0.062147">
+        <testcase name="testWriteEnd with data set &quot;1 byte(s)&quot;" assertions="4" time="0.004095"/>
+        <testcase name="testWriteEnd with data set &quot;2 byte(s)&quot;" assertions="4" time="0.004179"/>
+        <testcase name="testWriteEnd with data set &quot;3 byte(s)&quot;" assertions="4" time="0.004090"/>
+        <testcase name="testWriteEnd with data set &quot;4 byte(s)&quot;" assertions="4" time="0.004070"/>
+        <testcase name="testWriteEnd with data set &quot;5 byte(s)&quot;" assertions="4" time="0.004151"/>
+        <testcase name="testWriteEnd with data set &quot;6 byte(s)&quot;" assertions="4" time="0.004149"/>
+        <testcase name="testWriteEnd with data set &quot;7 byte(s)&quot;" assertions="4" time="0.004081"/>
+        <testcase name="testWriteEnd with data set &quot;8 byte(s)&quot;" assertions="4" time="0.004098"/>
+        <testcase name="testWriteEnd with data set &quot;9 byte(s)&quot;" assertions="4" time="0.004230"/>
+        <testcase name="testWriteEnd with data set &quot;10 byte(s)&quot;" assertions="4" time="0.004103"/>
+        <testcase name="testWriteEnd with data set &quot;11 byte(s)&quot;" assertions="4" time="0.004108"/>
+        <testcase name="testWriteEnd with data set &quot;12 byte(s)&quot;" assertions="4" time="0.004224"/>
+        <testcase name="testWriteEnd with data set &quot;13 byte(s)&quot;" assertions="4" time="0.004109"/>
+        <testcase name="testWriteEnd with data set &quot;14 byte(s)&quot;" assertions="4" time="0.004123"/>
+        <testcase name="testWriteEnd with data set &quot;15 byte(s)&quot;" assertions="4" time="0.004337"/>
+      </testsuite>
+      <testsuite name="Eloquent\Endec\Encoding\HexEncoderTest::testEnd" tests="15" assertions="45" failures="0" errors="0" time="0.058706">
+        <testcase name="testEnd with data set &quot;1 byte(s)&quot;" assertions="3" time="0.003893"/>
+        <testcase name="testEnd with data set &quot;2 byte(s)&quot;" assertions="3" time="0.003883"/>
+        <testcase name="testEnd with data set &quot;3 byte(s)&quot;" assertions="3" time="0.004021"/>
+        <testcase name="testEnd with data set &quot;4 byte(s)&quot;" assertions="3" time="0.003903"/>
+        <testcase name="testEnd with data set &quot;5 byte(s)&quot;" assertions="3" time="0.003884"/>
+        <testcase name="testEnd with data set &quot;6 byte(s)&quot;" assertions="3" time="0.003872"/>
+        <testcase name="testEnd with data set &quot;7 byte(s)&quot;" assertions="3" time="0.003890"/>
+        <testcase name="testEnd with data set &quot;8 byte(s)&quot;" assertions="3" time="0.004018"/>
+        <testcase name="testEnd with data set &quot;9 byte(s)&quot;" assertions="3" time="0.003895"/>
+        <testcase name="testEnd with data set &quot;10 byte(s)&quot;" assertions="3" time="0.003911"/>
+        <testcase name="testEnd with data set &quot;11 byte(s)&quot;" assertions="3" time="0.003894"/>
+        <testcase name="testEnd with data set &quot;12 byte(s)&quot;" assertions="3" time="0.003907"/>
+        <testcase name="testEnd with data set &quot;13 byte(s)&quot;" assertions="3" time="0.003951"/>
+        <testcase name="testEnd with data set &quot;14 byte(s)&quot;" assertions="3" time="0.003887"/>
+        <testcase name="testEnd with data set &quot;15 byte(s)&quot;" assertions="3" time="0.003896"/>
+      </testsuite>
+      <testcase name="testEndEmptyString" class="Eloquent\Endec\Encoding\HexEncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Encoding/HexEncoderTest.php" line="81" assertions="1" time="0.003429"/>
+      <testcase name="testClose" class="Eloquent\Endec\Encoding\HexEncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Encoding/HexEncoderTest.php" line="88" assertions="4" time="0.004134"/>
+      <testcase name="testPauseResume" class="Eloquent\Endec\Encoding\HexEncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Encoding/HexEncoderTest.php" line="101" assertions="5" time="0.004628"/>
+      <testcase name="testPipe" class="Eloquent\Endec\Encoding\HexEncoderTest" file="/home/travis/build/ezzatron/endec/test/suite/Encoding/HexEncoderTest.php" line="118" assertions="1" time="0.004274"/>
     </testsuite>
   </testsuite>
 </testsuites>
