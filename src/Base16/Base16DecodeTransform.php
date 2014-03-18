@@ -18,6 +18,8 @@ use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
 
 /**
  * Decodes data using base16 (hexadecimal) encoding.
+ *
+ * @link http://tools.ietf.org/html/rfc4648#section-8
  */
 class Base16DecodeTransform extends AbstractDataTransform
 {

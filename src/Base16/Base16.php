@@ -17,6 +17,8 @@ use Eloquent\Endec\Transform\DataTransformInterface;
 
 /**
  * A codec for the base16 (hexadecimal) encoding protocol.
+ *
+ * @link http://tools.ietf.org/html/rfc4648#section-8
  */
 class Base16 extends AbstractCodec
 {

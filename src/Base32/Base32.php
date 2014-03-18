@@ -17,6 +17,8 @@ use Eloquent\Endec\Transform\DataTransformInterface;
 
 /**
  * A codec for the base32 encoding protocol.
+ *
+ * @link http://tools.ietf.org/html/rfc4648#section-6
  */
 class Base32 extends AbstractCodec
 {

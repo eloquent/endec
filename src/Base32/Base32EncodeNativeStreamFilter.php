@@ -16,6 +16,8 @@ use Eloquent\Endec\Transform\DataTransformInterface;
 
 /**
  * A native stream filter for base32 encoding.
+ *
+ * @link http://tools.ietf.org/html/rfc4648#section-6
  */
 class Base32EncodeNativeStreamFilter extends AbstractNativeStreamFilter
 {

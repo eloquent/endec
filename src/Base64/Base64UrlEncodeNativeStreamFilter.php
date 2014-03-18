@@ -16,6 +16,8 @@ use Eloquent\Endec\Transform\DataTransformInterface;
 
 /**
  * A native stream filter for base64url encoding.
+ *
+ * @link http://tools.ietf.org/html/rfc4648#section-5
  */
 class Base64UrlEncodeNativeStreamFilter extends AbstractNativeStreamFilter
 {

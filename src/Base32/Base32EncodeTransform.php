@@ -16,6 +16,8 @@ use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
 
 /**
  * Encodes data using base32 encoding.
+ *
+ * @link http://tools.ietf.org/html/rfc4648#section-6
  */
 class Base32EncodeTransform implements DataTransformInterface
 {

@@ -16,6 +16,8 @@ use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
 
 /**
  * Encodes data using base64 encoding.
+ *
+ * @link http://tools.ietf.org/html/rfc4648#section-4
  */
 class Base64EncodeTransform extends AbstractDataTransform
 {

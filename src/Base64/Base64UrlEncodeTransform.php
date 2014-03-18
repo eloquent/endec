@@ -16,6 +16,8 @@ use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
 
 /**
  * Encodes data using base64url encoding.
+ *
+ * @link http://tools.ietf.org/html/rfc4648#section-5
  */
 class Base64UrlEncodeTransform extends AbstractDataTransform
 {

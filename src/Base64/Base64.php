@@ -17,6 +17,8 @@ use Eloquent\Endec\Transform\DataTransformInterface;
 
 /**
  * A codec for the base64 encoding protocol.
+ *
+ * @link http://tools.ietf.org/html/rfc4648#section-4
  */
 class Base64 extends AbstractCodec
 {
