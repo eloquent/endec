@@ -52,6 +52,9 @@ class Base64DecodeTransform extends AbstractDataTransform
     public function transform($data, $isEnd = false)
     {
         $consumedBytes = $this->calculateConsumeBytes($data, $isEnd, 4);
+        if (!$consumedBytes) {
+            return array('', 0);
+        }
 
         $consumedData = substr($data, 0, $consumedBytes);
         $outputBuffer = base64_decode($consumedData, true);

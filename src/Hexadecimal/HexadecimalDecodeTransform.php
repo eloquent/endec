@@ -52,6 +52,9 @@ class HexadecimalDecodeTransform extends AbstractDataTransform
     public function transform($data, $isEnd = false)
     {
         $consumedBytes = $this->calculateConsumeBytes($data, $isEnd, 2);
+        if (!$consumedBytes) {
+            return array('', 0);
+        }
 
         $consumedData = substr($data, 0, $consumedBytes);
         $outputBuffer = @hex2bin($consumedData);

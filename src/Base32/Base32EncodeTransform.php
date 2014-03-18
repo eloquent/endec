@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace Eloquent\Endec\Base64;
+namespace Eloquent\Endec\Base32;
 
 use Eloquent\Endec\Transform\AbstractDataTransform;
 use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
 
 /**
- * Encodes data using base64 encoding.
+ * Encodes data using base32 encoding.
  */
-class Base64EncodeTransform extends AbstractDataTransform
+class Base32EncodeTransform extends AbstractDataTransform
 {
     /**
      * Get the static instance of this transform.
@@ -49,16 +49,83 @@ class Base64EncodeTransform extends AbstractDataTransform
      */
     public function transform($data, $isEnd = false)
     {
-        $consumedBytes = $this->calculateConsumeBytes($data, $isEnd, 3);
+        $consumedBytes = $this->calculateConsumeBytes($data, $isEnd, 5);
         if (!$consumedBytes) {
             return array('', 0);
         }
 
         return array(
-            base64_encode(substr($data, 0, $consumedBytes)),
+            $this->encode(substr($data, 0, $consumedBytes)),
             $consumedBytes
         );
     }
 
+    /**
+     * Encodes data using base32 encoding.
+     *
+     * @param string $data The data to encode.
+     *
+     * @return string The encoded data.
+     */
+    protected function encode($data)
+    {
+        $binary = '';
+        foreach (str_split($data) as $byte) {
+            $binary .= str_pad(decbin(ord($byte)), 8, 0, STR_PAD_LEFT);
+        }
+
+        $chunks = str_split($binary, 5);
+        while (0 !== count($chunks) % 8) {
+            $chunks[] = null;
+        }
+
+        $base32 = '';
+        foreach ($chunks as $chunk) {
+            if (null === $chunk) {
+                $base32 .= '=';
+            } else {
+                $base32 .= self::$map[
+                    bindec(str_pad($chunk, 5, 0, STR_PAD_RIGHT))
+                ];
+            }
+        }
+
+        return $base32;
+    }
+
     private static $instance;
+    private static $map = array(
+        'A',
+        'B',
+        'C',
+        'D',
+        'E',
+        'F',
+        'G',
+        'H',
+        'I',
+        'J',
+        'K',
+        'L',
+        'M',
+        'N',
+        'O',
+        'P',
+        'Q',
+        'R',
+        'S',
+        'T',
+        'U',
+        'V',
+        'W',
+        'X',
+        'Y',
+        'Z',
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+    );
 }
