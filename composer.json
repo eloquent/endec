@@ -9,6 +9,11 @@
             "name": "Erin Millard",
             "email": "ezzatron@gmail.com",
             "homepage": "http://ezzatron.com/"
+        },
+        {
+            "name": "James Harris",
+            "email": "james.harris@icecave.com.au",
+            "homepage": "https://github.com/jmalloc"
         }
     ],
     "require": {
