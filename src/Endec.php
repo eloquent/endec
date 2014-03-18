@@ -36,6 +36,14 @@ abstract class Endec
             'Eloquent\Endec\Base16\Base16DecodeNativeStreamFilter'
         );
         $isolator->stream_filter_register(
+            'endec.base32-encode',
+            'Eloquent\Endec\Base32\Base32EncodeNativeStreamFilter'
+        );
+        $isolator->stream_filter_register(
+            'endec.base32-decode',
+            'Eloquent\Endec\Base32\Base32DecodeNativeStreamFilter'
+        );
+        $isolator->stream_filter_register(
             'endec.base64-encode',
             'Eloquent\Endec\Base64\Base64EncodeNativeStreamFilter'
         );
