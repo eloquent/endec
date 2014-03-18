@@ -1,7 +1,7 @@
 
 
 Code Coverage Report 
-  2014-03-18 03:34:25
+  2014-03-18 04:11:22
 
  Summary: 
   Classes: 100.00% (18/18)
@@ -12,6 +12,16 @@ Code Coverage Report
   Methods: 100.00% ( 7/ 7)   Lines: 100.00% ( 11/ 11)
 \Eloquent\Endec::Endec
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% ( 14/ 14)
+\Eloquent\Endec\Base16::Base16
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  9/  9)
+\Eloquent\Endec\Base16::Base16DecodeNativeStreamFilter
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
+\Eloquent\Endec\Base16::Base16DecodeTransform
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% ( 11/ 11)
+\Eloquent\Endec\Base16::Base16EncodeNativeStreamFilter
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
+\Eloquent\Endec\Base16::Base16EncodeTransform
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  4/  4)
 \Eloquent\Endec\Base32::Base32DecodeTransform
   Methods: 100.00% ( 3/ 3)   Lines: 100.00% ( 26/ 26)
 \Eloquent\Endec\Base32::Base32EncodeTransform
@@ -28,16 +38,6 @@ Code Coverage Report
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  8/  8)
 \Eloquent\Endec\Exception::InvalidEncodedDataException
   Methods: 100.00% ( 3/ 3)   Lines: 100.00% ( 11/ 11)
-\Eloquent\Endec\Hexadecimal::Hexadecimal
-  Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  9/  9)
-\Eloquent\Endec\Hexadecimal::HexadecimalDecodeNativeStreamFilter
-  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
-\Eloquent\Endec\Hexadecimal::HexadecimalDecodeTransform
-  Methods: 100.00% ( 2/ 2)   Lines: 100.00% ( 11/ 11)
-\Eloquent\Endec\Hexadecimal::HexadecimalEncodeNativeStreamFilter
-  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
-\Eloquent\Endec\Hexadecimal::HexadecimalEncodeTransform
-  Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  4/  4)
 \Eloquent\Endec\Transform::AbstractDataTransform
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  6/  6)
 \Eloquent\Endec\Transform::AbstractNativeStreamFilter
