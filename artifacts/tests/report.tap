@@ -226,13 +226,13 @@ ok 224 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformEnd with 
 ok 225 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformEnd with data set "2 bytes" ('Zm', 'f', 2)
 ok 226 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformEnd with data set "3 bytes" ('Zm9', 'fo', 3)
 ok 227 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformEnd with data set "4 bytes" ('Zm9v', 'foo', 4)
-ok 228 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformEnd with data set "5 bytes" ('Zm9vY', 'foo', 5)
-ok 229 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformEnd with data set "6 bytes" ('Zm9vYm', 'foob', 6)
-ok 230 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformEnd with data set "7 bytes" ('Zm9vYmF', 'fooba', 7)
-ok 231 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformEnd with data set "8 bytes" ('Zm9vYmFy', 'foobar', 8)
-ok 232 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformEnd with data set "8 bytes with padding" ('Zm9vYg==', 'foob', 8)
-ok 233 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformFailureLength
-ok 234 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformFailureAlphabet
+ok 228 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformEnd with data set "6 bytes" ('Zm9vYm', 'foob', 6)
+ok 229 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformEnd with data set "7 bytes" ('Zm9vYmF', 'fooba', 7)
+ok 230 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformEnd with data set "8 bytes" ('Zm9vYmFy', 'foobar', 8)
+ok 231 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformEnd with data set "8 bytes with padding" ('Zm9vYg==', 'foob', 8)
+ok 232 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformFailureLength with data set "Invalid characters" ('$$$$')
+ok 233 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformFailureLength with data set "1 byte" ('A')
+ok 234 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformFailureLength with data set "5 bytes" ('AAAAA')
 ok 235 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testInstance
 ok 236 - Eloquent\Endec\Base64\Base64EncodeNativeStreamFilterTest::testFilter
 ok 237 - Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransform with data set "Empty" ('', '', 0)
@@ -286,12 +286,12 @@ ok 284 - Eloquent\Endec\Base64\Base64UrlDecodeTransformTest::testTransformEnd wi
 ok 285 - Eloquent\Endec\Base64\Base64UrlDecodeTransformTest::testTransformEnd with data set "2 bytes" ('Zm', 'f', 2)
 ok 286 - Eloquent\Endec\Base64\Base64UrlDecodeTransformTest::testTransformEnd with data set "3 bytes" ('Zm9', 'fo', 3)
 ok 287 - Eloquent\Endec\Base64\Base64UrlDecodeTransformTest::testTransformEnd with data set "4 bytes" ('Zm9v', 'foo', 4)
-ok 288 - Eloquent\Endec\Base64\Base64UrlDecodeTransformTest::testTransformEnd with data set "5 bytes" ('Zm9vY', 'foo', 5)
-ok 289 - Eloquent\Endec\Base64\Base64UrlDecodeTransformTest::testTransformEnd with data set "6 bytes" ('Zm9vYm', 'foob', 6)
-ok 290 - Eloquent\Endec\Base64\Base64UrlDecodeTransformTest::testTransformEnd with data set "7 bytes" ('Zm9vYmF', 'fooba', 7)
-ok 291 - Eloquent\Endec\Base64\Base64UrlDecodeTransformTest::testTransformEnd with data set "8 bytes" ('Zm9vYmFy', 'foobar', 8)
-ok 292 - Eloquent\Endec\Base64\Base64UrlDecodeTransformTest::testTransformFailureLength
-ok 293 - Eloquent\Endec\Base64\Base64UrlDecodeTransformTest::testTransformFailureAlphabet
+ok 288 - Eloquent\Endec\Base64\Base64UrlDecodeTransformTest::testTransformEnd with data set "6 bytes" ('Zm9vYm', 'foob', 6)
+ok 289 - Eloquent\Endec\Base64\Base64UrlDecodeTransformTest::testTransformEnd with data set "7 bytes" ('Zm9vYmF', 'fooba', 7)
+ok 290 - Eloquent\Endec\Base64\Base64UrlDecodeTransformTest::testTransformEnd with data set "8 bytes" ('Zm9vYmFy', 'foobar', 8)
+ok 291 - Eloquent\Endec\Base64\Base64UrlDecodeTransformTest::testTransformFailureLength with data set "Invalid characters" ('$$$$')
+ok 292 - Eloquent\Endec\Base64\Base64UrlDecodeTransformTest::testTransformFailureLength with data set "1 byte" ('A')
+ok 293 - Eloquent\Endec\Base64\Base64UrlDecodeTransformTest::testTransformFailureLength with data set "5 bytes" ('AAAAA')
 ok 294 - Eloquent\Endec\Base64\Base64UrlDecodeTransformTest::testInstance
 ok 295 - Eloquent\Endec\Base64\Base64UrlEncodeNativeStreamFilterTest::testFilter
 ok 296 - Eloquent\Endec\Base64\Base64UrlEncodeTransformTest::testTransform with data set "Empty" ('', '', 0)
