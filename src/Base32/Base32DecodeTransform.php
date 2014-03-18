@@ -11,6 +11,7 @@
 
 namespace Eloquent\Endec\Base32;
 
+use Eloquent\Endec\Exception\InvalidEncodedDataException;
 use Eloquent\Endec\Transform\DataTransformInterface;
 
 /**
@@ -35,46 +36,37 @@ class Base32DecodeTransform extends AbstractBase32DecodeTransform
     }
 
     /**
-     * Construct a new base32 decode transform.
+     * Map a byte to its relevant alphabet entry.
+     *
+     * @param string  $data  The data to be decoded.
+     * @param integer $index The index into the data at which the relevant byte is located.
+     *
+     * @return integer                     The relevant alphabet entry.
+     * @throws TransformExceptionInterface If there is no relevant alphabet entry.
      */
-    public function __construct()
+    protected function mapByte($data, $index)
     {
-        parent::__construct(
-            array(
-                'A' => 0,
-                'B' => 1,
-                'C' => 2,
-                'D' => 3,
-                'E' => 4,
-                'F' => 5,
-                'G' => 6,
-                'H' => 7,
-                'I' => 8,
-                'J' => 9,
-                'K' => 10,
-                'L' => 11,
-                'M' => 12,
-                'N' => 13,
-                'O' => 14,
-                'P' => 15,
-                'Q' => 16,
-                'R' => 17,
-                'S' => 18,
-                'T' => 19,
-                'U' => 20,
-                'V' => 21,
-                'W' => 22,
-                'X' => 23,
-                'Y' => 24,
-                'Z' => 25,
-                '2' => 26,
-                '3' => 27,
-                '4' => 28,
-                '5' => 29,
-                '6' => 30,
-                '7' => 31,
-            )
-        );
+        $byte = ord($data[$index]);
+        if ($byte > 49) {
+            if ($byte < 56) {
+                return $byte - 24;
+            }
+            if ($byte > 64 && $byte < 91) {
+                return $byte - 65;
+            }
+        }
+
+        throw new InvalidEncodedDataException($this->key(), $data);
+    }
+
+    /**
+     * Get the string key used to identify this encoding.
+     *
+     * @return string The key.
+     */
+    protected function key()
+    {
+        return 'base32';
     }
 
     private static $instance;

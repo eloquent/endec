@@ -68,16 +68,27 @@ class Base16DecodeTransformTest extends PHPUnit_Framework_TestCase
         $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input, true));
     }
 
-    public function testTransformFailureLength()
+    public function invalidTransformEndData()
     {
-        $this->setExpectedException('Eloquent\Endec\Exception\InvalidEncodedDataException');
-        $this->transform->transform('A', true);
+        //                                    input
+        return array(
+            'Characters below range' => array('!!'),
+            'Characters above range' => array('~~'),
+            '1 byte'                 => array('A'),
+            '3 bytes'                => array('AAA'),
+        );
     }
 
-    public function testTransformFailureAlphabet()
+    /**
+     * @dataProvider invalidTransformEndData
+     */
+    public function testTransformFailure($input)
     {
-        $this->setExpectedException('Eloquent\Endec\Exception\InvalidEncodedDataException');
-        $this->transform->transform('$$', true);
+        $this->setExpectedException(
+            'Eloquent\Endec\Exception\InvalidEncodedDataException',
+            'The supplied data is not valid for base16 encoding.'
+        );
+        $this->transform->transform($input, true);
     }
 
     public function testInstance()

@@ -39,6 +39,14 @@ class EndecTest extends PHPUnit_Framework_TestCase
             'Eloquent\Endec\Base32\Base32DecodeNativeStreamFilter'
         );
         Phake::verify($isolator)->stream_filter_register(
+            'endec.base32hex-encode',
+            'Eloquent\Endec\Base32\Base32HexEncodeNativeStreamFilter'
+        );
+        Phake::verify($isolator)->stream_filter_register(
+            'endec.base32hex-decode',
+            'Eloquent\Endec\Base32\Base32HexDecodeNativeStreamFilter'
+        );
+        Phake::verify($isolator)->stream_filter_register(
             'endec.base64-encode',
             'Eloquent\Endec\Base64\Base64EncodeNativeStreamFilter'
         );

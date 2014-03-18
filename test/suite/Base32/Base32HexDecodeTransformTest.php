@@ -88,16 +88,27 @@ class Base32HexDecodeTransformTest extends PHPUnit_Framework_TestCase
         $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input, true));
     }
 
-    public function testTransformFailureLength()
+    public function invalidTransformEndData()
     {
-        $this->setExpectedException('Eloquent\Endec\Exception\InvalidEncodedDataException');
-        $this->transform->transform('A', true);
+        //                                    input
+        return array(
+            'Characters below range' => array('!!!!!!!!'),
+            'Characters above range' => array('~~~~~~~~'),
+            '1 byte'                 => array('A'),
+            '9 bytes'                => array('AAAAAAAAA'),
+        );
     }
 
-    public function testTransformFailureAlphabet()
+    /**
+     * @dataProvider invalidTransformEndData
+     */
+    public function testTransformFailure($input)
     {
-        $this->setExpectedException('Eloquent\Endec\Exception\InvalidEncodedDataException');
-        $this->transform->transform('$$$$$$$$', true);
+        $this->setExpectedException(
+            'Eloquent\Endec\Exception\InvalidEncodedDataException',
+            'The supplied data is not valid for base32hex encoding.'
+        );
+        $this->transform->transform($input, true);
     }
 
     public function testInstance()

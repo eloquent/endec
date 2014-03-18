@@ -75,18 +75,19 @@ class Base64UrlDecodeTransformTest extends PHPUnit_Framework_TestCase
 
     public function invalidTransformEndData()
     {
-        //                                input
+        //                                    input
         return array(
-            'Invalid characters' => array('$$$$'),
-            '1 byte'             => array('A'),
-            '5 bytes'            => array('AAAAA'),
+            'Characters below range' => array('!!!!'),
+            'Characters above range' => array('~~~~'),
+            '1 byte'                 => array('A'),
+            '5 bytes'                => array('AAAAA'),
         );
     }
 
     /**
      * @dataProvider invalidTransformEndData
      */
-    public function testTransformFailureLength($input)
+    public function testTransformFailure($input)
     {
         $this->setExpectedException(
             'Eloquent\Endec\Exception\InvalidEncodedDataException',

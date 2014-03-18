@@ -23,16 +23,6 @@ use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
 abstract class AbstractBase32DecodeTransform implements DataTransformInterface
 {
     /**
-     * Construct a new base32 decode transform.
-     *
-     * @param array<string,integer> $alphabet The base32 alphabet to use.
-     */
-    protected function __construct(array $alphabet)
-    {
-        $this->alphabet = $alphabet;
-    }
-
-    /**
      * Transform the supplied data.
      *
      * This method may transform only part of the supplied data. The return
@@ -103,7 +93,7 @@ abstract class AbstractBase32DecodeTransform implements DataTransformInterface
                     $this->mapByte($data, $index)
                 );
             } else {
-                throw new InvalidEncodedDataException('base32', $data);
+                throw new InvalidEncodedDataException($this->key(), $data);
             }
         }
 
@@ -145,14 +135,21 @@ abstract class AbstractBase32DecodeTransform implements DataTransformInterface
                chr($g << 5 | $h);
     }
 
-    private function mapByte($data, $index)
-    {
-        if (!isset($this->alphabet[$data[$index]])) {
-            throw new InvalidEncodedDataException('base32', $data);
-        }
+    /**
+     * Map a byte to its relevant alphabet entry.
+     *
+     * @param string  $data  The data to be decoded.
+     * @param integer $index The index into the data at which the relevant byte is located.
+     *
+     * @return integer                     The relevant alphabet entry.
+     * @throws TransformExceptionInterface If there is no relevant alphabet entry.
+     */
+    abstract protected function mapByte($data, $index);
 
-        return $this->alphabet[$data[$index]];
-    }
-
-    private $alphabet;
+    /**
+     * Get the string key used to identify this encoding.
+     *
+     * @return string The key.
+     */
+    abstract protected function key();
 }
