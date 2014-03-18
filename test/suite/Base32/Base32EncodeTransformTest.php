@@ -14,10 +14,6 @@ namespace Eloquent\Endec\Base32;
 use Eloquent\Liberator\Liberator;
 use PHPUnit_Framework_TestCase;
 
-/**
- * @covers \Eloquent\Endec\Base32\Base32EncodeTransform
- * @covers \Eloquent\Endec\Transform\AbstractDataTransform
- */
 class Base32EncodeTransformTest extends PHPUnit_Framework_TestCase
 {
     protected function setUp()

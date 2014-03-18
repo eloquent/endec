@@ -11,13 +11,13 @@
 
 namespace Eloquent\Endec\Base32;
 
-use Eloquent\Endec\Transform\AbstractDataTransform;
+use Eloquent\Endec\Transform\DataTransformInterface;
 use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
 
 /**
  * Encodes data using base32 encoding.
  */
-class Base32EncodeTransform extends AbstractDataTransform
+class Base32EncodeTransform implements DataTransformInterface
 {
     /**
      * Get the static instance of this transform.
@@ -49,52 +49,110 @@ class Base32EncodeTransform extends AbstractDataTransform
      */
     public function transform($data, $isEnd = false)
     {
-        $consumedBytes = $this->calculateConsumeBytes($data, $isEnd, 5);
-        if (!$consumedBytes) {
-            return array('', 0);
+        $length = strlen($data);
+        $consumedBytes = intval($length / 5) * 5;
+        $index = 0;
+        $output = '';
+
+        while ($index < $consumedBytes) {
+            $output .= $this->map5(
+                ord($data[$index++]),
+                ord($data[$index++]),
+                ord($data[$index++]),
+                ord($data[$index++]),
+                ord($data[$index++])
+            );
         }
 
-        return array(
-            $this->encode(substr($data, 0, $consumedBytes)),
-            $consumedBytes
-        );
-    }
+        if ($isEnd && $consumedBytes !== $length) {
+            $remaining = $length - $consumedBytes;
+            $consumedBytes = $length;
 
-    /**
-     * Encodes data using base32 encoding.
-     *
-     * @param string $data The data to encode.
-     *
-     * @return string The encoded data.
-     */
-    protected function encode($data)
-    {
-        $binary = '';
-        foreach (str_split($data) as $byte) {
-            $binary .= str_pad(decbin(ord($byte)), 8, 0, STR_PAD_LEFT);
-        }
-
-        $chunks = str_split($binary, 5);
-        while (0 !== count($chunks) % 8) {
-            $chunks[] = null;
-        }
-
-        $base32 = '';
-        foreach ($chunks as $chunk) {
-            if (null === $chunk) {
-                $base32 .= '=';
-            } else {
-                $base32 .= self::$map[
-                    bindec(str_pad($chunk, 5, 0, STR_PAD_RIGHT))
-                ];
+            if (1 === $remaining) {
+                $output .= $this->map1(
+                    ord($data[$index])
+                );
+            } elseif (2 === $remaining) {
+                $output .= $this->map2(
+                    ord($data[$index++]),
+                    ord($data[$index])
+                );
+            } elseif (3 === $remaining) {
+                $output .= $this->map3(
+                    ord($data[$index++]),
+                    ord($data[$index++]),
+                    ord($data[$index])
+                );
+            } elseif (4 === $remaining) {
+                $output .= $this->map4(
+                    ord($data[$index++]),
+                    ord($data[$index++]),
+                    ord($data[$index++]),
+                    ord($data[$index])
+                );
             }
         }
 
-        return $base32;
+        return array($output, $consumedBytes);
+    }
+
+    protected function map1($a)
+    {
+        return self::$alphabet[ ($a >> 3)                  ]
+             . self::$alphabet[ ($a & 0x07) << 2           ]
+             . '======'
+             ;
+    }
+
+    protected function map2($a, $b)
+    {
+        return self::$alphabet[ ($a >> 3)                  ]
+             . self::$alphabet[ ($a & 0x07) << 2 | $b >> 6 ]
+             . self::$alphabet[ ($b & 0x3e) >> 1           ]
+             . self::$alphabet[ ($b & 0x01) << 4           ]
+             . '===='
+             ;
+    }
+
+    protected function map3($a, $b, $c)
+    {
+        return self::$alphabet[ ($a >> 3)                  ]
+             . self::$alphabet[ ($a & 0x07) << 2 | $b >> 6 ]
+             . self::$alphabet[ ($b & 0x3e) >> 1           ]
+             . self::$alphabet[ ($b & 0x01) << 4 | $c >> 4 ]
+             . self::$alphabet[ ($c & 0x0f) << 1           ]
+             . '==='
+             ;
+    }
+
+    protected function map4($a, $b, $c, $d)
+    {
+        return self::$alphabet[ ($a >> 3)                  ]
+             . self::$alphabet[ ($a & 0x07) << 2 | $b >> 6 ]
+             . self::$alphabet[ ($b & 0x3e) >> 1           ]
+             . self::$alphabet[ ($b & 0x01) << 4 | $c >> 4 ]
+             . self::$alphabet[ ($c & 0x0f) << 1 | $d >> 7 ]
+             . self::$alphabet[ ($d & 0x7c) >> 2           ]
+             . self::$alphabet[ ($d & 0x03) << 3           ]
+             . '='
+             ;
+    }
+
+    protected function map5($a, $b, $c, $d, $e)
+    {
+        return self::$alphabet[ ($a >> 3)                  ]
+             . self::$alphabet[ ($a & 0x07) << 2 | $b >> 6 ]
+             . self::$alphabet[ ($b & 0x3e) >> 1           ]
+             . self::$alphabet[ ($b & 0x01) << 4 | $c >> 4 ]
+             . self::$alphabet[ ($c & 0x0f) << 1 | $d >> 7 ]
+             . self::$alphabet[ ($d & 0x7c) >> 2           ]
+             . self::$alphabet[ ($d & 0x03) << 3 | $e >> 5 ]
+             . self::$alphabet[ ($e & 0x1f)                ]
+             ;
     }
 
     private static $instance;
-    private static $map = array(
+    private static $alphabet = array(
         'A',
         'B',
         'C',
@@ -121,11 +179,11 @@ class Base32EncodeTransform extends AbstractDataTransform
         'X',
         'Y',
         'Z',
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
+        '2',
+        '3',
+        '4',
+        '5',
+        '6',
+        '7',
     );
 }
