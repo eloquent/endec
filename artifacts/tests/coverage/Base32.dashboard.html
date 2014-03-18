@@ -2,7 +2,7 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8">
-  <title>Dashboard for /home/travis/build/ezzatron/endec/src/Transform</title>
+  <title>Dashboard for /home/travis/build/ezzatron/endec/src/Base32</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
@@ -19,7 +19,7 @@
      <div class="span12">
       <ul class="breadcrumb">
         <li><a href="index.html">/home/travis/build/ezzatron/endec/src</a> <span class="divider">/</span></li>
-        <li><a href="Transform.html">Transform</a></li>
+        <li><a href="Base32.html">Base32</a></li>
         <li class="active">(Dashboard)</li>
 
       </ul>
@@ -78,7 +78,7 @@ $(document).ready(function() {
       .yAxis.tickFormat(d3.format('d'));
 
     d3.select('#classCoverageDistribution svg')
-      .datum(getCoverageDistributionData([0,0,0,0,0,0,0,0,0,0,0,3], "Class Coverage"))
+      .datum(getCoverageDistributionData([0,0,0,0,0,0,0,0,0,0,0,2], "Class Coverage"))
       .transition().duration(500).call(chart);
 
     nv.utils.windowResize(chart.update);
@@ -130,7 +130,7 @@ $(document).ready(function() {
     chart.yAxis.axisLabel('Cyclomatic Complexity');
 
     d3.select('#classComplexity svg')
-      .datum(getComplexityData([[100,2,"<a href=\"Transform_AbstractDataTransform.php.html#17\">AbstractDataTransform<\/a>"],[100,11,"<a href=\"Transform_AbstractNativeStreamFilter.php.html#20\">AbstractNativeStreamFilter<\/a>"],[100,25,"<a href=\"Transform_TransformStream.php.html#21\">TransformStream<\/a>"]], 'Class Complexity'))
+      .datum(getComplexityData([[100,9,"<a href=\"Base32_Base32DecodeTransform.php.html#21\">Base32DecodeTransform<\/a>"],[100,9,"<a href=\"Base32_Base32EncodeTransform.php.html#20\">Base32EncodeTransform<\/a>"]], 'Class Complexity'))
       .transition()
       .duration(500)
       .call(chart);

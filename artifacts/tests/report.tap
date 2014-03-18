@@ -1,127 +1,181 @@
 TAP version 13
-ok 1 - Eloquent\Endec\Base64\Base64DecodeNativeStreamFilterTest::testFilter
-ok 2 - Eloquent\Endec\Base64\Base64DecodeNativeStreamFilterTest::testFilterFailure
-ok 3 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransform with data set "Empty" ('', '', 0)
-ok 4 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransform with data set "1 byte" ('Z', '', 0)
-ok 5 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransform with data set "2 bytes" ('Zm', '', 0)
-ok 6 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransform with data set "3 bytes" ('Zm9', '', 0)
-ok 7 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransform with data set "4 bytes" ('Zm9v', 'foo', 4)
-ok 8 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransform with data set "5 bytes" ('Zm9vY', 'foo', 4)
-ok 9 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransform with data set "6 bytes" ('Zm9vYm', 'foo', 4)
-ok 10 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransform with data set "7 bytes" ('Zm9vYmF', 'foo', 4)
-ok 11 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransform with data set "8 bytes" ('Zm9vYmFy', 'foobar', 8)
-ok 12 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformEnd with data set "Empty" ('', '', 0)
-ok 13 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformEnd with data set "1 byte" ('Z', '', 1)
-ok 14 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformEnd with data set "2 bytes" ('Zm', 'f', 2)
-ok 15 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformEnd with data set "3 bytes" ('Zm9', 'fo', 3)
-ok 16 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformEnd with data set "4 bytes" ('Zm9v', 'foo', 4)
-ok 17 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformEnd with data set "5 bytes" ('Zm9vY', 'foo', 5)
-ok 18 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformEnd with data set "6 bytes" ('Zm9vYm', 'foob', 6)
-ok 19 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformEnd with data set "7 bytes" ('Zm9vYmF', 'fooba', 7)
-ok 20 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformEnd with data set "8 bytes" ('Zm9vYmFy', 'foobar', 8)
-ok 21 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformFailure
-ok 22 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testInstance
-ok 23 - Eloquent\Endec\Base64\Base64EncodeNativeStreamFilterTest::testFilter
-ok 24 - Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransform with data set "Empty" ('', '', 0)
-ok 25 - Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransform with data set "1 byte" ('f', '', 0)
-ok 26 - Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransform with data set "2 bytes" ('fo', '', 0)
-ok 27 - Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransform with data set "3 bytes" ('foo', 'Zm9v', 3)
-ok 28 - Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransform with data set "4 bytes" ('foob', 'Zm9v', 3)
-ok 29 - Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransform with data set "5 bytes" ('fooba', 'Zm9v', 3)
-ok 30 - Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransform with data set "6 bytes" ('foobar', 'Zm9vYmFy', 6)
-ok 31 - Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransformEnd with data set "Empty" ('', '', 0)
-ok 32 - Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransformEnd with data set "1 byte" ('f', 'Zg==', 1)
-ok 33 - Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransformEnd with data set "2 bytes" ('fo', 'Zm8=', 2)
-ok 34 - Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransformEnd with data set "3 bytes" ('foo', 'Zm9v', 3)
-ok 35 - Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransformEnd with data set "4 bytes" ('foob', 'Zm9vYg==', 4)
-ok 36 - Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransformEnd with data set "5 bytes" ('fooba', 'Zm9vYmE=', 5)
-ok 37 - Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransformEnd with data set "6 bytes" ('foobar', 'Zm9vYmFy', 6)
-ok 38 - Eloquent\Endec\Base64\Base64EncodeTransformTest::testInstance
-ok 39 - Eloquent\Endec\Base64\Base64Test::testConstructor
-ok 40 - Eloquent\Endec\Base64\Base64Test::testConstructorDefaults
-ok 41 - Eloquent\Endec\Base64\Base64Test::testEncode with data set "Empty" ('', '')
-ok 42 - Eloquent\Endec\Base64\Base64Test::testEncode with data set "1 byte" ('f', 'Zg==')
-ok 43 - Eloquent\Endec\Base64\Base64Test::testEncode with data set "2 bytes" ('fo', 'Zm8=')
-ok 44 - Eloquent\Endec\Base64\Base64Test::testEncode with data set "3 bytes" ('foo', 'Zm9v')
-ok 45 - Eloquent\Endec\Base64\Base64Test::testEncode with data set "4 bytes" ('foob', 'Zm9vYg==')
-ok 46 - Eloquent\Endec\Base64\Base64Test::testEncode with data set "5 bytes" ('fooba', 'Zm9vYmE=')
-ok 47 - Eloquent\Endec\Base64\Base64Test::testEncode with data set "6 bytes" ('foobar', 'Zm9vYmFy')
-ok 48 - Eloquent\Endec\Base64\Base64Test::testDecode with data set "Empty" ('', '')
-ok 49 - Eloquent\Endec\Base64\Base64Test::testDecode with data set "1 byte" ('f', 'Zg==')
-ok 50 - Eloquent\Endec\Base64\Base64Test::testDecode with data set "2 bytes" ('fo', 'Zm8=')
-ok 51 - Eloquent\Endec\Base64\Base64Test::testDecode with data set "3 bytes" ('foo', 'Zm9v')
-ok 52 - Eloquent\Endec\Base64\Base64Test::testDecode with data set "4 bytes" ('foob', 'Zm9vYg==')
-ok 53 - Eloquent\Endec\Base64\Base64Test::testDecode with data set "5 bytes" ('fooba', 'Zm9vYmE=')
-ok 54 - Eloquent\Endec\Base64\Base64Test::testDecode with data set "6 bytes" ('foobar', 'Zm9vYmFy')
-ok 55 - Eloquent\Endec\Base64\Base64Test::testCreateEncodeStream
-ok 56 - Eloquent\Endec\Base64\Base64Test::testCreateDecodeStream
-ok 57 - Eloquent\Endec\Base64\Base64Test::testInstance
-ok 58 - Eloquent\Endec\EndecTest::testRegisterFilters
-ok 59 - Eloquent\Endec\Exception\InvalidEncodedDataExceptionTest::testException
-ok 60 - Eloquent\Endec\Hexadecimal\HexadecimalDecodeNativeStreamFilterTest::testFilter
-ok 61 - Eloquent\Endec\Hexadecimal\HexadecimalDecodeNativeStreamFilterTest::testFilterFailure
-ok 62 - Eloquent\Endec\Hexadecimal\HexadecimalDecodeTransformTest::testTransform with data set "Empty" ('', '', 0)
-ok 63 - Eloquent\Endec\Hexadecimal\HexadecimalDecodeTransformTest::testTransform with data set "1 bytes" ('6', '', 0)
-ok 64 - Eloquent\Endec\Hexadecimal\HexadecimalDecodeTransformTest::testTransform with data set "2 bytes" ('66', 'f', 2)
-ok 65 - Eloquent\Endec\Hexadecimal\HexadecimalDecodeTransformTest::testTransform with data set "3 bytes" ('666', 'f', 2)
-ok 66 - Eloquent\Endec\Hexadecimal\HexadecimalDecodeTransformTest::testTransform with data set "4 bytes" ('666f', 'fo', 4)
-ok 67 - Eloquent\Endec\Hexadecimal\HexadecimalDecodeTransformTest::testTransform with data set "5 bytes" ('666f6', 'fo', 4)
-ok 68 - Eloquent\Endec\Hexadecimal\HexadecimalDecodeTransformTest::testTransform with data set "6 bytes" ('666f6f', 'foo', 6)
-ok 69 - Eloquent\Endec\Hexadecimal\HexadecimalDecodeTransformTest::testTransformEnd with data set "Empty" ('', '', 0)
-ok 70 - Eloquent\Endec\Hexadecimal\HexadecimalDecodeTransformTest::testTransformEnd with data set "2 bytes" ('66', 'f', 2)
-ok 71 - Eloquent\Endec\Hexadecimal\HexadecimalDecodeTransformTest::testTransformEnd with data set "4 bytes" ('666f', 'fo', 4)
-ok 72 - Eloquent\Endec\Hexadecimal\HexadecimalDecodeTransformTest::testTransformEnd with data set "6 bytes" ('666f6f', 'foo', 6)
-ok 73 - Eloquent\Endec\Hexadecimal\HexadecimalDecodeTransformTest::testTransformFailure
-ok 74 - Eloquent\Endec\Hexadecimal\HexadecimalDecodeTransformTest::testInstance
-ok 75 - Eloquent\Endec\Hexadecimal\HexadecimalEncodeNativeStreamFilterTest::testFilter
-ok 76 - Eloquent\Endec\Hexadecimal\HexadecimalEncodeTransformTest::testTransform with data set "Empty" ('', '', 0)
-ok 77 - Eloquent\Endec\Hexadecimal\HexadecimalEncodeTransformTest::testTransform with data set "1 byte" ('f', '66', 1)
-ok 78 - Eloquent\Endec\Hexadecimal\HexadecimalEncodeTransformTest::testTransform with data set "2 bytes" ('fo', '666f', 2)
-ok 79 - Eloquent\Endec\Hexadecimal\HexadecimalEncodeTransformTest::testTransform with data set "3 bytes" ('foo', '666f6f', 3)
-ok 80 - Eloquent\Endec\Hexadecimal\HexadecimalEncodeTransformTest::testTransform with data set "4 bytes" ('foob', '666f6f62', 4)
-ok 81 - Eloquent\Endec\Hexadecimal\HexadecimalEncodeTransformTest::testTransform with data set "5 bytes" ('fooba', '666f6f6261', 5)
-ok 82 - Eloquent\Endec\Hexadecimal\HexadecimalEncodeTransformTest::testTransform with data set "6 bytes" ('foobar', '666f6f626172', 6)
-ok 83 - Eloquent\Endec\Hexadecimal\HexadecimalEncodeTransformTest::testTransformEnd with data set "Empty" ('', '', 0)
-ok 84 - Eloquent\Endec\Hexadecimal\HexadecimalEncodeTransformTest::testTransformEnd with data set "1 byte" ('f', '66', 1)
-ok 85 - Eloquent\Endec\Hexadecimal\HexadecimalEncodeTransformTest::testTransformEnd with data set "2 bytes" ('fo', '666f', 2)
-ok 86 - Eloquent\Endec\Hexadecimal\HexadecimalEncodeTransformTest::testTransformEnd with data set "3 bytes" ('foo', '666f6f', 3)
-ok 87 - Eloquent\Endec\Hexadecimal\HexadecimalEncodeTransformTest::testTransformEnd with data set "4 bytes" ('foob', '666f6f62', 4)
-ok 88 - Eloquent\Endec\Hexadecimal\HexadecimalEncodeTransformTest::testTransformEnd with data set "5 bytes" ('fooba', '666f6f6261', 5)
-ok 89 - Eloquent\Endec\Hexadecimal\HexadecimalEncodeTransformTest::testTransformEnd with data set "6 bytes" ('foobar', '666f6f626172', 6)
-ok 90 - Eloquent\Endec\Hexadecimal\HexadecimalEncodeTransformTest::testInstance
-ok 91 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testConstructor
-ok 92 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testConstructorDefaults
-ok 93 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testEncode with data set "Empty" ('', '')
-ok 94 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testEncode with data set "1 byte" ('f', '66')
-ok 95 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testEncode with data set "2 bytes" ('fo', '666f')
-ok 96 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testEncode with data set "3 bytes" ('foo', '666f6f')
-ok 97 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testEncode with data set "4 bytes" ('foob', '666f6f62')
-ok 98 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testEncode with data set "5 bytes" ('fooba', '666f6f6261')
-ok 99 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testEncode with data set "6 bytes" ('foobar', '666f6f626172')
-ok 100 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testDecode with data set "Empty" ('', '')
-ok 101 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testDecode with data set "1 byte" ('f', '66')
-ok 102 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testDecode with data set "2 bytes" ('fo', '666f')
-ok 103 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testDecode with data set "3 bytes" ('foo', '666f6f')
-ok 104 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testDecode with data set "4 bytes" ('foob', '666f6f62')
-ok 105 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testDecode with data set "5 bytes" ('fooba', '666f6f6261')
-ok 106 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testDecode with data set "6 bytes" ('foobar', '666f6f626172')
-ok 107 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testCreateEncodeStream
-ok 108 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testCreateDecodeStream
-ok 109 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testInstance
-ok 110 - Eloquent\Endec\Transform\TransformStreamTest::testConstructor
-ok 111 - Eloquent\Endec\Transform\TransformStreamTest::testConstructorDefaults
-ok 112 - Eloquent\Endec\Transform\TransformStreamTest::testWriteEnd with data set "1 byte(s)" ('f')
-ok 113 - Eloquent\Endec\Transform\TransformStreamTest::testWriteEnd with data set "2 byte(s)" ('fo')
-ok 114 - Eloquent\Endec\Transform\TransformStreamTest::testWriteEnd with data set "3 byte(s)" ('foo')
-ok 115 - Eloquent\Endec\Transform\TransformStreamTest::testWriteEnd with data set "4 byte(s)" ('foob')
-ok 116 - Eloquent\Endec\Transform\TransformStreamTest::testWriteEnd with data set "5 byte(s)" ('fooba')
-ok 117 - Eloquent\Endec\Transform\TransformStreamTest::testEnd with data set "1 byte(s)" ('f')
-ok 118 - Eloquent\Endec\Transform\TransformStreamTest::testEnd with data set "2 byte(s)" ('fo')
-ok 119 - Eloquent\Endec\Transform\TransformStreamTest::testEnd with data set "3 byte(s)" ('foo')
-ok 120 - Eloquent\Endec\Transform\TransformStreamTest::testEnd with data set "4 byte(s)" ('foob')
-ok 121 - Eloquent\Endec\Transform\TransformStreamTest::testEnd with data set "5 byte(s)" ('fooba')
-ok 122 - Eloquent\Endec\Transform\TransformStreamTest::testEndEmptyString
-ok 123 - Eloquent\Endec\Transform\TransformStreamTest::testClose
-ok 124 - Eloquent\Endec\Transform\TransformStreamTest::testPauseResume
-ok 125 - Eloquent\Endec\Transform\TransformStreamTest::testPipe
-1..125
+ok 1 - Eloquent\Endec\Base32\Base32DecodeTransformTest::testTransform with data set "Empty" ('', '', 0)
+ok 2 - Eloquent\Endec\Base32\Base32DecodeTransformTest::testTransform with data set "1 byte" ('M', '', 0)
+ok 3 - Eloquent\Endec\Base32\Base32DecodeTransformTest::testTransform with data set "2 bytes" ('MZ', '', 0)
+ok 4 - Eloquent\Endec\Base32\Base32DecodeTransformTest::testTransform with data set "3 bytes" ('MZX', '', 0)
+ok 5 - Eloquent\Endec\Base32\Base32DecodeTransformTest::testTransform with data set "4 bytes" ('MZXW', '', 0)
+ok 6 - Eloquent\Endec\Base32\Base32DecodeTransformTest::testTransform with data set "5 bytes" ('MZXW6', '', 0)
+ok 7 - Eloquent\Endec\Base32\Base32DecodeTransformTest::testTransform with data set "6 bytes" ('MZXW6Y', '', 0)
+ok 8 - Eloquent\Endec\Base32\Base32DecodeTransformTest::testTransform with data set "7 bytes" ('MZXW6YT', '', 0)
+ok 9 - Eloquent\Endec\Base32\Base32DecodeTransformTest::testTransform with data set "8 bytes" ('MZXW6YTB', 'fooba', 8)
+ok 10 - Eloquent\Endec\Base32\Base32DecodeTransformTest::testTransform with data set "9 bytes" ('MZXW6YTBO', 'fooba', 8)
+ok 11 - Eloquent\Endec\Base32\Base32DecodeTransformTest::testTransform with data set "10 bytes" ('MZXW6YTBOJ', 'fooba', 8)
+ok 12 - Eloquent\Endec\Base32\Base32DecodeTransformTest::testTransform with data set "11 bytes" ('MZXW6YTBOJR', 'fooba', 8)
+ok 13 - Eloquent\Endec\Base32\Base32DecodeTransformTest::testTransform with data set "12 bytes" ('MZXW6YTBOJRG', 'fooba', 8)
+ok 14 - Eloquent\Endec\Base32\Base32DecodeTransformTest::testTransform with data set "13 bytes" ('MZXW6YTBOJRGC', 'fooba', 8)
+ok 15 - Eloquent\Endec\Base32\Base32DecodeTransformTest::testTransform with data set "14 bytes" ('MZXW6YTBOJRGC6', 'fooba', 8)
+ok 16 - Eloquent\Endec\Base32\Base32DecodeTransformTest::testTransform with data set "15 bytes" ('MZXW6YTBOJRGC6T', 'fooba', 8)
+ok 17 - Eloquent\Endec\Base32\Base32DecodeTransformTest::testTransform with data set "16 bytes" ('MZXW6YTBOJRGC6TR', 'foobarbazq', 16)
+ok 18 - Eloquent\Endec\Base32\Base32DecodeTransformTest::testTransformEnd with data set "Empty" ('', '', 0)
+ok 19 - Eloquent\Endec\Base32\Base32DecodeTransformTest::testTransformEnd with data set "2 bytes" ('MY', 'f', 2)
+ok 20 - Eloquent\Endec\Base32\Base32DecodeTransformTest::testTransformEnd with data set "4 bytes" ('MZXQ', 'fo', 4)
+ok 21 - Eloquent\Endec\Base32\Base32DecodeTransformTest::testTransformEnd with data set "5 bytes" ('MZXW6', 'foo', 5)
+ok 22 - Eloquent\Endec\Base32\Base32DecodeTransformTest::testTransformEnd with data set "7 bytes" ('MZXW6YQ', 'foob', 7)
+ok 23 - Eloquent\Endec\Base32\Base32DecodeTransformTest::testTransformEnd with data set "8 bytes" ('MZXW6YTB', 'fooba', 8)
+ok 24 - Eloquent\Endec\Base32\Base32DecodeTransformTest::testTransformEnd with data set "8 bytes with padding" ('MY======', 'f', 8)
+ok 25 - Eloquent\Endec\Base32\Base32DecodeTransformTest::testTransformEnd with data set "10 bytes" ('MZXW6YTBOI', 'foobar', 10)
+ok 26 - Eloquent\Endec\Base32\Base32DecodeTransformTest::testTransformEnd with data set "12 bytes" ('MZXW6YTBOJRA', 'foobarb', 12)
+ok 27 - Eloquent\Endec\Base32\Base32DecodeTransformTest::testTransformEnd with data set "13 bytes" ('MZXW6YTBOJRGC', 'foobarba', 13)
+ok 28 - Eloquent\Endec\Base32\Base32DecodeTransformTest::testTransformEnd with data set "15 bytes" ('MZXW6YTBOJRGC6Q', 'foobarbaz', 15)
+ok 29 - Eloquent\Endec\Base32\Base32DecodeTransformTest::testTransformEnd with data set "16 bytes" ('MZXW6YTBOJRGC6TR', 'foobarbazq', 16)
+ok 30 - Eloquent\Endec\Base32\Base32DecodeTransformTest::testTransformFailure
+ok 31 - Eloquent\Endec\Base32\Base32DecodeTransformTest::testInstance
+ok 32 - Eloquent\Endec\Base32\Base32EncodeTransformTest::testTransform with data set "Empty" ('', '', 0)
+ok 33 - Eloquent\Endec\Base32\Base32EncodeTransformTest::testTransform with data set "1 byte" ('f', '', 0)
+ok 34 - Eloquent\Endec\Base32\Base32EncodeTransformTest::testTransform with data set "2 bytes" ('fo', '', 0)
+ok 35 - Eloquent\Endec\Base32\Base32EncodeTransformTest::testTransform with data set "3 bytes" ('foo', '', 0)
+ok 36 - Eloquent\Endec\Base32\Base32EncodeTransformTest::testTransform with data set "4 bytes" ('foob', '', 0)
+ok 37 - Eloquent\Endec\Base32\Base32EncodeTransformTest::testTransform with data set "5 bytes" ('fooba', 'MZXW6YTB', 5)
+ok 38 - Eloquent\Endec\Base32\Base32EncodeTransformTest::testTransform with data set "6 bytes" ('foobar', 'MZXW6YTB', 5)
+ok 39 - Eloquent\Endec\Base32\Base32EncodeTransformTest::testTransform with data set "7 bytes" ('foobarb', 'MZXW6YTB', 5)
+ok 40 - Eloquent\Endec\Base32\Base32EncodeTransformTest::testTransform with data set "8 bytes" ('foobarba', 'MZXW6YTB', 5)
+ok 41 - Eloquent\Endec\Base32\Base32EncodeTransformTest::testTransform with data set "9 bytes" ('foobarbaz', 'MZXW6YTB', 5)
+ok 42 - Eloquent\Endec\Base32\Base32EncodeTransformTest::testTransform with data set "10 bytes" ('foobarbazq', 'MZXW6YTBOJRGC6TR', 10)
+ok 43 - Eloquent\Endec\Base32\Base32EncodeTransformTest::testTransformEnd with data set "Empty" ('', '', 0)
+ok 44 - Eloquent\Endec\Base32\Base32EncodeTransformTest::testTransformEnd with data set "1 byte" ('f', 'MY======', 1)
+ok 45 - Eloquent\Endec\Base32\Base32EncodeTransformTest::testTransformEnd with data set "2 bytes" ('fo', 'MZXQ====', 2)
+ok 46 - Eloquent\Endec\Base32\Base32EncodeTransformTest::testTransformEnd with data set "3 bytes" ('foo', 'MZXW6===', 3)
+ok 47 - Eloquent\Endec\Base32\Base32EncodeTransformTest::testTransformEnd with data set "4 bytes" ('foob', 'MZXW6YQ=', 4)
+ok 48 - Eloquent\Endec\Base32\Base32EncodeTransformTest::testTransformEnd with data set "5 bytes" ('fooba', 'MZXW6YTB', 5)
+ok 49 - Eloquent\Endec\Base32\Base32EncodeTransformTest::testTransformEnd with data set "6 bytes" ('foobar', 'MZXW6YTBOI======', 6)
+ok 50 - Eloquent\Endec\Base32\Base32EncodeTransformTest::testTransformEnd with data set "7 bytes" ('foobarb', 'MZXW6YTBOJRA====', 7)
+ok 51 - Eloquent\Endec\Base32\Base32EncodeTransformTest::testTransformEnd with data set "8 bytes" ('foobarba', 'MZXW6YTBOJRGC===', 8)
+ok 52 - Eloquent\Endec\Base32\Base32EncodeTransformTest::testTransformEnd with data set "9 bytes" ('foobarbaz', 'MZXW6YTBOJRGC6Q=', 9)
+ok 53 - Eloquent\Endec\Base32\Base32EncodeTransformTest::testTransformEnd with data set "10 bytes" ('foobarbazq', 'MZXW6YTBOJRGC6TR', 10)
+ok 54 - Eloquent\Endec\Base32\Base32EncodeTransformTest::testInstance
+ok 55 - Eloquent\Endec\Base64\Base64DecodeNativeStreamFilterTest::testFilter
+ok 56 - Eloquent\Endec\Base64\Base64DecodeNativeStreamFilterTest::testFilterFailure
+ok 57 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransform with data set "Empty" ('', '', 0)
+ok 58 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransform with data set "1 byte" ('Z', '', 0)
+ok 59 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransform with data set "2 bytes" ('Zm', '', 0)
+ok 60 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransform with data set "3 bytes" ('Zm9', '', 0)
+ok 61 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransform with data set "4 bytes" ('Zm9v', 'foo', 4)
+ok 62 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransform with data set "5 bytes" ('Zm9vY', 'foo', 4)
+ok 63 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransform with data set "6 bytes" ('Zm9vYm', 'foo', 4)
+ok 64 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransform with data set "7 bytes" ('Zm9vYmF', 'foo', 4)
+ok 65 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransform with data set "8 bytes" ('Zm9vYmFy', 'foobar', 8)
+ok 66 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformEnd with data set "Empty" ('', '', 0)
+ok 67 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformEnd with data set "1 byte" ('Z', '', 1)
+ok 68 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformEnd with data set "2 bytes" ('Zm', 'f', 2)
+ok 69 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformEnd with data set "3 bytes" ('Zm9', 'fo', 3)
+ok 70 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformEnd with data set "4 bytes" ('Zm9v', 'foo', 4)
+ok 71 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformEnd with data set "5 bytes" ('Zm9vY', 'foo', 5)
+ok 72 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformEnd with data set "6 bytes" ('Zm9vYm', 'foob', 6)
+ok 73 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformEnd with data set "7 bytes" ('Zm9vYmF', 'fooba', 7)
+ok 74 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformEnd with data set "8 bytes" ('Zm9vYmFy', 'foobar', 8)
+ok 75 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformFailure
+ok 76 - Eloquent\Endec\Base64\Base64DecodeTransformTest::testInstance
+ok 77 - Eloquent\Endec\Base64\Base64EncodeNativeStreamFilterTest::testFilter
+ok 78 - Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransform with data set "Empty" ('', '', 0)
+ok 79 - Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransform with data set "1 byte" ('f', '', 0)
+ok 80 - Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransform with data set "2 bytes" ('fo', '', 0)
+ok 81 - Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransform with data set "3 bytes" ('foo', 'Zm9v', 3)
+ok 82 - Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransform with data set "4 bytes" ('foob', 'Zm9v', 3)
+ok 83 - Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransform with data set "5 bytes" ('fooba', 'Zm9v', 3)
+ok 84 - Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransform with data set "6 bytes" ('foobar', 'Zm9vYmFy', 6)
+ok 85 - Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransformEnd with data set "Empty" ('', '', 0)
+ok 86 - Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransformEnd with data set "1 byte" ('f', 'Zg==', 1)
+ok 87 - Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransformEnd with data set "2 bytes" ('fo', 'Zm8=', 2)
+ok 88 - Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransformEnd with data set "3 bytes" ('foo', 'Zm9v', 3)
+ok 89 - Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransformEnd with data set "4 bytes" ('foob', 'Zm9vYg==', 4)
+ok 90 - Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransformEnd with data set "5 bytes" ('fooba', 'Zm9vYmE=', 5)
+ok 91 - Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransformEnd with data set "6 bytes" ('foobar', 'Zm9vYmFy', 6)
+ok 92 - Eloquent\Endec\Base64\Base64EncodeTransformTest::testInstance
+ok 93 - Eloquent\Endec\Base64\Base64Test::testConstructor
+ok 94 - Eloquent\Endec\Base64\Base64Test::testConstructorDefaults
+ok 95 - Eloquent\Endec\Base64\Base64Test::testEncode with data set "Empty" ('', '')
+ok 96 - Eloquent\Endec\Base64\Base64Test::testEncode with data set "1 byte" ('f', 'Zg==')
+ok 97 - Eloquent\Endec\Base64\Base64Test::testEncode with data set "2 bytes" ('fo', 'Zm8=')
+ok 98 - Eloquent\Endec\Base64\Base64Test::testEncode with data set "3 bytes" ('foo', 'Zm9v')
+ok 99 - Eloquent\Endec\Base64\Base64Test::testEncode with data set "4 bytes" ('foob', 'Zm9vYg==')
+ok 100 - Eloquent\Endec\Base64\Base64Test::testEncode with data set "5 bytes" ('fooba', 'Zm9vYmE=')
+ok 101 - Eloquent\Endec\Base64\Base64Test::testEncode with data set "6 bytes" ('foobar', 'Zm9vYmFy')
+ok 102 - Eloquent\Endec\Base64\Base64Test::testDecode with data set "Empty" ('', '')
+ok 103 - Eloquent\Endec\Base64\Base64Test::testDecode with data set "1 byte" ('f', 'Zg==')
+ok 104 - Eloquent\Endec\Base64\Base64Test::testDecode with data set "2 bytes" ('fo', 'Zm8=')
+ok 105 - Eloquent\Endec\Base64\Base64Test::testDecode with data set "3 bytes" ('foo', 'Zm9v')
+ok 106 - Eloquent\Endec\Base64\Base64Test::testDecode with data set "4 bytes" ('foob', 'Zm9vYg==')
+ok 107 - Eloquent\Endec\Base64\Base64Test::testDecode with data set "5 bytes" ('fooba', 'Zm9vYmE=')
+ok 108 - Eloquent\Endec\Base64\Base64Test::testDecode with data set "6 bytes" ('foobar', 'Zm9vYmFy')
+ok 109 - Eloquent\Endec\Base64\Base64Test::testCreateEncodeStream
+ok 110 - Eloquent\Endec\Base64\Base64Test::testCreateDecodeStream
+ok 111 - Eloquent\Endec\Base64\Base64Test::testInstance
+ok 112 - Eloquent\Endec\EndecTest::testRegisterFilters
+ok 113 - Eloquent\Endec\Exception\InvalidEncodedDataExceptionTest::testException
+ok 114 - Eloquent\Endec\Hexadecimal\HexadecimalDecodeNativeStreamFilterTest::testFilter
+ok 115 - Eloquent\Endec\Hexadecimal\HexadecimalDecodeNativeStreamFilterTest::testFilterFailure
+ok 116 - Eloquent\Endec\Hexadecimal\HexadecimalDecodeTransformTest::testTransform with data set "Empty" ('', '', 0)
+ok 117 - Eloquent\Endec\Hexadecimal\HexadecimalDecodeTransformTest::testTransform with data set "1 bytes" ('6', '', 0)
+ok 118 - Eloquent\Endec\Hexadecimal\HexadecimalDecodeTransformTest::testTransform with data set "2 bytes" ('66', 'f', 2)
+ok 119 - Eloquent\Endec\Hexadecimal\HexadecimalDecodeTransformTest::testTransform with data set "3 bytes" ('666', 'f', 2)
+ok 120 - Eloquent\Endec\Hexadecimal\HexadecimalDecodeTransformTest::testTransform with data set "4 bytes" ('666f', 'fo', 4)
+ok 121 - Eloquent\Endec\Hexadecimal\HexadecimalDecodeTransformTest::testTransform with data set "5 bytes" ('666f6', 'fo', 4)
+ok 122 - Eloquent\Endec\Hexadecimal\HexadecimalDecodeTransformTest::testTransform with data set "6 bytes" ('666f6f', 'foo', 6)
+ok 123 - Eloquent\Endec\Hexadecimal\HexadecimalDecodeTransformTest::testTransformEnd with data set "Empty" ('', '', 0)
+ok 124 - Eloquent\Endec\Hexadecimal\HexadecimalDecodeTransformTest::testTransformEnd with data set "2 bytes" ('66', 'f', 2)
+ok 125 - Eloquent\Endec\Hexadecimal\HexadecimalDecodeTransformTest::testTransformEnd with data set "4 bytes" ('666f', 'fo', 4)
+ok 126 - Eloquent\Endec\Hexadecimal\HexadecimalDecodeTransformTest::testTransformEnd with data set "6 bytes" ('666f6f', 'foo', 6)
+ok 127 - Eloquent\Endec\Hexadecimal\HexadecimalDecodeTransformTest::testTransformFailure
+ok 128 - Eloquent\Endec\Hexadecimal\HexadecimalDecodeTransformTest::testInstance
+ok 129 - Eloquent\Endec\Hexadecimal\HexadecimalEncodeNativeStreamFilterTest::testFilter
+ok 130 - Eloquent\Endec\Hexadecimal\HexadecimalEncodeTransformTest::testTransform with data set "Empty" ('', '', 0)
+ok 131 - Eloquent\Endec\Hexadecimal\HexadecimalEncodeTransformTest::testTransform with data set "1 byte" ('f', '66', 1)
+ok 132 - Eloquent\Endec\Hexadecimal\HexadecimalEncodeTransformTest::testTransform with data set "2 bytes" ('fo', '666f', 2)
+ok 133 - Eloquent\Endec\Hexadecimal\HexadecimalEncodeTransformTest::testTransform with data set "3 bytes" ('foo', '666f6f', 3)
+ok 134 - Eloquent\Endec\Hexadecimal\HexadecimalEncodeTransformTest::testTransform with data set "4 bytes" ('foob', '666f6f62', 4)
+ok 135 - Eloquent\Endec\Hexadecimal\HexadecimalEncodeTransformTest::testTransform with data set "5 bytes" ('fooba', '666f6f6261', 5)
+ok 136 - Eloquent\Endec\Hexadecimal\HexadecimalEncodeTransformTest::testTransform with data set "6 bytes" ('foobar', '666f6f626172', 6)
+ok 137 - Eloquent\Endec\Hexadecimal\HexadecimalEncodeTransformTest::testTransformEnd with data set "Empty" ('', '', 0)
+ok 138 - Eloquent\Endec\Hexadecimal\HexadecimalEncodeTransformTest::testTransformEnd with data set "1 byte" ('f', '66', 1)
+ok 139 - Eloquent\Endec\Hexadecimal\HexadecimalEncodeTransformTest::testTransformEnd with data set "2 bytes" ('fo', '666f', 2)
+ok 140 - Eloquent\Endec\Hexadecimal\HexadecimalEncodeTransformTest::testTransformEnd with data set "3 bytes" ('foo', '666f6f', 3)
+ok 141 - Eloquent\Endec\Hexadecimal\HexadecimalEncodeTransformTest::testTransformEnd with data set "4 bytes" ('foob', '666f6f62', 4)
+ok 142 - Eloquent\Endec\Hexadecimal\HexadecimalEncodeTransformTest::testTransformEnd with data set "5 bytes" ('fooba', '666f6f6261', 5)
+ok 143 - Eloquent\Endec\Hexadecimal\HexadecimalEncodeTransformTest::testTransformEnd with data set "6 bytes" ('foobar', '666f6f626172', 6)
+ok 144 - Eloquent\Endec\Hexadecimal\HexadecimalEncodeTransformTest::testInstance
+ok 145 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testConstructor
+ok 146 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testConstructorDefaults
+ok 147 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testEncode with data set "Empty" ('', '')
+ok 148 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testEncode with data set "1 byte" ('f', '66')
+ok 149 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testEncode with data set "2 bytes" ('fo', '666f')
+ok 150 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testEncode with data set "3 bytes" ('foo', '666f6f')
+ok 151 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testEncode with data set "4 bytes" ('foob', '666f6f62')
+ok 152 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testEncode with data set "5 bytes" ('fooba', '666f6f6261')
+ok 153 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testEncode with data set "6 bytes" ('foobar', '666f6f626172')
+ok 154 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testDecode with data set "Empty" ('', '')
+ok 155 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testDecode with data set "1 byte" ('f', '66')
+ok 156 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testDecode with data set "2 bytes" ('fo', '666f')
+ok 157 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testDecode with data set "3 bytes" ('foo', '666f6f')
+ok 158 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testDecode with data set "4 bytes" ('foob', '666f6f62')
+ok 159 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testDecode with data set "5 bytes" ('fooba', '666f6f6261')
+ok 160 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testDecode with data set "6 bytes" ('foobar', '666f6f626172')
+ok 161 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testCreateEncodeStream
+ok 162 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testCreateDecodeStream
+ok 163 - Eloquent\Endec\Hexadecimal\HexadecimalTest::testInstance
+ok 164 - Eloquent\Endec\Transform\TransformStreamTest::testConstructor
+ok 165 - Eloquent\Endec\Transform\TransformStreamTest::testConstructorDefaults
+ok 166 - Eloquent\Endec\Transform\TransformStreamTest::testWriteEnd with data set "1 byte(s)" ('f')
+ok 167 - Eloquent\Endec\Transform\TransformStreamTest::testWriteEnd with data set "2 byte(s)" ('fo')
+ok 168 - Eloquent\Endec\Transform\TransformStreamTest::testWriteEnd with data set "3 byte(s)" ('foo')
+ok 169 - Eloquent\Endec\Transform\TransformStreamTest::testWriteEnd with data set "4 byte(s)" ('foob')
+ok 170 - Eloquent\Endec\Transform\TransformStreamTest::testWriteEnd with data set "5 byte(s)" ('fooba')
+ok 171 - Eloquent\Endec\Transform\TransformStreamTest::testEnd with data set "1 byte(s)" ('f')
+ok 172 - Eloquent\Endec\Transform\TransformStreamTest::testEnd with data set "2 byte(s)" ('fo')
+ok 173 - Eloquent\Endec\Transform\TransformStreamTest::testEnd with data set "3 byte(s)" ('foo')
+ok 174 - Eloquent\Endec\Transform\TransformStreamTest::testEnd with data set "4 byte(s)" ('foob')
+ok 175 - Eloquent\Endec\Transform\TransformStreamTest::testEnd with data set "5 byte(s)" ('fooba')
+ok 176 - Eloquent\Endec\Transform\TransformStreamTest::testEndEmptyString
+ok 177 - Eloquent\Endec\Transform\TransformStreamTest::testClose
+ok 178 - Eloquent\Endec\Transform\TransformStreamTest::testPauseResume
+ok 179 - Eloquent\Endec\Transform\TransformStreamTest::testPipe
+1..179
