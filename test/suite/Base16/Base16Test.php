@@ -46,15 +46,15 @@ class Base16Test extends PHPUnit_Framework_TestCase
 
     public function encodingData()
     {
-        //                     decoded   encoded
+        //                                           decoded   encoded
         return array(
-            'Empty'   => array('',       ''),
-            '1 byte'  => array('f',      '66'),
-            '2 bytes' => array('fo',     '666f'),
-            '3 bytes' => array('foo',    '666f6f'),
-            '4 bytes' => array('foob',   '666f6f62'),
-            '5 bytes' => array('fooba',  '666f6f6261'),
-            '6 bytes' => array('foobar', '666f6f626172'),
+            'RFC 4648 base16 test vector 1' => array('',       ''),
+            'RFC 4648 base16 test vector 2' => array('f',      '66'),
+            'RFC 4648 base16 test vector 3' => array('fo',     '666F'),
+            'RFC 4648 base16 test vector 4' => array('foo',    '666F6F'),
+            'RFC 4648 base16 test vector 5' => array('foob',   '666F6F62'),
+            'RFC 4648 base16 test vector 6' => array('fooba',  '666F6F6261'),
+            'RFC 4648 base16 test vector 7' => array('foobar', '666F6F626172'),
         );
     }
 

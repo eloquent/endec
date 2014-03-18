@@ -38,6 +38,6 @@ class Base16EncodeNativeStreamFilterTest extends PHPUnit_Framework_TestCase
         $actual = file_get_contents($path);
         unlink($path);
 
-        $this->assertSame('666f6f626172', $actual);
+        $this->assertSame('666F6F626172', $actual);
     }
 }

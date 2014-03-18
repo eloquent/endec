@@ -49,7 +49,7 @@ class Base16EncodeTransform implements DataTransformInterface
      */
     public function transform($data, $isEnd = false)
     {
-        return array(bin2hex($data), strlen($data));
+        return array(strtoupper(bin2hex($data)), strlen($data));
     }
 
     private static $instance;

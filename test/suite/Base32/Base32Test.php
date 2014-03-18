@@ -46,15 +46,15 @@ class Base32Test extends PHPUnit_Framework_TestCase
 
     public function encodingData()
     {
-        //                     decoded   encoded
+        //                                           decoded   encoded
         return array(
-            'Empty'   => array('',       ''),
-            '1 byte'  => array('f',      'MY======'),
-            '2 bytes' => array('fo',     'MZXQ===='),
-            '3 bytes' => array('foo',    'MZXW6==='),
-            '4 bytes' => array('foob',   'MZXW6YQ='),
-            '5 bytes' => array('fooba',  'MZXW6YTB'),
-            '6 bytes' => array('foobar', 'MZXW6YTBOI======'),
+            'RFC 4648 base32 test vector 1' => array('',       ''),
+            'RFC 4648 base32 test vector 2' => array('f',      'MY======'),
+            'RFC 4648 base32 test vector 3' => array('fo',     'MZXQ===='),
+            'RFC 4648 base32 test vector 4' => array('foo',    'MZXW6==='),
+            'RFC 4648 base32 test vector 5' => array('foob',   'MZXW6YQ='),
+            'RFC 4648 base32 test vector 6' => array('fooba',  'MZXW6YTB'),
+            'RFC 4648 base32 test vector 7' => array('foobar', 'MZXW6YTBOI======'),
         );
     }
 

@@ -33,11 +33,11 @@ class Base16EncodeTransformTest extends PHPUnit_Framework_TestCase
         return array(
             'Empty'   => array('',       '',             0),
             '1 byte'  => array('f',      '66',           1),
-            '2 bytes' => array('fo',     '666f',         2),
-            '3 bytes' => array('foo',    '666f6f',       3),
-            '4 bytes' => array('foob',   '666f6f62',     4),
-            '5 bytes' => array('fooba',  '666f6f6261',   5),
-            '6 bytes' => array('foobar', '666f6f626172', 6),
+            '2 bytes' => array('fo',     '666F',         2),
+            '3 bytes' => array('foo',    '666F6F',       3),
+            '4 bytes' => array('foob',   '666F6F62',     4),
+            '5 bytes' => array('fooba',  '666F6F6261',   5),
+            '6 bytes' => array('foobar', '666F6F626172', 6),
         );
     }
 
