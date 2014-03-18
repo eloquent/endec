@@ -1,17 +1,17 @@
 
 
 Code Coverage Report 
-  2014-03-18 05:43:43
+  2014-03-18 06:10:00
 
  Summary: 
-  Classes: 100.00% (21/21)
-  Methods: 100.00% (53/53)
-  Lines:   100.00% (254/254)
+  Classes: 100.00% (26/26)
+  Methods: 100.00% (61/61)
+  Lines:   100.00% (301/301)
 
 \Eloquent\Endec::AbstractCodec
   Methods: 100.00% ( 7/ 7)   Lines: 100.00% ( 11/ 11)
 \Eloquent\Endec::Endec
-  Methods: 100.00% ( 1/ 1)   Lines: 100.00% ( 20/ 20)
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% ( 26/ 26)
 \Eloquent\Endec\Base16::Base16
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  9/  9)
 \Eloquent\Endec\Base16::Base16DecodeNativeStreamFilter
@@ -42,6 +42,16 @@ Code Coverage Report
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
 \Eloquent\Endec\Base64::Base64EncodeTransform
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  8/  8)
+\Eloquent\Endec\Base64::Base64Url
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  9/  9)
+\Eloquent\Endec\Base64::Base64UrlDecodeNativeStreamFilter
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
+\Eloquent\Endec\Base64::Base64UrlDecodeTransform
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% ( 17/ 17)
+\Eloquent\Endec\Base64::Base64UrlEncodeNativeStreamFilter
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
+\Eloquent\Endec\Base64::Base64UrlEncodeTransform
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% ( 13/ 13)
 \Eloquent\Endec\Exception::InvalidEncodedDataException
   Methods: 100.00% ( 3/ 3)   Lines: 100.00% ( 11/ 11)
 \Eloquent\Endec\Transform::AbstractDataTransform
