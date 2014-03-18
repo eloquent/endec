@@ -12,13 +12,13 @@
 namespace Eloquent\Endec\Base32;
 
 use Eloquent\Endec\Exception\InvalidEncodedDataException;
-use Eloquent\Endec\Transform\AbstractDataTransform;
+use Eloquent\Endec\Transform\DataTransformInterface;
 use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
 
 /**
  * Decodes data using base32 encoding.
  */
-class Base32DecodeTransform extends AbstractDataTransform
+class Base32DecodeTransform implements DataTransformInterface
 {
     /**
      * Get the static instance of this transform.
@@ -50,55 +50,113 @@ class Base32DecodeTransform extends AbstractDataTransform
      */
     public function transform($data, $isEnd = false)
     {
-        $consumedBytes = $this->calculateConsumeBytes($data, $isEnd, 8);
-        if (!$consumedBytes) {
-            return array('', 0);
-        }
+        $paddedLength = strlen($data);
+        $data = rtrim($data, '=');
+        $length = strlen($data);
+        $consumedBytes = intval($length / 8) * 8;
+        $index = 0;
+        $output = '';
 
-        return array(
-            $this->decode(substr($data, 0, $consumedBytes)),
-            $consumedBytes
-        );
-    }
-
-    /**
-     * Decodes data using base32 encoding.
-     *
-     * @param string $data The data to decode.
-     *
-     * @return string                      The decoded data.
-     * @throws TransformExceptionInterface If the data cannot be decoded.
-     */
-    protected function decode($data)
-    {
-        $binaryData = '';
-        foreach (str_split(rtrim($data, '=')) as $byte) {
-            if (!array_key_exists($byte, self::$map)) {
-                throw new InvalidEncodedDataException('base32', $data);
-            }
-
-            $binaryData .= str_pad(
-                decbin(self::$map[$byte]),
-                5,
-                0,
-                STR_PAD_LEFT
+        while ($index < $consumedBytes) {
+            $output .= $this->map8(
+                self::$alphabet[$data[$index++]],
+                self::$alphabet[$data[$index++]],
+                self::$alphabet[$data[$index++]],
+                self::$alphabet[$data[$index++]],
+                self::$alphabet[$data[$index++]],
+                self::$alphabet[$data[$index++]],
+                self::$alphabet[$data[$index++]],
+                self::$alphabet[$data[$index++]]
             );
         }
 
-        while (0 !== strlen($binaryData) % 8) {
-            $binaryData = substr($binaryData, 0, strlen($binaryData) - 1);
+        if (
+            ($isEnd || $paddedLength > $length)
+            && $consumedBytes !== $length
+        ) {
+            $remaining = $length - $consumedBytes;
+            $consumedBytes = $length;
+
+            if (2 === $remaining) {
+                $output .= $this->map2(
+                    self::$alphabet[$data[$index++]],
+                    self::$alphabet[$data[$index]]
+                );
+            } elseif (4 === $remaining) {
+                $output .= $this->map4(
+                    self::$alphabet[$data[$index++]],
+                    self::$alphabet[$data[$index++]],
+                    self::$alphabet[$data[$index++]],
+                    self::$alphabet[$data[$index]]
+                );
+            } elseif (5 === $remaining) {
+                $output .= $this->map5(
+                    self::$alphabet[$data[$index++]],
+                    self::$alphabet[$data[$index++]],
+                    self::$alphabet[$data[$index++]],
+                    self::$alphabet[$data[$index++]],
+                    self::$alphabet[$data[$index]]
+                );
+            } elseif (7 === $remaining) {
+                $output .= $this->map7(
+                    self::$alphabet[$data[$index++]],
+                    self::$alphabet[$data[$index++]],
+                    self::$alphabet[$data[$index++]],
+                    self::$alphabet[$data[$index++]],
+                    self::$alphabet[$data[$index++]],
+                    self::$alphabet[$data[$index++]],
+                    self::$alphabet[$data[$index]]
+                );
+            } else {
+                throw new InvalidEncodedDataException('base32', $data);
+            }
         }
 
-        $rawData = '';
-        foreach (str_split($binaryData, 8) as $chunk) {
-            $rawData .= chr(bindec(str_pad($chunk, 8, 0, STR_PAD_RIGHT)));
-        }
+        return array($output, $consumedBytes + $paddedLength - $length);
+    }
 
-        return $rawData;
+    protected function map2($a, $b)
+    {
+        return chr( $a << 3 | $b >> 2           )
+             ;
+    }
+
+    protected function map4($a, $b, $c, $d)
+    {
+        return chr( $a << 3 | $b >> 2           )
+             . chr( $b << 6 | $c << 1 | $d >> 4 )
+             ;
+    }
+
+    protected function map5($a, $b, $c, $d, $e)
+    {
+        return chr( $a << 3 | $b >> 2           )
+             . chr( $b << 6 | $c << 1 | $d >> 4 )
+             . chr( $d << 4 | $e >> 1           )
+             ;
+    }
+
+    protected function map7($a, $b, $c, $d, $e, $f, $g)
+    {
+        return chr( $a << 3 | $b >> 2           )
+             . chr( $b << 6 | $c << 1 | $d >> 4 )
+             . chr( $d << 4 | $e >> 1           )
+             . chr( $e << 7 | $f << 2 | $g >> 3 )
+             ;
+    }
+
+    protected function map8($a, $b, $c, $d, $e, $f, $g, $h)
+    {
+        return chr( $a << 3 | $b >> 2           )
+             . chr( $b << 6 | $c << 1 | $d >> 4 )
+             . chr( $d << 4 | $e >> 1           )
+             . chr( $e << 7 | $f << 2 | $g >> 3 )
+             . chr( $g << 5 | $h )
+             ;
     }
 
     private static $instance;
-    private static $map = array(
+    private static $alphabet = array(
         'A' => 0,
         'B' => 1,
         'C' => 2,
@@ -125,11 +183,11 @@ class Base32DecodeTransform extends AbstractDataTransform
         'X' => 23,
         'Y' => 24,
         'Z' => 25,
-        2 => 26,
-        3 => 27,
-        4 => 28,
-        5 => 29,
-        6 => 30,
-        7 => 31,
+        '2' => 26,
+        '3' => 27,
+        '4' => 28,
+        '5' => 29,
+        '6' => 30,
+        '7' => 31,
     );
 }
