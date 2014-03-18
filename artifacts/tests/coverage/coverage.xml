@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1395062359">
-  <project timestamp="1395062359">
+<coverage generated="1395101161">
+  <project timestamp="1395101161">
     <package name="Eloquent\Endec">
       <file name="/home/travis/build/ezzatron/endec/src/AbstractCodec.php">
         <class name="AbstractCodec" namespace="Eloquent\Endec">
@@ -249,7 +249,7 @@
         <line num="27" type="stmt" count="6"/>
         <line num="28" type="stmt" count="6"/>
         <line num="30" type="stmt" count="6"/>
-        <line num="43" type="method" name="filter" crap="8" count="6"/>
+        <line num="43" type="method" name="filter" crap="9" count="6"/>
         <line num="45" type="stmt" count="6"/>
         <line num="46" type="stmt" count="6"/>
         <line num="47" type="stmt" count="6"/>
