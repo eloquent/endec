@@ -70,10 +70,7 @@ class Base32DecodeTransform implements DataTransformInterface
             );
         }
 
-        if (
-            ($isEnd || $paddedLength > $length)
-            && $consumedBytes !== $length
-        ) {
+        if (($isEnd || $paddedLength > $length) && $consumedBytes !== $length) {
             $remaining = $length - $consumedBytes;
             $consumedBytes = $length;
 
@@ -115,44 +112,39 @@ class Base32DecodeTransform implements DataTransformInterface
         return array($output, $consumedBytes + $paddedLength - $length);
     }
 
-    protected function map2($a, $b)
+    private function map2($a, $b)
     {
-        return chr( $a << 3 | $b >> 2           )
-             ;
+        return chr($a << 3 | $b >> 2);
     }
 
-    protected function map4($a, $b, $c, $d)
+    private function map4($a, $b, $c, $d)
     {
-        return chr( $a << 3 | $b >> 2           )
-             . chr( $b << 6 | $c << 1 | $d >> 4 )
-             ;
+        return chr($a << 3 | $b >> 2) .
+               chr($b << 6 | $c << 1 | $d >> 4);
     }
 
-    protected function map5($a, $b, $c, $d, $e)
+    private function map5($a, $b, $c, $d, $e)
     {
-        return chr( $a << 3 | $b >> 2           )
-             . chr( $b << 6 | $c << 1 | $d >> 4 )
-             . chr( $d << 4 | $e >> 1           )
-             ;
+        return chr($a << 3 | $b >> 2) .
+               chr($b << 6 | $c << 1 | $d >> 4) .
+               chr($d << 4 | $e >> 1);
     }
 
-    protected function map7($a, $b, $c, $d, $e, $f, $g)
+    private function map7($a, $b, $c, $d, $e, $f, $g)
     {
-        return chr( $a << 3 | $b >> 2           )
-             . chr( $b << 6 | $c << 1 | $d >> 4 )
-             . chr( $d << 4 | $e >> 1           )
-             . chr( $e << 7 | $f << 2 | $g >> 3 )
-             ;
+        return chr($a << 3 | $b >> 2) .
+               chr($b << 6 | $c << 1 | $d >> 4) .
+               chr($d << 4 | $e >> 1) .
+               chr($e << 7 | $f << 2 | $g >> 3);
     }
 
-    protected function map8($a, $b, $c, $d, $e, $f, $g, $h)
+    private function map8($a, $b, $c, $d, $e, $f, $g, $h)
     {
-        return chr( $a << 3 | $b >> 2           )
-             . chr( $b << 6 | $c << 1 | $d >> 4 )
-             . chr( $d << 4 | $e >> 1           )
-             . chr( $e << 7 | $f << 2 | $g >> 3 )
-             . chr( $g << 5 | $h )
-             ;
+        return chr($a << 3 | $b >> 2) .
+               chr($b << 6 | $c << 1 | $d >> 4) .
+               chr($d << 4 | $e >> 1) .
+               chr($e << 7 | $f << 2 | $g >> 3) .
+               chr($g << 5 | $h);
     }
 
     private static $instance;

@@ -96,59 +96,54 @@ class Base32EncodeTransform implements DataTransformInterface
         return array($output, $consumedBytes);
     }
 
-    protected function map1($a)
+    private function map1($a)
     {
-        return self::$alphabet[ ($a >> 3)                  ]
-             . self::$alphabet[ ($a & 0x07) << 2           ]
-             . '======'
-             ;
+        return self::$alphabet[($a >> 3)] .
+               self::$alphabet[($a & 0x07) << 2] .
+               '======';
     }
 
-    protected function map2($a, $b)
+    private function map2($a, $b)
     {
-        return self::$alphabet[ ($a >> 3)                  ]
-             . self::$alphabet[ ($a & 0x07) << 2 | $b >> 6 ]
-             . self::$alphabet[ ($b & 0x3e) >> 1           ]
-             . self::$alphabet[ ($b & 0x01) << 4           ]
-             . '===='
-             ;
+        return self::$alphabet[($a >> 3)] .
+               self::$alphabet[($a & 0x07) << 2 | $b >> 6] .
+               self::$alphabet[($b & 0x3e) >> 1] .
+               self::$alphabet[($b & 0x01) << 4] .
+               '====';
     }
 
-    protected function map3($a, $b, $c)
+    private function map3($a, $b, $c)
     {
-        return self::$alphabet[ ($a >> 3)                  ]
-             . self::$alphabet[ ($a & 0x07) << 2 | $b >> 6 ]
-             . self::$alphabet[ ($b & 0x3e) >> 1           ]
-             . self::$alphabet[ ($b & 0x01) << 4 | $c >> 4 ]
-             . self::$alphabet[ ($c & 0x0f) << 1           ]
-             . '==='
-             ;
+        return self::$alphabet[($a >> 3)] .
+               self::$alphabet[($a & 0x07) << 2 | $b >> 6] .
+               self::$alphabet[($b & 0x3e) >> 1] .
+               self::$alphabet[($b & 0x01) << 4 | $c >> 4] .
+               self::$alphabet[($c & 0x0f) << 1] .
+               '===';
     }
 
-    protected function map4($a, $b, $c, $d)
+    private function map4($a, $b, $c, $d)
     {
-        return self::$alphabet[ ($a >> 3)                  ]
-             . self::$alphabet[ ($a & 0x07) << 2 | $b >> 6 ]
-             . self::$alphabet[ ($b & 0x3e) >> 1           ]
-             . self::$alphabet[ ($b & 0x01) << 4 | $c >> 4 ]
-             . self::$alphabet[ ($c & 0x0f) << 1 | $d >> 7 ]
-             . self::$alphabet[ ($d & 0x7c) >> 2           ]
-             . self::$alphabet[ ($d & 0x03) << 3           ]
-             . '='
-             ;
+        return self::$alphabet[($a >> 3)] .
+               self::$alphabet[($a & 0x07) << 2 | $b >> 6] .
+               self::$alphabet[($b & 0x3e) >> 1] .
+               self::$alphabet[($b & 0x01) << 4 | $c >> 4] .
+               self::$alphabet[($c & 0x0f) << 1 | $d >> 7] .
+               self::$alphabet[($d & 0x7c) >> 2] .
+               self::$alphabet[($d & 0x03) << 3] .
+               '=';
     }
 
-    protected function map5($a, $b, $c, $d, $e)
+    private function map5($a, $b, $c, $d, $e)
     {
-        return self::$alphabet[ ($a >> 3)                  ]
-             . self::$alphabet[ ($a & 0x07) << 2 | $b >> 6 ]
-             . self::$alphabet[ ($b & 0x3e) >> 1           ]
-             . self::$alphabet[ ($b & 0x01) << 4 | $c >> 4 ]
-             . self::$alphabet[ ($c & 0x0f) << 1 | $d >> 7 ]
-             . self::$alphabet[ ($d & 0x7c) >> 2           ]
-             . self::$alphabet[ ($d & 0x03) << 3 | $e >> 5 ]
-             . self::$alphabet[ ($e & 0x1f)                ]
-             ;
+        return self::$alphabet[($a >> 3)] .
+               self::$alphabet[($a & 0x07) << 2 | $b >> 6] .
+               self::$alphabet[($b & 0x3e) >> 1] .
+               self::$alphabet[($b & 0x01) << 4 | $c >> 4] .
+               self::$alphabet[($c & 0x0f) << 1 | $d >> 7] .
+               self::$alphabet[($d & 0x7c) >> 2] .
+               self::$alphabet[($d & 0x03) << 3 | $e >> 5] .
+               self::$alphabet[($e & 0x1f)];
     }
 
     private static $instance;
