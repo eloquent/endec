@@ -1,371 +1,470 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="" tests="268" assertions="334" failures="0" errors="0" time="1.794790">
-    <testsuite name="Eloquent\Endec\Base16\Base16DecodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16DecodeNativeStreamFilterTest.php" namespace="Eloquent\Endec\Base16" fullPackage="Eloquent.Endec.Base16" tests="2" assertions="2" failures="0" errors="0" time="0.220311">
-      <testcase name="testFilter" class="Eloquent\Endec\Base16\Base16DecodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16DecodeNativeStreamFilterTest.php" line="30" assertions="1" time="0.213755"/>
-      <testcase name="testFilterFailure" class="Eloquent\Endec\Base16\Base16DecodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16DecodeNativeStreamFilterTest.php" line="44" assertions="1" time="0.006556"/>
+  <testsuite name="" tests="349" assertions="420" failures="0" errors="0" time="2.444238">
+    <testsuite name="Eloquent\Endec\Base16\Base16DecodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16DecodeNativeStreamFilterTest.php" namespace="Eloquent\Endec\Base16" fullPackage="Eloquent.Endec.Base16" tests="2" assertions="2" failures="0" errors="0" time="0.239049">
+      <testcase name="testFilter" class="Eloquent\Endec\Base16\Base16DecodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16DecodeNativeStreamFilterTest.php" line="30" assertions="1" time="0.232536"/>
+      <testcase name="testFilterFailure" class="Eloquent\Endec\Base16\Base16DecodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16DecodeNativeStreamFilterTest.php" line="44" assertions="1" time="0.006513"/>
     </testsuite>
-    <testsuite name="Eloquent\Endec\Base16\Base16DecodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16DecodeTransformTest.php" namespace="Eloquent\Endec\Base16" fullPackage="Eloquent.Endec.Base16" tests="13" assertions="14" failures="0" errors="0" time="0.091598">
-      <testsuite name="Eloquent\Endec\Base16\Base16DecodeTransformTest::testTransform" tests="7" assertions="7" failures="0" errors="0" time="0.026556">
-        <testcase name="testTransform with data set &quot;Empty&quot;" assertions="1" time="0.003855"/>
-        <testcase name="testTransform with data set &quot;1 bytes&quot;" assertions="1" time="0.003799"/>
-        <testcase name="testTransform with data set &quot;2 bytes&quot;" assertions="1" time="0.003774"/>
-        <testcase name="testTransform with data set &quot;3 bytes&quot;" assertions="1" time="0.003769"/>
-        <testcase name="testTransform with data set &quot;4 bytes&quot;" assertions="1" time="0.003764"/>
-        <testcase name="testTransform with data set &quot;5 bytes&quot;" assertions="1" time="0.003810"/>
-        <testcase name="testTransform with data set &quot;6 bytes&quot;" assertions="1" time="0.003785"/>
+    <testsuite name="Eloquent\Endec\Base16\Base16DecodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16DecodeTransformTest.php" namespace="Eloquent\Endec\Base16" fullPackage="Eloquent.Endec.Base16" tests="14" assertions="15" failures="0" errors="0" time="0.065867">
+      <testsuite name="Eloquent\Endec\Base16\Base16DecodeTransformTest::testTransform" tests="7" assertions="7" failures="0" errors="0" time="0.027820">
+        <testcase name="testTransform with data set &quot;Empty&quot;" assertions="1" time="0.004190"/>
+        <testcase name="testTransform with data set &quot;1 bytes&quot;" assertions="1" time="0.003826"/>
+        <testcase name="testTransform with data set &quot;2 bytes&quot;" assertions="1" time="0.004037"/>
+        <testcase name="testTransform with data set &quot;3 bytes&quot;" assertions="1" time="0.004073"/>
+        <testcase name="testTransform with data set &quot;4 bytes&quot;" assertions="1" time="0.004010"/>
+        <testcase name="testTransform with data set &quot;5 bytes&quot;" assertions="1" time="0.003776"/>
+        <testcase name="testTransform with data set &quot;6 bytes&quot;" assertions="1" time="0.003908"/>
       </testsuite>
-      <testsuite name="Eloquent\Endec\Base16\Base16DecodeTransformTest::testTransformEnd" tests="4" assertions="4" failures="0" errors="0" time="0.016642">
-        <testcase name="testTransformEnd with data set &quot;Empty&quot;" assertions="1" time="0.003814"/>
-        <testcase name="testTransformEnd with data set &quot;2 bytes&quot;" assertions="1" time="0.005075"/>
-        <testcase name="testTransformEnd with data set &quot;4 bytes&quot;" assertions="1" time="0.003933"/>
-        <testcase name="testTransformEnd with data set &quot;6 bytes&quot;" assertions="1" time="0.003820"/>
+      <testsuite name="Eloquent\Endec\Base16\Base16DecodeTransformTest::testTransformEnd" tests="4" assertions="4" failures="0" errors="0" time="0.016136">
+        <testcase name="testTransformEnd with data set &quot;Empty&quot;" assertions="1" time="0.003909"/>
+        <testcase name="testTransformEnd with data set &quot;2 bytes&quot;" assertions="1" time="0.004296"/>
+        <testcase name="testTransformEnd with data set &quot;4 bytes&quot;" assertions="1" time="0.003827"/>
+        <testcase name="testTransformEnd with data set &quot;6 bytes&quot;" assertions="1" time="0.004104"/>
       </testsuite>
-      <testcase name="testTransformFailure" class="Eloquent\Endec\Base16\Base16DecodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16DecodeTransformTest.php" line="71" assertions="1" time="0.027463"/>
-      <testcase name="testInstance" class="Eloquent\Endec\Base16\Base16DecodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16DecodeTransformTest.php" line="77" assertions="2" time="0.020936"/>
+      <testcase name="testTransformFailureLength" class="Eloquent\Endec\Base16\Base16DecodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16DecodeTransformTest.php" line="71" assertions="1" time="0.006066"/>
+      <testcase name="testTransformFailureAlphabet" class="Eloquent\Endec\Base16\Base16DecodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16DecodeTransformTest.php" line="77" assertions="1" time="0.004595"/>
+      <testcase name="testInstance" class="Eloquent\Endec\Base16\Base16DecodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16DecodeTransformTest.php" line="83" assertions="2" time="0.011250"/>
     </testsuite>
-    <testsuite name="Eloquent\Endec\Base16\Base16EncodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16EncodeNativeStreamFilterTest.php" namespace="Eloquent\Endec\Base16" fullPackage="Eloquent.Endec.Base16" tests="1" assertions="1" failures="0" errors="0" time="0.006613">
-      <testcase name="testFilter" class="Eloquent\Endec\Base16\Base16EncodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16EncodeNativeStreamFilterTest.php" line="30" assertions="1" time="0.006613"/>
+    <testsuite name="Eloquent\Endec\Base16\Base16EncodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16EncodeNativeStreamFilterTest.php" namespace="Eloquent\Endec\Base16" fullPackage="Eloquent.Endec.Base16" tests="1" assertions="1" failures="0" errors="0" time="0.006265">
+      <testcase name="testFilter" class="Eloquent\Endec\Base16\Base16EncodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16EncodeNativeStreamFilterTest.php" line="30" assertions="1" time="0.006265"/>
     </testsuite>
-    <testsuite name="Eloquent\Endec\Base16\Base16EncodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16EncodeTransformTest.php" namespace="Eloquent\Endec\Base16" fullPackage="Eloquent.Endec.Base16" tests="15" assertions="16" failures="0" errors="0" time="0.058382">
-      <testsuite name="Eloquent\Endec\Base16\Base16EncodeTransformTest::testTransform" tests="7" assertions="7" failures="0" errors="0" time="0.026932">
-        <testcase name="testTransform with data set &quot;Empty&quot;" assertions="1" time="0.003906"/>
-        <testcase name="testTransform with data set &quot;1 byte&quot;" assertions="1" time="0.003817"/>
-        <testcase name="testTransform with data set &quot;2 bytes&quot;" assertions="1" time="0.003830"/>
-        <testcase name="testTransform with data set &quot;3 bytes&quot;" assertions="1" time="0.003850"/>
-        <testcase name="testTransform with data set &quot;4 bytes&quot;" assertions="1" time="0.003872"/>
-        <testcase name="testTransform with data set &quot;5 bytes&quot;" assertions="1" time="0.003832"/>
-        <testcase name="testTransform with data set &quot;6 bytes&quot;" assertions="1" time="0.003825"/>
+    <testsuite name="Eloquent\Endec\Base16\Base16EncodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16EncodeTransformTest.php" namespace="Eloquent\Endec\Base16" fullPackage="Eloquent.Endec.Base16" tests="15" assertions="16" failures="0" errors="0" time="0.060501">
+      <testsuite name="Eloquent\Endec\Base16\Base16EncodeTransformTest::testTransform" tests="7" assertions="7" failures="0" errors="0" time="0.027429">
+        <testcase name="testTransform with data set &quot;Empty&quot;" assertions="1" time="0.004095"/>
+        <testcase name="testTransform with data set &quot;1 byte&quot;" assertions="1" time="0.004018"/>
+        <testcase name="testTransform with data set &quot;2 bytes&quot;" assertions="1" time="0.003857"/>
+        <testcase name="testTransform with data set &quot;3 bytes&quot;" assertions="1" time="0.003775"/>
+        <testcase name="testTransform with data set &quot;4 bytes&quot;" assertions="1" time="0.003765"/>
+        <testcase name="testTransform with data set &quot;5 bytes&quot;" assertions="1" time="0.004058"/>
+        <testcase name="testTransform with data set &quot;6 bytes&quot;" assertions="1" time="0.003861"/>
       </testsuite>
-      <testsuite name="Eloquent\Endec\Base16\Base16EncodeTransformTest::testTransformEnd" tests="7" assertions="7" failures="0" errors="0" time="0.026865">
-        <testcase name="testTransformEnd with data set &quot;Empty&quot;" assertions="1" time="0.003832"/>
-        <testcase name="testTransformEnd with data set &quot;1 byte&quot;" assertions="1" time="0.003851"/>
-        <testcase name="testTransformEnd with data set &quot;2 bytes&quot;" assertions="1" time="0.003817"/>
-        <testcase name="testTransformEnd with data set &quot;3 bytes&quot;" assertions="1" time="0.003838"/>
-        <testcase name="testTransformEnd with data set &quot;4 bytes&quot;" assertions="1" time="0.003820"/>
-        <testcase name="testTransformEnd with data set &quot;5 bytes&quot;" assertions="1" time="0.003838"/>
-        <testcase name="testTransformEnd with data set &quot;6 bytes&quot;" assertions="1" time="0.003869"/>
+      <testsuite name="Eloquent\Endec\Base16\Base16EncodeTransformTest::testTransformEnd" tests="7" assertions="7" failures="0" errors="0" time="0.028068">
+        <testcase name="testTransformEnd with data set &quot;Empty&quot;" assertions="1" time="0.004136"/>
+        <testcase name="testTransformEnd with data set &quot;1 byte&quot;" assertions="1" time="0.004105"/>
+        <testcase name="testTransformEnd with data set &quot;2 bytes&quot;" assertions="1" time="0.003746"/>
+        <testcase name="testTransformEnd with data set &quot;3 bytes&quot;" assertions="1" time="0.004110"/>
+        <testcase name="testTransformEnd with data set &quot;4 bytes&quot;" assertions="1" time="0.003960"/>
+        <testcase name="testTransformEnd with data set &quot;5 bytes&quot;" assertions="1" time="0.004057"/>
+        <testcase name="testTransformEnd with data set &quot;6 bytes&quot;" assertions="1" time="0.003954"/>
       </testsuite>
-      <testcase name="testInstance" class="Eloquent\Endec\Base16\Base16EncodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16EncodeTransformTest.php" line="60" assertions="2" time="0.004585"/>
+      <testcase name="testInstance" class="Eloquent\Endec\Base16\Base16EncodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16EncodeTransformTest.php" line="60" assertions="2" time="0.005004"/>
     </testsuite>
-    <testsuite name="Eloquent\Endec\Base16\Base16Test" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16Test.php" namespace="Eloquent\Endec\Base16" fullPackage="Eloquent.Endec.Base16" tests="21" assertions="24" failures="0" errors="0" time="0.215646">
-      <testcase name="testConstructor" class="Eloquent\Endec\Base16\Base16Test" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16Test.php" line="33" assertions="2" time="0.006697"/>
-      <testcase name="testConstructorDefaults" class="Eloquent\Endec\Base16\Base16Test" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16Test.php" line="39" assertions="2" time="0.112005"/>
-      <testsuite name="Eloquent\Endec\Base16\Base16Test::testEncode" tests="7" assertions="7" failures="0" errors="0" time="0.030242">
-        <testcase name="testEncode with data set &quot;RFC 4648 base16 test vector 1&quot;" assertions="1" time="0.004951"/>
-        <testcase name="testEncode with data set &quot;RFC 4648 base16 test vector 2&quot;" assertions="1" time="0.004116"/>
-        <testcase name="testEncode with data set &quot;RFC 4648 base16 test vector 3&quot;" assertions="1" time="0.004177"/>
-        <testcase name="testEncode with data set &quot;RFC 4648 base16 test vector 4&quot;" assertions="1" time="0.004233"/>
-        <testcase name="testEncode with data set &quot;RFC 4648 base16 test vector 5&quot;" assertions="1" time="0.004071"/>
-        <testcase name="testEncode with data set &quot;RFC 4648 base16 test vector 6&quot;" assertions="1" time="0.004476"/>
-        <testcase name="testEncode with data set &quot;RFC 4648 base16 test vector 7&quot;" assertions="1" time="0.004218"/>
+    <testsuite name="Eloquent\Endec\Base16\Base16Test" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16Test.php" namespace="Eloquent\Endec\Base16" fullPackage="Eloquent.Endec.Base16" tests="21" assertions="24" failures="0" errors="0" time="0.129858">
+      <testcase name="testConstructor" class="Eloquent\Endec\Base16\Base16Test" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16Test.php" line="33" assertions="2" time="0.007088"/>
+      <testcase name="testConstructorDefaults" class="Eloquent\Endec\Base16\Base16Test" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16Test.php" line="39" assertions="2" time="0.022929"/>
+      <testsuite name="Eloquent\Endec\Base16\Base16Test::testEncode" tests="7" assertions="7" failures="0" errors="0" time="0.029352">
+        <testcase name="testEncode with data set &quot;RFC 4648 base16 test vector 1&quot;" assertions="1" time="0.004335"/>
+        <testcase name="testEncode with data set &quot;RFC 4648 base16 test vector 2&quot;" assertions="1" time="0.004292"/>
+        <testcase name="testEncode with data set &quot;RFC 4648 base16 test vector 3&quot;" assertions="1" time="0.004016"/>
+        <testcase name="testEncode with data set &quot;RFC 4648 base16 test vector 4&quot;" assertions="1" time="0.004303"/>
+        <testcase name="testEncode with data set &quot;RFC 4648 base16 test vector 5&quot;" assertions="1" time="0.004165"/>
+        <testcase name="testEncode with data set &quot;RFC 4648 base16 test vector 6&quot;" assertions="1" time="0.004086"/>
+        <testcase name="testEncode with data set &quot;RFC 4648 base16 test vector 7&quot;" assertions="1" time="0.004155"/>
       </testsuite>
-      <testcase name="testEncodeFullAlphabet" class="Eloquent\Endec\Base16\Base16Test" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16Test.php" line="69" assertions="1" time="0.004033"/>
-      <testsuite name="Eloquent\Endec\Base16\Base16Test::testDecode" tests="7" assertions="7" failures="0" errors="0" time="0.028579">
-        <testcase name="testDecode with data set &quot;RFC 4648 base16 test vector 1&quot;" assertions="1" time="0.004066"/>
-        <testcase name="testDecode with data set &quot;RFC 4648 base16 test vector 2&quot;" assertions="1" time="0.004090"/>
-        <testcase name="testDecode with data set &quot;RFC 4648 base16 test vector 3&quot;" assertions="1" time="0.004092"/>
-        <testcase name="testDecode with data set &quot;RFC 4648 base16 test vector 4&quot;" assertions="1" time="0.004079"/>
-        <testcase name="testDecode with data set &quot;RFC 4648 base16 test vector 5&quot;" assertions="1" time="0.004079"/>
-        <testcase name="testDecode with data set &quot;RFC 4648 base16 test vector 6&quot;" assertions="1" time="0.004081"/>
-        <testcase name="testDecode with data set &quot;RFC 4648 base16 test vector 7&quot;" assertions="1" time="0.004092"/>
+      <testcase name="testEncodeFullAlphabet" class="Eloquent\Endec\Base16\Base16Test" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16Test.php" line="69" assertions="1" time="0.003966"/>
+      <testsuite name="Eloquent\Endec\Base16\Base16Test::testDecode" tests="7" assertions="7" failures="0" errors="0" time="0.029641">
+        <testcase name="testDecode with data set &quot;RFC 4648 base16 test vector 1&quot;" assertions="1" time="0.004221"/>
+        <testcase name="testDecode with data set &quot;RFC 4648 base16 test vector 2&quot;" assertions="1" time="0.004197"/>
+        <testcase name="testDecode with data set &quot;RFC 4648 base16 test vector 3&quot;" assertions="1" time="0.004267"/>
+        <testcase name="testDecode with data set &quot;RFC 4648 base16 test vector 4&quot;" assertions="1" time="0.004289"/>
+        <testcase name="testDecode with data set &quot;RFC 4648 base16 test vector 5&quot;" assertions="1" time="0.004441"/>
+        <testcase name="testDecode with data set &quot;RFC 4648 base16 test vector 6&quot;" assertions="1" time="0.004041"/>
+        <testcase name="testDecode with data set &quot;RFC 4648 base16 test vector 7&quot;" assertions="1" time="0.004185"/>
       </testsuite>
-      <testcase name="testDecodeFullAlphabet" class="Eloquent\Endec\Base16\Base16Test" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16Test.php" line="82" assertions="1" time="0.004090"/>
-      <testcase name="testCreateEncodeStream" class="Eloquent\Endec\Base16\Base16Test" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16Test.php" line="87" assertions="1" time="0.014536"/>
-      <testcase name="testCreateDecodeStream" class="Eloquent\Endec\Base16\Base16Test" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16Test.php" line="92" assertions="1" time="0.010494"/>
-      <testcase name="testInstance" class="Eloquent\Endec\Base16\Base16Test" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16Test.php" line="97" assertions="2" time="0.004970"/>
+      <testcase name="testDecodeFullAlphabet" class="Eloquent\Endec\Base16\Base16Test" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16Test.php" line="82" assertions="1" time="0.004251"/>
+      <testcase name="testCreateEncodeStream" class="Eloquent\Endec\Base16\Base16Test" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16Test.php" line="87" assertions="1" time="0.016440"/>
+      <testcase name="testCreateDecodeStream" class="Eloquent\Endec\Base16\Base16Test" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16Test.php" line="92" assertions="1" time="0.011147"/>
+      <testcase name="testInstance" class="Eloquent\Endec\Base16\Base16Test" file="/home/travis/build/ezzatron/endec/test/suite/Base16/Base16Test.php" line="97" assertions="2" time="0.005044"/>
     </testsuite>
-    <testsuite name="Eloquent\Endec\Base32\Base32DecodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32DecodeNativeStreamFilterTest.php" namespace="Eloquent\Endec\Base32" fullPackage="Eloquent.Endec.Base32" tests="2" assertions="2" failures="0" errors="0" time="0.012559">
-      <testcase name="testFilter" class="Eloquent\Endec\Base32\Base32DecodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32DecodeNativeStreamFilterTest.php" line="30" assertions="1" time="0.007228"/>
-      <testcase name="testFilterFailure" class="Eloquent\Endec\Base32\Base32DecodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32DecodeNativeStreamFilterTest.php" line="44" assertions="1" time="0.005331"/>
+    <testsuite name="Eloquent\Endec\Base32\Base32DecodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32DecodeNativeStreamFilterTest.php" namespace="Eloquent\Endec\Base32" fullPackage="Eloquent.Endec.Base32" tests="2" assertions="2" failures="0" errors="0" time="0.013724">
+      <testcase name="testFilter" class="Eloquent\Endec\Base32\Base32DecodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32DecodeNativeStreamFilterTest.php" line="30" assertions="1" time="0.008414"/>
+      <testcase name="testFilterFailure" class="Eloquent\Endec\Base32\Base32DecodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32DecodeNativeStreamFilterTest.php" line="44" assertions="1" time="0.005310"/>
     </testsuite>
-    <testsuite name="Eloquent\Endec\Base32\Base32DecodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32DecodeTransformTest.php" namespace="Eloquent\Endec\Base32" fullPackage="Eloquent.Endec.Base32" tests="33" assertions="34" failures="0" errors="0" time="0.134430">
-      <testsuite name="Eloquent\Endec\Base32\Base32DecodeTransformTest::testTransform" tests="18" assertions="18" failures="0" errors="0" time="0.072322">
-        <testcase name="testTransform with data set &quot;Empty&quot;" assertions="1" time="0.003998"/>
-        <testcase name="testTransform with data set &quot;1 byte&quot;" assertions="1" time="0.003973"/>
-        <testcase name="testTransform with data set &quot;2 bytes&quot;" assertions="1" time="0.004154"/>
-        <testcase name="testTransform with data set &quot;3 bytes&quot;" assertions="1" time="0.003950"/>
-        <testcase name="testTransform with data set &quot;4 bytes&quot;" assertions="1" time="0.003962"/>
-        <testcase name="testTransform with data set &quot;5 bytes&quot;" assertions="1" time="0.003936"/>
-        <testcase name="testTransform with data set &quot;6 bytes&quot;" assertions="1" time="0.003953"/>
-        <testcase name="testTransform with data set &quot;7 bytes&quot;" assertions="1" time="0.003963"/>
-        <testcase name="testTransform with data set &quot;8 bytes&quot;" assertions="1" time="0.004025"/>
-        <testcase name="testTransform with data set &quot;9 bytes&quot;" assertions="1" time="0.004029"/>
-        <testcase name="testTransform with data set &quot;10 bytes&quot;" assertions="1" time="0.004026"/>
-        <testcase name="testTransform with data set &quot;11 bytes&quot;" assertions="1" time="0.004042"/>
-        <testcase name="testTransform with data set &quot;12 bytes&quot;" assertions="1" time="0.004041"/>
-        <testcase name="testTransform with data set &quot;13 bytes&quot;" assertions="1" time="0.004027"/>
-        <testcase name="testTransform with data set &quot;14 bytes&quot;" assertions="1" time="0.004045"/>
-        <testcase name="testTransform with data set &quot;15 bytes&quot;" assertions="1" time="0.004023"/>
-        <testcase name="testTransform with data set &quot;16 bytes&quot;" assertions="1" time="0.004078"/>
-        <testcase name="testTransform with data set &quot;16 bytes with padding&quot;" assertions="1" time="0.004098"/>
+    <testsuite name="Eloquent\Endec\Base32\Base32DecodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32DecodeTransformTest.php" namespace="Eloquent\Endec\Base32" fullPackage="Eloquent.Endec.Base32" tests="34" assertions="35" failures="0" errors="0" time="0.172541">
+      <testsuite name="Eloquent\Endec\Base32\Base32DecodeTransformTest::testTransform" tests="18" assertions="18" failures="0" errors="0" time="0.085781">
+        <testcase name="testTransform with data set &quot;Empty&quot;" assertions="1" time="0.003988"/>
+        <testcase name="testTransform with data set &quot;1 byte&quot;" assertions="1" time="0.003985"/>
+        <testcase name="testTransform with data set &quot;2 bytes&quot;" assertions="1" time="0.004551"/>
+        <testcase name="testTransform with data set &quot;3 bytes&quot;" assertions="1" time="0.004141"/>
+        <testcase name="testTransform with data set &quot;4 bytes&quot;" assertions="1" time="0.004145"/>
+        <testcase name="testTransform with data set &quot;5 bytes&quot;" assertions="1" time="0.004068"/>
+        <testcase name="testTransform with data set &quot;6 bytes&quot;" assertions="1" time="0.003931"/>
+        <testcase name="testTransform with data set &quot;7 bytes&quot;" assertions="1" time="0.004224"/>
+        <testcase name="testTransform with data set &quot;8 bytes&quot;" assertions="1" time="0.004549"/>
+        <testcase name="testTransform with data set &quot;9 bytes&quot;" assertions="1" time="0.004871"/>
+        <testcase name="testTransform with data set &quot;10 bytes&quot;" assertions="1" time="0.004733"/>
+        <testcase name="testTransform with data set &quot;11 bytes&quot;" assertions="1" time="0.005697"/>
+        <testcase name="testTransform with data set &quot;12 bytes&quot;" assertions="1" time="0.005266"/>
+        <testcase name="testTransform with data set &quot;13 bytes&quot;" assertions="1" time="0.005598"/>
+        <testcase name="testTransform with data set &quot;14 bytes&quot;" assertions="1" time="0.005397"/>
+        <testcase name="testTransform with data set &quot;15 bytes&quot;" assertions="1" time="0.005304"/>
+        <testcase name="testTransform with data set &quot;16 bytes&quot;" assertions="1" time="0.005939"/>
+        <testcase name="testTransform with data set &quot;16 bytes with padding&quot;" assertions="1" time="0.005394"/>
       </testsuite>
-      <testsuite name="Eloquent\Endec\Base32\Base32DecodeTransformTest::testTransformEnd" tests="13" assertions="13" failures="0" errors="0" time="0.052920">
-        <testcase name="testTransformEnd with data set &quot;Empty&quot;" assertions="1" time="0.003992"/>
-        <testcase name="testTransformEnd with data set &quot;2 bytes&quot;" assertions="1" time="0.004030"/>
-        <testcase name="testTransformEnd with data set &quot;4 bytes&quot;" assertions="1" time="0.004041"/>
-        <testcase name="testTransformEnd with data set &quot;5 bytes&quot;" assertions="1" time="0.004032"/>
-        <testcase name="testTransformEnd with data set &quot;7 bytes&quot;" assertions="1" time="0.004073"/>
-        <testcase name="testTransformEnd with data set &quot;8 bytes&quot;" assertions="1" time="0.004061"/>
-        <testcase name="testTransformEnd with data set &quot;8 bytes with padding&quot;" assertions="1" time="0.004041"/>
-        <testcase name="testTransformEnd with data set &quot;10 bytes&quot;" assertions="1" time="0.004067"/>
-        <testcase name="testTransformEnd with data set &quot;12 bytes&quot;" assertions="1" time="0.004096"/>
-        <testcase name="testTransformEnd with data set &quot;13 bytes&quot;" assertions="1" time="0.004132"/>
-        <testcase name="testTransformEnd with data set &quot;15 bytes&quot;" assertions="1" time="0.004122"/>
-        <testcase name="testTransformEnd with data set &quot;16 bytes&quot;" assertions="1" time="0.004112"/>
-        <testcase name="testTransformEnd with data set &quot;16 bytes with padding&quot;" assertions="1" time="0.004121"/>
+      <testsuite name="Eloquent\Endec\Base32\Base32DecodeTransformTest::testTransformEnd" tests="13" assertions="13" failures="0" errors="0" time="0.070615">
+        <testcase name="testTransformEnd with data set &quot;Empty&quot;" assertions="1" time="0.004854"/>
+        <testcase name="testTransformEnd with data set &quot;2 bytes&quot;" assertions="1" time="0.005118"/>
+        <testcase name="testTransformEnd with data set &quot;4 bytes&quot;" assertions="1" time="0.004998"/>
+        <testcase name="testTransformEnd with data set &quot;5 bytes&quot;" assertions="1" time="0.005269"/>
+        <testcase name="testTransformEnd with data set &quot;7 bytes&quot;" assertions="1" time="0.005463"/>
+        <testcase name="testTransformEnd with data set &quot;8 bytes&quot;" assertions="1" time="0.005219"/>
+        <testcase name="testTransformEnd with data set &quot;8 bytes with padding&quot;" assertions="1" time="0.004874"/>
+        <testcase name="testTransformEnd with data set &quot;10 bytes&quot;" assertions="1" time="0.005450"/>
+        <testcase name="testTransformEnd with data set &quot;12 bytes&quot;" assertions="1" time="0.005843"/>
+        <testcase name="testTransformEnd with data set &quot;13 bytes&quot;" assertions="1" time="0.005485"/>
+        <testcase name="testTransformEnd with data set &quot;15 bytes&quot;" assertions="1" time="0.005370"/>
+        <testcase name="testTransformEnd with data set &quot;16 bytes&quot;" assertions="1" time="0.006952"/>
+        <testcase name="testTransformEnd with data set &quot;16 bytes with padding&quot;" assertions="1" time="0.005719"/>
       </testsuite>
-      <testcase name="testTransformFailure" class="Eloquent\Endec\Base32\Base32DecodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32DecodeTransformTest.php" line="87" assertions="1" time="0.004449"/>
-      <testcase name="testInstance" class="Eloquent\Endec\Base32\Base32DecodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32DecodeTransformTest.php" line="93" assertions="2" time="0.004739"/>
+      <testcase name="testTransformFailureLength" class="Eloquent\Endec\Base32\Base32DecodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32DecodeTransformTest.php" line="91" assertions="1" time="0.005274"/>
+      <testcase name="testTransformFailureAlphabet" class="Eloquent\Endec\Base32\Base32DecodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32DecodeTransformTest.php" line="97" assertions="1" time="0.005172"/>
+      <testcase name="testInstance" class="Eloquent\Endec\Base32\Base32DecodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32DecodeTransformTest.php" line="103" assertions="2" time="0.005699"/>
     </testsuite>
-    <testsuite name="Eloquent\Endec\Base32\Base32EncodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32EncodeNativeStreamFilterTest.php" namespace="Eloquent\Endec\Base32" fullPackage="Eloquent.Endec.Base32" tests="1" assertions="1" failures="0" errors="0" time="0.007307">
-      <testcase name="testFilter" class="Eloquent\Endec\Base32\Base32EncodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32EncodeNativeStreamFilterTest.php" line="30" assertions="1" time="0.007307"/>
+    <testsuite name="Eloquent\Endec\Base32\Base32EncodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32EncodeNativeStreamFilterTest.php" namespace="Eloquent\Endec\Base32" fullPackage="Eloquent.Endec.Base32" tests="1" assertions="1" failures="0" errors="0" time="0.008680">
+      <testcase name="testFilter" class="Eloquent\Endec\Base32\Base32EncodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32EncodeNativeStreamFilterTest.php" line="30" assertions="1" time="0.008680"/>
     </testsuite>
-    <testsuite name="Eloquent\Endec\Base32\Base32EncodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32EncodeTransformTest.php" namespace="Eloquent\Endec\Base32" fullPackage="Eloquent.Endec.Base32" tests="23" assertions="24" failures="0" errors="0" time="0.094611">
-      <testsuite name="Eloquent\Endec\Base32\Base32EncodeTransformTest::testTransform" tests="11" assertions="11" failures="0" errors="0" time="0.044620">
-        <testcase name="testTransform with data set &quot;Empty&quot;" assertions="1" time="0.004065"/>
-        <testcase name="testTransform with data set &quot;1 byte&quot;" assertions="1" time="0.004013"/>
-        <testcase name="testTransform with data set &quot;2 bytes&quot;" assertions="1" time="0.004003"/>
-        <testcase name="testTransform with data set &quot;3 bytes&quot;" assertions="1" time="0.004001"/>
-        <testcase name="testTransform with data set &quot;4 bytes&quot;" assertions="1" time="0.004006"/>
-        <testcase name="testTransform with data set &quot;5 bytes&quot;" assertions="1" time="0.004064"/>
-        <testcase name="testTransform with data set &quot;6 bytes&quot;" assertions="1" time="0.004086"/>
-        <testcase name="testTransform with data set &quot;7 bytes&quot;" assertions="1" time="0.004079"/>
-        <testcase name="testTransform with data set &quot;8 bytes&quot;" assertions="1" time="0.004079"/>
-        <testcase name="testTransform with data set &quot;9 bytes&quot;" assertions="1" time="0.004090"/>
-        <testcase name="testTransform with data set &quot;10 bytes&quot;" assertions="1" time="0.004134"/>
+    <testsuite name="Eloquent\Endec\Base32\Base32EncodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32EncodeTransformTest.php" namespace="Eloquent\Endec\Base32" fullPackage="Eloquent.Endec.Base32" tests="23" assertions="24" failures="0" errors="0" time="0.112963">
+      <testsuite name="Eloquent\Endec\Base32\Base32EncodeTransformTest::testTransform" tests="11" assertions="11" failures="0" errors="0" time="0.053446">
+        <testcase name="testTransform with data set &quot;Empty&quot;" assertions="1" time="0.004814"/>
+        <testcase name="testTransform with data set &quot;1 byte&quot;" assertions="1" time="0.004902"/>
+        <testcase name="testTransform with data set &quot;2 bytes&quot;" assertions="1" time="0.004830"/>
+        <testcase name="testTransform with data set &quot;3 bytes&quot;" assertions="1" time="0.004783"/>
+        <testcase name="testTransform with data set &quot;4 bytes&quot;" assertions="1" time="0.004877"/>
+        <testcase name="testTransform with data set &quot;5 bytes&quot;" assertions="1" time="0.005000"/>
+        <testcase name="testTransform with data set &quot;6 bytes&quot;" assertions="1" time="0.004812"/>
+        <testcase name="testTransform with data set &quot;7 bytes&quot;" assertions="1" time="0.004697"/>
+        <testcase name="testTransform with data set &quot;8 bytes&quot;" assertions="1" time="0.004757"/>
+        <testcase name="testTransform with data set &quot;9 bytes&quot;" assertions="1" time="0.004969"/>
+        <testcase name="testTransform with data set &quot;10 bytes&quot;" assertions="1" time="0.005006"/>
       </testsuite>
-      <testsuite name="Eloquent\Endec\Base32\Base32EncodeTransformTest::testTransformEnd" tests="11" assertions="11" failures="0" errors="0" time="0.045172">
-        <testcase name="testTransformEnd with data set &quot;Empty&quot;" assertions="1" time="0.004043"/>
-        <testcase name="testTransformEnd with data set &quot;1 byte&quot;" assertions="1" time="0.004077"/>
-        <testcase name="testTransformEnd with data set &quot;2 bytes&quot;" assertions="1" time="0.004077"/>
-        <testcase name="testTransformEnd with data set &quot;3 bytes&quot;" assertions="1" time="0.004073"/>
-        <testcase name="testTransformEnd with data set &quot;4 bytes&quot;" assertions="1" time="0.004084"/>
-        <testcase name="testTransformEnd with data set &quot;5 bytes&quot;" assertions="1" time="0.004082"/>
-        <testcase name="testTransformEnd with data set &quot;6 bytes&quot;" assertions="1" time="0.004143"/>
-        <testcase name="testTransformEnd with data set &quot;7 bytes&quot;" assertions="1" time="0.004152"/>
-        <testcase name="testTransformEnd with data set &quot;8 bytes&quot;" assertions="1" time="0.004151"/>
-        <testcase name="testTransformEnd with data set &quot;9 bytes&quot;" assertions="1" time="0.004158"/>
-        <testcase name="testTransformEnd with data set &quot;10 bytes&quot;" assertions="1" time="0.004132"/>
+      <testsuite name="Eloquent\Endec\Base32\Base32EncodeTransformTest::testTransformEnd" tests="11" assertions="11" failures="0" errors="0" time="0.053639">
+        <testcase name="testTransformEnd with data set &quot;Empty&quot;" assertions="1" time="0.004984"/>
+        <testcase name="testTransformEnd with data set &quot;1 byte&quot;" assertions="1" time="0.004978"/>
+        <testcase name="testTransformEnd with data set &quot;2 bytes&quot;" assertions="1" time="0.005031"/>
+        <testcase name="testTransformEnd with data set &quot;3 bytes&quot;" assertions="1" time="0.005026"/>
+        <testcase name="testTransformEnd with data set &quot;4 bytes&quot;" assertions="1" time="0.004974"/>
+        <testcase name="testTransformEnd with data set &quot;5 bytes&quot;" assertions="1" time="0.004816"/>
+        <testcase name="testTransformEnd with data set &quot;6 bytes&quot;" assertions="1" time="0.004766"/>
+        <testcase name="testTransformEnd with data set &quot;7 bytes&quot;" assertions="1" time="0.005076"/>
+        <testcase name="testTransformEnd with data set &quot;8 bytes&quot;" assertions="1" time="0.005053"/>
+        <testcase name="testTransformEnd with data set &quot;9 bytes&quot;" assertions="1" time="0.004449"/>
+        <testcase name="testTransformEnd with data set &quot;10 bytes&quot;" assertions="1" time="0.004486"/>
       </testsuite>
-      <testcase name="testInstance" class="Eloquent\Endec\Base32\Base32EncodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32EncodeTransformTest.php" line="78" assertions="2" time="0.004819"/>
+      <testcase name="testInstance" class="Eloquent\Endec\Base32\Base32EncodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32EncodeTransformTest.php" line="82" assertions="2" time="0.005878"/>
     </testsuite>
-    <testsuite name="Eloquent\Endec\Base32\Base32Test" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32Test.php" namespace="Eloquent\Endec\Base32" fullPackage="Eloquent.Endec.Base32" tests="21" assertions="24" failures="0" errors="0" time="0.105716">
-      <testcase name="testConstructor" class="Eloquent\Endec\Base32\Base32Test" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32Test.php" line="33" assertions="2" time="0.005151"/>
-      <testcase name="testConstructorDefaults" class="Eloquent\Endec\Base32\Base32Test" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32Test.php" line="39" assertions="2" time="0.005632"/>
-      <testsuite name="Eloquent\Endec\Base32\Base32Test::testEncode" tests="7" assertions="7" failures="0" errors="0" time="0.029673">
-        <testcase name="testEncode with data set &quot;RFC 4648 base32 test vector 1&quot;" assertions="1" time="0.004204"/>
-        <testcase name="testEncode with data set &quot;RFC 4648 base32 test vector 2&quot;" assertions="1" time="0.004212"/>
-        <testcase name="testEncode with data set &quot;RFC 4648 base32 test vector 3&quot;" assertions="1" time="0.004229"/>
-        <testcase name="testEncode with data set &quot;RFC 4648 base32 test vector 4&quot;" assertions="1" time="0.004256"/>
-        <testcase name="testEncode with data set &quot;RFC 4648 base32 test vector 5&quot;" assertions="1" time="0.004233"/>
-        <testcase name="testEncode with data set &quot;RFC 4648 base32 test vector 6&quot;" assertions="1" time="0.004234"/>
-        <testcase name="testEncode with data set &quot;RFC 4648 base32 test vector 7&quot;" assertions="1" time="0.004305"/>
+    <testsuite name="Eloquent\Endec\Base32\Base32HexDecodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32HexDecodeTransformTest.php" namespace="Eloquent\Endec\Base32" fullPackage="Eloquent.Endec.Base32" tests="34" assertions="35" failures="0" errors="0" time="0.173243">
+      <testsuite name="Eloquent\Endec\Base32\Base32HexDecodeTransformTest::testTransform" tests="18" assertions="18" failures="0" errors="0" time="0.096043">
+        <testcase name="testTransform with data set &quot;Empty&quot;" assertions="1" time="0.005683"/>
+        <testcase name="testTransform with data set &quot;1 byte&quot;" assertions="1" time="0.004775"/>
+        <testcase name="testTransform with data set &quot;2 bytes&quot;" assertions="1" time="0.004667"/>
+        <testcase name="testTransform with data set &quot;3 bytes&quot;" assertions="1" time="0.005554"/>
+        <testcase name="testTransform with data set &quot;4 bytes&quot;" assertions="1" time="0.004655"/>
+        <testcase name="testTransform with data set &quot;5 bytes&quot;" assertions="1" time="0.004874"/>
+        <testcase name="testTransform with data set &quot;6 bytes&quot;" assertions="1" time="0.004962"/>
+        <testcase name="testTransform with data set &quot;7 bytes&quot;" assertions="1" time="0.005121"/>
+        <testcase name="testTransform with data set &quot;8 bytes&quot;" assertions="1" time="0.005548"/>
+        <testcase name="testTransform with data set &quot;9 bytes&quot;" assertions="1" time="0.005650"/>
+        <testcase name="testTransform with data set &quot;10 bytes&quot;" assertions="1" time="0.005633"/>
+        <testcase name="testTransform with data set &quot;11 bytes&quot;" assertions="1" time="0.005538"/>
+        <testcase name="testTransform with data set &quot;12 bytes&quot;" assertions="1" time="0.005598"/>
+        <testcase name="testTransform with data set &quot;13 bytes&quot;" assertions="1" time="0.005557"/>
+        <testcase name="testTransform with data set &quot;14 bytes&quot;" assertions="1" time="0.005194"/>
+        <testcase name="testTransform with data set &quot;15 bytes&quot;" assertions="1" time="0.005300"/>
+        <testcase name="testTransform with data set &quot;16 bytes&quot;" assertions="1" time="0.006181"/>
+        <testcase name="testTransform with data set &quot;16 bytes with padding&quot;" assertions="1" time="0.005553"/>
       </testsuite>
-      <testcase name="testEncodeFullAlphabet" class="Eloquent\Endec\Base32\Base32Test" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32Test.php" line="69" assertions="1" time="0.004454"/>
-      <testsuite name="Eloquent\Endec\Base32\Base32Test::testDecode" tests="7" assertions="7" failures="0" errors="0" time="0.029721">
-        <testcase name="testDecode with data set &quot;RFC 4648 base32 test vector 1&quot;" assertions="1" time="0.004202"/>
-        <testcase name="testDecode with data set &quot;RFC 4648 base32 test vector 2&quot;" assertions="1" time="0.004230"/>
-        <testcase name="testDecode with data set &quot;RFC 4648 base32 test vector 3&quot;" assertions="1" time="0.004237"/>
-        <testcase name="testDecode with data set &quot;RFC 4648 base32 test vector 4&quot;" assertions="1" time="0.004227"/>
-        <testcase name="testDecode with data set &quot;RFC 4648 base32 test vector 5&quot;" assertions="1" time="0.004230"/>
-        <testcase name="testDecode with data set &quot;RFC 4648 base32 test vector 6&quot;" assertions="1" time="0.004262"/>
-        <testcase name="testDecode with data set &quot;RFC 4648 base32 test vector 7&quot;" assertions="1" time="0.004333"/>
+      <testsuite name="Eloquent\Endec\Base32\Base32HexDecodeTransformTest::testTransformEnd" tests="13" assertions="13" failures="0" errors="0" time="0.062630">
+        <testcase name="testTransformEnd with data set &quot;Empty&quot;" assertions="1" time="0.004840"/>
+        <testcase name="testTransformEnd with data set &quot;2 bytes&quot;" assertions="1" time="0.005024"/>
+        <testcase name="testTransformEnd with data set &quot;4 bytes&quot;" assertions="1" time="0.004144"/>
+        <testcase name="testTransformEnd with data set &quot;5 bytes&quot;" assertions="1" time="0.004507"/>
+        <testcase name="testTransformEnd with data set &quot;7 bytes&quot;" assertions="1" time="0.005315"/>
+        <testcase name="testTransformEnd with data set &quot;8 bytes&quot;" assertions="1" time="0.004796"/>
+        <testcase name="testTransformEnd with data set &quot;8 bytes with padding&quot;" assertions="1" time="0.004231"/>
+        <testcase name="testTransformEnd with data set &quot;10 bytes&quot;" assertions="1" time="0.005012"/>
+        <testcase name="testTransformEnd with data set &quot;12 bytes&quot;" assertions="1" time="0.005126"/>
+        <testcase name="testTransformEnd with data set &quot;13 bytes&quot;" assertions="1" time="0.004929"/>
+        <testcase name="testTransformEnd with data set &quot;15 bytes&quot;" assertions="1" time="0.004923"/>
+        <testcase name="testTransformEnd with data set &quot;16 bytes&quot;" assertions="1" time="0.005016"/>
+        <testcase name="testTransformEnd with data set &quot;16 bytes with padding&quot;" assertions="1" time="0.004767"/>
       </testsuite>
-      <testcase name="testDecodeFullAlphabet" class="Eloquent\Endec\Base32\Base32Test" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32Test.php" line="85" assertions="1" time="0.004458"/>
-      <testcase name="testCreateEncodeStream" class="Eloquent\Endec\Base32\Base32Test" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32Test.php" line="93" assertions="1" time="0.010757"/>
-      <testcase name="testCreateDecodeStream" class="Eloquent\Endec\Base32\Base32Test" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32Test.php" line="98" assertions="1" time="0.010753"/>
-      <testcase name="testInstance" class="Eloquent\Endec\Base32\Base32Test" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32Test.php" line="103" assertions="2" time="0.005117"/>
+      <testcase name="testTransformFailureLength" class="Eloquent\Endec\Base32\Base32HexDecodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32HexDecodeTransformTest.php" line="91" assertions="1" time="0.004796"/>
+      <testcase name="testTransformFailureAlphabet" class="Eloquent\Endec\Base32\Base32HexDecodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32HexDecodeTransformTest.php" line="97" assertions="1" time="0.004663"/>
+      <testcase name="testInstance" class="Eloquent\Endec\Base32\Base32HexDecodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32HexDecodeTransformTest.php" line="103" assertions="2" time="0.005111"/>
     </testsuite>
-    <testsuite name="Eloquent\Endec\Base64\Base64DecodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64DecodeNativeStreamFilterTest.php" namespace="Eloquent\Endec\Base64" fullPackage="Eloquent.Endec.Base64" tests="2" assertions="2" failures="0" errors="0" time="0.012261">
-      <testcase name="testFilter" class="Eloquent\Endec\Base64\Base64DecodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64DecodeNativeStreamFilterTest.php" line="30" assertions="1" time="0.006699"/>
-      <testcase name="testFilterFailure" class="Eloquent\Endec\Base64\Base64DecodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64DecodeNativeStreamFilterTest.php" line="44" assertions="1" time="0.005562"/>
+    <testsuite name="Eloquent\Endec\Base32\Base32HexEncodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32HexEncodeTransformTest.php" namespace="Eloquent\Endec\Base32" fullPackage="Eloquent.Endec.Base32" tests="23" assertions="24" failures="0" errors="0" time="0.109523">
+      <testsuite name="Eloquent\Endec\Base32\Base32HexEncodeTransformTest::testTransform" tests="11" assertions="11" failures="0" errors="0" time="0.052492">
+        <testcase name="testTransform with data set &quot;Empty&quot;" assertions="1" time="0.005057"/>
+        <testcase name="testTransform with data set &quot;1 byte&quot;" assertions="1" time="0.004176"/>
+        <testcase name="testTransform with data set &quot;2 bytes&quot;" assertions="1" time="0.003936"/>
+        <testcase name="testTransform with data set &quot;3 bytes&quot;" assertions="1" time="0.004499"/>
+        <testcase name="testTransform with data set &quot;4 bytes&quot;" assertions="1" time="0.004950"/>
+        <testcase name="testTransform with data set &quot;5 bytes&quot;" assertions="1" time="0.004933"/>
+        <testcase name="testTransform with data set &quot;6 bytes&quot;" assertions="1" time="0.004893"/>
+        <testcase name="testTransform with data set &quot;7 bytes&quot;" assertions="1" time="0.005468"/>
+        <testcase name="testTransform with data set &quot;8 bytes&quot;" assertions="1" time="0.004837"/>
+        <testcase name="testTransform with data set &quot;9 bytes&quot;" assertions="1" time="0.004868"/>
+        <testcase name="testTransform with data set &quot;10 bytes&quot;" assertions="1" time="0.004875"/>
+      </testsuite>
+      <testsuite name="Eloquent\Endec\Base32\Base32HexEncodeTransformTest::testTransformEnd" tests="11" assertions="11" failures="0" errors="0" time="0.052165">
+        <testcase name="testTransformEnd with data set &quot;Empty&quot;" assertions="1" time="0.004731"/>
+        <testcase name="testTransformEnd with data set &quot;1 byte&quot;" assertions="1" time="0.004805"/>
+        <testcase name="testTransformEnd with data set &quot;2 bytes&quot;" assertions="1" time="0.004857"/>
+        <testcase name="testTransformEnd with data set &quot;3 bytes&quot;" assertions="1" time="0.004884"/>
+        <testcase name="testTransformEnd with data set &quot;4 bytes&quot;" assertions="1" time="0.004884"/>
+        <testcase name="testTransformEnd with data set &quot;5 bytes&quot;" assertions="1" time="0.004842"/>
+        <testcase name="testTransformEnd with data set &quot;6 bytes&quot;" assertions="1" time="0.004883"/>
+        <testcase name="testTransformEnd with data set &quot;7 bytes&quot;" assertions="1" time="0.004847"/>
+        <testcase name="testTransformEnd with data set &quot;8 bytes&quot;" assertions="1" time="0.005058"/>
+        <testcase name="testTransformEnd with data set &quot;9 bytes&quot;" assertions="1" time="0.004392"/>
+        <testcase name="testTransformEnd with data set &quot;10 bytes&quot;" assertions="1" time="0.003982"/>
+      </testsuite>
+      <testcase name="testInstance" class="Eloquent\Endec\Base32\Base32HexEncodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32HexEncodeTransformTest.php" line="82" assertions="2" time="0.004867"/>
     </testsuite>
-    <testsuite name="Eloquent\Endec\Base64\Base64DecodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64DecodeTransformTest.php" namespace="Eloquent\Endec\Base64" fullPackage="Eloquent.Endec.Base64" tests="20" assertions="21" failures="0" errors="0" time="0.083557">
-      <testsuite name="Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransform" tests="9" assertions="9" failures="0" errors="0" time="0.036964">
-        <testcase name="testTransform with data set &quot;Empty&quot;" assertions="1" time="0.004161"/>
-        <testcase name="testTransform with data set &quot;1 byte&quot;" assertions="1" time="0.004083"/>
-        <testcase name="testTransform with data set &quot;2 bytes&quot;" assertions="1" time="0.004082"/>
-        <testcase name="testTransform with data set &quot;3 bytes&quot;" assertions="1" time="0.004099"/>
-        <testcase name="testTransform with data set &quot;4 bytes&quot;" assertions="1" time="0.004101"/>
-        <testcase name="testTransform with data set &quot;5 bytes&quot;" assertions="1" time="0.004097"/>
-        <testcase name="testTransform with data set &quot;6 bytes&quot;" assertions="1" time="0.004116"/>
-        <testcase name="testTransform with data set &quot;7 bytes&quot;" assertions="1" time="0.004099"/>
-        <testcase name="testTransform with data set &quot;8 bytes&quot;" assertions="1" time="0.004126"/>
+    <testsuite name="Eloquent\Endec\Base32\Base32HexTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32HexTest.php" namespace="Eloquent\Endec\Base32" fullPackage="Eloquent.Endec.Base32" tests="21" assertions="24" failures="0" errors="0" time="0.184570">
+      <testcase name="testConstructor" class="Eloquent\Endec\Base32\Base32HexTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32HexTest.php" line="33" assertions="2" time="0.005100"/>
+      <testcase name="testConstructorDefaults" class="Eloquent\Endec\Base32\Base32HexTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32HexTest.php" line="39" assertions="2" time="0.074842"/>
+      <testsuite name="Eloquent\Endec\Base32\Base32HexTest::testEncode" tests="7" assertions="7" failures="0" errors="0" time="0.031956">
+        <testcase name="testEncode with data set &quot;RFC 4648 base32 test vector 1&quot;" assertions="1" time="0.005039"/>
+        <testcase name="testEncode with data set &quot;RFC 4648 base32 test vector 2&quot;" assertions="1" time="0.004645"/>
+        <testcase name="testEncode with data set &quot;RFC 4648 base32 test vector 3&quot;" assertions="1" time="0.004449"/>
+        <testcase name="testEncode with data set &quot;RFC 4648 base32 test vector 4&quot;" assertions="1" time="0.004287"/>
+        <testcase name="testEncode with data set &quot;RFC 4648 base32 test vector 5&quot;" assertions="1" time="0.004587"/>
+        <testcase name="testEncode with data set &quot;RFC 4648 base32 test vector 6&quot;" assertions="1" time="0.004509"/>
+        <testcase name="testEncode with data set &quot;RFC 4648 base32 test vector 7&quot;" assertions="1" time="0.004440"/>
       </testsuite>
-      <testsuite name="Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformEnd" tests="9" assertions="9" failures="0" errors="0" time="0.037184">
-        <testcase name="testTransformEnd with data set &quot;Empty&quot;" assertions="1" time="0.004113"/>
-        <testcase name="testTransformEnd with data set &quot;1 byte&quot;" assertions="1" time="0.004139"/>
-        <testcase name="testTransformEnd with data set &quot;2 bytes&quot;" assertions="1" time="0.004144"/>
-        <testcase name="testTransformEnd with data set &quot;3 bytes&quot;" assertions="1" time="0.004188"/>
-        <testcase name="testTransformEnd with data set &quot;4 bytes&quot;" assertions="1" time="0.004130"/>
-        <testcase name="testTransformEnd with data set &quot;5 bytes&quot;" assertions="1" time="0.004119"/>
-        <testcase name="testTransformEnd with data set &quot;6 bytes&quot;" assertions="1" time="0.004126"/>
-        <testcase name="testTransformEnd with data set &quot;7 bytes&quot;" assertions="1" time="0.004115"/>
-        <testcase name="testTransformEnd with data set &quot;8 bytes&quot;" assertions="1" time="0.004110"/>
+      <testcase name="testEncodeFullAlphabet" class="Eloquent\Endec\Base32\Base32HexTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32HexTest.php" line="69" assertions="1" time="0.004675"/>
+      <testsuite name="Eloquent\Endec\Base32\Base32HexTest::testDecode" tests="7" assertions="7" failures="0" errors="0" time="0.033047">
+        <testcase name="testDecode with data set &quot;RFC 4648 base32 test vector 1&quot;" assertions="1" time="0.004533"/>
+        <testcase name="testDecode with data set &quot;RFC 4648 base32 test vector 2&quot;" assertions="1" time="0.004446"/>
+        <testcase name="testDecode with data set &quot;RFC 4648 base32 test vector 3&quot;" assertions="1" time="0.004705"/>
+        <testcase name="testDecode with data set &quot;RFC 4648 base32 test vector 4&quot;" assertions="1" time="0.004669"/>
+        <testcase name="testDecode with data set &quot;RFC 4648 base32 test vector 5&quot;" assertions="1" time="0.004847"/>
+        <testcase name="testDecode with data set &quot;RFC 4648 base32 test vector 6&quot;" assertions="1" time="0.004925"/>
+        <testcase name="testDecode with data set &quot;RFC 4648 base32 test vector 7&quot;" assertions="1" time="0.004922"/>
       </testsuite>
-      <testcase name="testTransformFailure" class="Eloquent\Endec\Base64\Base64DecodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64DecodeTransformTest.php" line="78" assertions="1" time="0.004562"/>
-      <testcase name="testInstance" class="Eloquent\Endec\Base64\Base64DecodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64DecodeTransformTest.php" line="84" assertions="2" time="0.004846"/>
+      <testcase name="testDecodeFullAlphabet" class="Eloquent\Endec\Base32\Base32HexTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32HexTest.php" line="85" assertions="1" time="0.006139"/>
+      <testcase name="testCreateEncodeStream" class="Eloquent\Endec\Base32\Base32HexTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32HexTest.php" line="93" assertions="1" time="0.011789"/>
+      <testcase name="testCreateDecodeStream" class="Eloquent\Endec\Base32\Base32HexTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32HexTest.php" line="98" assertions="1" time="0.011486"/>
+      <testcase name="testInstance" class="Eloquent\Endec\Base32\Base32HexTest" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32HexTest.php" line="103" assertions="2" time="0.005536"/>
     </testsuite>
-    <testsuite name="Eloquent\Endec\Base64\Base64EncodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64EncodeNativeStreamFilterTest.php" namespace="Eloquent\Endec\Base64" fullPackage="Eloquent.Endec.Base64" tests="1" assertions="1" failures="0" errors="0" time="0.006655">
-      <testcase name="testFilter" class="Eloquent\Endec\Base64\Base64EncodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64EncodeNativeStreamFilterTest.php" line="30" assertions="1" time="0.006655"/>
+    <testsuite name="Eloquent\Endec\Base32\Base32Test" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32Test.php" namespace="Eloquent\Endec\Base32" fullPackage="Eloquent.Endec.Base32" tests="21" assertions="24" failures="0" errors="0" time="0.194300">
+      <testcase name="testConstructor" class="Eloquent\Endec\Base32\Base32Test" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32Test.php" line="33" assertions="2" time="0.005513"/>
+      <testcase name="testConstructorDefaults" class="Eloquent\Endec\Base32\Base32Test" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32Test.php" line="39" assertions="2" time="0.081211"/>
+      <testsuite name="Eloquent\Endec\Base32\Base32Test::testEncode" tests="7" assertions="7" failures="0" errors="0" time="0.032798">
+        <testcase name="testEncode with data set &quot;RFC 4648 base32 test vector 1&quot;" assertions="1" time="0.005276"/>
+        <testcase name="testEncode with data set &quot;RFC 4648 base32 test vector 2&quot;" assertions="1" time="0.004532"/>
+        <testcase name="testEncode with data set &quot;RFC 4648 base32 test vector 3&quot;" assertions="1" time="0.004436"/>
+        <testcase name="testEncode with data set &quot;RFC 4648 base32 test vector 4&quot;" assertions="1" time="0.004761"/>
+        <testcase name="testEncode with data set &quot;RFC 4648 base32 test vector 5&quot;" assertions="1" time="0.004633"/>
+        <testcase name="testEncode with data set &quot;RFC 4648 base32 test vector 6&quot;" assertions="1" time="0.004574"/>
+        <testcase name="testEncode with data set &quot;RFC 4648 base32 test vector 7&quot;" assertions="1" time="0.004586"/>
+      </testsuite>
+      <testcase name="testEncodeFullAlphabet" class="Eloquent\Endec\Base32\Base32Test" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32Test.php" line="69" assertions="1" time="0.004845"/>
+      <testsuite name="Eloquent\Endec\Base32\Base32Test::testDecode" tests="7" assertions="7" failures="0" errors="0" time="0.034459">
+        <testcase name="testDecode with data set &quot;RFC 4648 base32 test vector 1&quot;" assertions="1" time="0.004863"/>
+        <testcase name="testDecode with data set &quot;RFC 4648 base32 test vector 2&quot;" assertions="1" time="0.004827"/>
+        <testcase name="testDecode with data set &quot;RFC 4648 base32 test vector 3&quot;" assertions="1" time="0.004725"/>
+        <testcase name="testDecode with data set &quot;RFC 4648 base32 test vector 4&quot;" assertions="1" time="0.004872"/>
+        <testcase name="testDecode with data set &quot;RFC 4648 base32 test vector 5&quot;" assertions="1" time="0.004865"/>
+        <testcase name="testDecode with data set &quot;RFC 4648 base32 test vector 6&quot;" assertions="1" time="0.005255"/>
+        <testcase name="testDecode with data set &quot;RFC 4648 base32 test vector 7&quot;" assertions="1" time="0.005052"/>
+      </testsuite>
+      <testcase name="testDecodeFullAlphabet" class="Eloquent\Endec\Base32\Base32Test" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32Test.php" line="85" assertions="1" time="0.006162"/>
+      <testcase name="testCreateEncodeStream" class="Eloquent\Endec\Base32\Base32Test" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32Test.php" line="93" assertions="1" time="0.011669"/>
+      <testcase name="testCreateDecodeStream" class="Eloquent\Endec\Base32\Base32Test" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32Test.php" line="98" assertions="1" time="0.012038"/>
+      <testcase name="testInstance" class="Eloquent\Endec\Base32\Base32Test" file="/home/travis/build/ezzatron/endec/test/suite/Base32/Base32Test.php" line="103" assertions="2" time="0.005606"/>
     </testsuite>
-    <testsuite name="Eloquent\Endec\Base64\Base64EncodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64EncodeTransformTest.php" namespace="Eloquent\Endec\Base64" fullPackage="Eloquent.Endec.Base64" tests="15" assertions="16" failures="0" errors="0" time="0.063923">
-      <testsuite name="Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransform" tests="7" assertions="7" failures="0" errors="0" time="0.029964">
-        <testcase name="testTransform with data set &quot;Empty&quot;" assertions="1" time="0.004162"/>
-        <testcase name="testTransform with data set &quot;1 byte&quot;" assertions="1" time="0.004102"/>
-        <testcase name="testTransform with data set &quot;2 bytes&quot;" assertions="1" time="0.004119"/>
-        <testcase name="testTransform with data set &quot;3 bytes&quot;" assertions="1" time="0.004117"/>
-        <testcase name="testTransform with data set &quot;4 bytes&quot;" assertions="1" time="0.004150"/>
-        <testcase name="testTransform with data set &quot;5 bytes&quot;" assertions="1" time="0.004124"/>
-        <testcase name="testTransform with data set &quot;6 bytes&quot;" assertions="1" time="0.005190"/>
-      </testsuite>
-      <testsuite name="Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransformEnd" tests="7" assertions="7" failures="0" errors="0" time="0.029107">
-        <testcase name="testTransformEnd with data set &quot;Empty&quot;" assertions="1" time="0.004192"/>
-        <testcase name="testTransformEnd with data set &quot;1 byte&quot;" assertions="1" time="0.004211"/>
-        <testcase name="testTransformEnd with data set &quot;2 bytes&quot;" assertions="1" time="0.004154"/>
-        <testcase name="testTransformEnd with data set &quot;3 bytes&quot;" assertions="1" time="0.004143"/>
-        <testcase name="testTransformEnd with data set &quot;4 bytes&quot;" assertions="1" time="0.004126"/>
-        <testcase name="testTransformEnd with data set &quot;5 bytes&quot;" assertions="1" time="0.004135"/>
-        <testcase name="testTransformEnd with data set &quot;6 bytes&quot;" assertions="1" time="0.004146"/>
-      </testsuite>
-      <testcase name="testInstance" class="Eloquent\Endec\Base64\Base64EncodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64EncodeTransformTest.php" line="74" assertions="2" time="0.004852"/>
+    <testsuite name="Eloquent\Endec\Base64\Base64DecodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64DecodeNativeStreamFilterTest.php" namespace="Eloquent\Endec\Base64" fullPackage="Eloquent.Endec.Base64" tests="2" assertions="2" failures="0" errors="0" time="0.012594">
+      <testcase name="testFilter" class="Eloquent\Endec\Base64\Base64DecodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64DecodeNativeStreamFilterTest.php" line="30" assertions="1" time="0.007113"/>
+      <testcase name="testFilterFailure" class="Eloquent\Endec\Base64\Base64DecodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64DecodeNativeStreamFilterTest.php" line="44" assertions="1" time="0.005481"/>
     </testsuite>
-    <testsuite name="Eloquent\Endec\Base64\Base64Test" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64Test.php" namespace="Eloquent\Endec\Base64" fullPackage="Eloquent.Endec.Base64" tests="21" assertions="24" failures="0" errors="0" time="0.106166">
-      <testcase name="testConstructor" class="Eloquent\Endec\Base64\Base64Test" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64Test.php" line="33" assertions="2" time="0.005253"/>
-      <testcase name="testConstructorDefaults" class="Eloquent\Endec\Base64\Base64Test" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64Test.php" line="39" assertions="2" time="0.005693"/>
-      <testsuite name="Eloquent\Endec\Base64\Base64Test::testEncode" tests="7" assertions="7" failures="0" errors="0" time="0.029986">
-        <testcase name="testEncode with data set &quot;RFC 4648 base64 test vector 1&quot;" assertions="1" time="0.004287"/>
-        <testcase name="testEncode with data set &quot;RFC 4648 base64 test vector 2&quot;" assertions="1" time="0.004262"/>
-        <testcase name="testEncode with data set &quot;RFC 4648 base64 test vector 3&quot;" assertions="1" time="0.004265"/>
-        <testcase name="testEncode with data set &quot;RFC 4648 base64 test vector 4&quot;" assertions="1" time="0.004275"/>
-        <testcase name="testEncode with data set &quot;RFC 4648 base64 test vector 5&quot;" assertions="1" time="0.004297"/>
-        <testcase name="testEncode with data set &quot;RFC 4648 base64 test vector 6&quot;" assertions="1" time="0.004267"/>
-        <testcase name="testEncode with data set &quot;RFC 4648 base64 test vector 7&quot;" assertions="1" time="0.004333"/>
+    <testsuite name="Eloquent\Endec\Base64\Base64DecodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64DecodeTransformTest.php" namespace="Eloquent\Endec\Base64" fullPackage="Eloquent.Endec.Base64" tests="21" assertions="22" failures="0" errors="0" time="0.101349">
+      <testsuite name="Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransform" tests="9" assertions="9" failures="0" errors="0" time="0.039392">
+        <testcase name="testTransform with data set &quot;Empty&quot;" assertions="1" time="0.004180"/>
+        <testcase name="testTransform with data set &quot;1 byte&quot;" assertions="1" time="0.004194"/>
+        <testcase name="testTransform with data set &quot;2 bytes&quot;" assertions="1" time="0.004241"/>
+        <testcase name="testTransform with data set &quot;3 bytes&quot;" assertions="1" time="0.004395"/>
+        <testcase name="testTransform with data set &quot;4 bytes&quot;" assertions="1" time="0.004289"/>
+        <testcase name="testTransform with data set &quot;5 bytes&quot;" assertions="1" time="0.004087"/>
+        <testcase name="testTransform with data set &quot;6 bytes&quot;" assertions="1" time="0.004245"/>
+        <testcase name="testTransform with data set &quot;7 bytes&quot;" assertions="1" time="0.004801"/>
+        <testcase name="testTransform with data set &quot;8 bytes&quot;" assertions="1" time="0.004960"/>
       </testsuite>
-      <testcase name="testEncodeFullAlphabet" class="Eloquent\Endec\Base64\Base64Test" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64Test.php" line="69" assertions="1" time="0.004270"/>
-      <testsuite name="Eloquent\Endec\Base64\Base64Test::testDecode" tests="7" assertions="7" failures="0" errors="0" time="0.029858">
-        <testcase name="testDecode with data set &quot;RFC 4648 base64 test vector 1&quot;" assertions="1" time="0.004266"/>
-        <testcase name="testDecode with data set &quot;RFC 4648 base64 test vector 2&quot;" assertions="1" time="0.004254"/>
-        <testcase name="testDecode with data set &quot;RFC 4648 base64 test vector 3&quot;" assertions="1" time="0.004255"/>
-        <testcase name="testDecode with data set &quot;RFC 4648 base64 test vector 4&quot;" assertions="1" time="0.004270"/>
-        <testcase name="testDecode with data set &quot;RFC 4648 base64 test vector 5&quot;" assertions="1" time="0.004266"/>
-        <testcase name="testDecode with data set &quot;RFC 4648 base64 test vector 6&quot;" assertions="1" time="0.004280"/>
-        <testcase name="testDecode with data set &quot;RFC 4648 base64 test vector 7&quot;" assertions="1" time="0.004267"/>
+      <testsuite name="Eloquent\Endec\Base64\Base64DecodeTransformTest::testTransformEnd" tests="9" assertions="9" failures="0" errors="0" time="0.045632">
+        <testcase name="testTransformEnd with data set &quot;Empty&quot;" assertions="1" time="0.004970"/>
+        <testcase name="testTransformEnd with data set &quot;2 bytes&quot;" assertions="1" time="0.005411"/>
+        <testcase name="testTransformEnd with data set &quot;3 bytes&quot;" assertions="1" time="0.004983"/>
+        <testcase name="testTransformEnd with data set &quot;4 bytes&quot;" assertions="1" time="0.004812"/>
+        <testcase name="testTransformEnd with data set &quot;5 bytes&quot;" assertions="1" time="0.005691"/>
+        <testcase name="testTransformEnd with data set &quot;6 bytes&quot;" assertions="1" time="0.004797"/>
+        <testcase name="testTransformEnd with data set &quot;7 bytes&quot;" assertions="1" time="0.005085"/>
+        <testcase name="testTransformEnd with data set &quot;8 bytes&quot;" assertions="1" time="0.005047"/>
+        <testcase name="testTransformEnd with data set &quot;8 bytes with padding&quot;" assertions="1" time="0.004836"/>
       </testsuite>
-      <testcase name="testDecodeFullAlphabet" class="Eloquent\Endec\Base64\Base64Test" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64Test.php" line="89" assertions="1" time="0.004293"/>
-      <testcase name="testCreateEncodeStream" class="Eloquent\Endec\Base64\Base64Test" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64Test.php" line="97" assertions="1" time="0.010838"/>
-      <testcase name="testCreateDecodeStream" class="Eloquent\Endec\Base64\Base64Test" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64Test.php" line="102" assertions="1" time="0.010822"/>
-      <testcase name="testInstance" class="Eloquent\Endec\Base64\Base64Test" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64Test.php" line="107" assertions="2" time="0.005153"/>
+      <testcase name="testTransformFailureLength" class="Eloquent\Endec\Base64\Base64DecodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64DecodeTransformTest.php" line="78" assertions="1" time="0.005296"/>
+      <testcase name="testTransformFailureAlphabet" class="Eloquent\Endec\Base64\Base64DecodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64DecodeTransformTest.php" line="84" assertions="1" time="0.005321"/>
+      <testcase name="testInstance" class="Eloquent\Endec\Base64\Base64DecodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64DecodeTransformTest.php" line="90" assertions="2" time="0.005708"/>
     </testsuite>
-    <testsuite name="Eloquent\Endec\Base64\Base64UrlDecodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlDecodeNativeStreamFilterTest.php" namespace="Eloquent\Endec\Base64" fullPackage="Eloquent.Endec.Base64" tests="2" assertions="2" failures="0" errors="0" time="0.012375">
-      <testcase name="testFilter" class="Eloquent\Endec\Base64\Base64UrlDecodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlDecodeNativeStreamFilterTest.php" line="30" assertions="1" time="0.006751"/>
-      <testcase name="testFilterFailure" class="Eloquent\Endec\Base64\Base64UrlDecodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlDecodeNativeStreamFilterTest.php" line="44" assertions="1" time="0.005624"/>
+    <testsuite name="Eloquent\Endec\Base64\Base64EncodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64EncodeNativeStreamFilterTest.php" namespace="Eloquent\Endec\Base64" fullPackage="Eloquent.Endec.Base64" tests="1" assertions="1" failures="0" errors="0" time="0.007826">
+      <testcase name="testFilter" class="Eloquent\Endec\Base64\Base64EncodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64EncodeNativeStreamFilterTest.php" line="30" assertions="1" time="0.007826"/>
     </testsuite>
-    <testsuite name="Eloquent\Endec\Base64\Base64UrlDecodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlDecodeTransformTest.php" namespace="Eloquent\Endec\Base64" fullPackage="Eloquent.Endec.Base64" tests="20" assertions="21" failures="0" errors="0" time="0.084335">
-      <testsuite name="Eloquent\Endec\Base64\Base64UrlDecodeTransformTest::testTransform" tests="9" assertions="9" failures="0" errors="0" time="0.037327">
-        <testcase name="testTransform with data set &quot;Empty&quot;" assertions="1" time="0.004183"/>
-        <testcase name="testTransform with data set &quot;1 byte&quot;" assertions="1" time="0.004142"/>
-        <testcase name="testTransform with data set &quot;2 bytes&quot;" assertions="1" time="0.004125"/>
-        <testcase name="testTransform with data set &quot;3 bytes&quot;" assertions="1" time="0.004133"/>
-        <testcase name="testTransform with data set &quot;4 bytes&quot;" assertions="1" time="0.004127"/>
-        <testcase name="testTransform with data set &quot;5 bytes&quot;" assertions="1" time="0.004182"/>
-        <testcase name="testTransform with data set &quot;6 bytes&quot;" assertions="1" time="0.004145"/>
-        <testcase name="testTransform with data set &quot;7 bytes&quot;" assertions="1" time="0.004129"/>
-        <testcase name="testTransform with data set &quot;8 bytes&quot;" assertions="1" time="0.004161"/>
+    <testsuite name="Eloquent\Endec\Base64\Base64EncodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64EncodeTransformTest.php" namespace="Eloquent\Endec\Base64" fullPackage="Eloquent.Endec.Base64" tests="15" assertions="16" failures="0" errors="0" time="0.074640">
+      <testsuite name="Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransform" tests="7" assertions="7" failures="0" errors="0" time="0.034697">
+        <testcase name="testTransform with data set &quot;Empty&quot;" assertions="1" time="0.004883"/>
+        <testcase name="testTransform with data set &quot;1 byte&quot;" assertions="1" time="0.005116"/>
+        <testcase name="testTransform with data set &quot;2 bytes&quot;" assertions="1" time="0.005085"/>
+        <testcase name="testTransform with data set &quot;3 bytes&quot;" assertions="1" time="0.004967"/>
+        <testcase name="testTransform with data set &quot;4 bytes&quot;" assertions="1" time="0.005049"/>
+        <testcase name="testTransform with data set &quot;5 bytes&quot;" assertions="1" time="0.004819"/>
+        <testcase name="testTransform with data set &quot;6 bytes&quot;" assertions="1" time="0.004778"/>
       </testsuite>
-      <testsuite name="Eloquent\Endec\Base64\Base64UrlDecodeTransformTest::testTransformEnd" tests="9" assertions="9" failures="0" errors="0" time="0.037534">
-        <testcase name="testTransformEnd with data set &quot;Empty&quot;" assertions="1" time="0.004150"/>
-        <testcase name="testTransformEnd with data set &quot;1 byte&quot;" assertions="1" time="0.004171"/>
-        <testcase name="testTransformEnd with data set &quot;2 bytes&quot;" assertions="1" time="0.004151"/>
-        <testcase name="testTransformEnd with data set &quot;3 bytes&quot;" assertions="1" time="0.004178"/>
-        <testcase name="testTransformEnd with data set &quot;4 bytes&quot;" assertions="1" time="0.004142"/>
-        <testcase name="testTransformEnd with data set &quot;5 bytes&quot;" assertions="1" time="0.004186"/>
-        <testcase name="testTransformEnd with data set &quot;6 bytes&quot;" assertions="1" time="0.004165"/>
-        <testcase name="testTransformEnd with data set &quot;7 bytes&quot;" assertions="1" time="0.004177"/>
-        <testcase name="testTransformEnd with data set &quot;8 bytes&quot;" assertions="1" time="0.004215"/>
+      <testsuite name="Eloquent\Endec\Base64\Base64EncodeTransformTest::testTransformEnd" tests="7" assertions="7" failures="0" errors="0" time="0.034186">
+        <testcase name="testTransformEnd with data set &quot;Empty&quot;" assertions="1" time="0.004833"/>
+        <testcase name="testTransformEnd with data set &quot;1 byte&quot;" assertions="1" time="0.004948"/>
+        <testcase name="testTransformEnd with data set &quot;2 bytes&quot;" assertions="1" time="0.004868"/>
+        <testcase name="testTransformEnd with data set &quot;3 bytes&quot;" assertions="1" time="0.004802"/>
+        <testcase name="testTransformEnd with data set &quot;4 bytes&quot;" assertions="1" time="0.004999"/>
+        <testcase name="testTransformEnd with data set &quot;5 bytes&quot;" assertions="1" time="0.004892"/>
+        <testcase name="testTransformEnd with data set &quot;6 bytes&quot;" assertions="1" time="0.004844"/>
       </testsuite>
-      <testcase name="testTransformFailure" class="Eloquent\Endec\Base64\Base64UrlDecodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlDecodeTransformTest.php" line="78" assertions="1" time="0.004614"/>
-      <testcase name="testInstance" class="Eloquent\Endec\Base64\Base64UrlDecodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlDecodeTransformTest.php" line="84" assertions="2" time="0.004859"/>
+      <testcase name="testInstance" class="Eloquent\Endec\Base64\Base64EncodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64EncodeTransformTest.php" line="74" assertions="2" time="0.005757"/>
     </testsuite>
-    <testsuite name="Eloquent\Endec\Base64\Base64UrlEncodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlEncodeNativeStreamFilterTest.php" namespace="Eloquent\Endec\Base64" fullPackage="Eloquent.Endec.Base64" tests="1" assertions="1" failures="0" errors="0" time="0.006675">
-      <testcase name="testFilter" class="Eloquent\Endec\Base64\Base64UrlEncodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlEncodeNativeStreamFilterTest.php" line="30" assertions="1" time="0.006675"/>
+    <testsuite name="Eloquent\Endec\Base64\Base64Test" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64Test.php" namespace="Eloquent\Endec\Base64" fullPackage="Eloquent.Endec.Base64" tests="21" assertions="24" failures="0" errors="0" time="0.127152">
+      <testcase name="testConstructor" class="Eloquent\Endec\Base64\Base64Test" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64Test.php" line="33" assertions="2" time="0.006178"/>
+      <testcase name="testConstructorDefaults" class="Eloquent\Endec\Base64\Base64Test" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64Test.php" line="39" assertions="2" time="0.007070"/>
+      <testsuite name="Eloquent\Endec\Base64\Base64Test::testEncode" tests="7" assertions="7" failures="0" errors="0" time="0.036177">
+        <testcase name="testEncode with data set &quot;RFC 4648 base64 test vector 1&quot;" assertions="1" time="0.005059"/>
+        <testcase name="testEncode with data set &quot;RFC 4648 base64 test vector 2&quot;" assertions="1" time="0.004944"/>
+        <testcase name="testEncode with data set &quot;RFC 4648 base64 test vector 3&quot;" assertions="1" time="0.004882"/>
+        <testcase name="testEncode with data set &quot;RFC 4648 base64 test vector 4&quot;" assertions="1" time="0.004992"/>
+        <testcase name="testEncode with data set &quot;RFC 4648 base64 test vector 5&quot;" assertions="1" time="0.005913"/>
+        <testcase name="testEncode with data set &quot;RFC 4648 base64 test vector 6&quot;" assertions="1" time="0.005222"/>
+        <testcase name="testEncode with data set &quot;RFC 4648 base64 test vector 7&quot;" assertions="1" time="0.005165"/>
+      </testsuite>
+      <testcase name="testEncodeFullAlphabet" class="Eloquent\Endec\Base64\Base64Test" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64Test.php" line="69" assertions="1" time="0.005472"/>
+      <testsuite name="Eloquent\Endec\Base64\Base64Test::testDecode" tests="7" assertions="7" failures="0" errors="0" time="0.034314">
+        <testcase name="testDecode with data set &quot;RFC 4648 base64 test vector 1&quot;" assertions="1" time="0.004871"/>
+        <testcase name="testDecode with data set &quot;RFC 4648 base64 test vector 2&quot;" assertions="1" time="0.004946"/>
+        <testcase name="testDecode with data set &quot;RFC 4648 base64 test vector 3&quot;" assertions="1" time="0.004868"/>
+        <testcase name="testDecode with data set &quot;RFC 4648 base64 test vector 4&quot;" assertions="1" time="0.004919"/>
+        <testcase name="testDecode with data set &quot;RFC 4648 base64 test vector 5&quot;" assertions="1" time="0.004965"/>
+        <testcase name="testDecode with data set &quot;RFC 4648 base64 test vector 6&quot;" assertions="1" time="0.004858"/>
+        <testcase name="testDecode with data set &quot;RFC 4648 base64 test vector 7&quot;" assertions="1" time="0.004887"/>
+      </testsuite>
+      <testcase name="testDecodeFullAlphabet" class="Eloquent\Endec\Base64\Base64Test" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64Test.php" line="89" assertions="1" time="0.005062"/>
+      <testcase name="testCreateEncodeStream" class="Eloquent\Endec\Base64\Base64Test" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64Test.php" line="97" assertions="1" time="0.013304"/>
+      <testcase name="testCreateDecodeStream" class="Eloquent\Endec\Base64\Base64Test" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64Test.php" line="102" assertions="1" time="0.013317"/>
+      <testcase name="testInstance" class="Eloquent\Endec\Base64\Base64Test" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64Test.php" line="107" assertions="2" time="0.006258"/>
     </testsuite>
-    <testsuite name="Eloquent\Endec\Base64\Base64UrlEncodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlEncodeTransformTest.php" namespace="Eloquent\Endec\Base64" fullPackage="Eloquent.Endec.Base64" tests="15" assertions="16" failures="0" errors="0" time="0.063205">
-      <testsuite name="Eloquent\Endec\Base64\Base64UrlEncodeTransformTest::testTransform" tests="7" assertions="7" failures="0" errors="0" time="0.029107">
-        <testcase name="testTransform with data set &quot;Empty&quot;" assertions="1" time="0.004207"/>
-        <testcase name="testTransform with data set &quot;1 byte&quot;" assertions="1" time="0.004114"/>
-        <testcase name="testTransform with data set &quot;2 bytes&quot;" assertions="1" time="0.004133"/>
-        <testcase name="testTransform with data set &quot;3 bytes&quot;" assertions="1" time="0.004157"/>
-        <testcase name="testTransform with data set &quot;4 bytes&quot;" assertions="1" time="0.004147"/>
-        <testcase name="testTransform with data set &quot;5 bytes&quot;" assertions="1" time="0.004191"/>
-        <testcase name="testTransform with data set &quot;6 bytes&quot;" assertions="1" time="0.004158"/>
-      </testsuite>
-      <testsuite name="Eloquent\Endec\Base64\Base64UrlEncodeTransformTest::testTransformEnd" tests="7" assertions="7" failures="0" errors="0" time="0.029203">
-        <testcase name="testTransformEnd with data set &quot;Empty&quot;" assertions="1" time="0.004162"/>
-        <testcase name="testTransformEnd with data set &quot;1 byte&quot;" assertions="1" time="0.004183"/>
-        <testcase name="testTransformEnd with data set &quot;2 bytes&quot;" assertions="1" time="0.004169"/>
-        <testcase name="testTransformEnd with data set &quot;3 bytes&quot;" assertions="1" time="0.004160"/>
-        <testcase name="testTransformEnd with data set &quot;4 bytes&quot;" assertions="1" time="0.004165"/>
-        <testcase name="testTransformEnd with data set &quot;5 bytes&quot;" assertions="1" time="0.004213"/>
-        <testcase name="testTransformEnd with data set &quot;6 bytes&quot;" assertions="1" time="0.004151"/>
-      </testsuite>
-      <testcase name="testInstance" class="Eloquent\Endec\Base64\Base64UrlEncodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlEncodeTransformTest.php" line="74" assertions="2" time="0.004895"/>
+    <testsuite name="Eloquent\Endec\Base64\Base64UrlDecodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlDecodeNativeStreamFilterTest.php" namespace="Eloquent\Endec\Base64" fullPackage="Eloquent.Endec.Base64" tests="2" assertions="2" failures="0" errors="0" time="0.014374">
+      <testcase name="testFilter" class="Eloquent\Endec\Base64\Base64UrlDecodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlDecodeNativeStreamFilterTest.php" line="30" assertions="1" time="0.007835"/>
+      <testcase name="testFilterFailure" class="Eloquent\Endec\Base64\Base64UrlDecodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlDecodeNativeStreamFilterTest.php" line="44" assertions="1" time="0.006539"/>
     </testsuite>
-    <testsuite name="Eloquent\Endec\Base64\Base64UrlTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlTest.php" namespace="Eloquent\Endec\Base64" fullPackage="Eloquent.Endec.Base64" tests="21" assertions="24" failures="0" errors="0" time="0.106855">
-      <testcase name="testConstructor" class="Eloquent\Endec\Base64\Base64UrlTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlTest.php" line="33" assertions="2" time="0.005192"/>
-      <testcase name="testConstructorDefaults" class="Eloquent\Endec\Base64\Base64UrlTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlTest.php" line="39" assertions="2" time="0.005739"/>
-      <testsuite name="Eloquent\Endec\Base64\Base64UrlTest::testEncode" tests="7" assertions="7" failures="0" errors="0" time="0.030149">
-        <testcase name="testEncode with data set &quot;RFC 4648 base64 test vector 1&quot;" assertions="1" time="0.004330"/>
-        <testcase name="testEncode with data set &quot;RFC 4648 base64 test vector 2&quot;" assertions="1" time="0.004300"/>
-        <testcase name="testEncode with data set &quot;RFC 4648 base64 test vector 3&quot;" assertions="1" time="0.004274"/>
-        <testcase name="testEncode with data set &quot;RFC 4648 base64 test vector 4&quot;" assertions="1" time="0.004297"/>
-        <testcase name="testEncode with data set &quot;RFC 4648 base64 test vector 5&quot;" assertions="1" time="0.004301"/>
-        <testcase name="testEncode with data set &quot;RFC 4648 base64 test vector 6&quot;" assertions="1" time="0.004305"/>
-        <testcase name="testEncode with data set &quot;RFC 4648 base64 test vector 7&quot;" assertions="1" time="0.004342"/>
+    <testsuite name="Eloquent\Endec\Base64\Base64UrlDecodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlDecodeTransformTest.php" namespace="Eloquent\Endec\Base64" fullPackage="Eloquent.Endec.Base64" tests="20" assertions="21" failures="0" errors="0" time="0.094776">
+      <testsuite name="Eloquent\Endec\Base64\Base64UrlDecodeTransformTest::testTransform" tests="9" assertions="9" failures="0" errors="0" time="0.043080">
+        <testcase name="testTransform with data set &quot;Empty&quot;" assertions="1" time="0.004728"/>
+        <testcase name="testTransform with data set &quot;1 byte&quot;" assertions="1" time="0.004714"/>
+        <testcase name="testTransform with data set &quot;2 bytes&quot;" assertions="1" time="0.004833"/>
+        <testcase name="testTransform with data set &quot;3 bytes&quot;" assertions="1" time="0.004762"/>
+        <testcase name="testTransform with data set &quot;4 bytes&quot;" assertions="1" time="0.004935"/>
+        <testcase name="testTransform with data set &quot;5 bytes&quot;" assertions="1" time="0.004852"/>
+        <testcase name="testTransform with data set &quot;6 bytes&quot;" assertions="1" time="0.004737"/>
+        <testcase name="testTransform with data set &quot;7 bytes&quot;" assertions="1" time="0.004837"/>
+        <testcase name="testTransform with data set &quot;8 bytes&quot;" assertions="1" time="0.004682"/>
       </testsuite>
-      <testcase name="testEncodeFullAlphabet" class="Eloquent\Endec\Base64\Base64UrlTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlTest.php" line="69" assertions="1" time="0.004318"/>
-      <testsuite name="Eloquent\Endec\Base64\Base64UrlTest::testDecode" tests="7" assertions="7" failures="0" errors="0" time="0.030170">
-        <testcase name="testDecode with data set &quot;RFC 4648 base64 test vector 1&quot;" assertions="1" time="0.004290"/>
-        <testcase name="testDecode with data set &quot;RFC 4648 base64 test vector 2&quot;" assertions="1" time="0.004344"/>
-        <testcase name="testDecode with data set &quot;RFC 4648 base64 test vector 3&quot;" assertions="1" time="0.004336"/>
-        <testcase name="testDecode with data set &quot;RFC 4648 base64 test vector 4&quot;" assertions="1" time="0.004307"/>
-        <testcase name="testDecode with data set &quot;RFC 4648 base64 test vector 5&quot;" assertions="1" time="0.004301"/>
-        <testcase name="testDecode with data set &quot;RFC 4648 base64 test vector 6&quot;" assertions="1" time="0.004305"/>
-        <testcase name="testDecode with data set &quot;RFC 4648 base64 test vector 7&quot;" assertions="1" time="0.004287"/>
+      <testsuite name="Eloquent\Endec\Base64\Base64UrlDecodeTransformTest::testTransformEnd" tests="8" assertions="8" failures="0" errors="0" time="0.035573">
+        <testcase name="testTransformEnd with data set &quot;Empty&quot;" assertions="1" time="0.004756"/>
+        <testcase name="testTransformEnd with data set &quot;2 bytes&quot;" assertions="1" time="0.004576"/>
+        <testcase name="testTransformEnd with data set &quot;3 bytes&quot;" assertions="1" time="0.004386"/>
+        <testcase name="testTransformEnd with data set &quot;4 bytes&quot;" assertions="1" time="0.004430"/>
+        <testcase name="testTransformEnd with data set &quot;5 bytes&quot;" assertions="1" time="0.004383"/>
+        <testcase name="testTransformEnd with data set &quot;6 bytes&quot;" assertions="1" time="0.004201"/>
+        <testcase name="testTransformEnd with data set &quot;7 bytes&quot;" assertions="1" time="0.004566"/>
+        <testcase name="testTransformEnd with data set &quot;8 bytes&quot;" assertions="1" time="0.004276"/>
       </testsuite>
-      <testcase name="testDecodeFullAlphabet" class="Eloquent\Endec\Base64\Base64UrlTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlTest.php" line="89" assertions="1" time="0.004319"/>
-      <testcase name="testCreateEncodeStream" class="Eloquent\Endec\Base64\Base64UrlTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlTest.php" line="97" assertions="1" time="0.010899"/>
-      <testcase name="testCreateDecodeStream" class="Eloquent\Endec\Base64\Base64UrlTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlTest.php" line="102" assertions="1" time="0.010902"/>
-      <testcase name="testInstance" class="Eloquent\Endec\Base64\Base64UrlTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlTest.php" line="107" assertions="2" time="0.005167"/>
+      <testcase name="testTransformFailureLength" class="Eloquent\Endec\Base64\Base64UrlDecodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlDecodeTransformTest.php" line="77" assertions="1" time="0.005137"/>
+      <testcase name="testTransformFailureAlphabet" class="Eloquent\Endec\Base64\Base64UrlDecodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlDecodeTransformTest.php" line="83" assertions="1" time="0.005219"/>
+      <testcase name="testInstance" class="Eloquent\Endec\Base64\Base64UrlDecodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlDecodeTransformTest.php" line="89" assertions="2" time="0.005767"/>
     </testsuite>
-    <testsuite name="Eloquent\Endec\EndecTest" file="/home/travis/build/ezzatron/endec/test/suite/EndecTest.php" namespace="Eloquent\Endec" fullPackage="Eloquent.Endec" tests="1" assertions="8" failures="0" errors="0" time="0.152892">
-      <testcase name="testRegisterFilters" class="Eloquent\Endec\EndecTest" file="/home/travis/build/ezzatron/endec/test/suite/EndecTest.php" line="20" assertions="8" time="0.152892"/>
+    <testsuite name="Eloquent\Endec\Base64\Base64UrlEncodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlEncodeNativeStreamFilterTest.php" namespace="Eloquent\Endec\Base64" fullPackage="Eloquent.Endec.Base64" tests="1" assertions="1" failures="0" errors="0" time="0.007706">
+      <testcase name="testFilter" class="Eloquent\Endec\Base64\Base64UrlEncodeNativeStreamFilterTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlEncodeNativeStreamFilterTest.php" line="30" assertions="1" time="0.007706"/>
     </testsuite>
-    <testsuite name="Eloquent\Endec\Exception\InvalidEncodedDataExceptionTest" file="/home/travis/build/ezzatron/endec/test/suite/Exception/InvalidEncodedDataExceptionTest.php" namespace="Eloquent\Endec\Exception" fullPackage="Eloquent.Endec.Exception" tests="1" assertions="5" failures="0" errors="0" time="0.005416">
-      <testcase name="testException" class="Eloquent\Endec\Exception\InvalidEncodedDataExceptionTest" file="/home/travis/build/ezzatron/endec/test/suite/Exception/InvalidEncodedDataExceptionTest.php" line="19" assertions="5" time="0.005416"/>
+    <testsuite name="Eloquent\Endec\Base64\Base64UrlEncodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlEncodeTransformTest.php" namespace="Eloquent\Endec\Base64" fullPackage="Eloquent.Endec.Base64" tests="15" assertions="16" failures="0" errors="0" time="0.076054">
+      <testsuite name="Eloquent\Endec\Base64\Base64UrlEncodeTransformTest::testTransform" tests="7" assertions="7" failures="0" errors="0" time="0.035107">
+        <testcase name="testTransform with data set &quot;Empty&quot;" assertions="1" time="0.004961"/>
+        <testcase name="testTransform with data set &quot;1 byte&quot;" assertions="1" time="0.005431"/>
+        <testcase name="testTransform with data set &quot;2 bytes&quot;" assertions="1" time="0.004826"/>
+        <testcase name="testTransform with data set &quot;3 bytes&quot;" assertions="1" time="0.005015"/>
+        <testcase name="testTransform with data set &quot;4 bytes&quot;" assertions="1" time="0.004903"/>
+        <testcase name="testTransform with data set &quot;5 bytes&quot;" assertions="1" time="0.005105"/>
+        <testcase name="testTransform with data set &quot;6 bytes&quot;" assertions="1" time="0.004866"/>
+      </testsuite>
+      <testsuite name="Eloquent\Endec\Base64\Base64UrlEncodeTransformTest::testTransformEnd" tests="7" assertions="7" failures="0" errors="0" time="0.034975">
+        <testcase name="testTransformEnd with data set &quot;Empty&quot;" assertions="1" time="0.005373"/>
+        <testcase name="testTransformEnd with data set &quot;1 byte&quot;" assertions="1" time="0.004967"/>
+        <testcase name="testTransformEnd with data set &quot;2 bytes&quot;" assertions="1" time="0.004875"/>
+        <testcase name="testTransformEnd with data set &quot;3 bytes&quot;" assertions="1" time="0.004927"/>
+        <testcase name="testTransformEnd with data set &quot;4 bytes&quot;" assertions="1" time="0.004977"/>
+        <testcase name="testTransformEnd with data set &quot;5 bytes&quot;" assertions="1" time="0.004892"/>
+        <testcase name="testTransformEnd with data set &quot;6 bytes&quot;" assertions="1" time="0.004964"/>
+      </testsuite>
+      <testcase name="testInstance" class="Eloquent\Endec\Base64\Base64UrlEncodeTransformTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlEncodeTransformTest.php" line="74" assertions="2" time="0.005972"/>
     </testsuite>
-    <testsuite name="Eloquent\Endec\Transform\TransformStreamTest" file="/home/travis/build/ezzatron/endec/test/suite/Transform/TransformStreamTest.php" namespace="Eloquent\Endec\Transform" fullPackage="Eloquent.Endec.Transform" tests="16" assertions="51" failures="0" errors="0" time="0.143301">
-      <testcase name="testConstructor" class="Eloquent\Endec\Transform\TransformStreamTest" file="/home/travis/build/ezzatron/endec/test/suite/Transform/TransformStreamTest.php" line="63" assertions="4" time="0.009800"/>
-      <testcase name="testConstructorDefaults" class="Eloquent\Endec\Transform\TransformStreamTest" file="/home/travis/build/ezzatron/endec/test/suite/Transform/TransformStreamTest.php" line="71" assertions="1" time="0.006867"/>
-      <testsuite name="Eloquent\Endec\Transform\TransformStreamTest::testWriteEnd" tests="5" assertions="20" failures="0" errors="0" time="0.044437">
-        <testcase name="testWriteEnd with data set &quot;1 byte(s)&quot;" assertions="4" time="0.008241"/>
-        <testcase name="testWriteEnd with data set &quot;2 byte(s)&quot;" assertions="4" time="0.008654"/>
-        <testcase name="testWriteEnd with data set &quot;3 byte(s)&quot;" assertions="4" time="0.009193"/>
-        <testcase name="testWriteEnd with data set &quot;4 byte(s)&quot;" assertions="4" time="0.008926"/>
-        <testcase name="testWriteEnd with data set &quot;5 byte(s)&quot;" assertions="4" time="0.009423"/>
+    <testsuite name="Eloquent\Endec\Base64\Base64UrlTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlTest.php" namespace="Eloquent\Endec\Base64" fullPackage="Eloquent.Endec.Base64" tests="21" assertions="24" failures="0" errors="0" time="0.121211">
+      <testcase name="testConstructor" class="Eloquent\Endec\Base64\Base64UrlTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlTest.php" line="33" assertions="2" time="0.006269"/>
+      <testcase name="testConstructorDefaults" class="Eloquent\Endec\Base64\Base64UrlTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlTest.php" line="39" assertions="2" time="0.007550"/>
+      <testsuite name="Eloquent\Endec\Base64\Base64UrlTest::testEncode" tests="7" assertions="7" failures="0" errors="0" time="0.039335">
+        <testcase name="testEncode with data set &quot;RFC 4648 base64 test vector 1&quot;" assertions="1" time="0.005222"/>
+        <testcase name="testEncode with data set &quot;RFC 4648 base64 test vector 2&quot;" assertions="1" time="0.005059"/>
+        <testcase name="testEncode with data set &quot;RFC 4648 base64 test vector 3&quot;" assertions="1" time="0.005289"/>
+        <testcase name="testEncode with data set &quot;RFC 4648 base64 test vector 4&quot;" assertions="1" time="0.005114"/>
+        <testcase name="testEncode with data set &quot;RFC 4648 base64 test vector 5&quot;" assertions="1" time="0.005947"/>
+        <testcase name="testEncode with data set &quot;RFC 4648 base64 test vector 6&quot;" assertions="1" time="0.006184"/>
+        <testcase name="testEncode with data set &quot;RFC 4648 base64 test vector 7&quot;" assertions="1" time="0.006520"/>
       </testsuite>
-      <testsuite name="Eloquent\Endec\Transform\TransformStreamTest::testEnd" tests="5" assertions="15" failures="0" errors="0" time="0.041385">
-        <testcase name="testEnd with data set &quot;1 byte(s)&quot;" assertions="3" time="0.008229"/>
-        <testcase name="testEnd with data set &quot;2 byte(s)&quot;" assertions="3" time="0.008529"/>
-        <testcase name="testEnd with data set &quot;3 byte(s)&quot;" assertions="3" time="0.008080"/>
-        <testcase name="testEnd with data set &quot;4 byte(s)&quot;" assertions="3" time="0.008566"/>
-        <testcase name="testEnd with data set &quot;5 byte(s)&quot;" assertions="3" time="0.007981"/>
+      <testcase name="testEncodeFullAlphabet" class="Eloquent\Endec\Base64\Base64UrlTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlTest.php" line="69" assertions="1" time="0.005635"/>
+      <testsuite name="Eloquent\Endec\Base64\Base64UrlTest::testDecode" tests="7" assertions="7" failures="0" errors="0" time="0.031460">
+        <testcase name="testDecode with data set &quot;RFC 4648 base64 test vector 1&quot;" assertions="1" time="0.005901"/>
+        <testcase name="testDecode with data set &quot;RFC 4648 base64 test vector 2&quot;" assertions="1" time="0.005406"/>
+        <testcase name="testDecode with data set &quot;RFC 4648 base64 test vector 3&quot;" assertions="1" time="0.004068"/>
+        <testcase name="testDecode with data set &quot;RFC 4648 base64 test vector 4&quot;" assertions="1" time="0.003991"/>
+        <testcase name="testDecode with data set &quot;RFC 4648 base64 test vector 5&quot;" assertions="1" time="0.004061"/>
+        <testcase name="testDecode with data set &quot;RFC 4648 base64 test vector 6&quot;" assertions="1" time="0.004014"/>
+        <testcase name="testDecode with data set &quot;RFC 4648 base64 test vector 7&quot;" assertions="1" time="0.004019"/>
       </testsuite>
-      <testcase name="testEndEmptyString" class="Eloquent\Endec\Transform\TransformStreamTest" file="/home/travis/build/ezzatron/endec/test/suite/Transform/TransformStreamTest.php" line="114" assertions="1" time="0.007636"/>
-      <testcase name="testClose" class="Eloquent\Endec\Transform\TransformStreamTest" file="/home/travis/build/ezzatron/endec/test/suite/Transform/TransformStreamTest.php" line="121" assertions="4" time="0.010744"/>
-      <testcase name="testPauseResume" class="Eloquent\Endec\Transform\TransformStreamTest" file="/home/travis/build/ezzatron/endec/test/suite/Transform/TransformStreamTest.php" line="134" assertions="5" time="0.011020"/>
-      <testcase name="testPipe" class="Eloquent\Endec\Transform\TransformStreamTest" file="/home/travis/build/ezzatron/endec/test/suite/Transform/TransformStreamTest.php" line="151" assertions="1" time="0.011412"/>
+      <testcase name="testDecodeFullAlphabet" class="Eloquent\Endec\Base64\Base64UrlTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlTest.php" line="89" assertions="1" time="0.004187"/>
+      <testcase name="testCreateEncodeStream" class="Eloquent\Endec\Base64\Base64UrlTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlTest.php" line="97" assertions="1" time="0.010919"/>
+      <testcase name="testCreateDecodeStream" class="Eloquent\Endec\Base64\Base64UrlTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlTest.php" line="102" assertions="1" time="0.011045"/>
+      <testcase name="testInstance" class="Eloquent\Endec\Base64\Base64UrlTest" file="/home/travis/build/ezzatron/endec/test/suite/Base64/Base64UrlTest.php" line="107" assertions="2" time="0.004811"/>
+    </testsuite>
+    <testsuite name="Eloquent\Endec\EndecTest" file="/home/travis/build/ezzatron/endec/test/suite/EndecTest.php" namespace="Eloquent\Endec" fullPackage="Eloquent.Endec" tests="1" assertions="8" failures="0" errors="0" time="0.175208">
+      <testcase name="testRegisterFilters" class="Eloquent\Endec\EndecTest" file="/home/travis/build/ezzatron/endec/test/suite/EndecTest.php" line="20" assertions="8" time="0.175208"/>
+    </testsuite>
+    <testsuite name="Eloquent\Endec\Exception\InvalidEncodedDataExceptionTest" file="/home/travis/build/ezzatron/endec/test/suite/Exception/InvalidEncodedDataExceptionTest.php" namespace="Eloquent\Endec\Exception" fullPackage="Eloquent.Endec.Exception" tests="1" assertions="5" failures="0" errors="0" time="0.005740">
+      <testcase name="testException" class="Eloquent\Endec\Exception\InvalidEncodedDataExceptionTest" file="/home/travis/build/ezzatron/endec/test/suite/Exception/InvalidEncodedDataExceptionTest.php" line="19" assertions="5" time="0.005740"/>
+    </testsuite>
+    <testsuite name="Eloquent\Endec\Transform\TransformStreamTest" file="/home/travis/build/ezzatron/endec/test/suite/Transform/TransformStreamTest.php" namespace="Eloquent\Endec\Transform" fullPackage="Eloquent.Endec.Transform" tests="16" assertions="51" failures="0" errors="0" time="0.154525">
+      <testcase name="testConstructor" class="Eloquent\Endec\Transform\TransformStreamTest" file="/home/travis/build/ezzatron/endec/test/suite/Transform/TransformStreamTest.php" line="63" assertions="4" time="0.009786"/>
+      <testcase name="testConstructorDefaults" class="Eloquent\Endec\Transform\TransformStreamTest" file="/home/travis/build/ezzatron/endec/test/suite/Transform/TransformStreamTest.php" line="71" assertions="1" time="0.005907"/>
+      <testsuite name="Eloquent\Endec\Transform\TransformStreamTest::testWriteEnd" tests="5" assertions="20" failures="0" errors="0" time="0.044475">
+        <testcase name="testWriteEnd with data set &quot;1 byte(s)&quot;" assertions="4" time="0.008297"/>
+        <testcase name="testWriteEnd with data set &quot;2 byte(s)&quot;" assertions="4" time="0.008337"/>
+        <testcase name="testWriteEnd with data set &quot;3 byte(s)&quot;" assertions="4" time="0.009899"/>
+        <testcase name="testWriteEnd with data set &quot;4 byte(s)&quot;" assertions="4" time="0.008320"/>
+        <testcase name="testWriteEnd with data set &quot;5 byte(s)&quot;" assertions="4" time="0.009622"/>
+      </testsuite>
+      <testsuite name="Eloquent\Endec\Transform\TransformStreamTest::testEnd" tests="5" assertions="15" failures="0" errors="0" time="0.048498">
+        <testcase name="testEnd with data set &quot;1 byte(s)&quot;" assertions="3" time="0.009948"/>
+        <testcase name="testEnd with data set &quot;2 byte(s)&quot;" assertions="3" time="0.009913"/>
+        <testcase name="testEnd with data set &quot;3 byte(s)&quot;" assertions="3" time="0.010023"/>
+        <testcase name="testEnd with data set &quot;4 byte(s)&quot;" assertions="3" time="0.009251"/>
+        <testcase name="testEnd with data set &quot;5 byte(s)&quot;" assertions="3" time="0.009363"/>
+      </testsuite>
+      <testcase name="testEndEmptyString" class="Eloquent\Endec\Transform\TransformStreamTest" file="/home/travis/build/ezzatron/endec/test/suite/Transform/TransformStreamTest.php" line="114" assertions="1" time="0.007711"/>
+      <testcase name="testClose" class="Eloquent\Endec\Transform\TransformStreamTest" file="/home/travis/build/ezzatron/endec/test/suite/Transform/TransformStreamTest.php" line="121" assertions="4" time="0.011259"/>
+      <testcase name="testPauseResume" class="Eloquent\Endec\Transform\TransformStreamTest" file="/home/travis/build/ezzatron/endec/test/suite/Transform/TransformStreamTest.php" line="134" assertions="5" time="0.012228"/>
+      <testcase name="testPipe" class="Eloquent\Endec\Transform\TransformStreamTest" file="/home/travis/build/ezzatron/endec/test/suite/Transform/TransformStreamTest.php" line="151" assertions="1" time="0.014661"/>
     </testsuite>
   </testsuite>
 </testsuites>

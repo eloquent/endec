@@ -22,8 +22,7 @@
     <h1><a href="../../../Eloquent/Endec/Base32.html">Eloquent\Endec\Base32</a>\Base32DecodeTransform</h1>
     </div>
         <div class="content">
-                <p>class    <strong>Base32DecodeTransform</strong>        implements
-        <a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a></p>
+                <p>class    <strong>Base32DecodeTransform</strong>        extends <a href="../../../Eloquent/Endec/Base32/AbstractBase32DecodeTransform.html"><abbr title="Eloquent\Endec\Base32\AbstractBase32DecodeTransform">AbstractBase32DecodeTransform</abbr></a></p>
 
             <div class="description">
             <p>Decodes data using base32 encoding.</p>
@@ -38,6 +37,16 @@
             <table>
                     <tr>
                 <td class="type">
+                    <abbr title="Eloquent\Endec\Base32\tuple&lt;string,integer&gt;">tuple&lt;string,integer&gt;</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_transform">transform</a>(string $data, boolean $isEnd = false)
+                    <p>Transform the supplied data.</p>
+                </td>
+                <td><small>from&nbsp;<a href="../../../Eloquent/Endec/Base32/AbstractBase32DecodeTransform.html#method_transform"><abbr title="Eloquent\Endec\Base32\AbstractBase32DecodeTransform">AbstractBase32DecodeTransform</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type">
                     static&nbsp;<a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a>
                 </td>
                 <td class="last">
@@ -48,11 +57,11 @@
             </tr>
                     <tr>
                 <td class="type">
-                    <abbr title="Eloquent\Endec\Base32\tuple&lt;string,integer&gt;">tuple&lt;string,integer&gt;</abbr>
+                    
                 </td>
                 <td class="last">
-                    <a href="#method_transform">transform</a>(string $data, boolean $isEnd = false)
-                    <p>Transform the supplied data.</p>
+                    <a href="#method___construct">__construct</a>()
+                    <p>Construct a new base32 decode transform.</p>
                 </td>
                 <td></td>
             </tr>
@@ -61,33 +70,8 @@
 
         <h2>Details</h2>
 
-                        <h3 id="method_instance">
-        <div class="location">at line 28</div>
-        <code>        static    public            <a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a>
-    <strong>instance</strong>()</code>
-    </h3>
-    <div class="details">
-        <p>Get the static instance of this transform.</p>
-        <p>
-</p>
-        <div class="tags">
-            
-                            <h4>Return Value</h4>
-
-                    <table>
-        <tr>
-            <td><a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a></td>
-            <td>The transform.</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-                <h3 id="method_transform">
-        <div class="location">at line 51</div>
+                        <h3 id="method_transform">
+        <div class="location">in <a href="../../../Eloquent/Endec/Base32/AbstractBase32DecodeTransform.html#method_transform"><abbr title="Eloquent\Endec\Base32\AbstractBase32DecodeTransform">AbstractBase32DecodeTransform</abbr></a> at line 49</div>
         <code>            public            <abbr title="Eloquent\Endec\Base32\tuple&lt;string,integer&gt;">tuple&lt;string,integer&gt;</abbr>
     <strong>transform</strong>(string $data, boolean $isEnd = false)</code>
     </h3>
@@ -133,6 +117,47 @@ the second argument.</p>
             </tr>
             </table>
 
+            
+                    </div>
+    </div>
+
+                <h3 id="method_instance">
+        <div class="location">at line 28</div>
+        <code>        static    public            <a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a>
+    <strong>instance</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Get the static instance of this transform.</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a></td>
+            <td>The transform.</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method___construct">
+        <div class="location">at line 40</div>
+        <code>            public            
+    <strong>__construct</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Construct a new base32 decode transform.</p>
+        <p>
+</p>
+        <div class="tags">
+            
+            
             
                     </div>
     </div>

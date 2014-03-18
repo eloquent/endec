@@ -1,12 +1,12 @@
 
 
 Code Coverage Report 
-  2014-03-18 07:01:45
+  2014-03-18 08:17:10
 
  Summary: 
-  Classes: 100.00% (26/26)
-  Methods: 100.00% (69/69)
-  Lines:   100.00% (394/394)
+  Classes: 100.00% (31/31)
+  Methods: 100.00% (80/80)
+  Lines:   100.00% (561/561)
 
 \Eloquent\Endec::AbstractCodec
   Methods: 100.00% ( 7/ 7)   Lines: 100.00% ( 11/ 11)
@@ -22,22 +22,32 @@ Code Coverage Report
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
 \Eloquent\Endec\Base16::Base16EncodeTransform
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  4/  4)
+\Eloquent\Endec\Base32::AbstractBase32DecodeTransform
+  Methods: 100.00% ( 8/ 8)   Lines: 100.00% ( 74/ 74)
+\Eloquent\Endec\Base32::AbstractBase32EncodeTransform
+  Methods: 100.00% ( 7/ 7)   Lines: 100.00% ( 71/ 71)
 \Eloquent\Endec\Base32::Base32
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  9/  9)
 \Eloquent\Endec\Base32::Base32DecodeNativeStreamFilter
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
 \Eloquent\Endec\Base32::Base32DecodeTransform
-  Methods: 100.00% ( 7/ 7)   Lines: 100.00% ( 72/ 72)
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% ( 38/ 38)
 \Eloquent\Endec\Base32::Base32EncodeNativeStreamFilter
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
 \Eloquent\Endec\Base32::Base32EncodeTransform
-  Methods: 100.00% ( 7/ 7)   Lines: 100.00% ( 72/ 72)
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% ( 38/ 38)
+\Eloquent\Endec\Base32::Base32Hex
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  9/  9)
+\Eloquent\Endec\Base32::Base32HexDecodeTransform
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% ( 38/ 38)
+\Eloquent\Endec\Base32::Base32HexEncodeTransform
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% ( 38/ 38)
 \Eloquent\Endec\Base64::Base64
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  9/  9)
 \Eloquent\Endec\Base64::Base64DecodeNativeStreamFilter
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
 \Eloquent\Endec\Base64::Base64DecodeTransform
-  Methods: 100.00% ( 2/ 2)   Lines: 100.00% ( 11/ 11)
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% ( 13/ 13)
 \Eloquent\Endec\Base64::Base64EncodeNativeStreamFilter
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
 \Eloquent\Endec\Base64::Base64EncodeTransform
@@ -47,7 +57,7 @@ Code Coverage Report
 \Eloquent\Endec\Base64::Base64UrlDecodeNativeStreamFilter
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
 \Eloquent\Endec\Base64::Base64UrlDecodeTransform
-  Methods: 100.00% ( 2/ 2)   Lines: 100.00% ( 17/ 17)
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% ( 19/ 19)
 \Eloquent\Endec\Base64::Base64UrlEncodeNativeStreamFilter
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
 \Eloquent\Endec\Base64::Base64UrlEncodeTransform
@@ -57,6 +67,6 @@ Code Coverage Report
 \Eloquent\Endec\Transform::AbstractDataTransform
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  6/  6)
 \Eloquent\Endec\Transform::AbstractNativeStreamFilter
-  Methods:  66.67% ( 2/ 3)   Lines: 100.00% ( 29/ 29)
+  Methods:  66.67% ( 2/ 3)   Lines: 100.00% ( 30/ 30)
 \Eloquent\Endec\Transform::TransformStream
   Methods: 100.00% (13/13)   Lines: 100.00% ( 59/ 59)
