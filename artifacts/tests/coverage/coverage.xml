@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1395125937">
-  <project timestamp="1395125937">
+<coverage generated="1395126105">
+  <project timestamp="1395126105">
     <package name="Eloquent\Endec">
       <file name="/home/travis/build/ezzatron/endec/src/AbstractCodec.php">
         <class name="AbstractCodec" namespace="Eloquent\Endec">
