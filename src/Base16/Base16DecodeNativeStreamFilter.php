@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace Eloquent\Endec\Hexadecimal;
+namespace Eloquent\Endec\Base16;
 
 use Eloquent\Endec\Transform\AbstractNativeStreamFilter;
 use Eloquent\Endec\Transform\DataTransformInterface;
 
 /**
- * A native stream filter for hexadecimal encoding.
+ * A native stream filter for base16 (hexadecimal) decoding.
  */
-class HexadecimalEncodeNativeStreamFilter extends AbstractNativeStreamFilter
+class Base16DecodeNativeStreamFilter extends AbstractNativeStreamFilter
 {
     /**
      * Create the transform.
@@ -26,6 +26,6 @@ class HexadecimalEncodeNativeStreamFilter extends AbstractNativeStreamFilter
      */
     protected function createTransform()
     {
-        return HexadecimalEncodeTransform::instance();
+        return Base16DecodeTransform::instance();
     }
 }

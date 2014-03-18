@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace Eloquent\Endec\Hexadecimal;
+namespace Eloquent\Endec\Base16;
 
 use Eloquent\Endec\AbstractCodec;
 use Eloquent\Endec\Encoding\CodecInterface;
 use Eloquent\Endec\Transform\DataTransformInterface;
 
 /**
- * A codec for the hexadecimal encoding protocol.
+ * A codec for the base16 (hexadecimal) encoding protocol.
  */
-class Hexadecimal extends AbstractCodec
+class Base16 extends AbstractCodec
 {
     /**
      * Get the static instance of this codec.
@@ -35,7 +35,7 @@ class Hexadecimal extends AbstractCodec
     }
 
     /**
-     * Construct a new hexadecimal codec.
+     * Construct a new base16 (hexadecimal) codec.
      *
      * @param DataTransformInterface|null $encodeTransform The encode transform to use.
      * @param DataTransformInterface|null $decodeTransform The decode transform to use.
@@ -45,10 +45,10 @@ class Hexadecimal extends AbstractCodec
         DataTransformInterface $decodeTransform = null
     ) {
         if (null === $encodeTransform) {
-            $encodeTransform = HexadecimalEncodeTransform::instance();
+            $encodeTransform = Base16EncodeTransform::instance();
         }
         if (null === $decodeTransform) {
-            $decodeTransform = HexadecimalDecodeTransform::instance();
+            $decodeTransform = Base16DecodeTransform::instance();
         }
 
         parent::__construct($encodeTransform, $decodeTransform);

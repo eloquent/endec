@@ -9,25 +9,25 @@
  * file that was distributed with this source code.
  */
 
-namespace Eloquent\Endec\Hexadecimal;
+namespace Eloquent\Endec\Base16;
 
 use Eloquent\Endec\Transform\TransformStream;
 use Eloquent\Liberator\Liberator;
 use PHPUnit_Framework_TestCase;
 
 /**
- * @covers \Eloquent\Endec\Hexadecimal\Hexadecimal
+ * @covers \Eloquent\Endec\Base16\Base16
  * @covers \Eloquent\Endec\AbstractCodec
  */
-class HexadecimalTest extends PHPUnit_Framework_TestCase
+class Base16Test extends PHPUnit_Framework_TestCase
 {
     protected function setUp()
     {
         parent::setUp();
 
-        $this->encodeTransform = new HexadecimalEncodeTransform;
-        $this->decodeTransform = new HexadecimalDecodeTransform;
-        $this->codec = new Hexadecimal($this->encodeTransform, $this->decodeTransform);
+        $this->encodeTransform = new Base16EncodeTransform;
+        $this->decodeTransform = new Base16DecodeTransform;
+        $this->codec = new Base16($this->encodeTransform, $this->decodeTransform);
     }
 
     public function testConstructor()
@@ -38,7 +38,7 @@ class HexadecimalTest extends PHPUnit_Framework_TestCase
 
     public function testConstructorDefaults()
     {
-        $this->codec = new Hexadecimal;
+        $this->codec = new Base16;
 
         $this->assertEquals($this->encodeTransform, $this->codec->encodeTransform());
         $this->assertEquals($this->decodeTransform, $this->codec->decodeTransform());

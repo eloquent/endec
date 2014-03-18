@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace Eloquent\Endec\Hexadecimal;
+namespace Eloquent\Endec\Base16;
 
 use Eloquent\Endec\Endec;
 use PHPUnit_Framework_TestCase;
 
 /**
- * @covers \Eloquent\Endec\Hexadecimal\HexadecimalEncodeNativeStreamFilter
+ * @covers \Eloquent\Endec\Base16\Base16DecodeNativeStreamFilter
  * @covers \Eloquent\Endec\Transform\AbstractNativeStreamFilter
  */
-class HexadecimalEncodeNativeStreamFilterTest extends PHPUnit_Framework_TestCase
+class Base16DecodeNativeStreamFilterTest extends PHPUnit_Framework_TestCase
 {
     protected function setUp()
     {
@@ -31,13 +31,25 @@ class HexadecimalEncodeNativeStreamFilterTest extends PHPUnit_Framework_TestCase
     {
         $path = tempnam(sys_get_temp_dir(), 'endec');
         $stream = fopen($path, 'wb');
-        stream_filter_append($stream, 'endec.hexadecimal-encode');
-        fwrite($stream, 'f');
-        fwrite($stream, 'oobar');
+        stream_filter_append($stream, 'endec.base16-decode');
+        fwrite($stream, '6');
+        fwrite($stream, '66f6f626172');
         fclose($stream);
         $actual = file_get_contents($path);
         unlink($path);
 
-        $this->assertSame('666f6f626172', $actual);
+        $this->assertSame('foobar', $actual);
+    }
+
+    public function testFilterFailure()
+    {
+        $path = tempnam(sys_get_temp_dir(), 'endec');
+        $stream = fopen($path, 'wb');
+        stream_filter_append($stream, 'endec.base16-decode');
+        $actual = fwrite($stream, '$');
+        fclose($stream);
+        unlink($path);
+
+        $this->assertSame(0, $actual);
     }
 }

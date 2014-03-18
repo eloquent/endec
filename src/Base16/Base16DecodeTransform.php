@@ -9,15 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace Eloquent\Endec\Hexadecimal;
+namespace Eloquent\Endec\Base16;
 
+use Eloquent\Endec\Exception\InvalidEncodedDataException;
+use Eloquent\Endec\Transform\AbstractDataTransform;
 use Eloquent\Endec\Transform\DataTransformInterface;
 use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
 
 /**
- * Encodes data using hexadecimal encoding.
+ * Decodes data using base16 (hexadecimal) encoding.
  */
-class HexadecimalEncodeTransform implements DataTransformInterface
+class Base16DecodeTransform extends AbstractDataTransform
 {
     /**
      * Get the static instance of this transform.
@@ -49,7 +51,18 @@ class HexadecimalEncodeTransform implements DataTransformInterface
      */
     public function transform($data, $isEnd = false)
     {
-        return array(bin2hex($data), strlen($data));
+        $consumedBytes = $this->calculateConsumeBytes($data, $isEnd, 2);
+        if (!$consumedBytes) {
+            return array('', 0);
+        }
+
+        $consumedData = substr($data, 0, $consumedBytes);
+        $outputBuffer = @hex2bin($consumedData);
+        if (false === $outputBuffer) {
+            throw new InvalidEncodedDataException('base16', $consumedData);
+        }
+
+        return array($outputBuffer, $consumedBytes);
     }
 
     private static $instance;

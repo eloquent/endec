@@ -9,22 +9,22 @@
  * file that was distributed with this source code.
  */
 
-namespace Eloquent\Endec\Hexadecimal;
+namespace Eloquent\Endec\Base16;
 
 use Eloquent\Liberator\Liberator;
 use PHPUnit_Framework_TestCase;
 
 /**
- * @covers \Eloquent\Endec\Hexadecimal\HexadecimalDecodeTransform
+ * @covers \Eloquent\Endec\Base16\Base16DecodeTransform
  * @covers \Eloquent\Endec\Transform\AbstractDataTransform
  */
-class HexadecimalDecodeTransformTest extends PHPUnit_Framework_TestCase
+class Base16DecodeTransformTest extends PHPUnit_Framework_TestCase
 {
     protected function setUp()
     {
         parent::setUp();
 
-        $this->transform = new HexadecimalDecodeTransform;
+        $this->transform = new Base16DecodeTransform;
     }
 
     public function transformData()

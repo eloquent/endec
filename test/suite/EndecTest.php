@@ -23,20 +23,20 @@ class EndecTest extends PHPUnit_Framework_TestCase
         Endec::registerFilters($isolator);
 
         Phake::verify($isolator)->stream_filter_register(
+            'endec.base16-encode',
+            'Eloquent\Endec\Base16\Base16EncodeNativeStreamFilter'
+        );
+        Phake::verify($isolator)->stream_filter_register(
+            'endec.base16-decode',
+            'Eloquent\Endec\Base16\Base16DecodeNativeStreamFilter'
+        );
+        Phake::verify($isolator)->stream_filter_register(
             'endec.base64-encode',
             'Eloquent\Endec\Base64\Base64EncodeNativeStreamFilter'
         );
         Phake::verify($isolator)->stream_filter_register(
             'endec.base64-decode',
             'Eloquent\Endec\Base64\Base64DecodeNativeStreamFilter'
-        );
-        Phake::verify($isolator)->stream_filter_register(
-            'endec.hexadecimal-encode',
-            'Eloquent\Endec\Hexadecimal\HexadecimalEncodeNativeStreamFilter'
-        );
-        Phake::verify($isolator)->stream_filter_register(
-            'endec.hexadecimal-decode',
-            'Eloquent\Endec\Hexadecimal\HexadecimalDecodeNativeStreamFilter'
         );
     }
 }
