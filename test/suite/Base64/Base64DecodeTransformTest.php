@@ -59,7 +59,6 @@ class Base64DecodeTransformTest extends PHPUnit_Framework_TestCase
             '2 bytes'              => array('Zm',       'f',      2),
             '3 bytes'              => array('Zm9',      'fo',     3),
             '4 bytes'              => array('Zm9v',     'foo',    4),
-            '5 bytes'              => array('Zm9vY',    'foo',    5),
             '6 bytes'              => array('Zm9vYm',   'foob',   6),
             '7 bytes'              => array('Zm9vYmF',  'fooba',  7),
             '8 bytes'              => array('Zm9vYmFy', 'foobar', 8),
@@ -75,16 +74,26 @@ class Base64DecodeTransformTest extends PHPUnit_Framework_TestCase
         $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input, true));
     }
 
-    public function testTransformFailureLength()
+    public function invalidTransformEndData()
     {
-        $this->setExpectedException('Eloquent\Endec\Exception\InvalidEncodedDataException');
-        $this->transform->transform('A', true);
+        //                                input
+        return array(
+            'Invalid characters' => array('$$$$'),
+            '1 byte'             => array('A'),
+            '5 bytes'            => array('AAAAA'),
+        );
     }
 
-    public function testTransformFailureAlphabet()
+    /**
+     * @dataProvider invalidTransformEndData
+     */
+    public function testTransformFailureLength($input)
     {
-        $this->setExpectedException('Eloquent\Endec\Exception\InvalidEncodedDataException');
-        $this->transform->transform('$$$$', true);
+        $this->setExpectedException(
+            'Eloquent\Endec\Exception\InvalidEncodedDataException',
+            'The supplied data is not valid for base64 encoding.'
+        );
+        $this->transform->transform($input, true);
     }
 
     public function testInstance()
