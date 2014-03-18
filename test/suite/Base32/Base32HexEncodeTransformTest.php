@@ -15,16 +15,16 @@ use Eloquent\Liberator\Liberator;
 use PHPUnit_Framework_TestCase;
 
 /**
- * @covers \Eloquent\Endec\Base32\Base32EncodeTransform
+ * @covers \Eloquent\Endec\Base32\Base32HexEncodeTransform
  * @covers \Eloquent\Endec\Base32\AbstractBase32EncodeTransform
  */
-class Base32EncodeTransformTest extends PHPUnit_Framework_TestCase
+class Base32HexEncodeTransformTest extends PHPUnit_Framework_TestCase
 {
     protected function setUp()
     {
         parent::setUp();
 
-        $this->transform = new Base32EncodeTransform;
+        $this->transform = new Base32HexEncodeTransform;
     }
 
     public function transformData()
@@ -36,12 +36,12 @@ class Base32EncodeTransformTest extends PHPUnit_Framework_TestCase
             '2 bytes'  => array('fo',         '',                 0),
             '3 bytes'  => array('foo',        '',                 0),
             '4 bytes'  => array('foob',       '',                 0),
-            '5 bytes'  => array('fooba',      'MZXW6YTB',         5),
-            '6 bytes'  => array('foobar',     'MZXW6YTB',         5),
-            '7 bytes'  => array('foobarb',    'MZXW6YTB',         5),
-            '8 bytes'  => array('foobarba',   'MZXW6YTB',         5),
-            '9 bytes'  => array('foobarbaz',  'MZXW6YTB',         5),
-            '10 bytes' => array('foobarbazq', 'MZXW6YTBOJRGC6TR', 10),
+            '5 bytes'  => array('fooba',      'CPNMUOJ1',         5),
+            '6 bytes'  => array('foobar',     'CPNMUOJ1',         5),
+            '7 bytes'  => array('foobarb',    'CPNMUOJ1',         5),
+            '8 bytes'  => array('foobarba',   'CPNMUOJ1',         5),
+            '9 bytes'  => array('foobarbaz',  'CPNMUOJ1',         5),
+            '10 bytes' => array('foobarbazq', 'CPNMUOJ1E9H62UJH', 10),
         );
     }
 
@@ -58,16 +58,16 @@ class Base32EncodeTransformTest extends PHPUnit_Framework_TestCase
         //                      input         output              bytesConsumed
         return array(
             'Empty'    => array('',           '',                 0),
-            '1 byte'   => array('f',          'MY======',         1),
-            '2 bytes'  => array('fo',         'MZXQ====',         2),
-            '3 bytes'  => array('foo',        'MZXW6===',         3),
-            '4 bytes'  => array('foob',       'MZXW6YQ=',         4),
-            '5 bytes'  => array('fooba',      'MZXW6YTB',         5),
-            '6 bytes'  => array('foobar',     'MZXW6YTBOI======', 6),
-            '7 bytes'  => array('foobarb',    'MZXW6YTBOJRA====', 7),
-            '8 bytes'  => array('foobarba',   'MZXW6YTBOJRGC===', 8),
-            '9 bytes'  => array('foobarbaz',  'MZXW6YTBOJRGC6Q=', 9),
-            '10 bytes' => array('foobarbazq', 'MZXW6YTBOJRGC6TR', 10),
+            '1 byte'   => array('f',          'CO======',         1),
+            '2 bytes'  => array('fo',         'CPNG====',         2),
+            '3 bytes'  => array('foo',        'CPNMU===',         3),
+            '4 bytes'  => array('foob',       'CPNMUOG=',         4),
+            '5 bytes'  => array('fooba',      'CPNMUOJ1',         5),
+            '6 bytes'  => array('foobar',     'CPNMUOJ1E8======', 6),
+            '7 bytes'  => array('foobarb',    'CPNMUOJ1E9H0====', 7),
+            '8 bytes'  => array('foobarba',   'CPNMUOJ1E9H62===', 8),
+            '9 bytes'  => array('foobarbaz',  'CPNMUOJ1E9H62UG=', 9),
+            '10 bytes' => array('foobarbazq', 'CPNMUOJ1E9H62UJH', 10),
         );
     }
 

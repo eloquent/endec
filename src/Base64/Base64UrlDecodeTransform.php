@@ -59,6 +59,10 @@ class Base64UrlDecodeTransform extends AbstractDataTransform
         }
 
         $consumedData = substr($data, 0, $consumedBytes);
+        if (1 === $consumedBytes) {
+            throw new InvalidEncodedDataException('base64url', $consumedData);
+        }
+
         $outputBuffer = base64_decode(
             str_pad(
                 strtr($consumedData, '-_', '+/'),

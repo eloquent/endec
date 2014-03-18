@@ -14,6 +14,10 @@ namespace Eloquent\Endec\Base32;
 use Eloquent\Liberator\Liberator;
 use PHPUnit_Framework_TestCase;
 
+/**
+ * @covers \Eloquent\Endec\Base32\Base32DecodeTransform
+ * @covers \Eloquent\Endec\Base32\AbstractBase32DecodeTransform
+ */
 class Base32DecodeTransformTest extends PHPUnit_Framework_TestCase
 {
     protected function setUp()
@@ -84,10 +88,16 @@ class Base32DecodeTransformTest extends PHPUnit_Framework_TestCase
         $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input, true));
     }
 
-    public function testTransformFailure()
+    public function testTransformFailureLength()
     {
         $this->setExpectedException('Eloquent\Endec\Exception\InvalidEncodedDataException');
-        $this->transform->transform('$', true);
+        $this->transform->transform('A', true);
+    }
+
+    public function testTransformFailureAlphabet()
+    {
+        $this->setExpectedException('Eloquent\Endec\Exception\InvalidEncodedDataException');
+        $this->transform->transform('$$$$$$$$', true);
     }
 
     public function testInstance()

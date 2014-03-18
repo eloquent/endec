@@ -56,7 +56,6 @@ class Base64UrlDecodeTransformTest extends PHPUnit_Framework_TestCase
         //                     input       output    bytesConsumed
         return array(
             'Empty'   => array('',         '',       0),
-            '1 byte'  => array('Z',        '',       1),
             '2 bytes' => array('Zm',       'f',      2),
             '3 bytes' => array('Zm9',      'fo',     3),
             '4 bytes' => array('Zm9v',     'foo',    4),
@@ -75,10 +74,16 @@ class Base64UrlDecodeTransformTest extends PHPUnit_Framework_TestCase
         $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input, true));
     }
 
-    public function testTransformFailure()
+    public function testTransformFailureLength()
     {
         $this->setExpectedException('Eloquent\Endec\Exception\InvalidEncodedDataException');
-        $this->transform->transform('$', true);
+        $this->transform->transform('A', true);
+    }
+
+    public function testTransformFailureAlphabet()
+    {
+        $this->setExpectedException('Eloquent\Endec\Exception\InvalidEncodedDataException');
+        $this->transform->transform('$$$$', true);
     }
 
     public function testInstance()

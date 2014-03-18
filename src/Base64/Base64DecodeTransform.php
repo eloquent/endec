@@ -59,6 +59,10 @@ class Base64DecodeTransform extends AbstractDataTransform
         }
 
         $consumedData = substr($data, 0, $consumedBytes);
+        if (1 === strlen(rtrim($consumedData, '='))) {
+            throw new InvalidEncodedDataException('base64', $consumedData);
+        }
+
         $outputBuffer = base64_decode($consumedData, true);
         if (false === $outputBuffer) {
             throw new InvalidEncodedDataException('base64', $consumedData);

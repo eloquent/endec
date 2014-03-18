@@ -14,11 +14,11 @@ namespace Eloquent\Endec\Base32;
 use Eloquent\Endec\Transform\DataTransformInterface;
 
 /**
- * Encodes data using base32 encoding.
+ * Encodes data using base32hex encoding.
  *
- * @link http://tools.ietf.org/html/rfc4648#section-6
+ * @link http://tools.ietf.org/html/rfc4648#section-7
  */
-class Base32EncodeTransform extends AbstractBase32EncodeTransform
+class Base32HexEncodeTransform extends AbstractBase32EncodeTransform
 {
     /**
      * Get the static instance of this transform.
@@ -41,6 +41,16 @@ class Base32EncodeTransform extends AbstractBase32EncodeTransform
     {
         parent::__construct(
             array(
+                '0',
+                '1',
+                '2',
+                '3',
+                '4',
+                '5',
+                '6',
+                '7',
+                '8',
+                '9',
                 'A',
                 'B',
                 'C',
@@ -63,16 +73,6 @@ class Base32EncodeTransform extends AbstractBase32EncodeTransform
                 'T',
                 'U',
                 'V',
-                'W',
-                'X',
-                'Y',
-                'Z',
-                '2',
-                '3',
-                '4',
-                '5',
-                '6',
-                '7',
             )
         );
     }
