@@ -16,18 +16,18 @@ use Eloquent\Liberator\Liberator;
 use PHPUnit_Framework_TestCase;
 
 /**
- * @covers \Eloquent\Endec\Base64\Base64
+ * @covers \Eloquent\Endec\Base64\Base64Url
  * @covers \Eloquent\Endec\AbstractCodec
  */
-class Base64Test extends PHPUnit_Framework_TestCase
+class Base64UrlTest extends PHPUnit_Framework_TestCase
 {
     protected function setUp()
     {
         parent::setUp();
 
-        $this->encodeTransform = new Base64EncodeTransform;
-        $this->decodeTransform = new Base64DecodeTransform;
-        $this->codec = new Base64($this->encodeTransform, $this->decodeTransform);
+        $this->encodeTransform = new Base64UrlEncodeTransform;
+        $this->decodeTransform = new Base64UrlDecodeTransform;
+        $this->codec = new Base64Url($this->encodeTransform, $this->decodeTransform);
     }
 
     public function testConstructor()
@@ -38,7 +38,7 @@ class Base64Test extends PHPUnit_Framework_TestCase
 
     public function testConstructorDefaults()
     {
-        $this->codec = new Base64;
+        $this->codec = new Base64Url;
 
         $this->assertEquals($this->encodeTransform, $this->codec->encodeTransform());
         $this->assertEquals($this->decodeTransform, $this->codec->decodeTransform());
@@ -49,11 +49,11 @@ class Base64Test extends PHPUnit_Framework_TestCase
         //                                           decoded   encoded
         return array(
             'RFC 4648 base64 test vector 1' => array('',       ''),
-            'RFC 4648 base64 test vector 2' => array('f',      'Zg=='),
-            'RFC 4648 base64 test vector 3' => array('fo',     'Zm8='),
+            'RFC 4648 base64 test vector 2' => array('f',      'Zg'),
+            'RFC 4648 base64 test vector 3' => array('fo',     'Zm8'),
             'RFC 4648 base64 test vector 4' => array('foo',    'Zm9v'),
-            'RFC 4648 base64 test vector 5' => array('foob',   'Zm9vYg=='),
-            'RFC 4648 base64 test vector 6' => array('fooba',  'Zm9vYmE='),
+            'RFC 4648 base64 test vector 5' => array('foob',   'Zm9vYg'),
+            'RFC 4648 base64 test vector 6' => array('fooba',  'Zm9vYmE'),
             'RFC 4648 base64 test vector 7' => array('foobar', 'Zm9vYmFy'),
         );
     }
@@ -69,7 +69,7 @@ class Base64Test extends PHPUnit_Framework_TestCase
     public function testEncodeFullAlphabet()
     {
         $this->assertSame(
-            'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/AA==',
+            'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_AA',
             $this->codec->encode(
                 hex2bin(
                     '00108310518720928b30d38f41149351559761969b71d79f8218a39259a7a29aabb2dbafc31cb3d35db7e39ebbf3dfbf00'
@@ -90,7 +90,7 @@ class Base64Test extends PHPUnit_Framework_TestCase
     {
         $this->assertSame(
             '00108310518720928b30d38f41149351559761969b71d79f8218a39259a7a29aabb2dbafc31cb3d35db7e39ebbf3dfbf00',
-            bin2hex($this->codec->decode('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/AA=='))
+            bin2hex($this->codec->decode('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_AA'))
         );
     }
 

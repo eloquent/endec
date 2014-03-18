@@ -51,5 +51,13 @@ abstract class Endec
             'endec.base64-decode',
             'Eloquent\Endec\Base64\Base64DecodeNativeStreamFilter'
         );
+        $isolator->stream_filter_register(
+            'endec.base64url-encode',
+            'Eloquent\Endec\Base64\Base64UrlEncodeNativeStreamFilter'
+        );
+        $isolator->stream_filter_register(
+            'endec.base64url-decode',
+            'Eloquent\Endec\Base64\Base64UrlDecodeNativeStreamFilter'
+        );
     }
 }
