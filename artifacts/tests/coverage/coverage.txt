@@ -1,12 +1,12 @@
 
 
 Code Coverage Report 
-  2014-03-18 06:22:52
+  2014-03-18 06:47:27
 
  Summary: 
   Classes: 100.00% (26/26)
-  Methods: 100.00% (61/61)
-  Lines:   100.00% (301/301)
+  Methods: 100.00% (69/69)
+  Lines:   100.00% (406/406)
 
 \Eloquent\Endec::AbstractCodec
   Methods: 100.00% ( 7/ 7)   Lines: 100.00% ( 11/ 11)
@@ -27,11 +27,11 @@ Code Coverage Report
 \Eloquent\Endec\Base32::Base32DecodeNativeStreamFilter
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
 \Eloquent\Endec\Base32::Base32DecodeTransform
-  Methods: 100.00% ( 3/ 3)   Lines: 100.00% ( 26/ 26)
+  Methods: 100.00% ( 7/ 7)   Lines: 100.00% ( 79/ 79)
 \Eloquent\Endec\Base32::Base32EncodeNativeStreamFilter
   Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
 \Eloquent\Endec\Base32::Base32EncodeTransform
-  Methods: 100.00% ( 3/ 3)   Lines: 100.00% ( 25/ 25)
+  Methods: 100.00% ( 7/ 7)   Lines: 100.00% ( 77/ 77)
 \Eloquent\Endec\Base64::Base64
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  9/  9)
 \Eloquent\Endec\Base64::Base64DecodeNativeStreamFilter
