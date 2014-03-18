@@ -1,7 +1,22 @@
 {
     "name": "eloquent/endec",
-    "description": "Streaming encoding and serialization for PHP.",
-    "keywords": ["encoding", "decoding", "encode", "decode", "codec", "hex", "hex", "base64", "base64url", "base32", "stream", "streaming", "react"],
+    "description": "Versatile encoders and decoders for PHP.",
+    "keywords": [
+        "encoding",
+        "decoding",
+        "encode",
+        "decode",
+        "codec",
+        "hex",
+        "base16",
+        "base32",
+        "base32hex",
+        "base64",
+        "base64url",
+        "stream",
+        "streaming",
+        "react"
+    ],
     "homepage": "https://github.com/eloquent/endec",
     "license": "MIT",
     "authors": [

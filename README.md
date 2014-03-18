@@ -1,6 +1,6 @@
 # Endec
 
-*Streaming encoding and serialization for PHP.*
+*Versatile encoders and decoders for PHP.*
 
 [![There is no current stable version][version-image]][Semantic versioning]
 [![Current build status image][build-image]][Current build status]
