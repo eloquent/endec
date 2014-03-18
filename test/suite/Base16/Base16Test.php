@@ -66,12 +66,22 @@ class Base16Test extends PHPUnit_Framework_TestCase
         $this->assertSame($encoded, $this->codec->encode($decoded));
     }
 
+    public function testEncodeFullAlphabet()
+    {
+        $this->assertSame('0123456789ABCDEF', $this->codec->encode(hex2bin('0123456789ABCDEF')));
+    }
+
     /**
      * @dataProvider encodingData
      */
     public function testDecode($decoded, $encoded)
     {
         $this->assertSame($decoded, $this->codec->decode($encoded));
+    }
+
+    public function testDecodeFullAlphabet()
+    {
+        $this->assertSame('0123456789ABCDEF', strtoupper(bin2hex($this->codec->decode('0123456789ABCDEF'))));
     }
 
     public function testCreateEncodeStream()

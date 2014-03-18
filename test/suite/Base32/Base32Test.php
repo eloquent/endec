@@ -66,12 +66,28 @@ class Base32Test extends PHPUnit_Framework_TestCase
         $this->assertSame($encoded, $this->codec->encode($decoded));
     }
 
+    public function testEncodeFullAlphabet()
+    {
+        $this->assertSame(
+            'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567AA======',
+            $this->codec->encode(hex2bin('00443214c74254b635cf84653a56d7c675be77df00'))
+        );
+    }
+
     /**
      * @dataProvider encodingData
      */
     public function testDecode($decoded, $encoded)
     {
         $this->assertSame($decoded, $this->codec->decode($encoded));
+    }
+
+    public function testDecodeFullAlphabet()
+    {
+        $this->assertSame(
+            '00443214c74254b635cf84653a56d7c675be77df00',
+            bin2hex($this->codec->decode('ABCDEFGHIJKLMNOPQRSTUVWXYZ234567AA======'))
+        );
     }
 
     public function testCreateEncodeStream()
