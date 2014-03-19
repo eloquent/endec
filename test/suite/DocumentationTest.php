@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-use Eloquent\Endec\Base64\Base64;
+use Eloquent\Endec\Base32\Base32;
 use Eloquent\Endec\Endec;
 use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
 
@@ -17,34 +17,34 @@ class DocumentationTest extends PHPUnit_Framework_TestCase
 {
     public function testStringUsage()
     {
-        $this->expectOutputString('Zm9vYmFyfoobarZm9vYmFyfoobar');
+        $this->expectOutputString('MZXW6YTBOI======foobarMZXW6YTBOI======foobar');
 
-        $codec = new Base64;
-        echo $codec->encode('foobar'); // outputs 'Zm9vYmFy'
-        echo $codec->decode('Zm9vYmFy'); // outputs 'foobar'
+        $codec = new Base32;
+        echo $codec->encode('foobar'); // outputs 'MZXW6YTBOI======'
+        echo $codec->decode('MZXW6YTBOI======'); // outputs 'foobar'
 
-        echo Base64::instance()->encode('foobar'); // outputs 'Zm9vYmFy'
-        echo Base64::instance()->decode('Zm9vYmFy'); // outputs 'foobar'
+        echo Base32::instance()->encode('foobar'); // outputs 'MZXW6YTBOI======'
+        echo Base32::instance()->decode('MZXW6YTBOI======'); // outputs 'foobar'
     }
 
     public function testStreamFilterUsage()
     {
         $path = tempnam(sys_get_temp_dir(), 'endec');
-        $this->expectOutputString('Zm9vYmFyfoobar');
+        $this->expectOutputString('MZXW6YTBOI======foobar');
 
         Endec::registerFilters();
         // $path = '/path/to/file';
 
         $stream = fopen($path, 'wb');
-        stream_filter_append($stream, 'endec.base64-encode');
+        stream_filter_append($stream, 'endec.base32-encode');
         fwrite($stream, 'fo');
         fwrite($stream, 'ob');
         fwrite($stream, 'ar');
         fclose($stream);
-        echo file_get_contents($path); // outputs 'Zm9vYmFy'
+        echo file_get_contents($path); // outputs 'MZXW6YTBOI======'
 
         $stream = fopen($path, 'rb');
-        stream_filter_append($stream, 'endec.base64-decode');
+        stream_filter_append($stream, 'endec.base32-decode');
         $data = fread($stream, 3);
         $data .= fread($stream, 3);
         $data .= fread($stream, 2);
@@ -56,9 +56,9 @@ class DocumentationTest extends PHPUnit_Framework_TestCase
 
     public function testReactStreamUsage()
     {
-        $this->expectOutputString('Zm9vYmFyfoobar');
+        $this->expectOutputString('MZXW6YTBOI======foobar');
 
-        $codec = new Base64;
+        $codec = new Base32;
         $encodeStream = $codec->createEncodeStream();
         $decodeStream = $codec->createDecodeStream();
 
@@ -84,7 +84,7 @@ class DocumentationTest extends PHPUnit_Framework_TestCase
         $encodeStream->write('ob');
         $encodeStream->end('ar');
 
-        echo $encoded; // outputs 'Zm9vYmFy'
+        echo $encoded; // outputs 'MZXW6YTBOI======'
         echo $decoded; // outputs 'foobar'
     }
 
@@ -92,7 +92,7 @@ class DocumentationTest extends PHPUnit_Framework_TestCase
     {
         $this->expectOutputString('Unable to decode');
 
-        $codec = new Base64;
+        $codec = new Base32;
         try {
             $codec->decode('!!!!');
         } catch (TransformExceptionInterface $e) {
