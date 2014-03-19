@@ -358,26 +358,27 @@ ok 356 - DocumentationTest::testHandlingErrorsReactStreamUsage
 ok 357 - DocumentationTest::testRot13TransformEncoderUsage
 ok 358 - DocumentationTest::testRot13TransformCodecUsage
 ok 359 - DocumentationTest::testMultiplyTransformUsage
-ok 360 - Eloquent\Endec\EncoderTest::testConstructor
-ok 361 - Eloquent\Endec\EncoderTest::testEncode
-ok 362 - Eloquent\Endec\EncoderTest::testCreateEncodeStream
-ok 363 - Eloquent\Endec\EndecTest::testRegisterFilters
-ok 364 - Eloquent\Endec\Exception\InvalidEncodedDataExceptionTest::testException
-ok 365 - Eloquent\Endec\Transform\TransformStreamTest::testConstructor
-ok 366 - Eloquent\Endec\Transform\TransformStreamTest::testConstructorDefaults
-ok 367 - Eloquent\Endec\Transform\TransformStreamTest::testWriteEnd with data set "1 byte(s)" ('f')
-ok 368 - Eloquent\Endec\Transform\TransformStreamTest::testWriteEnd with data set "2 byte(s)" ('fo')
-ok 369 - Eloquent\Endec\Transform\TransformStreamTest::testWriteEnd with data set "3 byte(s)" ('foo')
-ok 370 - Eloquent\Endec\Transform\TransformStreamTest::testWriteEnd with data set "4 byte(s)" ('foob')
-ok 371 - Eloquent\Endec\Transform\TransformStreamTest::testWriteEnd with data set "5 byte(s)" ('fooba')
-ok 372 - Eloquent\Endec\Transform\TransformStreamTest::testEnd with data set "1 byte(s)" ('f')
-ok 373 - Eloquent\Endec\Transform\TransformStreamTest::testEnd with data set "2 byte(s)" ('fo')
-ok 374 - Eloquent\Endec\Transform\TransformStreamTest::testEnd with data set "3 byte(s)" ('foo')
-ok 375 - Eloquent\Endec\Transform\TransformStreamTest::testEnd with data set "4 byte(s)" ('foob')
-ok 376 - Eloquent\Endec\Transform\TransformStreamTest::testEnd with data set "5 byte(s)" ('fooba')
-ok 377 - Eloquent\Endec\Transform\TransformStreamTest::testEndEmptyString
-ok 378 - Eloquent\Endec\Transform\TransformStreamTest::testClose
-ok 379 - Eloquent\Endec\Transform\TransformStreamTest::testPauseResume
-ok 380 - Eloquent\Endec\Transform\TransformStreamTest::testPipe
-ok 381 - Eloquent\Endec\Transform\TransformStreamTest::testTransformFailure
-1..381
+ok 360 - DocumentationTest::testCustomNativeStreamFilterUsage
+ok 361 - Eloquent\Endec\EncoderTest::testConstructor
+ok 362 - Eloquent\Endec\EncoderTest::testEncode
+ok 363 - Eloquent\Endec\EncoderTest::testCreateEncodeStream
+ok 364 - Eloquent\Endec\EndecTest::testRegisterFilters
+ok 365 - Eloquent\Endec\Exception\InvalidEncodedDataExceptionTest::testException
+ok 366 - Eloquent\Endec\Transform\TransformStreamTest::testConstructor
+ok 367 - Eloquent\Endec\Transform\TransformStreamTest::testConstructorDefaults
+ok 368 - Eloquent\Endec\Transform\TransformStreamTest::testWriteEnd with data set "1 byte(s)" ('f')
+ok 369 - Eloquent\Endec\Transform\TransformStreamTest::testWriteEnd with data set "2 byte(s)" ('fo')
+ok 370 - Eloquent\Endec\Transform\TransformStreamTest::testWriteEnd with data set "3 byte(s)" ('foo')
+ok 371 - Eloquent\Endec\Transform\TransformStreamTest::testWriteEnd with data set "4 byte(s)" ('foob')
+ok 372 - Eloquent\Endec\Transform\TransformStreamTest::testWriteEnd with data set "5 byte(s)" ('fooba')
+ok 373 - Eloquent\Endec\Transform\TransformStreamTest::testEnd with data set "1 byte(s)" ('f')
+ok 374 - Eloquent\Endec\Transform\TransformStreamTest::testEnd with data set "2 byte(s)" ('fo')
+ok 375 - Eloquent\Endec\Transform\TransformStreamTest::testEnd with data set "3 byte(s)" ('foo')
+ok 376 - Eloquent\Endec\Transform\TransformStreamTest::testEnd with data set "4 byte(s)" ('foob')
+ok 377 - Eloquent\Endec\Transform\TransformStreamTest::testEnd with data set "5 byte(s)" ('fooba')
+ok 378 - Eloquent\Endec\Transform\TransformStreamTest::testEndEmptyString
+ok 379 - Eloquent\Endec\Transform\TransformStreamTest::testClose
+ok 380 - Eloquent\Endec\Transform\TransformStreamTest::testPauseResume
+ok 381 - Eloquent\Endec\Transform\TransformStreamTest::testPipe
+ok 382 - Eloquent\Endec\Transform\TransformStreamTest::testTransformFailure
+1..382
