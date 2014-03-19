@@ -94,7 +94,7 @@ class DocumentationTest extends PHPUnit_Framework_TestCase
 
         $codec = new Base32;
         try {
-            $codec->decode('!!!!');
+            $codec->decode('!!!!!!!!');
         } catch (TransformExceptionInterface $e) {
             echo 'Unable to decode';
         }

@@ -68,10 +68,9 @@ echo $data; // outputs 'foobar'
 
 ### React streams
 
-A codec/encoder/decoder can be used to obtain an encode or decode stream.
-*Endec*'s streams implement both [WritableStreamInterface] and
-[ReadableStreamInterface] from the [React] library, and hence can be used in an
-asynchronous manner.
+Streams can be obtained from an [encoder, decoder, or codec]. *Endec*'s streams
+implement both [WritableStreamInterface] and [ReadableStreamInterface] from the
+[React] library, and hence can be used in an asynchronous manner.
 
 ```php
 use Eloquent\Endec\Base32\Base32;
@@ -109,7 +108,7 @@ echo $decoded; // outputs 'foobar'
 ### Handling errors
 
 Handling errors when dealing with strings is as simple as catching an exception.
-All exceptions thrown by codecs implement [TransformExceptionInterface]:
+All exceptions thrown implement [TransformExceptionInterface]:
 
 ```php
 use Eloquent\Endec\Base32\Base32;
@@ -117,14 +116,30 @@ use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
 
 $codec = new Base32;
 try {
-    $codec->decode('!!!!');
+    $codec->decode('!!!!!!!!');
 } catch (TransformExceptionInterface $e) {
     echo 'Unable to decode';
 }
 ```
 
+## Encoders, decoders, and codecs
+
+Most of the functionality of *Endec* is provided through *encoders*, *decoders*,
+and *codecs* (codecs are simply a combination of an encoder & decoder). All of
+*Endec*'s built-in encodings are implemented as codecs, but it is also possible
+to implement a standalone encoder or decoder.
+
+All encoders implement [EncoderInterface], all decoders implement
+[DecoderInterface], and all codecs implement [EncoderInterface],
+[DecoderInterface], and [CodecInterface]. This allows for type hints to
+accurately express requirements.
+
 <!-- References -->
 
+[CodecInterface]: http://lqnt.co/endec/artifacts/documentation/api/Eloquent/Endec/CodecInterface.html
+[DecoderInterface]: http://lqnt.co/endec/artifacts/documentation/api/Eloquent/Endec/DecoderInterface.html
+[encoder, decoder, or codec]: #encoders-decoders-and-codecs
+[EncoderInterface]: http://lqnt.co/endec/artifacts/documentation/api/Eloquent/Endec/EncoderInterface.html
 [React]: http://reactphp.org/
 [ReadableStreamInterface]: https://github.com/reactphp/react/blob/v0.4.0/src/Stream/ReadableStreamInterface.php
 [stream filters]: http://php.net/stream.filters
