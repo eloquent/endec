@@ -11,7 +11,7 @@
 
 namespace Eloquent\Endec\Base64;
 
-use Eloquent\Endec\AbstractCodec;
+use Eloquent\Endec\Codec;
 use Eloquent\Endec\Encoding\CodecInterface;
 use Eloquent\Endec\Transform\DataTransformInterface;
 
@@ -20,7 +20,7 @@ use Eloquent\Endec\Transform\DataTransformInterface;
  *
  * @link http://tools.ietf.org/html/rfc4648#section-4
  */
-class Base64 extends AbstractCodec
+class Base64 extends Codec
 {
     /**
      * Get the static instance of this codec.

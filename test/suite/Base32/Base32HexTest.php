@@ -15,10 +15,6 @@ use Eloquent\Endec\Transform\TransformStream;
 use Eloquent\Liberator\Liberator;
 use PHPUnit_Framework_TestCase;
 
-/**
- * @covers \Eloquent\Endec\Base32\Base32Hex
- * @covers \Eloquent\Endec\AbstractCodec
- */
 class Base32HexTest extends PHPUnit_Framework_TestCase
 {
     protected function setUp()

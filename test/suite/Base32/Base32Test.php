@@ -15,10 +15,6 @@ use Eloquent\Endec\Transform\TransformStream;
 use Eloquent\Liberator\Liberator;
 use PHPUnit_Framework_TestCase;
 
-/**
- * @covers \Eloquent\Endec\Base32\Base32
- * @covers \Eloquent\Endec\AbstractCodec
- */
 class Base32Test extends PHPUnit_Framework_TestCase
 {
     protected function setUp()

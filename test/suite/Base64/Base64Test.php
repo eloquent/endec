@@ -15,10 +15,6 @@ use Eloquent\Endec\Transform\TransformStream;
 use Eloquent\Liberator\Liberator;
 use PHPUnit_Framework_TestCase;
 
-/**
- * @covers \Eloquent\Endec\Base64\Base64
- * @covers \Eloquent\Endec\AbstractCodec
- */
 class Base64Test extends PHPUnit_Framework_TestCase
 {
     protected function setUp()

@@ -11,7 +11,7 @@
 
 namespace Eloquent\Endec\Base16;
 
-use Eloquent\Endec\AbstractCodec;
+use Eloquent\Endec\Codec;
 use Eloquent\Endec\Encoding\CodecInterface;
 use Eloquent\Endec\Transform\DataTransformInterface;
 
@@ -20,7 +20,7 @@ use Eloquent\Endec\Transform\DataTransformInterface;
  *
  * @link http://tools.ietf.org/html/rfc4648#section-8
  */
-class Base16 extends AbstractCodec
+class Base16 extends Codec
 {
     /**
      * Get the static instance of this codec.

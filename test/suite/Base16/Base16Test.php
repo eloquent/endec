@@ -15,10 +15,6 @@ use Eloquent\Endec\Transform\TransformStream;
 use Eloquent\Liberator\Liberator;
 use PHPUnit_Framework_TestCase;
 
-/**
- * @covers \Eloquent\Endec\Base16\Base16
- * @covers \Eloquent\Endec\AbstractCodec
- */
 class Base16Test extends PHPUnit_Framework_TestCase
 {
     protected function setUp()

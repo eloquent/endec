@@ -11,7 +11,7 @@
 
 namespace Eloquent\Endec\Base32;
 
-use Eloquent\Endec\AbstractCodec;
+use Eloquent\Endec\Codec;
 use Eloquent\Endec\Encoding\CodecInterface;
 use Eloquent\Endec\Transform\DataTransformInterface;
 
@@ -20,7 +20,7 @@ use Eloquent\Endec\Transform\DataTransformInterface;
  *
  * @link http://tools.ietf.org/html/rfc4648#section-7
  */
-class Base32Hex extends AbstractCodec
+class Base32Hex extends Codec
 {
     /**
      * Get the static instance of this codec.
