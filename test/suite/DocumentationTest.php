@@ -10,8 +10,12 @@
  */
 
 use Eloquent\Endec\Base32\Base32;
+use Eloquent\Endec\Codec;
+use Eloquent\Endec\Encoder;
 use Eloquent\Endec\Endec;
 use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
+use MultiplyTransform;
+use Rot13Transform;
 
 class DocumentationTest extends PHPUnit_Framework_TestCase
 {
@@ -97,6 +101,44 @@ class DocumentationTest extends PHPUnit_Framework_TestCase
             $codec->decode('!!!!!!!!');
         } catch (TransformExceptionInterface $e) {
             echo 'Unable to decode';
+        }
+    }
+
+    public function testRot13TransformEncoderUsage()
+    {
+        $this->expectOutputString('sbbone');
+
+        $encoder = new Encoder(new Rot13Transform);
+        echo $encoder->encode('foobar'); // outputs 'sbbone'
+    }
+
+    public function testRot13TransformCodecUsage()
+    {
+        $this->expectOutputString('sbbonefoobar');
+
+        $transform = new Rot13Transform;
+        $codec = new Codec($transform, $transform);
+        echo $codec->encode('foobar'); // outputs 'sbbone'
+        echo $codec->decode('sbbone'); // outputs 'foobar'
+    }
+
+    public function testMultiplyTransformUsage()
+    {
+        $this->expectOutputString('0|6|20|42|72|Unable to encode non-digitsUnable to encode odd lengths');
+
+        $encoder = new Encoder(new MultiplyTransform);
+        echo $encoder->encode('0123456789'); // outputs '0|6|20|42|72|'
+
+        try {
+            $encoder->encode('foobar');
+        } catch (TransformExceptionInterface $e) {
+            echo 'Unable to encode non-digits';
+        }
+
+        try {
+            $encoder->encode('123');
+        } catch (TransformExceptionInterface $e) {
+            echo 'Unable to encode odd lengths';
         }
     }
 }
