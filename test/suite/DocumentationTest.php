@@ -67,7 +67,7 @@ class DocumentationTest extends PHPUnit_Framework_TestCase
         $encoded = '';
         $encodeStream->on(
             'data',
-            function ($data, $codec) use (&$encoded) {
+            function ($data, $stream) use (&$encoded) {
                 $encoded .= $data;
             }
         );
@@ -75,7 +75,7 @@ class DocumentationTest extends PHPUnit_Framework_TestCase
         $decoded = '';
         $decodeStream->on(
             'data',
-            function ($data, $codec) use (&$decoded) {
+            function ($data, $stream) use (&$decoded) {
                 $decoded .= $data;
             }
         );

@@ -27,7 +27,7 @@ class TransformStreamTest extends PHPUnit_Framework_TestCase
         $this->output = '';
         $this->stream->on(
             'data',
-            function ($data, $codec) {
+            function ($data, $stream) {
                 $this->output .= $data;
             }
         );

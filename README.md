@@ -82,7 +82,7 @@ $decodeStream = $codec->createDecodeStream();
 $encoded = '';
 $encodeStream->on(
     'data',
-    function ($data, $codec) use (&$encoded) {
+    function ($data, $stream) use (&$encoded) {
         $encoded .= $data;
     }
 );
@@ -90,7 +90,7 @@ $encodeStream->on(
 $decoded = '';
 $decodeStream->on(
     'data',
-    function ($data, $codec) use (&$decoded) {
+    function ($data, $stream) use (&$decoded) {
         $decoded .= $data;
     }
 );
