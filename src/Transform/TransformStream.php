@@ -12,6 +12,7 @@
 namespace Eloquent\Endec\Transform;
 
 use Evenement\EventEmitterTrait;
+use Exception;
 use React\Stream\Util;
 use React\Stream\WritableStreamInterface;
 
@@ -88,8 +89,7 @@ class TransformStream implements TransformStreamInterface
      *
      * @param string $data The data to transform.
      *
-     * @return boolean                               True if this stream is ready for more data.
-     * @throws Exception\TransformExceptionInterface If the data cannot be transformed.
+     * @return boolean True if this stream is ready for more data.
      */
     public function write($data)
     {
@@ -98,17 +98,15 @@ class TransformStream implements TransformStreamInterface
         }
 
         $this->buffer .= $data;
-        $this->transformBuffer();
+        $result = $this->transformBuffer();
 
-        return !$this->isPaused;
+        return $result && !$this->isPaused;
     }
 
     /**
      * Transform and finalize any remaining buffered data.
      *
      * @param string|null $data Additional data to transform before finalizing.
-     *
-     * @throws Exception\TransformExceptionInterface If the data cannot be transformed.
      */
     public function end($data = null)
     {
@@ -146,8 +144,6 @@ class TransformStream implements TransformStreamInterface
 
     /**
      * Resume this stream.
-     *
-     * @throws Exception\TransformExceptionInterface If the data cannot be transformed.
      */
     public function resume()
     {
@@ -175,7 +171,7 @@ class TransformStream implements TransformStreamInterface
     /**
      * Transform the internal data buffer.
      *
-     * @throws Exception\TransformExceptionInterface If the data cannot be transformed.
+     * @return boolean True if successful.
      */
     protected function transformBuffer()
     {
@@ -192,13 +188,18 @@ class TransformStream implements TransformStreamInterface
             if ($this->isPaused) {
                 break;
             }
-
             if (!$this->isEnding && $bufferLength < $this->bufferSize) {
                 break;
             }
 
-            list($outputBuffer, $consumedBytes) =
-                $this->transform->transform($this->buffer, $this->isEnding);
+            try {
+                list($outputBuffer, $consumedBytes) =
+                    $this->transform->transform($this->buffer, $this->isEnding);
+            } catch (Exception $e) {
+                $this->emit('error', array($e, $this));
+
+                return false;
+            }
 
             if ($bufferLength === $consumedBytes) {
                 $this->buffer = '';
@@ -208,6 +209,8 @@ class TransformStream implements TransformStreamInterface
 
             $this->emit('data', array($outputBuffer, $this));
         }
+
+        return true;
     }
 
     /**
