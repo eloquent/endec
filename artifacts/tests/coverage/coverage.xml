@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1395190863">
-  <project timestamp="1395190863">
+<coverage generated="1395196225">
+  <project timestamp="1395196225">
     <package name="Eloquent\Endec\Base16">
       <file name="/home/travis/build/ezzatron/endec/src/Base16/Base16.php">
         <class name="Base16" namespace="Eloquent\Endec\Base16">
@@ -617,62 +617,68 @@
     <package name="Eloquent\Endec">
       <file name="/home/travis/build/ezzatron/endec/src/Codec.php">
         <class name="Codec" namespace="Eloquent\Endec">
-          <metrics methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="11" elements="18" coveredelements="18"/>
+          <metrics methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="8" coveredelements="8"/>
         </class>
         <line num="30" type="method" name="__construct" crap="1" count="5"/>
         <line num="34" type="stmt" count="5"/>
         <line num="35" type="stmt" count="5"/>
         <line num="36" type="stmt" count="5"/>
-        <line num="43" type="method" name="encodeTransform" crap="1" count="1"/>
-        <line num="45" type="stmt" count="1"/>
-        <line num="53" type="method" name="decodeTransform" crap="1" count="1"/>
-        <line num="55" type="stmt" count="1"/>
-        <line num="66" type="method" name="encode" crap="1" count="1"/>
-        <line num="68" type="stmt" count="1"/>
-        <line num="70" type="stmt" count="1"/>
-        <line num="81" type="method" name="decode" crap="1" count="1"/>
-        <line num="83" type="stmt" count="1"/>
-        <line num="85" type="stmt" count="1"/>
-        <line num="95" type="method" name="createEncodeStream" crap="1" count="1"/>
-        <line num="97" type="stmt" count="1"/>
-        <line num="107" type="method" name="createDecodeStream" crap="1" count="1"/>
-        <line num="109" type="stmt" count="1"/>
-        <line num="115" type="stmt" count="0"/>
-        <metrics loc="114" ncloc="57" classes="1" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="11" elements="18" coveredelements="18"/>
+        <line num="43" type="method" name="encodeTransform" crap="1" count="3"/>
+        <line num="45" type="stmt" count="3"/>
+        <line num="53" type="method" name="decodeTransform" crap="1" count="3"/>
+        <line num="55" type="stmt" count="3"/>
+        <line num="61" type="stmt" count="0"/>
+        <metrics loc="60" ncloc="33" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="8" coveredelements="8"/>
       </file>
       <file name="/home/travis/build/ezzatron/endec/src/Decoder.php">
         <class name="Decoder" namespace="Eloquent\Endec">
-          <metrics methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="10" coveredelements="10"/>
+          <metrics methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
         </class>
-        <line num="29" type="method" name="__construct" crap="1" count="3"/>
+        <line num="28" type="method" name="__construct" crap="1" count="3"/>
+        <line num="30" type="stmt" count="3"/>
         <line num="31" type="stmt" count="3"/>
-        <line num="32" type="stmt" count="3"/>
-        <line num="39" type="method" name="decodeTransform" crap="1" count="1"/>
-        <line num="41" type="stmt" count="1"/>
-        <line num="52" type="method" name="decode" crap="1" count="1"/>
-        <line num="54" type="stmt" count="1"/>
-        <line num="56" type="stmt" count="1"/>
-        <line num="66" type="method" name="createDecodeStream" crap="1" count="1"/>
-        <line num="68" type="stmt" count="1"/>
-        <line num="73" type="stmt" count="0"/>
-        <metrics loc="72" ncloc="36" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="10" coveredelements="10"/>
+        <line num="38" type="method" name="decodeTransform" crap="1" count="3"/>
+        <line num="40" type="stmt" count="3"/>
+        <line num="45" type="stmt" count="0"/>
+        <metrics loc="44" ncloc="23" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
+      </file>
+      <file name="/home/travis/build/ezzatron/endec/src/DecoderTrait.php">
+        <class name="DecoderTrait" namespace="Eloquent\Endec">
+          <metrics methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="6" coveredelements="5"/>
+        </class>
+        <line num="32" type="method" name="decode" crap="1" count="1"/>
+        <line num="34" type="stmt" count="1"/>
+        <line num="36" type="stmt" count="1"/>
+        <line num="46" type="method" name="createDecodeStream" crap="1" count="1"/>
+        <line num="48" type="stmt" count="1"/>
+        <line num="56" type="method" name="decodeTransform" crap="1" count="0"/>
+        <line num="58" type="stmt" count="0"/>
+        <metrics loc="57" ncloc="26" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
       </file>
       <file name="/home/travis/build/ezzatron/endec/src/Encoder.php">
         <class name="Encoder" namespace="Eloquent\Endec">
-          <metrics methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="10" coveredelements="10"/>
+          <metrics methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
         </class>
-        <line num="29" type="method" name="__construct" crap="1" count="3"/>
+        <line num="28" type="method" name="__construct" crap="1" count="3"/>
+        <line num="30" type="stmt" count="3"/>
         <line num="31" type="stmt" count="3"/>
-        <line num="32" type="stmt" count="3"/>
-        <line num="39" type="method" name="encodeTransform" crap="1" count="1"/>
-        <line num="41" type="stmt" count="1"/>
-        <line num="52" type="method" name="encode" crap="1" count="1"/>
-        <line num="54" type="stmt" count="1"/>
-        <line num="56" type="stmt" count="1"/>
-        <line num="66" type="method" name="createEncodeStream" crap="1" count="1"/>
-        <line num="68" type="stmt" count="1"/>
-        <line num="73" type="stmt" count="0"/>
-        <metrics loc="72" ncloc="36" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="10" coveredelements="10"/>
+        <line num="38" type="method" name="encodeTransform" crap="1" count="3"/>
+        <line num="40" type="stmt" count="3"/>
+        <line num="45" type="stmt" count="0"/>
+        <metrics loc="44" ncloc="23" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
+      </file>
+      <file name="/home/travis/build/ezzatron/endec/src/EncoderTrait.php">
+        <class name="EncoderTrait" namespace="Eloquent\Endec">
+          <metrics methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="6" coveredelements="5"/>
+        </class>
+        <line num="32" type="method" name="encode" crap="1" count="1"/>
+        <line num="34" type="stmt" count="1"/>
+        <line num="36" type="stmt" count="1"/>
+        <line num="46" type="method" name="createEncodeStream" crap="1" count="1"/>
+        <line num="48" type="stmt" count="1"/>
+        <line num="56" type="method" name="encodeTransform" crap="1" count="0"/>
+        <line num="58" type="stmt" count="0"/>
+        <metrics loc="57" ncloc="26" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
       </file>
       <file name="/home/travis/build/ezzatron/endec/src/Endec.php">
         <class name="Endec" namespace="Eloquent\Endec">
@@ -898,6 +904,6 @@
       <line num="31" type="stmt" count="0"/>
       <metrics loc="30" ncloc="14" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <metrics files="41" loc="2616" ncloc="1527" classes="35" methods="90" coveredmethods="90" conditionals="0" coveredconditionals="0" statements="522" coveredstatements="522" elements="612" coveredelements="612"/>
+    <metrics files="43" loc="2620" ncloc="1529" classes="37" methods="86" coveredmethods="86" conditionals="0" coveredconditionals="0" statements="516" coveredstatements="516" elements="602" coveredelements="602"/>
   </project>
 </coverage>
