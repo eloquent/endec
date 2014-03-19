@@ -12,15 +12,15 @@
 namespace Eloquent\Endec;
 
 use Eloquent\Endec\Transform\DataTransformInterface;
-use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
-use Eloquent\Endec\Transform\TransformStream;
-use Eloquent\Endec\Transform\TransformStreamInterface;
 
 /**
  * A general-purpose codec implementation for composing custom codecs.
  */
 class Codec implements CodecInterface
 {
+    use EncoderTrait;
+    use DecoderTrait;
+
     /**
      * Construct a new codec.
      *
@@ -53,60 +53,6 @@ class Codec implements CodecInterface
     public function decodeTransform()
     {
         return $this->decodeTransform;
-    }
-
-    /**
-     * Encode the supplied data.
-     *
-     * @param string $data The data to encode.
-     *
-     * @return string                      The encoded data.
-     * @throws TransformExceptionInterface If the data cannot be encoded.
-     */
-    public function encode($data)
-    {
-        list($data) = $this->encodeTransform->transform($data, true);
-
-        return $data;
-    }
-
-    /**
-     * Decode the supplied data.
-     *
-     * @param string $data The data to decode.
-     *
-     * @return string                      The decoded data.
-     * @throws TransformExceptionInterface If the data cannot be decoded.
-     */
-    public function decode($data)
-    {
-        list($data) = $this->decodeTransform->transform($data, true);
-
-        return $data;
-    }
-
-    /**
-     * Create a new encode stream.
-     *
-     * @param integer|null $bufferSize The buffer size in bytes.
-     *
-     * @return TransformStreamInterface The newly created encode stream.
-     */
-    public function createEncodeStream($bufferSize = null)
-    {
-        return new TransformStream($this->encodeTransform, $bufferSize);
-    }
-
-    /**
-     * Create a new decode stream.
-     *
-     * @param integer|null $bufferSize The buffer size in bytes.
-     *
-     * @return TransformStreamInterface The newly created decode stream.
-     */
-    public function createDecodeStream($bufferSize = null)
-    {
-        return new TransformStream($this->decodeTransform, $bufferSize);
     }
 
     private $encodeTransform;

@@ -15,6 +15,10 @@ use Eloquent\Endec\Transform\TransformStream;
 use Phake;
 use PHPUnit_Framework_TestCase;
 
+/**
+ * @covers \Eloquent\Endec\Encoder
+ * @covers \Eloquent\Endec\EncoderTrait
+ */
 class EncoderTest extends PHPUnit_Framework_TestCase
 {
     protected function setUp()
