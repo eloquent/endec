@@ -41,7 +41,8 @@ echo Base32::instance()->decode('MZXW6YTBOI======'); // outputs 'foobar'
 
 PHP natively supports [stream filters]. Any number of filters can be added to
 any stream with [stream_filter_append] or [stream_filter_prepend], and removed
-with [stream_filter_remove].
+with [stream_filter_remove]. All of *Endec*'s encodings are available as [stream
+filters](#built-in-stream-filters).
 
 ```php
 use Eloquent\Endec\Endec;
@@ -68,9 +69,10 @@ echo $data; // outputs 'foobar'
 
 ### React streams
 
-Streams can be obtained from an [encoder, decoder, or codec]. *Endec*'s streams
-implement both [WritableStreamInterface] and [ReadableStreamInterface] from the
-[React] library, and hence can be used in an asynchronous manner.
+Streams can be obtained from an [encoder, decoder, or
+codec](#encoders-decoders-and-codecs). *Endec*'s streams implement both
+[WritableStreamInterface] and [ReadableStreamInterface] from the [React]
+library, and hence can be used in an asynchronous manner.
 
 ```php
 use Eloquent\Endec\Base32\Base32;
@@ -170,7 +172,7 @@ Available encodings include:
 - [Base32 with extended hexadecimal alphabet] from [RFC 4648]
 - [Base16 (hexadecimal)] from [RFC 4648]
 
-## Stream filters
+## Built-in stream filters
 
 All *Endec* encodings are available as stream filters. Filters must be
 registered globally before use by calling `Endec::registerFilters()` (it is safe
@@ -244,7 +246,7 @@ echo $codec->encode('foobar'); // outputs 'sbbone'
 echo $codec->decode('sbbone'); // outputs 'foobar'
 ```
 
-More complex encodings may not be able to consume data byte-by-byte. As an
+More complex transforms may not be able to consume data byte-by-byte. As an
 example, attempting to base64 encode each byte as it is received would result in
 invalid output filled with padding characters. Data transforms also have to deal
 with error conditions, such as attempting to decode invalid data.
@@ -307,6 +309,40 @@ try {
 }
 ```
 
+### Custom stream filters
+
+PHP's stream filter system requires that each filter is implemented as an
+individual class. *Endec* includes an abstract class that greatly simplifies
+implementing stream filters.
+
+To create a stream filter for the multiply transform defined above would be as
+simple as the following:
+
+```php
+use Eloquent\Endec\Transform\AbstractNativeStreamFilter;
+
+class MultiplyNativeStreamFilter extends AbstractNativeStreamFilter
+{
+    protected function createTransform()
+    {
+        return new MultiplyTransform;
+    }
+}
+```
+
+Once the filter is registered, it can be used like any other stream filter:
+
+```php
+stream_filter_register('multiply', 'MultiplyNativeStreamFilter');
+
+$path = '/path/to/file';
+$stream = fopen($path, 'wb');
+stream_filter_append($stream, 'multiply');
+fwrite($stream, '0123456789');
+fclose($stream);
+echo file_get_contents($path); // outputs '0|6|20|42|72|'
+```
+
 <!-- References -->
 
 [Base16 (hexadecimal)]: http://tools.ietf.org/html/rfc4648#section-8
@@ -319,7 +355,6 @@ try {
 [convert.base64-encode]: http://php.net/filters.convert
 [DataTransformInterface]: http://lqnt.co/endec/artifacts/documentation/api/Eloquent/Endec/Transform/DataTransformInterface.html
 [DecoderInterface]: http://lqnt.co/endec/artifacts/documentation/api/Eloquent/Endec/DecoderInterface.html
-[encoder, decoder, or codec]: #encoders-decoders-and-codecs
 [EncoderInterface]: http://lqnt.co/endec/artifacts/documentation/api/Eloquent/Endec/EncoderInterface.html
 [ignore errors produced by the filter]: https://bugs.php.net/bug.php?id=66932
 [React]: http://reactphp.org/

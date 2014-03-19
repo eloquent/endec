@@ -173,4 +173,19 @@ class DocumentationTest extends PHPUnit_Framework_TestCase
             echo 'Unable to encode odd lengths';
         }
     }
+
+    public function testCustomNativeStreamFilterUsage()
+    {
+        $path = tempnam(sys_get_temp_dir(), 'endec');
+        $this->expectOutputString('0|6|20|42|72|');
+
+        stream_filter_register('multiply', 'MultiplyNativeStreamFilter');
+
+        // $path = '/path/to/file';
+        $stream = fopen($path, 'wb');
+        stream_filter_append($stream, 'multiply');
+        fwrite($stream, '0123456789');
+        fclose($stream);
+        echo file_get_contents($path); // outputs '0|6|20|42|72|'
+    }
 }
