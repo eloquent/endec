@@ -1,12 +1,12 @@
 
 
 Code Coverage Report 
-  2014-03-19 07:28:18
+  2014-03-19 09:44:04
 
  Summary: 
   Classes: 100.00% (37/37)
   Methods: 100.00% (86/86)
-  Lines:   100.00% (516/516)
+  Lines:   100.00% (519/519)
 
 \Eloquent\Endec::Codec
   Methods: 100.00% ( 3/ 3)   Lines: 100.00% (  5/  5)
@@ -81,4 +81,4 @@ Code Coverage Report
 \Eloquent\Endec\Transform::AbstractNativeStreamFilter
   Methods:  66.67% ( 2/ 3)   Lines: 100.00% ( 30/ 30)
 \Eloquent\Endec\Transform::TransformStream
-  Methods: 100.00% (13/13)   Lines: 100.00% ( 59/ 59)
+  Methods: 100.00% (13/13)   Lines: 100.00% ( 62/ 62)

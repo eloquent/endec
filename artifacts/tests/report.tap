@@ -377,4 +377,5 @@ ok 375 - Eloquent\Endec\Transform\TransformStreamTest::testEndEmptyString
 ok 376 - Eloquent\Endec\Transform\TransformStreamTest::testClose
 ok 377 - Eloquent\Endec\Transform\TransformStreamTest::testPauseResume
 ok 378 - Eloquent\Endec\Transform\TransformStreamTest::testPipe
-1..378
+ok 379 - Eloquent\Endec\Transform\TransformStreamTest::testTransformFailure
+1..379
