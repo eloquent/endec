@@ -3,29 +3,30 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="robots" content="index, follow, all" />
-        <title>Eloquent\Endec\Base32\Base32 | eloquent/endec API</title>
-                    <link rel="stylesheet" type="text/css" href="../../../stylesheet.css">
+        <title>Eloquent\Endec\Codec | eloquent/endec API</title>
+                    <link rel="stylesheet" type="text/css" href="../../stylesheet.css">
                             </head>
         <body id="class">
             <div class="header">
         <ul>
-            <li><a href="../../../classes.html">Classes</a></li>
-                            <li><a href="../../../namespaces.html">Namespaces</a></li>
-                        <li><a href="../../../interfaces.html">Interfaces</a></li>
-            <li><a href="../../../doc-index.html">Index</a></li>
+            <li><a href="../../classes.html">Classes</a></li>
+                            <li><a href="../../namespaces.html">Namespaces</a></li>
+                        <li><a href="../../interfaces.html">Interfaces</a></li>
+            <li><a href="../../doc-index.html">Index</a></li>
             
         </ul>
 
         <div id="title">eloquent/endec API</div>
 
             <div class="type">Class</div>
-    <h1><a href="../../../Eloquent/Endec/Base32.html">Eloquent\Endec\Base32</a>\Base32</h1>
+    <h1><a href="../../Eloquent/Endec.html">Eloquent\Endec</a>\Codec</h1>
     </div>
         <div class="content">
-                <p>class    <strong>Base32</strong>        extends <a href="../../../Eloquent/Endec/Codec.html"><abbr title="Eloquent\Endec\Codec">Codec</abbr></a></p>
+                <p>class    <strong>Codec</strong>        implements
+        <a href="../../Eloquent/Endec/CodecInterface.html"><abbr title="Eloquent\Endec\CodecInterface">CodecInterface</abbr></a></p>
 
             <div class="description">
-            <p>A codec for the base32 encoding protocol.</p>
+            <p>A general-purpose codec implementation for composing custom codecs.</p>
             <p>
 </p>
         </div>
@@ -40,30 +41,30 @@
                     
                 </td>
                 <td class="last">
-                    <a href="#method___construct">__construct</a>(<a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a> $encodeTransform = null, <a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a> $decodeTransform = null)
-                    <p>Construct a new base32 codec.</p>
+                    <a href="#method___construct">__construct</a>(<a href="../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a> $encodeTransform, <a href="../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a> $decodeTransform)
+                    <p>Construct a new codec.</p>
                 </td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    <a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a>
+                    <a href="../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a>
                 </td>
                 <td class="last">
                     <a href="#method_encodeTransform">encodeTransform</a>()
                     <p>Get the encode transform.</p>
                 </td>
-                <td><small>from&nbsp;<a href="../../../Eloquent/Endec/Codec.html#method_encodeTransform"><abbr title="Eloquent\Endec\Codec">Codec</abbr></a></small></td>
+                <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    <a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a>
+                    <a href="../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a>
                 </td>
                 <td class="last">
                     <a href="#method_decodeTransform">decodeTransform</a>()
                     <p>Get the decode transform.</p>
                 </td>
-                <td><small>from&nbsp;<a href="../../../Eloquent/Endec/Codec.html#method_decodeTransform"><abbr title="Eloquent\Endec\Codec">Codec</abbr></a></small></td>
+                <td></td>
             </tr>
                     <tr>
                 <td class="type">
@@ -73,7 +74,7 @@
                     <a href="#method_encode">encode</a>(string $data)
                     <p>Encode the supplied data.</p>
                 </td>
-                <td><small>from&nbsp;<a href="../../../Eloquent/Endec/Codec.html#method_encode"><abbr title="Eloquent\Endec\Codec">Codec</abbr></a></small></td>
+                <td></td>
             </tr>
                     <tr>
                 <td class="type">
@@ -83,35 +84,25 @@
                     <a href="#method_decode">decode</a>(string $data)
                     <p>Decode the supplied data.</p>
                 </td>
-                <td><small>from&nbsp;<a href="../../../Eloquent/Endec/Codec.html#method_decode"><abbr title="Eloquent\Endec\Codec">Codec</abbr></a></small></td>
+                <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    <a href="../../../Eloquent/Endec/Transform/TransformStreamInterface.html"><abbr title="Eloquent\Endec\Transform\TransformStreamInterface">TransformStreamInterface</abbr></a>
+                    <a href="../../Eloquent/Endec/Transform/TransformStreamInterface.html"><abbr title="Eloquent\Endec\Transform\TransformStreamInterface">TransformStreamInterface</abbr></a>
                 </td>
                 <td class="last">
                     <a href="#method_createEncodeStream">createEncodeStream</a>(integer|null $bufferSize = null)
                     <p>Create a new encode stream.</p>
                 </td>
-                <td><small>from&nbsp;<a href="../../../Eloquent/Endec/Codec.html#method_createEncodeStream"><abbr title="Eloquent\Endec\Codec">Codec</abbr></a></small></td>
+                <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    <a href="../../../Eloquent/Endec/Transform/TransformStreamInterface.html"><abbr title="Eloquent\Endec\Transform\TransformStreamInterface">TransformStreamInterface</abbr></a>
+                    <a href="../../Eloquent/Endec/Transform/TransformStreamInterface.html"><abbr title="Eloquent\Endec\Transform\TransformStreamInterface">TransformStreamInterface</abbr></a>
                 </td>
                 <td class="last">
                     <a href="#method_createDecodeStream">createDecodeStream</a>(integer|null $bufferSize = null)
                     <p>Create a new decode stream.</p>
-                </td>
-                <td><small>from&nbsp;<a href="../../../Eloquent/Endec/Codec.html#method_createDecodeStream"><abbr title="Eloquent\Endec\Codec">Codec</abbr></a></small></td>
-            </tr>
-                    <tr>
-                <td class="type">
-                    static&nbsp;<abbr title="Eloquent\Endec\Encoding\CodecInterface">CodecInterface</abbr>
-                </td>
-                <td class="last">
-                    <a href="#method_instance">instance</a>()
-                    <p>Get the static instance of this codec.</p>
                 </td>
                 <td></td>
             </tr>
@@ -121,12 +112,12 @@
         <h2>Details</h2>
 
                         <h3 id="method___construct">
-        <div class="location">at line 45</div>
+        <div class="location">at line 30</div>
         <code>            public            
-    <strong>__construct</strong>(<a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a> $encodeTransform = null, <a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a> $decodeTransform = null)</code>
+    <strong>__construct</strong>(<a href="../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a> $encodeTransform, <a href="../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a> $decodeTransform)</code>
     </h3>
     <div class="details">
-        <p>Construct a new base32 codec.</p>
+        <p>Construct a new codec.</p>
         <p>
 </p>
         <div class="tags">
@@ -134,12 +125,12 @@
 
                     <table>
                     <tr>
-                <td><a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a></td>
+                <td><a href="../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a></td>
                 <td>$encodeTransform</td>
                 <td>The encode transform to use.</td>
             </tr>
                     <tr>
-                <td><a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a></td>
+                <td><a href="../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a></td>
                 <td>$decodeTransform</td>
                 <td>The decode transform to use.</td>
             </tr>
@@ -152,8 +143,8 @@
     </div>
 
                 <h3 id="method_encodeTransform">
-        <div class="location">in <a href="../../../Eloquent/Endec/Codec.html#method_encodeTransform"><abbr title="Eloquent\Endec\Codec">Codec</abbr></a> at line 43</div>
-        <code>            public            <a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a>
+        <div class="location">at line 43</div>
+        <code>            public            <a href="../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a>
     <strong>encodeTransform</strong>()</code>
     </h3>
     <div class="details">
@@ -166,7 +157,7 @@
 
                     <table>
         <tr>
-            <td><a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a></td>
+            <td><a href="../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a></td>
             <td>The encode transform.</td>
         </tr>
     </table>
@@ -177,8 +168,8 @@
     </div>
 
                 <h3 id="method_decodeTransform">
-        <div class="location">in <a href="../../../Eloquent/Endec/Codec.html#method_decodeTransform"><abbr title="Eloquent\Endec\Codec">Codec</abbr></a> at line 53</div>
-        <code>            public            <a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a>
+        <div class="location">at line 53</div>
+        <code>            public            <a href="../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a>
     <strong>decodeTransform</strong>()</code>
     </h3>
     <div class="details">
@@ -191,7 +182,7 @@
 
                     <table>
         <tr>
-            <td><a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a></td>
+            <td><a href="../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a></td>
             <td>The decode transform.</td>
         </tr>
     </table>
@@ -202,7 +193,7 @@
     </div>
 
                 <h3 id="method_encode">
-        <div class="location">in <a href="../../../Eloquent/Endec/Codec.html#method_encode"><abbr title="Eloquent\Endec\Codec">Codec</abbr></a> at line 66</div>
+        <div class="location">at line 66</div>
         <code>            public            string
     <strong>encode</strong>(string $data)</code>
     </h3>
@@ -246,7 +237,7 @@
     </div>
 
                 <h3 id="method_decode">
-        <div class="location">in <a href="../../../Eloquent/Endec/Codec.html#method_decode"><abbr title="Eloquent\Endec\Codec">Codec</abbr></a> at line 81</div>
+        <div class="location">at line 81</div>
         <code>            public            string
     <strong>decode</strong>(string $data)</code>
     </h3>
@@ -290,8 +281,8 @@
     </div>
 
                 <h3 id="method_createEncodeStream">
-        <div class="location">in <a href="../../../Eloquent/Endec/Codec.html#method_createEncodeStream"><abbr title="Eloquent\Endec\Codec">Codec</abbr></a> at line 95</div>
-        <code>            public            <a href="../../../Eloquent/Endec/Transform/TransformStreamInterface.html"><abbr title="Eloquent\Endec\Transform\TransformStreamInterface">TransformStreamInterface</abbr></a>
+        <div class="location">at line 95</div>
+        <code>            public            <a href="../../Eloquent/Endec/Transform/TransformStreamInterface.html"><abbr title="Eloquent\Endec\Transform\TransformStreamInterface">TransformStreamInterface</abbr></a>
     <strong>createEncodeStream</strong>(integer|null $bufferSize = null)</code>
     </h3>
     <div class="details">
@@ -314,7 +305,7 @@
 
                     <table>
         <tr>
-            <td><a href="../../../Eloquent/Endec/Transform/TransformStreamInterface.html"><abbr title="Eloquent\Endec\Transform\TransformStreamInterface">TransformStreamInterface</abbr></a></td>
+            <td><a href="../../Eloquent/Endec/Transform/TransformStreamInterface.html"><abbr title="Eloquent\Endec\Transform\TransformStreamInterface">TransformStreamInterface</abbr></a></td>
             <td>The newly created encode stream.</td>
         </tr>
     </table>
@@ -325,8 +316,8 @@
     </div>
 
                 <h3 id="method_createDecodeStream">
-        <div class="location">in <a href="../../../Eloquent/Endec/Codec.html#method_createDecodeStream"><abbr title="Eloquent\Endec\Codec">Codec</abbr></a> at line 107</div>
-        <code>            public            <a href="../../../Eloquent/Endec/Transform/TransformStreamInterface.html"><abbr title="Eloquent\Endec\Transform\TransformStreamInterface">TransformStreamInterface</abbr></a>
+        <div class="location">at line 107</div>
+        <code>            public            <a href="../../Eloquent/Endec/Transform/TransformStreamInterface.html"><abbr title="Eloquent\Endec\Transform\TransformStreamInterface">TransformStreamInterface</abbr></a>
     <strong>createDecodeStream</strong>(integer|null $bufferSize = null)</code>
     </h3>
     <div class="details">
@@ -349,33 +340,8 @@
 
                     <table>
         <tr>
-            <td><a href="../../../Eloquent/Endec/Transform/TransformStreamInterface.html"><abbr title="Eloquent\Endec\Transform\TransformStreamInterface">TransformStreamInterface</abbr></a></td>
+            <td><a href="../../Eloquent/Endec/Transform/TransformStreamInterface.html"><abbr title="Eloquent\Endec\Transform\TransformStreamInterface">TransformStreamInterface</abbr></a></td>
             <td>The newly created decode stream.</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-                <h3 id="method_instance">
-        <div class="location">at line 30</div>
-        <code>        static    public            <abbr title="Eloquent\Endec\Encoding\CodecInterface">CodecInterface</abbr>
-    <strong>instance</strong>()</code>
-    </h3>
-    <div class="details">
-        <p>Get the static instance of this codec.</p>
-        <p>
-</p>
-        <div class="tags">
-            
-                            <h4>Return Value</h4>
-
-                    <table>
-        <tr>
-            <td><abbr title="Eloquent\Endec\Encoding\CodecInterface">CodecInterface</abbr></td>
-            <td>The codec.</td>
         </tr>
     </table>
 
