@@ -122,6 +122,35 @@ try {
 }
 ```
 
+## Built-in encodings
+
+*Endec* supports a number of common encodings out of the box. Where there is a
+relevant specification document, *Endec* aims to be 100% spec-conformant.
+Available encodings include:
+
+- [Base64] from [RFC 4648]
+- [Base64 with URL and filename safe alphabet] from [RFC 4648]
+- [Base32] from [RFC 4648]
+- [Base32 with extended hexadecimal alphabet] from [RFC 4648]
+- [Base16 (hexadecimal)] from [RFC 4648]
+
+## Stream filters
+
+All *Endec* encodings are available as stream filters. Filters must be
+registered globally before use by calling `Endec::registerFilters()` (it is safe
+to call this method multiple times). Available stream filters include:
+
+- endec.base64-encode (see also PHP's [convert.base64-encode])
+- endec.base64-decode (see also PHP's [convert.base64-decode])
+- endec.base64url-encode
+- endec.base64url-decode
+- endec.base32-encode
+- endec.base32-decode
+- endec.base32hex-encode
+- endec.base32hex-decode
+- endec.base16-encode
+- endec.base16-decode
+
 ## Encoders, decoders, and codecs
 
 Most of the functionality of *Endec* is provided through *encoders*, *decoders*,
@@ -244,13 +273,21 @@ try {
 
 <!-- References -->
 
+[Base16 (hexadecimal)]: http://tools.ietf.org/html/rfc4648#section-8
+[Base32 with extended hexadecimal alphabet]: http://tools.ietf.org/html/rfc4648#section-7
+[Base32]: http://tools.ietf.org/html/rfc4648#section-6
+[Base64 with URL and filename safe alphabet]: http://tools.ietf.org/html/rfc4648#section-5
+[Base64]: http://tools.ietf.org/html/rfc4648#section-4
 [CodecInterface]: http://lqnt.co/endec/artifacts/documentation/api/Eloquent/Endec/CodecInterface.html
+[convert.base64-decode]: http://php.net/filters.convert
+[convert.base64-encode]: http://php.net/filters.convert
 [DataTransformInterface]: http://lqnt.co/endec/artifacts/documentation/api/Eloquent/Endec/Transform/DataTransformInterface.html
 [DecoderInterface]: http://lqnt.co/endec/artifacts/documentation/api/Eloquent/Endec/DecoderInterface.html
 [encoder, decoder, or codec]: #encoders-decoders-and-codecs
 [EncoderInterface]: http://lqnt.co/endec/artifacts/documentation/api/Eloquent/Endec/EncoderInterface.html
 [React]: http://reactphp.org/
 [ReadableStreamInterface]: https://github.com/reactphp/react/blob/v0.4.0/src/Stream/ReadableStreamInterface.php
+[RFC 4648]: http://tools.ietf.org/html/rfc4648
 [stream filters]: http://php.net/stream.filters
 [stream_filter_append]: http://php.net/stream_filter_append
 [stream_filter_prepend]: http://php.net/stream_filter_prepend
