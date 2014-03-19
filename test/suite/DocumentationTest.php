@@ -14,8 +14,6 @@ use Eloquent\Endec\Codec;
 use Eloquent\Endec\Encoder;
 use Eloquent\Endec\Endec;
 use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
-use MultiplyTransform;
-use Rot13Transform;
 
 class DocumentationTest extends PHPUnit_Framework_TestCase
 {

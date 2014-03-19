@@ -13,10 +13,7 @@ class MultiplyTransform extends AbstractDataTransform
         }
 
         $consumedData = substr($data, 0, $consumedBytes);
-        if (0 !== $consumedBytes % 2) {
-            throw new InvalidEncodedDataException('multiply', $consumedData);
-        }
-        if (!ctype_digit($consumedData)) {
+        if (0 !== $consumedBytes % 2 || !ctype_digit($consumedData)) {
             throw new InvalidEncodedDataException('multiply', $consumedData);
         }
 
