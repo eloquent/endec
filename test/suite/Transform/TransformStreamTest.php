@@ -34,7 +34,7 @@ class TransformStreamTest extends PHPUnit_Framework_TestCase
         );
 
         $this->endsEmitted = $this->closesEmitted = 0;
-        $this->errorsEmitted = array();
+        $this->errorsEmitted = [];
         $this->stream->on(
             'end',
             function ($codec) {
@@ -62,7 +62,7 @@ class TransformStreamTest extends PHPUnit_Framework_TestCase
                 $consumedBytes = $length - ($length % 2);
             }
 
-            return array(strtoupper(substr($data, 0, $consumedBytes)), $consumedBytes);
+            return [strtoupper(substr($data, 0, $consumedBytes)), $consumedBytes];
         };
 
         $this->error = new Exception('You done goofed.');
@@ -91,9 +91,9 @@ class TransformStreamTest extends PHPUnit_Framework_TestCase
 
     public function transformData()
     {
-        $data = array();
+        $data = [];
         for ($i = 1; $i < 6; $i++) {
-            $data[sprintf('%d byte(s)', $i)] = array(substr('foobar', 0, $i));
+            $data[sprintf('%d byte(s)', $i)] = [substr('foobar', 0, $i)];
         }
 
         return $data;
@@ -111,7 +111,7 @@ class TransformStreamTest extends PHPUnit_Framework_TestCase
         $this->assertSame(strtoupper($data), $this->output);
         $this->assertSame(1, $this->endsEmitted);
         $this->assertSame(1, $this->closesEmitted);
-        $this->assertSame(array(), $this->errorsEmitted);
+        $this->assertSame([], $this->errorsEmitted);
     }
 
     /**
@@ -124,7 +124,7 @@ class TransformStreamTest extends PHPUnit_Framework_TestCase
         $this->assertSame(strtoupper($data), $this->output);
         $this->assertSame(1, $this->endsEmitted);
         $this->assertSame(1, $this->closesEmitted);
-        $this->assertSame(array(), $this->errorsEmitted);
+        $this->assertSame([], $this->errorsEmitted);
     }
 
     public function testEndEmptyString()
@@ -145,7 +145,7 @@ class TransformStreamTest extends PHPUnit_Framework_TestCase
         $this->assertSame('FO', $this->output);
         $this->assertSame(1, $this->endsEmitted);
         $this->assertSame(1, $this->closesEmitted);
-        $this->assertSame(array(), $this->errorsEmitted);
+        $this->assertSame([], $this->errorsEmitted);
     }
 
     public function testPauseResume()
@@ -186,7 +186,7 @@ class TransformStreamTest extends PHPUnit_Framework_TestCase
         $this->assertSame('FO', $this->output);
         $this->assertSame(0, $this->endsEmitted);
         $this->assertSame(0, $this->closesEmitted);
-        $this->assertSame(array(), $this->errorsEmitted);
+        $this->assertSame([], $this->errorsEmitted);
 
         $writeReturn = $this->stream->write('bar');
 
@@ -194,7 +194,7 @@ class TransformStreamTest extends PHPUnit_Framework_TestCase
         $this->assertSame('FO', $this->output);
         $this->assertSame(0, $this->endsEmitted);
         $this->assertSame(0, $this->closesEmitted);
-        $this->assertSame(array($this->error), $this->errorsEmitted);
+        $this->assertSame([$this->error], $this->errorsEmitted);
 
         $this->stream->end();
 
@@ -202,6 +202,6 @@ class TransformStreamTest extends PHPUnit_Framework_TestCase
         $this->assertSame('FOOBAR', $this->output);
         $this->assertSame(1, $this->endsEmitted);
         $this->assertSame(1, $this->closesEmitted);
-        $this->assertSame(array($this->error), $this->errorsEmitted);
+        $this->assertSame([$this->error], $this->errorsEmitted);
     }
 }

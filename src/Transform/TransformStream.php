@@ -161,7 +161,7 @@ class TransformStream implements TransformStreamInterface
      */
     public function pipe(
         WritableStreamInterface $destination,
-        array $options = array()
+        array $options = []
     ) {
         Util::pipe($this, $destination, $options);
 
@@ -196,7 +196,7 @@ class TransformStream implements TransformStreamInterface
                 list($outputBuffer, $consumedBytes) =
                     $this->transform->transform($this->buffer, $this->isEnding);
             } catch (Exception $e) {
-                $this->emit('error', array($e, $this));
+                $this->emit('error', [$e, $this]);
 
                 return false;
             }
@@ -207,7 +207,7 @@ class TransformStream implements TransformStreamInterface
                 $this->buffer = substr($this->buffer, $consumedBytes);
             }
 
-            $this->emit('data', array($outputBuffer, $this));
+            $this->emit('data', [$outputBuffer, $this]);
         }
 
         return true;
@@ -222,8 +222,8 @@ class TransformStream implements TransformStreamInterface
         $this->isEnding = $this->isPaused = false;
         $this->buffer = '';
 
-        $this->emit('end', array($this));
-        $this->emit('close', array($this));
+        $this->emit('end', [$this]);
+        $this->emit('close', [$this]);
         $this->removeAllListeners();
     }
 

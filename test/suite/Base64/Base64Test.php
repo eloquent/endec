@@ -42,16 +42,16 @@ class Base64Test extends PHPUnit_Framework_TestCase
 
     public function encodingData()
     {
-        //                                           decoded   encoded
-        return array(
-            'RFC 4648 base64 test vector 1' => array('',       ''),
-            'RFC 4648 base64 test vector 2' => array('f',      'Zg=='),
-            'RFC 4648 base64 test vector 3' => array('fo',     'Zm8='),
-            'RFC 4648 base64 test vector 4' => array('foo',    'Zm9v'),
-            'RFC 4648 base64 test vector 5' => array('foob',   'Zm9vYg=='),
-            'RFC 4648 base64 test vector 6' => array('fooba',  'Zm9vYmE='),
-            'RFC 4648 base64 test vector 7' => array('foobar', 'Zm9vYmFy'),
-        );
+        //                                      decoded   encoded
+        return [
+            'RFC 4648 base64 test vector 1' => ['',       ''],
+            'RFC 4648 base64 test vector 2' => ['f',      'Zg=='],
+            'RFC 4648 base64 test vector 3' => ['fo',     'Zm8='],
+            'RFC 4648 base64 test vector 4' => ['foo',    'Zm9v'],
+            'RFC 4648 base64 test vector 5' => ['foob',   'Zm9vYg=='],
+            'RFC 4648 base64 test vector 6' => ['fooba',  'Zm9vYmE='],
+            'RFC 4648 base64 test vector 7' => ['foobar', 'Zm9vYmFy'],
+        ];
     }
 
     /**

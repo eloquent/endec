@@ -55,7 +55,7 @@ class Base64DecodeTransform extends AbstractDataTransform
     {
         $consumedBytes = $this->calculateConsumeBytes($data, $isEnd, 4);
         if (!$consumedBytes) {
-            return array('', 0);
+            return ['', 0];
         }
 
         $consumedData = substr($data, 0, $consumedBytes);
@@ -68,7 +68,7 @@ class Base64DecodeTransform extends AbstractDataTransform
             throw new InvalidEncodedDataException('base64', $consumedData);
         }
 
-        return array($outputBuffer, $consumedBytes);
+        return [$outputBuffer, $consumedBytes];
     }
 
     private static $instance;

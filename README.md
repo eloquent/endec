@@ -178,7 +178,7 @@ class Rot13Transform implements DataTransformInterface
 {
     public function transform($data, $isEnd = false)
     {
-        return array(str_rot13($data), strlen($data));
+        return [str_rot13($data), strlen($data)];
     }
 }
 ```
@@ -225,7 +225,7 @@ class MultiplyTransform extends AbstractDataTransform
     {
         $consumedBytes = $this->calculateConsumeBytes($data, $isEnd, 2);
         if (!$consumedBytes) {
-            return array('', 0);
+            return ['', 0];
         }
 
         $consumedData = substr($data, 0, $consumedBytes);
@@ -238,7 +238,7 @@ class MultiplyTransform extends AbstractDataTransform
             $output .= $consumedData[$i] * $consumedData[$i + 1] . '|';
         }
 
-        return array($output, $consumedBytes);
+        return [$output, $consumedBytes];
     }
 }
 ```

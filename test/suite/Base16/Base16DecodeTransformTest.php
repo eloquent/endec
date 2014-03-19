@@ -29,16 +29,16 @@ class Base16DecodeTransformTest extends PHPUnit_Framework_TestCase
 
     public function transformData()
     {
-        //                     input     output bytesConsumed
-        return array(
-            'Empty'   => array('',       '',    0),
-            '1 bytes' => array('6',      '',    0),
-            '2 bytes' => array('66',     'f',   2),
-            '3 bytes' => array('666',    'f',   2),
-            '4 bytes' => array('666f',   'fo',  4),
-            '5 bytes' => array('666f6',  'fo',  4),
-            '6 bytes' => array('666f6f', 'foo', 6),
-        );
+        //                input     output bytesConsumed
+        return [
+            'Empty'   => ['',       '',    0],
+            '1 bytes' => ['6',      '',    0],
+            '2 bytes' => ['66',     'f',   2],
+            '3 bytes' => ['666',    'f',   2],
+            '4 bytes' => ['666f',   'fo',  4],
+            '5 bytes' => ['666f6',  'fo',  4],
+            '6 bytes' => ['666f6f', 'foo', 6],
+        ];
     }
 
     /**
@@ -46,18 +46,18 @@ class Base16DecodeTransformTest extends PHPUnit_Framework_TestCase
      */
     public function testTransform($input, $output, $bytesConsumed)
     {
-        $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input));
+        $this->assertSame([$output, $bytesConsumed], $this->transform->transform($input));
     }
 
     public function transformEndData()
     {
-        //                     input     output bytesConsumed
-        return array(
-            'Empty'   => array('',       '',    0),
-            '2 bytes' => array('66',     'f',   2),
-            '4 bytes' => array('666f',   'fo',  4),
-            '6 bytes' => array('666f6f', 'foo', 6),
-        );
+        //                input     output bytesConsumed
+        return [
+            'Empty'   => ['',       '',    0],
+            '2 bytes' => ['66',     'f',   2],
+            '4 bytes' => ['666f',   'fo',  4],
+            '6 bytes' => ['666f6f', 'foo', 6],
+        ];
     }
 
     /**
@@ -65,18 +65,18 @@ class Base16DecodeTransformTest extends PHPUnit_Framework_TestCase
      */
     public function testTransformEnd($input, $output, $bytesConsumed)
     {
-        $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input, true));
+        $this->assertSame([$output, $bytesConsumed], $this->transform->transform($input, true));
     }
 
     public function invalidTransformEndData()
     {
-        //                                    input
-        return array(
-            'Characters below range' => array('!!'),
-            'Characters above range' => array('~~'),
-            '1 byte'                 => array('A'),
-            '3 bytes'                => array('AAA'),
-        );
+        //                               input
+        return [
+            'Characters below range' => ['!!'],
+            'Characters above range' => ['~~'],
+            '1 byte'                 => ['A'],
+            '3 bytes'                => ['AAA'],
+        ];
     }
 
     /**

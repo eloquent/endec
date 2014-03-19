@@ -29,7 +29,7 @@ class EncoderTest extends PHPUnit_Framework_TestCase
         $this->codec = new Encoder($this->encodeTransform);
 
         $transformCallback = function ($data, $isEnd = false) {
-            return array(str_rot13($data), strlen($data));
+            return [str_rot13($data), strlen($data)];
         };
         Phake::when($this->encodeTransform)->transform(Phake::anyParameters())
             ->thenGetReturnByLambda($transformCallback);

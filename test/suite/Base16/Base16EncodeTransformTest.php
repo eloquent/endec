@@ -29,16 +29,16 @@ class Base16EncodeTransformTest extends PHPUnit_Framework_TestCase
 
     public function transformData()
     {
-        //                     input     output          bytesConsumed
-        return array(
-            'Empty'   => array('',       '',             0),
-            '1 byte'  => array('f',      '66',           1),
-            '2 bytes' => array('fo',     '666F',         2),
-            '3 bytes' => array('foo',    '666F6F',       3),
-            '4 bytes' => array('foob',   '666F6F62',     4),
-            '5 bytes' => array('fooba',  '666F6F6261',   5),
-            '6 bytes' => array('foobar', '666F6F626172', 6),
-        );
+        //                input     output          bytesConsumed
+        return [
+            'Empty'   => ['',       '',             0],
+            '1 byte'  => ['f',      '66',           1],
+            '2 bytes' => ['fo',     '666F',         2],
+            '3 bytes' => ['foo',    '666F6F',       3],
+            '4 bytes' => ['foob',   '666F6F62',     4],
+            '5 bytes' => ['fooba',  '666F6F6261',   5],
+            '6 bytes' => ['foobar', '666F6F626172', 6],
+        ];
     }
 
     /**
@@ -46,7 +46,7 @@ class Base16EncodeTransformTest extends PHPUnit_Framework_TestCase
      */
     public function testTransform($input, $output, $bytesConsumed)
     {
-        $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input));
+        $this->assertSame([$output, $bytesConsumed], $this->transform->transform($input));
     }
 
     /**
@@ -54,7 +54,7 @@ class Base16EncodeTransformTest extends PHPUnit_Framework_TestCase
      */
     public function testTransformEnd($input, $output, $bytesConsumed)
     {
-        $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input, true));
+        $this->assertSame([$output, $bytesConsumed], $this->transform->transform($input, true));
     }
 
     public function testInstance()
