@@ -122,6 +122,42 @@ try {
 }
 ```
 
+When using stream filters, error handling is difficult because PHP seems to
+simply [ignore errors produced by the filter]. If 0 bytes are written by
+`fwrite()`, it's a fair indication that an error occurred:
+
+```php
+use Eloquent\Endec\Endec;
+
+Endec::registerFilters();
+$path = '/path/to/file';
+
+$stream = fopen($path, 'wb');
+stream_filter_append($stream, 'endec.base32-decode');
+if (!fwrite($stream, '!!!!!!!!')) {
+    echo 'Unable to decode';
+}
+fclose($stream);
+```
+
+When using [React] streams, simply handle the `error` event:
+
+```php
+use Eloquent\Endec\Base32\Base32;
+
+$codec = new Base32;
+$decodeStream = $codec->createDecodeStream();
+
+$decodeStream->on(
+    'error',
+    function ($error, $stream) {
+        echo 'Unable to decode';
+    }
+);
+
+$decodeStream->end('!!!!!!!!');
+```
+
 ## Built-in encodings
 
 *Endec* supports a number of common encodings out of the box. Where there is a
@@ -285,6 +321,7 @@ try {
 [DecoderInterface]: http://lqnt.co/endec/artifacts/documentation/api/Eloquent/Endec/DecoderInterface.html
 [encoder, decoder, or codec]: #encoders-decoders-and-codecs
 [EncoderInterface]: http://lqnt.co/endec/artifacts/documentation/api/Eloquent/Endec/EncoderInterface.html
+[ignore errors produced by the filter]: https://bugs.php.net/bug.php?id=66932
 [React]: http://reactphp.org/
 [ReadableStreamInterface]: https://github.com/reactphp/react/blob/v0.4.0/src/Stream/ReadableStreamInterface.php
 [RFC 4648]: http://tools.ietf.org/html/rfc4648

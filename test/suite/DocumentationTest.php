@@ -90,7 +90,7 @@ class DocumentationTest extends PHPUnit_Framework_TestCase
         echo $decoded; // outputs 'foobar'
     }
 
-    public function testHandlingErrorsUsage()
+    public function testHandlingErrorsStringUsage()
     {
         $this->expectOutputString('Unable to decode');
 
@@ -100,6 +100,40 @@ class DocumentationTest extends PHPUnit_Framework_TestCase
         } catch (TransformExceptionInterface $e) {
             echo 'Unable to decode';
         }
+    }
+
+    public function testHandlingErrorsStreamFilterUsage()
+    {
+        $path = tempnam(sys_get_temp_dir(), 'endec');
+        $this->expectOutputString('Unable to decode');
+
+        Endec::registerFilters();
+        // $path = '/path/to/file';
+
+        $stream = fopen($path, 'wb');
+        stream_filter_append($stream, 'endec.base32-decode');
+        if (!fwrite($stream, '!!!!!!!!')) {
+            echo 'Unable to decode';
+        }
+        fclose($stream);
+    }
+
+    public function testHandlingErrorsReactStreamUsage()
+    {
+        $path = tempnam(sys_get_temp_dir(), 'endec');
+        $this->expectOutputString('Unable to decode');
+
+        $codec = new Base32;
+        $decodeStream = $codec->createDecodeStream();
+
+        $decodeStream->on(
+            'error',
+            function ($error, $stream) {
+                echo 'Unable to decode';
+            }
+        );
+
+        $decodeStream->end('!!!!!!!!');
     }
 
     public function testRot13TransformEncoderUsage()
