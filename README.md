@@ -1,6 +1,6 @@
 # Endec
 
-*Versatile encoding for PHP.*
+*Versatile encoding implementations for PHP.*
 
 [![There is no current stable version][version-image]][Semantic versioning]
 [![Current build status image][build-image]][Current build status]

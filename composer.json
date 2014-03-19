@@ -1,6 +1,6 @@
 {
     "name": "eloquent/endec",
-    "description": "Versatile encoding for PHP.",
+    "description": "Versatile encoding implementations for PHP.",
     "keywords": [
         "encoding",
         "decoding",
