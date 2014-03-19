@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1395212375">
-  <project timestamp="1395212375">
+<coverage generated="1395214098">
+  <project timestamp="1395214098">
     <package name="Eloquent\Endec\Base16">
       <file name="/home/travis/build/ezzatron/endec/src/Base16/Base16.php">
         <class name="Base16" namespace="Eloquent\Endec\Base16">
