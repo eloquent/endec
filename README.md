@@ -22,6 +22,10 @@ extend with custom encodings if necessary.
 
 ### Strings
 
+*Endec* can work with strings, similar to encoding functions in the PHP standard
+library. All codec classes have a static `instance()` method as a convenience
+only (they are not singletons).
+
 ```php
 use Eloquent\Endec\Base32\Base32;
 
@@ -34,6 +38,10 @@ echo Base32::instance()->decode('MZXW6YTBOI======'); // outputs 'foobar'
 ```
 
 ### Stream filters
+
+PHP natively supports [stream filters]. Any number of filters can be added to
+any stream with [stream_filter_append] or [stream_filter_prepend], and removed
+with [stream_filter_remove].
 
 ```php
 use Eloquent\Endec\Endec;
@@ -58,7 +66,12 @@ fclose($stream);
 echo $data; // outputs 'foobar'
 ```
 
-### [React] streams
+### React streams
+
+A codec/encoder/decoder can be used to obtain an encode or decode stream.
+*Endec*'s streams implement both [WritableStreamInterface] and
+[ReadableStreamInterface] from the [React] library, and hence can be used in an
+asynchronous manner.
 
 ```php
 use Eloquent\Endec\Base32\Base32;
@@ -95,6 +108,9 @@ echo $decoded; // outputs 'foobar'
 
 ### Handling errors
 
+Handling errors when dealing with strings is as simple as catching an exception.
+All exceptions thrown by codecs implement [TransformExceptionInterface]:
+
 ```php
 use Eloquent\Endec\Base32\Base32;
 use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
@@ -110,6 +126,13 @@ try {
 <!-- References -->
 
 [React]: http://reactphp.org/
+[ReadableStreamInterface]: https://github.com/reactphp/react/blob/v0.4.0/src/Stream/ReadableStreamInterface.php
+[stream filters]: http://php.net/stream.filters
+[stream_filter_append]: http://php.net/stream_filter_append
+[stream_filter_prepend]: http://php.net/stream_filter_prepend
+[stream_filter_remove]: http://php.net/stream_filter_remove
+[TransformExceptionInterface]: http://lqnt.co/endec/artifacts/documentation/api/Eloquent/Endec/Transform/Exception/TransformExceptionInterface.html
+[WritableStreamInterface]: https://github.com/reactphp/react/blob/v0.4.0/src/Stream/WritableStreamInterface.php
 
 [API documentation]: http://lqnt.co/endec/artifacts/documentation/api/
 [Composer]: http://getcomposer.org/
