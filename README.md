@@ -171,6 +171,7 @@ Available encodings include:
 - [Base32] from [RFC 4648]
 - [Base32 with extended hexadecimal alphabet] from [RFC 4648]
 - [Base16 (hexadecimal)] from [RFC 4648]
+- [URI percent encoding] from [RFC 3986]
 
 ## Built-in stream filters
 
@@ -188,6 +189,8 @@ to call this method multiple times). Available stream filters include:
 - endec.base32hex-decode
 - endec.base16-encode
 - endec.base16-decode
+- endec.uri-encode
+- endec.uri-decode
 
 ## Encoders, decoders, and codecs
 
@@ -359,12 +362,14 @@ echo file_get_contents($path); // outputs '0|6|20|42|72|'
 [ignore errors produced by the filter]: https://bugs.php.net/bug.php?id=66932
 [React]: http://reactphp.org/
 [ReadableStreamInterface]: https://github.com/reactphp/react/blob/v0.4.0/src/Stream/ReadableStreamInterface.php
+[RFC 3986]: http://tools.ietf.org/html/rfc3986
 [RFC 4648]: http://tools.ietf.org/html/rfc4648
 [stream filters]: http://php.net/stream.filters
 [stream_filter_append]: http://php.net/stream_filter_append
 [stream_filter_prepend]: http://php.net/stream_filter_prepend
 [stream_filter_remove]: http://php.net/stream_filter_remove
 [TransformExceptionInterface]: http://lqnt.co/endec/artifacts/documentation/api/Eloquent/Endec/Transform/Exception/TransformExceptionInterface.html
+[URI percent encoding]: http://tools.ietf.org/html/rfc3986#section-2.1
 [WritableStreamInterface]: https://github.com/reactphp/react/blob/v0.4.0/src/Stream/WritableStreamInterface.php
 
 [API documentation]: http://lqnt.co/endec/artifacts/documentation/api/
