@@ -62,5 +62,14 @@ class EndecTest extends PHPUnit_Framework_TestCase
             'endec.base64url-decode',
             'Eloquent\Endec\Base64\Base64UrlDecodeNativeStreamFilter'
         );
+        Phake::verify($isolator)->stream_filter_register(
+            'endec.uri-encode',
+            'Eloquent\Endec\Uri\UriEncodeNativeStreamFilter'
+        );
+        Phake::verify($isolator)->stream_filter_register(
+            'endec.uri-decode',
+            'Eloquent\Endec\Uri\UriDecodeNativeStreamFilter'
+        );
+
     }
 }

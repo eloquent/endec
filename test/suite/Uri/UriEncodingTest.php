@@ -9,21 +9,21 @@
  * file that was distributed with this source code.
  */
 
-namespace Eloquent\Endec\Base16;
+namespace Eloquent\Endec\Uri;
 
 use Eloquent\Endec\Transform\TransformStream;
 use Eloquent\Liberator\Liberator;
 use PHPUnit_Framework_TestCase;
 
-class Base16Test extends PHPUnit_Framework_TestCase
+class UriEncodingTest extends PHPUnit_Framework_TestCase
 {
     protected function setUp()
     {
         parent::setUp();
 
-        $this->encodeTransform = new Base16EncodeTransform;
-        $this->decodeTransform = new Base16DecodeTransform;
-        $this->codec = new Base16($this->encodeTransform, $this->decodeTransform);
+        $this->encodeTransform = new UriEncodeTransform;
+        $this->decodeTransform = new UriDecodeTransform;
+        $this->codec = new UriEncoding($this->encodeTransform, $this->decodeTransform);
     }
 
     public function testConstructor()
@@ -34,7 +34,7 @@ class Base16Test extends PHPUnit_Framework_TestCase
 
     public function testConstructorDefaults()
     {
-        $this->codec = new Base16;
+        $this->codec = new UriEncoding;
 
         $this->assertEquals($this->encodeTransform, $this->codec->encodeTransform());
         $this->assertEquals($this->decodeTransform, $this->codec->decodeTransform());
@@ -42,15 +42,34 @@ class Base16Test extends PHPUnit_Framework_TestCase
 
     public function encodingData()
     {
-        //                                      decoded   encoded
+        //                       decoded   encoded
         return [
-            'RFC 4648 base16 test vector 1' => ['',       ''],
-            'RFC 4648 base16 test vector 2' => ['f',      '66'],
-            'RFC 4648 base16 test vector 3' => ['fo',     '666F'],
-            'RFC 4648 base16 test vector 4' => ['foo',    '666F6F'],
-            'RFC 4648 base16 test vector 5' => ['foob',   '666F6F62'],
-            'RFC 4648 base16 test vector 6' => ['fooba',  '666F6F6261'],
-            'RFC 4648 base16 test vector 7' => ['foobar', '666F6F626172'],
+            'Empty'          => ['',       ''],
+
+            '1 byte safe'    => ['f',      'f'],
+            '2 bytes safe'   => ['fo',     'fo'],
+            '3 bytes safe'   => ['foo',    'foo'],
+            '4 bytes safe'   => ['foob',   'foob'],
+            '5 bytes safe'   => ['fooba',  'fooba'],
+            '6 bytes safe'   => ['foobar', 'foobar'],
+
+            '1 byte unsafe'  => ['!',      '%21'],
+            '2 bytes unsafe' => ['!@',     '%21%40'],
+            '3 bytes unsafe' => ['!@#',    '%21%40%23'],
+            '4 bytes unsafe' => ['!@#$',   '%21%40%23%24'],
+            '5 bytes unsafe' => ['!@#$%',  '%21%40%23%24%25'],
+            '6 bytes unsafe' => ['!@#$%^', '%21%40%23%24%25%5E'],
+
+            'Mixed safety'   => ['f!o@o#', 'f%21o%40o%23'],
+
+            'All reserved characters' => [
+                ':/?#\[\]@!$&\'()*+,;=',
+                '%3A%2F%3F%23%5C%5B%5C%5D%40%21%24%26%27%28%29%2A%2B%2C%3B%3D',
+            ],
+            'All unreserved characters' => [
+                'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-.~',
+                'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-.~',
+            ],
         ];
     }
 
@@ -62,22 +81,12 @@ class Base16Test extends PHPUnit_Framework_TestCase
         $this->assertSame($encoded, $this->codec->encode($decoded));
     }
 
-    public function testEncodeFullAlphabet()
-    {
-        $this->assertSame('0123456789ABCDEF', $this->codec->encode(hex2bin('0123456789ABCDEF')));
-    }
-
     /**
      * @dataProvider encodingData
      */
     public function testDecode($decoded, $encoded)
     {
         $this->assertSame($decoded, $this->codec->decode($encoded));
-    }
-
-    public function testDecodeFullAlphabet()
-    {
-        $this->assertSame('0123456789ABCDEF', strtoupper(bin2hex($this->codec->decode('0123456789ABCDEF'))));
     }
 
     public function testCreateEncodeStream()
