@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="robots" content="index, follow, all" />
+        <title>Eloquent\Endec\Uri\UriEncoding | eloquent/endec API</title>
+                    <link rel="stylesheet" type="text/css" href="../../../stylesheet.css">
+                            </head>
+        <body id="class">
+            <div class="header">
+        <ul>
+            <li><a href="../../../classes.html">Classes</a></li>
+                            <li><a href="../../../namespaces.html">Namespaces</a></li>
+                        <li><a href="../../../interfaces.html">Interfaces</a></li>
+            <li><a href="../../../doc-index.html">Index</a></li>
+            
+        </ul>
+
+        <div id="title">eloquent/endec API</div>
+
+            <div class="type">Class</div>
+    <h1><a href="../../../Eloquent/Endec/Uri.html">Eloquent\Endec\Uri</a>\UriEncoding</h1>
+    </div>
+        <div class="content">
+                <p>class    <strong>UriEncoding</strong>        extends <a href="../../../Eloquent/Endec/Codec.html"><abbr title="Eloquent\Endec\Codec">Codec</abbr></a></p>
+
+            <div class="description">
+            <p>A codec for the URI percent encoding protocol.</p>
+            <p>
+</p>
+        </div>
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="#method___construct">__construct</a>(<a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a> $encodeTransform = null, <a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a> $decodeTransform = null)
+                    <p>Construct a new URI encoding codec.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_encodeTransform">encodeTransform</a>()
+                    <p>Get the encode transform.</p>
+                </td>
+                <td><small>from&nbsp;<a href="../../../Eloquent/Endec/Codec.html#method_encodeTransform"><abbr title="Eloquent\Endec\Codec">Codec</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_decodeTransform">decodeTransform</a>()
+                    <p>Get the decode transform.</p>
+                </td>
+                <td><small>from&nbsp;<a href="../../../Eloquent/Endec/Codec.html#method_decodeTransform"><abbr title="Eloquent\Endec\Codec">Codec</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    static&nbsp;<abbr title="Eloquent\Endec\Encoding\CodecInterface">CodecInterface</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_instance">instance</a>()
+                    <p>Get the static instance of this codec.</p>
+                </td>
+                <td></td>
+            </tr>
+            </table>
+
+
+        <h2>Details</h2>
+
+                        <h3 id="method___construct">
+        <div class="location">at line 45</div>
+        <code>            public            
+    <strong>__construct</strong>(<a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a> $encodeTransform = null, <a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a> $decodeTransform = null)</code>
+    </h3>
+    <div class="details">
+        <p>Construct a new URI encoding codec.</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a></td>
+                <td>$encodeTransform</td>
+                <td>The encode transform to use.</td>
+            </tr>
+                    <tr>
+                <td><a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a></td>
+                <td>$decodeTransform</td>
+                <td>The decode transform to use.</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_encodeTransform">
+        <div class="location">in <a href="../../../Eloquent/Endec/Codec.html#method_encodeTransform"><abbr title="Eloquent\Endec\Codec">Codec</abbr></a> at line 43</div>
+        <code>            public            <a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a>
+    <strong>encodeTransform</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Get the encode transform.</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a></td>
+            <td>The encode transform.</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_decodeTransform">
+        <div class="location">in <a href="../../../Eloquent/Endec/Codec.html#method_decodeTransform"><abbr title="Eloquent\Endec\Codec">Codec</abbr></a> at line 53</div>
+        <code>            public            <a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a>
+    <strong>decodeTransform</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Get the decode transform.</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a></td>
+            <td>The decode transform.</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_instance">
+        <div class="location">at line 30</div>
+        <code>        static    public            <abbr title="Eloquent\Endec\Encoding\CodecInterface">CodecInterface</abbr>
+    <strong>instance</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Get the static instance of this codec.</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="Eloquent\Endec\Encoding\CodecInterface">CodecInterface</abbr></td>
+            <td>The codec.</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+    
+            </div>
+            <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/" target="_top">Sami, the API Documentation Generator</a>.
+    </div>
+    </body>
+</html>
