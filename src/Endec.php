@@ -60,6 +60,14 @@ abstract class Endec
             'Eloquent\Endec\Base64\Base64DecodeNativeStreamFilter'
         );
         $isolator->stream_filter_register(
+            'endec.base64mime-encode',
+            'Eloquent\Endec\Base64\Base64MimeEncodeNativeStreamFilter'
+        );
+        $isolator->stream_filter_register(
+            'endec.base64mime-decode',
+            'Eloquent\Endec\Base64\Base64MimeDecodeNativeStreamFilter'
+        );
+        $isolator->stream_filter_register(
             'endec.base64url-encode',
             'Eloquent\Endec\Base64\Base64UrlEncodeNativeStreamFilter'
         );
