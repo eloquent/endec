@@ -167,6 +167,7 @@ relevant specification document, *Endec* aims to be 100% spec-conformant.
 Available encodings include:
 
 - [Base64] from [RFC 4648]
+- [Base64 for MIME message bodies] from [RFC 2045]
 - [Base64 with URL and filename safe alphabet] from [RFC 4648]
 - [Base32] from [RFC 4648]
 - [Base32 with extended hexadecimal alphabet] from [RFC 4648]
@@ -181,6 +182,8 @@ to call this method multiple times). Available stream filters include:
 
 - endec.base64-encode (see also PHP's [convert.base64-encode])
 - endec.base64-decode (see also PHP's [convert.base64-decode])
+- endec.base64mime-encode (see also PHP's [convert.base64-encode])
+- endec.base64mime-decode (see also PHP's [convert.base64-decode])
 - endec.base64url-encode
 - endec.base64url-decode
 - endec.base32-encode
@@ -351,6 +354,7 @@ echo file_get_contents($path); // outputs '0|6|20|42|72|'
 [Base16 (hexadecimal)]: http://tools.ietf.org/html/rfc4648#section-8
 [Base32 with extended hexadecimal alphabet]: http://tools.ietf.org/html/rfc4648#section-7
 [Base32]: http://tools.ietf.org/html/rfc4648#section-6
+[Base64 for MIME message bodies]: http://tools.ietf.org/html/rfc2045#section-6.8
 [Base64 with URL and filename safe alphabet]: http://tools.ietf.org/html/rfc4648#section-5
 [Base64]: http://tools.ietf.org/html/rfc4648#section-4
 [CodecInterface]: http://lqnt.co/endec/artifacts/documentation/api/Eloquent/Endec/CodecInterface.html
@@ -362,6 +366,7 @@ echo file_get_contents($path); // outputs '0|6|20|42|72|'
 [ignore errors produced by the filter]: https://bugs.php.net/bug.php?id=66932
 [React]: http://reactphp.org/
 [ReadableStreamInterface]: https://github.com/reactphp/react/blob/v0.4.0/src/Stream/ReadableStreamInterface.php
+[RFC 2045]: http://tools.ietf.org/html/rfc2045
 [RFC 3986]: http://tools.ietf.org/html/rfc3986
 [RFC 4648]: http://tools.ietf.org/html/rfc4648
 [stream filters]: http://php.net/stream.filters
