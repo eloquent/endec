@@ -180,8 +180,8 @@ All *Endec* encodings are available as stream filters. Filters must be
 registered globally before use by calling `Endec::registerFilters()` (it is safe
 to call this method multiple times). Available stream filters include:
 
-- endec.base64-encode (see also PHP's [convert.base64-encode])
-- endec.base64-decode (see also PHP's [convert.base64-decode])
+- endec.base64-encode
+- endec.base64-decode
 - endec.base64mime-encode (see also PHP's [convert.base64-encode])
 - endec.base64mime-decode (see also PHP's [convert.base64-decode])
 - endec.base64url-encode
