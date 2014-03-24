@@ -52,43 +52,51 @@ class Base64MimeDecodeTransform extends Base64DecodeTransform
      */
     public function transform($data, $isEnd = false)
     {
-        $chunks = preg_split(
-            '{([^[:alnum:]+/=]+)}',
-            $data,
-            -1,
-            PREG_SPLIT_DELIM_CAPTURE
-        );
-        $numChunks = count($chunks);
-
-        $buffer = '';
-        $output = '';
-        $consumedBytes = 0;
-        $lastFullyConsumed = -1;
-        for ($i = 0; $i < $numChunks; $i += 2) {
-            $buffer .= $chunks[$i];
-
+        if ($isEnd) {
             try {
-                list($thisOutput, $thisConsumedBytes) = parent::transform(
-                    $buffer,
-                    $isEnd && $numChunks - 1 === $i
+                list($output) = parent::transform(
+                    preg_replace('{[^[:alnum:]+/=]+}', '', $data),
+                    true
                 );
             } catch (TransformExceptionInterface $e) {
                 throw new InvalidEncodedDataException('base64mime', $e->data());
             }
 
-            $output .= $thisOutput;
-            $consumedBytes += $thisConsumedBytes;
+            return [$output, strlen($data)];
+        }
 
-            if ($thisConsumedBytes === strlen($buffer)) {
+        $chunks = preg_split(
+            '{([^[:alnum:]+/=]+)}',
+            $data,
+            -1,
+            PREG_SPLIT_OFFSET_CAPTURE
+        );
+        $numChunks = count($chunks);
+
+        $buffer = '';
+        $output = '';
+        $lastFullyConsumed = -1;
+        $consumedBytes = 0;
+        for ($i = 0; $i < $numChunks; $i ++) {
+            $buffer .= $chunks[$i][0];
+            list($thisOutput, $consumedBytes) = parent::transform($buffer);
+            $output .= $thisOutput;
+
+            if ($consumedBytes === strlen($buffer)) {
                 $buffer = '';
                 $lastFullyConsumed = $i;
             } else {
-                $buffer = substr($buffer, $thisConsumedBytes);
+                $buffer = substr($buffer, $consumedBytes);
             }
         }
 
-        for ($i = 1; $i < $lastFullyConsumed + 2 && $i < $numChunks; $i += 2) {
-            $consumedBytes += strlen($chunks[$i]);
+        if ($lastFullyConsumed > -1) {
+            if ($lastFullyConsumed < $numChunks - 1) {
+                $consumedBytes = $chunks[$lastFullyConsumed + 1][1];
+            } else {
+                $consumedBytes = $chunks[$lastFullyConsumed][1] +
+                    strlen($chunks[$lastFullyConsumed][0]);
+            }
         }
 
         return [$output, $consumedBytes];
