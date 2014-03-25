@@ -9,21 +9,21 @@
  * file that was distributed with this source code.
  */
 
-namespace Eloquent\Endec\Base32;
+namespace Eloquent\Endec\Uri;
 
 use Eloquent\Endec\Transform\TransformStream;
 use Eloquent\Liberator\Liberator;
 use PHPUnit_Framework_TestCase;
 
-class Base32HexTest extends PHPUnit_Framework_TestCase
+class UriEncodingTest extends PHPUnit_Framework_TestCase
 {
     protected function setUp()
     {
         parent::setUp();
 
-        $this->encodeTransform = new Base32HexEncodeTransform;
-        $this->decodeTransform = new Base32HexDecodeTransform;
-        $this->codec = new Base32Hex($this->encodeTransform, $this->decodeTransform);
+        $this->encodeTransform = new UriEncodeTransform;
+        $this->decodeTransform = new UriDecodeTransform;
+        $this->codec = new UriEncoding($this->encodeTransform, $this->decodeTransform);
     }
 
     public function testConstructor()
@@ -34,7 +34,7 @@ class Base32HexTest extends PHPUnit_Framework_TestCase
 
     public function testConstructorDefaults()
     {
-        $this->codec = new Base32Hex;
+        $this->codec = new UriEncoding;
 
         $this->assertEquals($this->encodeTransform, $this->codec->encodeTransform());
         $this->assertEquals($this->decodeTransform, $this->codec->decodeTransform());
@@ -42,15 +42,34 @@ class Base32HexTest extends PHPUnit_Framework_TestCase
 
     public function encodingData()
     {
-        //                                           decoded   encoded
+        //                            decoded   encoded
         return array(
-            'RFC 4648 base32 test vector 1' => array('',       ''),
-            'RFC 4648 base32 test vector 2' => array('f',      'CO======'),
-            'RFC 4648 base32 test vector 3' => array('fo',     'CPNG===='),
-            'RFC 4648 base32 test vector 4' => array('foo',    'CPNMU==='),
-            'RFC 4648 base32 test vector 5' => array('foob',   'CPNMUOG='),
-            'RFC 4648 base32 test vector 6' => array('fooba',  'CPNMUOJ1'),
-            'RFC 4648 base32 test vector 7' => array('foobar', 'CPNMUOJ1E8======'),
+            'Empty'          => array('',       ''),
+
+            '1 byte safe'    => array('f',      'f'),
+            '2 bytes safe'   => array('fo',     'fo'),
+            '3 bytes safe'   => array('foo',    'foo'),
+            '4 bytes safe'   => array('foob',   'foob'),
+            '5 bytes safe'   => array('fooba',  'fooba'),
+            '6 bytes safe'   => array('foobar', 'foobar'),
+
+            '1 byte unsafe'  => array('!',      '%21'),
+            '2 bytes unsafe' => array('!@',     '%21%40'),
+            '3 bytes unsafe' => array('!@#',    '%21%40%23'),
+            '4 bytes unsafe' => array('!@#$',   '%21%40%23%24'),
+            '5 bytes unsafe' => array('!@#$%',  '%21%40%23%24%25'),
+            '6 bytes unsafe' => array('!@#$%^', '%21%40%23%24%25%5E'),
+
+            'Mixed safety'   => array('f!o@o#', 'f%21o%40o%23'),
+
+            'All reserved characters' => array(
+                ':/?#\[\]@!$&\'()*+,;=',
+                '%3A%2F%3F%23%5C%5B%5C%5D%40%21%24%26%27%28%29%2A%2B%2C%3B%3D',
+            ),
+            'All unreserved characters' => array(
+                'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-.~',
+                'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-.~',
+            ),
         );
     }
 
@@ -62,28 +81,12 @@ class Base32HexTest extends PHPUnit_Framework_TestCase
         $this->assertSame($encoded, $this->codec->encode($decoded));
     }
 
-    public function testEncodeFullAlphabet()
-    {
-        $this->assertSame(
-            '0123456789ABCDEFGHIJKLMNOPQRSTUV00======',
-            $this->codec->encode(pack('H*', '00443214c74254b635cf84653a56d7c675be77df00'))
-        );
-    }
-
     /**
      * @dataProvider encodingData
      */
     public function testDecode($decoded, $encoded)
     {
         $this->assertSame($decoded, $this->codec->decode($encoded));
-    }
-
-    public function testDecodeFullAlphabet()
-    {
-        $this->assertSame(
-            '00443214c74254b635cf84653a56d7c675be77df00',
-            bin2hex($this->codec->decode('0123456789ABCDEFGHIJKLMNOPQRSTUV00======'))
-        );
     }
 
     public function testCreateEncodeStream()

@@ -91,7 +91,7 @@ abstract class AbstractBase32EncodeTransform implements DataTransformInterface
             }
         }
 
-        return [$output, $consumedBytes];
+        return array($output, $consumedBytes);
     }
 
     private function map1($a)

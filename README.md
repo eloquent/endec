@@ -2,7 +2,7 @@
 
 *Versatile encoding implementations for PHP.*
 
-[![The most recent stable version is 0.1.0][version-image]][Semantic versioning]
+[![The most recent stable version is 0.1.1][version-image]][Semantic versioning]
 [![Current build status image][build-image]][Current build status]
 [![Current coverage status image][coverage-image]][Current coverage status]
 
@@ -167,10 +167,12 @@ relevant specification document, *Endec* aims to be 100% spec-conformant.
 Available encodings include:
 
 - [Base64] from [RFC 4648]
+- [Base64 for MIME message bodies] from [RFC 2045]
 - [Base64 with URL and filename safe alphabet] from [RFC 4648]
 - [Base32] from [RFC 4648]
 - [Base32 with extended hexadecimal alphabet] from [RFC 4648]
 - [Base16 (hexadecimal)] from [RFC 4648]
+- [URI percent encoding] from [RFC 3986]
 
 ## Built-in stream filters
 
@@ -178,8 +180,10 @@ All *Endec* encodings are available as stream filters. Filters must be
 registered globally before use by calling `Endec::registerFilters()` (it is safe
 to call this method multiple times). Available stream filters include:
 
-- endec.base64-encode (see also PHP's [convert.base64-encode])
-- endec.base64-decode (see also PHP's [convert.base64-decode])
+- endec.base64-encode
+- endec.base64-decode
+- endec.base64mime-encode (see also PHP's [convert.base64-encode])
+- endec.base64mime-decode (see also PHP's [convert.base64-decode])
 - endec.base64url-encode
 - endec.base64url-decode
 - endec.base32-encode
@@ -188,6 +192,8 @@ to call this method multiple times). Available stream filters include:
 - endec.base32hex-decode
 - endec.base16-encode
 - endec.base16-decode
+- endec.uri-encode
+- endec.uri-decode
 
 ## Encoders, decoders, and codecs
 
@@ -216,7 +222,7 @@ class Rot13Transform implements DataTransformInterface
 {
     public function transform($data, $isEnd = false)
     {
-        return [str_rot13($data), strlen($data)];
+        return array(str_rot13($data), strlen($data));
     }
 }
 ```
@@ -263,7 +269,7 @@ class MultiplyTransform extends AbstractDataTransform
     {
         $consumedBytes = $this->calculateConsumeBytes($data, $isEnd, 2);
         if (!$consumedBytes) {
-            return ['', 0];
+            return array('', 0);
         }
 
         $consumedData = substr($data, 0, $consumedBytes);
@@ -276,7 +282,7 @@ class MultiplyTransform extends AbstractDataTransform
             $output .= $consumedData[$i] * $consumedData[$i + 1] . '|';
         }
 
-        return [$output, $consumedBytes];
+        return array($output, $consumedBytes);
     }
 }
 ```
@@ -348,6 +354,7 @@ echo file_get_contents($path); // outputs '0|6|20|42|72|'
 [Base16 (hexadecimal)]: http://tools.ietf.org/html/rfc4648#section-8
 [Base32 with extended hexadecimal alphabet]: http://tools.ietf.org/html/rfc4648#section-7
 [Base32]: http://tools.ietf.org/html/rfc4648#section-6
+[Base64 for MIME message bodies]: http://tools.ietf.org/html/rfc2045#section-6.8
 [Base64 with URL and filename safe alphabet]: http://tools.ietf.org/html/rfc4648#section-5
 [Base64]: http://tools.ietf.org/html/rfc4648#section-4
 [CodecInterface]: http://lqnt.co/endec/artifacts/documentation/api/Eloquent/Endec/CodecInterface.html
@@ -359,12 +366,15 @@ echo file_get_contents($path); // outputs '0|6|20|42|72|'
 [ignore errors produced by the filter]: https://bugs.php.net/bug.php?id=66932
 [React]: http://reactphp.org/
 [ReadableStreamInterface]: https://github.com/reactphp/react/blob/v0.4.0/src/Stream/ReadableStreamInterface.php
+[RFC 2045]: http://tools.ietf.org/html/rfc2045
+[RFC 3986]: http://tools.ietf.org/html/rfc3986
 [RFC 4648]: http://tools.ietf.org/html/rfc4648
 [stream filters]: http://php.net/stream.filters
 [stream_filter_append]: http://php.net/stream_filter_append
 [stream_filter_prepend]: http://php.net/stream_filter_prepend
 [stream_filter_remove]: http://php.net/stream_filter_remove
 [TransformExceptionInterface]: http://lqnt.co/endec/artifacts/documentation/api/Eloquent/Endec/Transform/Exception/TransformExceptionInterface.html
+[URI percent encoding]: http://tools.ietf.org/html/rfc3986#section-2.1
 [WritableStreamInterface]: https://github.com/reactphp/react/blob/v0.4.0/src/Stream/WritableStreamInterface.php
 
 [API documentation]: http://lqnt.co/endec/artifacts/documentation/api/
@@ -375,4 +385,4 @@ echo file_get_contents($path); // outputs '0|6|20|42|72|'
 [Current coverage status]: https://coveralls.io/r/eloquent/endec
 [eloquent/endec]: https://packagist.org/packages/eloquent/endec
 [Semantic versioning]: http://semver.org/
-[version-image]: http://img.shields.io/:semver-0.1.0-yellow.svg "This project uses semantic versioning"
+[version-image]: http://img.shields.io/:semver-0.1.1-yellow.svg "This project uses semantic versioning"

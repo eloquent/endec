@@ -55,6 +55,14 @@ class EndecTest extends PHPUnit_Framework_TestCase
             'Eloquent\Endec\Base64\Base64DecodeNativeStreamFilter'
         );
         Phake::verify($isolator)->stream_filter_register(
+            'endec.base64mime-encode',
+            'Eloquent\Endec\Base64\Base64MimeEncodeNativeStreamFilter'
+        );
+        Phake::verify($isolator)->stream_filter_register(
+            'endec.base64mime-decode',
+            'Eloquent\Endec\Base64\Base64MimeDecodeNativeStreamFilter'
+        );
+        Phake::verify($isolator)->stream_filter_register(
             'endec.base64url-encode',
             'Eloquent\Endec\Base64\Base64UrlEncodeNativeStreamFilter'
         );
@@ -62,5 +70,14 @@ class EndecTest extends PHPUnit_Framework_TestCase
             'endec.base64url-decode',
             'Eloquent\Endec\Base64\Base64UrlDecodeNativeStreamFilter'
         );
+        Phake::verify($isolator)->stream_filter_register(
+            'endec.uri-encode',
+            'Eloquent\Endec\Uri\UriEncodeNativeStreamFilter'
+        );
+        Phake::verify($isolator)->stream_filter_register(
+            'endec.uri-decode',
+            'Eloquent\Endec\Uri\UriDecodeNativeStreamFilter'
+        );
+
     }
 }

@@ -29,27 +29,27 @@ class Base32HexDecodeTransformTest extends PHPUnit_Framework_TestCase
 
     public function transformData()
     {
-        //                              input               output        bytesConsumed
-        return [
-            'Empty'                 => ['',                 '',           0],
-            '1 byte'                => ['C',                '',           0],
-            '2 bytes'               => ['CP',               '',           0],
-            '3 bytes'               => ['CPN',              '',           0],
-            '4 bytes'               => ['CPNM',             '',           0],
-            '5 bytes'               => ['CPNMU',            '',           0],
-            '6 bytes'               => ['CPNMUO',           '',           0],
-            '7 bytes'               => ['CPNMUOJ',          '',           0],
-            '8 bytes'               => ['CPNMUOJ1',         'fooba',      8],
-            '9 bytes'               => ['CPNMUOJ1E',        'fooba',      8],
-            '10 bytes'              => ['CPNMUOJ1E9',       'fooba',      8],
-            '11 bytes'              => ['CPNMUOJ1E9H',      'fooba',      8],
-            '12 bytes'              => ['CPNMUOJ1E9H6',     'fooba',      8],
-            '13 bytes'              => ['CPNMUOJ1E9H62',    'fooba',      8],
-            '14 bytes'              => ['CPNMUOJ1E9H62U',   'fooba',      8],
-            '15 bytes'              => ['CPNMUOJ1E9H62UJ',  'fooba',      8],
-            '16 bytes'              => ['CPNMUOJ1E9H62UJH', 'foobarbazq', 16],
-            '16 bytes with padding' => ['CPNMUOJ1E8======', 'foobar',     16],
-        ];
+        //                                   input               output        bytesConsumed
+        return array(
+            'Empty'                 => array('',                 '',           0),
+            '1 byte'                => array('C',                '',           0),
+            '2 bytes'               => array('CP',               '',           0),
+            '3 bytes'               => array('CPN',              '',           0),
+            '4 bytes'               => array('CPNM',             '',           0),
+            '5 bytes'               => array('CPNMU',            '',           0),
+            '6 bytes'               => array('CPNMUO',           '',           0),
+            '7 bytes'               => array('CPNMUOJ',          '',           0),
+            '8 bytes'               => array('CPNMUOJ1',         'fooba',      8),
+            '9 bytes'               => array('CPNMUOJ1E',        'fooba',      8),
+            '10 bytes'              => array('CPNMUOJ1E9',       'fooba',      8),
+            '11 bytes'              => array('CPNMUOJ1E9H',      'fooba',      8),
+            '12 bytes'              => array('CPNMUOJ1E9H6',     'fooba',      8),
+            '13 bytes'              => array('CPNMUOJ1E9H62',    'fooba',      8),
+            '14 bytes'              => array('CPNMUOJ1E9H62U',   'fooba',      8),
+            '15 bytes'              => array('CPNMUOJ1E9H62UJ',  'fooba',      8),
+            '16 bytes'              => array('CPNMUOJ1E9H62UJH', 'foobarbazq', 16),
+            '16 bytes with padding' => array('CPNMUOJ1E8======', 'foobar',     16),
+        );
     }
 
     /**
@@ -57,27 +57,27 @@ class Base32HexDecodeTransformTest extends PHPUnit_Framework_TestCase
      */
     public function testTransform($input, $output, $bytesConsumed)
     {
-        $this->assertSame([$output, $bytesConsumed], $this->transform->transform($input));
+        $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input));
     }
 
     public function transformEndData()
     {
-        //                              input               output        bytesConsumed
-        return [
-            'Empty'                 => ['',                 '',           0],
-            '2 bytes'               => ['CO',               'f',          2],
-            '4 bytes'               => ['CPNG',             'fo',         4],
-            '5 bytes'               => ['CPNMU',            'foo',        5],
-            '7 bytes'               => ['CPNMUOG',          'foob',       7],
-            '8 bytes'               => ['CPNMUOJ1',         'fooba',      8],
-            '8 bytes with padding'  => ['CO======',         'f',          8],
-            '10 bytes'              => ['CPNMUOJ1E8',       'foobar',     10],
-            '12 bytes'              => ['CPNMUOJ1E9H0',     'foobarb',    12],
-            '13 bytes'              => ['CPNMUOJ1E9H62',    'foobarba',   13],
-            '15 bytes'              => ['CPNMUOJ1E9H62UG',  'foobarbaz',  15],
-            '16 bytes'              => ['CPNMUOJ1E9H62UJH', 'foobarbazq', 16],
-            '16 bytes with padding' => ['CPNMUOJ1E8======', 'foobar',     16],
-        ];
+        //                                   input               output        bytesConsumed
+        return array(
+            'Empty'                 => array('',                 '',           0),
+            '2 bytes'               => array('CO',               'f',          2),
+            '4 bytes'               => array('CPNG',             'fo',         4),
+            '5 bytes'               => array('CPNMU',            'foo',        5),
+            '7 bytes'               => array('CPNMUOG',          'foob',       7),
+            '8 bytes'               => array('CPNMUOJ1',         'fooba',      8),
+            '8 bytes with padding'  => array('CO======',         'f',          8),
+            '10 bytes'              => array('CPNMUOJ1E8',       'foobar',     10),
+            '12 bytes'              => array('CPNMUOJ1E9H0',     'foobarb',    12),
+            '13 bytes'              => array('CPNMUOJ1E9H62',    'foobarba',   13),
+            '15 bytes'              => array('CPNMUOJ1E9H62UG',  'foobarbaz',  15),
+            '16 bytes'              => array('CPNMUOJ1E9H62UJH', 'foobarbazq', 16),
+            '16 bytes with padding' => array('CPNMUOJ1E8======', 'foobar',     16),
+        );
     }
 
     /**
@@ -85,18 +85,18 @@ class Base32HexDecodeTransformTest extends PHPUnit_Framework_TestCase
      */
     public function testTransformEnd($input, $output, $bytesConsumed)
     {
-        $this->assertSame([$output, $bytesConsumed], $this->transform->transform($input, true));
+        $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input, true));
     }
 
     public function invalidTransformEndData()
     {
-        //                               input
-        return [
-            'Characters below range' => ['!!!!!!!!'],
-            'Characters above range' => ['~~~~~~~~'],
-            '1 byte'                 => ['A'],
-            '9 bytes'                => ['AAAAAAAAA'],
-        ];
+        //                                    input
+        return array(
+            'Characters below range' => array('!!!!!!!!'),
+            'Characters above range' => array('~~~~~~~~'),
+            '1 byte'                 => array('A'),
+            '9 bytes'                => array('AAAAAAAAA'),
+        );
     }
 
     /**

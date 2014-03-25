@@ -15,11 +15,11 @@ use Eloquent\Endec\Transform\AbstractDataTransform;
 use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
 
 /**
- * Encodes data using base64url encoding.
+ * Encodes data using base64 encoding suitable for MIME message bodies.
  *
- * @link http://tools.ietf.org/html/rfc4648#section-5
+ * @link https://tools.ietf.org/html/rfc2045#section-6.8
  */
-class Base64UrlEncodeTransform extends AbstractDataTransform
+class Base64MimeEncodeTransform extends AbstractDataTransform
 {
     /**
      * Get the static instance of this transform.
@@ -51,20 +51,13 @@ class Base64UrlEncodeTransform extends AbstractDataTransform
      */
     public function transform($data, $isEnd = false)
     {
-        $consumedBytes = $this->calculateConsumeBytes($data, $isEnd, 3);
+        $consumedBytes = $this->calculateConsumeBytes($data, $isEnd, 57);
         if (!$consumedBytes) {
             return array('', 0);
         }
 
         return array(
-            rtrim(
-                strtr(
-                    base64_encode(substr($data, 0, $consumedBytes)),
-                    '+/',
-                    '-_'
-                ),
-                '='
-            ),
+            chunk_split(base64_encode(substr($data, 0, $consumedBytes))),
             $consumedBytes
         );
     }

@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace Eloquent\Endec\Base64;
+namespace Eloquent\Endec\Uri;
 
 use Eloquent\Endec\Codec;
 use Eloquent\Endec\Encoding\CodecInterface;
 use Eloquent\Endec\Transform\DataTransformInterface;
 
 /**
- * A codec for the base64url encoding protocol.
+ * A codec for the URI percent encoding protocol.
  *
- * @link http://tools.ietf.org/html/rfc4648#section-5
+ * @link http://tools.ietf.org/html/rfc3986#section-2.1
  */
-class Base64Url extends Codec
+class UriEncoding extends Codec
 {
     /**
      * Get the static instance of this codec.
@@ -37,7 +37,7 @@ class Base64Url extends Codec
     }
 
     /**
-     * Construct a new base64url codec.
+     * Construct a new URI encoding codec.
      *
      * @param DataTransformInterface|null $encodeTransform The encode transform to use.
      * @param DataTransformInterface|null $decodeTransform The decode transform to use.
@@ -47,10 +47,10 @@ class Base64Url extends Codec
         DataTransformInterface $decodeTransform = null
     ) {
         if (null === $encodeTransform) {
-            $encodeTransform = Base64UrlEncodeTransform::instance();
+            $encodeTransform = UriEncodeTransform::instance();
         }
         if (null === $decodeTransform) {
-            $decodeTransform = Base64UrlDecodeTransform::instance();
+            $decodeTransform = UriDecodeTransform::instance();
         }
 
         parent::__construct($encodeTransform, $decodeTransform);

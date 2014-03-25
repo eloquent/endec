@@ -29,16 +29,16 @@ class Base64EncodeTransformTest extends PHPUnit_Framework_TestCase
 
     public function transformData()
     {
-        //                input     output      bytesConsumed
-        return [
-            'Empty'   => ['',       '',         0],
-            '1 byte'  => ['f',      '',         0],
-            '2 bytes' => ['fo',     '',         0],
-            '3 bytes' => ['foo',    'Zm9v',     3],
-            '4 bytes' => ['foob',   'Zm9v',     3],
-            '5 bytes' => ['fooba',  'Zm9v',     3],
-            '6 bytes' => ['foobar', 'Zm9vYmFy', 6],
-        ];
+        //                     input     output      bytesConsumed
+        return array(
+            'Empty'   => array('',       '',         0),
+            '1 byte'  => array('f',      '',         0),
+            '2 bytes' => array('fo',     '',         0),
+            '3 bytes' => array('foo',    'Zm9v',     3),
+            '4 bytes' => array('foob',   'Zm9v',     3),
+            '5 bytes' => array('fooba',  'Zm9v',     3),
+            '6 bytes' => array('foobar', 'Zm9vYmFy', 6),
+        );
     }
 
     /**
@@ -46,21 +46,21 @@ class Base64EncodeTransformTest extends PHPUnit_Framework_TestCase
      */
     public function testTransform($input, $output, $bytesConsumed)
     {
-        $this->assertSame([$output, $bytesConsumed], $this->transform->transform($input));
+        $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input));
     }
 
     public function transformEndData()
     {
-        //                input     output      bytesConsumed
-        return [
-            'Empty'   => ['',       '',         0],
-            '1 byte'  => ['f',      'Zg==',     1],
-            '2 bytes' => ['fo',     'Zm8=',     2],
-            '3 bytes' => ['foo',    'Zm9v',     3],
-            '4 bytes' => ['foob',   'Zm9vYg==', 4],
-            '5 bytes' => ['fooba',  'Zm9vYmE=', 5],
-            '6 bytes' => ['foobar', 'Zm9vYmFy', 6],
-        ];
+        //                     input     output      bytesConsumed
+        return array(
+            'Empty'   => array('',       '',         0),
+            '1 byte'  => array('f',      'Zg==',     1),
+            '2 bytes' => array('fo',     'Zm8=',     2),
+            '3 bytes' => array('foo',    'Zm9v',     3),
+            '4 bytes' => array('foob',   'Zm9vYg==', 4),
+            '5 bytes' => array('fooba',  'Zm9vYmE=', 5),
+            '6 bytes' => array('foobar', 'Zm9vYmFy', 6),
+        );
     }
 
     /**
@@ -68,7 +68,7 @@ class Base64EncodeTransformTest extends PHPUnit_Framework_TestCase
      */
     public function testTransformEnd($input, $output, $bytesConsumed)
     {
-        $this->assertSame([$output, $bytesConsumed], $this->transform->transform($input, true));
+        $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input, true));
     }
 
     public function testInstance()

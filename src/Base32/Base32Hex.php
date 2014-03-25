@@ -37,7 +37,7 @@ class Base32Hex extends Codec
     }
 
     /**
-     * Construct a new base32 codec.
+     * Construct a new base32hex codec.
      *
      * @param DataTransformInterface|null $encodeTransform The encode transform to use.
      * @param DataTransformInterface|null $decodeTransform The decode transform to use.

@@ -15,10 +15,6 @@ use Eloquent\Endec\Transform\TransformStream;
 use Phake;
 use PHPUnit_Framework_TestCase;
 
-/**
- * @covers \Eloquent\Endec\Decoder
- * @covers \Eloquent\Endec\DecoderTrait
- */
 class DecoderTest extends PHPUnit_Framework_TestCase
 {
     protected function setUp()
@@ -29,7 +25,7 @@ class DecoderTest extends PHPUnit_Framework_TestCase
         $this->codec = new Decoder($this->decodeTransform);
 
         $transformCallback = function ($data, $isEnd = false) {
-            return [str_rot13($data), strlen($data)];
+            return array(str_rot13($data), strlen($data));
         };
         Phake::when($this->decodeTransform)->transform(Phake::anyParameters())
             ->thenGetReturnByLambda($transformCallback);

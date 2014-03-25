@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace Eloquent\Endec\Base64;
+namespace Eloquent\Endec\Uri;
 
-use Eloquent\Endec\Transform\AbstractDataTransform;
+use Eloquent\Endec\Transform\DataTransformInterface;
 use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
 
 /**
- * Encodes data using base64url encoding.
+ * Encodes data using URI percent encoding.
  *
- * @link http://tools.ietf.org/html/rfc4648#section-5
+ * @link http://tools.ietf.org/html/rfc3986#section-2.1
  */
-class Base64UrlEncodeTransform extends AbstractDataTransform
+class UriEncodeTransform implements DataTransformInterface
 {
     /**
      * Get the static instance of this transform.
@@ -51,22 +51,7 @@ class Base64UrlEncodeTransform extends AbstractDataTransform
      */
     public function transform($data, $isEnd = false)
     {
-        $consumedBytes = $this->calculateConsumeBytes($data, $isEnd, 3);
-        if (!$consumedBytes) {
-            return array('', 0);
-        }
-
-        return array(
-            rtrim(
-                strtr(
-                    base64_encode(substr($data, 0, $consumedBytes)),
-                    '+/',
-                    '-_'
-                ),
-                '='
-            ),
-            $consumedBytes
-        );
+        return array(rawurlencode($data), strlen($data));
     }
 
     private static $instance;

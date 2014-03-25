@@ -16,11 +16,11 @@ use Eloquent\Endec\Encoding\CodecInterface;
 use Eloquent\Endec\Transform\DataTransformInterface;
 
 /**
- * A codec for the base64url encoding protocol.
+ * A codec for the base64 encoding variant suitable for MIME message bodies.
  *
- * @link http://tools.ietf.org/html/rfc4648#section-5
+ * @link https://tools.ietf.org/html/rfc2045#section-6.8
  */
-class Base64Url extends Codec
+class Base64Mime extends Codec
 {
     /**
      * Get the static instance of this codec.
@@ -37,7 +37,7 @@ class Base64Url extends Codec
     }
 
     /**
-     * Construct a new base64url codec.
+     * Construct a new base64mime codec.
      *
      * @param DataTransformInterface|null $encodeTransform The encode transform to use.
      * @param DataTransformInterface|null $decodeTransform The decode transform to use.
@@ -47,10 +47,10 @@ class Base64Url extends Codec
         DataTransformInterface $decodeTransform = null
     ) {
         if (null === $encodeTransform) {
-            $encodeTransform = Base64UrlEncodeTransform::instance();
+            $encodeTransform = Base64MimeEncodeTransform::instance();
         }
         if (null === $decodeTransform) {
-            $decodeTransform = Base64UrlDecodeTransform::instance();
+            $decodeTransform = Base64MimeDecodeTransform::instance();
         }
 
         parent::__construct($encodeTransform, $decodeTransform);
