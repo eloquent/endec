@@ -11,7 +11,7 @@
 
 namespace Eloquent\Endec\Transform;
 
-use Evenement\EventEmitterTrait;
+use Evenement\EventEmitter;
 use Exception;
 use React\Stream\Util;
 use React\Stream\WritableStreamInterface;
@@ -19,10 +19,8 @@ use React\Stream\WritableStreamInterface;
 /**
  * A stream that applies a data transform.
  */
-class TransformStream implements TransformStreamInterface
+class TransformStream extends EventEmitter implements TransformStreamInterface
 {
-    use EventEmitterTrait;
-
     /**
      * Construct a new data transform stream.
      *
@@ -161,7 +159,7 @@ class TransformStream implements TransformStreamInterface
      */
     public function pipe(
         WritableStreamInterface $destination,
-        array $options = []
+        array $options = array()
     ) {
         Util::pipe($this, $destination, $options);
 
@@ -196,7 +194,7 @@ class TransformStream implements TransformStreamInterface
                 list($outputBuffer, $consumedBytes) =
                     $this->transform->transform($this->buffer, $this->isEnding);
             } catch (Exception $e) {
-                $this->emit('error', [$e, $this]);
+                $this->emit('error', array($e, $this));
 
                 return false;
             }
@@ -207,7 +205,7 @@ class TransformStream implements TransformStreamInterface
                 $this->buffer = substr($this->buffer, $consumedBytes);
             }
 
-            $this->emit('data', [$outputBuffer, $this]);
+            $this->emit('data', array($outputBuffer, $this));
         }
 
         return true;
@@ -222,8 +220,8 @@ class TransformStream implements TransformStreamInterface
         $this->isEnding = $this->isPaused = false;
         $this->buffer = '';
 
-        $this->emit('end', [$this]);
-        $this->emit('close', [$this]);
+        $this->emit('end', array($this));
+        $this->emit('close', array($this));
         $this->removeAllListeners();
     }
 

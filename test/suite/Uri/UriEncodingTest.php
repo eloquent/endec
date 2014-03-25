@@ -42,35 +42,35 @@ class UriEncodingTest extends PHPUnit_Framework_TestCase
 
     public function encodingData()
     {
-        //                       decoded   encoded
-        return [
-            'Empty'          => ['',       ''],
+        //                            decoded   encoded
+        return array(
+            'Empty'          => array('',       ''),
 
-            '1 byte safe'    => ['f',      'f'],
-            '2 bytes safe'   => ['fo',     'fo'],
-            '3 bytes safe'   => ['foo',    'foo'],
-            '4 bytes safe'   => ['foob',   'foob'],
-            '5 bytes safe'   => ['fooba',  'fooba'],
-            '6 bytes safe'   => ['foobar', 'foobar'],
+            '1 byte safe'    => array('f',      'f'),
+            '2 bytes safe'   => array('fo',     'fo'),
+            '3 bytes safe'   => array('foo',    'foo'),
+            '4 bytes safe'   => array('foob',   'foob'),
+            '5 bytes safe'   => array('fooba',  'fooba'),
+            '6 bytes safe'   => array('foobar', 'foobar'),
 
-            '1 byte unsafe'  => ['!',      '%21'],
-            '2 bytes unsafe' => ['!@',     '%21%40'],
-            '3 bytes unsafe' => ['!@#',    '%21%40%23'],
-            '4 bytes unsafe' => ['!@#$',   '%21%40%23%24'],
-            '5 bytes unsafe' => ['!@#$%',  '%21%40%23%24%25'],
-            '6 bytes unsafe' => ['!@#$%^', '%21%40%23%24%25%5E'],
+            '1 byte unsafe'  => array('!',      '%21'),
+            '2 bytes unsafe' => array('!@',     '%21%40'),
+            '3 bytes unsafe' => array('!@#',    '%21%40%23'),
+            '4 bytes unsafe' => array('!@#$',   '%21%40%23%24'),
+            '5 bytes unsafe' => array('!@#$%',  '%21%40%23%24%25'),
+            '6 bytes unsafe' => array('!@#$%^', '%21%40%23%24%25%5E'),
 
-            'Mixed safety'   => ['f!o@o#', 'f%21o%40o%23'],
+            'Mixed safety'   => array('f!o@o#', 'f%21o%40o%23'),
 
-            'All reserved characters' => [
+            'All reserved characters' => array(
                 ':/?#\[\]@!$&\'()*+,;=',
                 '%3A%2F%3F%23%5C%5B%5C%5D%40%21%24%26%27%28%29%2A%2B%2C%3B%3D',
-            ],
-            'All unreserved characters' => [
+            ),
+            'All unreserved characters' => array(
                 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-.~',
                 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-.~',
-            ],
-        ];
+            ),
+        );
     }
 
     /**

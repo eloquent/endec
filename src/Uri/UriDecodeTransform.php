@@ -70,10 +70,13 @@ class UriDecodeTransform extends AbstractDataTransform
             }
         }
         if (!$consumedBytes) {
-            return ['', 0];
+            return array('', 0);
         }
 
-        return [rawurldecode(substr($data, 0, $consumedBytes)), $consumedBytes];
+        return array(
+            rawurldecode(substr($data, 0, $consumedBytes)),
+            $consumedBytes
+        );
     }
 
     private static $instance;

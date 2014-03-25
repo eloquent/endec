@@ -55,16 +55,15 @@ class Base16DecodeTransform extends AbstractDataTransform
     {
         $consumedBytes = $this->calculateConsumeBytes($data, $isEnd, 2);
         if (!$consumedBytes) {
-            return ['', 0];
+            return array('', 0);
         }
 
         $consumedData = substr($data, 0, $consumedBytes);
-        $outputBuffer = @hex2bin($consumedData);
-        if (false === $outputBuffer) {
+        if (!preg_match('/^([[:xdigit:]]{2})+$/', $consumedData)) {
             throw new InvalidEncodedDataException('base16', $consumedData);
         }
 
-        return [$outputBuffer, $consumedBytes];
+        return array(pack('H*', $consumedData), $consumedBytes);
     }
 
     private static $instance;

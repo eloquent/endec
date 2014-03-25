@@ -51,7 +51,7 @@ class UriEncodeTransform implements DataTransformInterface
      */
     public function transform($data, $isEnd = false)
     {
-        return [rawurlencode($data), strlen($data)];
+        return array(rawurlencode($data), strlen($data));
     }
 
     private static $instance;

@@ -9,7 +9,7 @@ class MultiplyTransform extends AbstractDataTransform
     {
         $consumedBytes = $this->calculateConsumeBytes($data, $isEnd, 2);
         if (!$consumedBytes) {
-            return ['', 0];
+            return array('', 0);
         }
 
         $consumedData = substr($data, 0, $consumedBytes);
@@ -22,6 +22,6 @@ class MultiplyTransform extends AbstractDataTransform
             $output .= $consumedData[$i] * $consumedData[$i + 1] . '|';
         }
 
-        return [$output, $consumedBytes];
+        return array($output, $consumedBytes);
     }
 }

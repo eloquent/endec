@@ -53,10 +53,10 @@ class Base64UrlEncodeTransform extends AbstractDataTransform
     {
         $consumedBytes = $this->calculateConsumeBytes($data, $isEnd, 3);
         if (!$consumedBytes) {
-            return ['', 0];
+            return array('', 0);
         }
 
-        return [
+        return array(
             rtrim(
                 strtr(
                     base64_encode(substr($data, 0, $consumedBytes)),
@@ -66,7 +66,7 @@ class Base64UrlEncodeTransform extends AbstractDataTransform
                 '='
             ),
             $consumedBytes
-        ];
+        );
     }
 
     private static $instance;

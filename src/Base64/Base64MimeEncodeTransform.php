@@ -53,13 +53,13 @@ class Base64MimeEncodeTransform extends AbstractDataTransform
     {
         $consumedBytes = $this->calculateConsumeBytes($data, $isEnd, 57);
         if (!$consumedBytes) {
-            return ['', 0];
+            return array('', 0);
         }
 
-        return [
+        return array(
             chunk_split(base64_encode(substr($data, 0, $consumedBytes))),
             $consumedBytes
-        ];
+        );
     }
 
     private static $instance;

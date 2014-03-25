@@ -29,18 +29,18 @@ class Base64UrlDecodeTransformTest extends PHPUnit_Framework_TestCase
 
     public function transformData()
     {
-        //                input       output    bytesConsumed
-        return [
-            'Empty'   => ['',         '',       0],
-            '1 byte'  => ['Z',        '',       0],
-            '2 bytes' => ['Zm',       '',       0],
-            '3 bytes' => ['Zm9',      '',       0],
-            '4 bytes' => ['Zm9v',     'foo',    4],
-            '5 bytes' => ['Zm9vY',    'foo',    4],
-            '6 bytes' => ['Zm9vYm',   'foo',    4],
-            '7 bytes' => ['Zm9vYmF',  'foo',    4],
-            '8 bytes' => ['Zm9vYmFy', 'foobar', 8],
-        ];
+        //                     input       output    bytesConsumed
+        return array(
+            'Empty'   => array('',         '',       0),
+            '1 byte'  => array('Z',        '',       0),
+            '2 bytes' => array('Zm',       '',       0),
+            '3 bytes' => array('Zm9',      '',       0),
+            '4 bytes' => array('Zm9v',     'foo',    4),
+            '5 bytes' => array('Zm9vY',    'foo',    4),
+            '6 bytes' => array('Zm9vYm',   'foo',    4),
+            '7 bytes' => array('Zm9vYmF',  'foo',    4),
+            '8 bytes' => array('Zm9vYmFy', 'foobar', 8),
+        );
     }
 
     /**
@@ -48,21 +48,21 @@ class Base64UrlDecodeTransformTest extends PHPUnit_Framework_TestCase
      */
     public function testTransform($input, $output, $bytesConsumed)
     {
-        $this->assertSame([$output, $bytesConsumed], $this->transform->transform($input));
+        $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input));
     }
 
     public function transformEndData()
     {
-        //                input       output    bytesConsumed
-        return [
-            'Empty'   => ['',         '',       0],
-            '2 bytes' => ['Zm',       'f',      2],
-            '3 bytes' => ['Zm9',      'fo',     3],
-            '4 bytes' => ['Zm9v',     'foo',    4],
-            '6 bytes' => ['Zm9vYm',   'foob',   6],
-            '7 bytes' => ['Zm9vYmF',  'fooba',  7],
-            '8 bytes' => ['Zm9vYmFy', 'foobar', 8],
-        ];
+        //                     input       output    bytesConsumed
+        return array(
+            'Empty'   => array('',         '',       0),
+            '2 bytes' => array('Zm',       'f',      2),
+            '3 bytes' => array('Zm9',      'fo',     3),
+            '4 bytes' => array('Zm9v',     'foo',    4),
+            '6 bytes' => array('Zm9vYm',   'foob',   6),
+            '7 bytes' => array('Zm9vYmF',  'fooba',  7),
+            '8 bytes' => array('Zm9vYmFy', 'foobar', 8),
+        );
     }
 
     /**
@@ -70,18 +70,18 @@ class Base64UrlDecodeTransformTest extends PHPUnit_Framework_TestCase
      */
     public function testTransformEnd($input, $output, $bytesConsumed)
     {
-        $this->assertSame([$output, $bytesConsumed], $this->transform->transform($input, true));
+        $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input, true));
     }
 
     public function invalidTransformEndData()
     {
-        //                               input
-        return [
-            'Characters below range' => ['!!!!'],
-            'Characters above range' => ['~~~~'],
-            '1 byte'                 => ['A'],
-            '5 bytes'                => ['AAAAA'],
-        ];
+        //                                    input
+        return array(
+            'Characters below range' => array('!!!!'),
+            'Characters above range' => array('~~~~'),
+            '1 byte'                 => array('A'),
+            '5 bytes'                => array('AAAAA'),
+        );
     }
 
     /**

@@ -42,16 +42,16 @@ class Base16Test extends PHPUnit_Framework_TestCase
 
     public function encodingData()
     {
-        //                                      decoded   encoded
-        return [
-            'RFC 4648 base16 test vector 1' => ['',       ''],
-            'RFC 4648 base16 test vector 2' => ['f',      '66'],
-            'RFC 4648 base16 test vector 3' => ['fo',     '666F'],
-            'RFC 4648 base16 test vector 4' => ['foo',    '666F6F'],
-            'RFC 4648 base16 test vector 5' => ['foob',   '666F6F62'],
-            'RFC 4648 base16 test vector 6' => ['fooba',  '666F6F6261'],
-            'RFC 4648 base16 test vector 7' => ['foobar', '666F6F626172'],
-        ];
+        //                                           decoded   encoded
+        return array(
+            'RFC 4648 base16 test vector 1' => array('',       ''),
+            'RFC 4648 base16 test vector 2' => array('f',      '66'),
+            'RFC 4648 base16 test vector 3' => array('fo',     '666F'),
+            'RFC 4648 base16 test vector 4' => array('foo',    '666F6F'),
+            'RFC 4648 base16 test vector 5' => array('foob',   '666F6F62'),
+            'RFC 4648 base16 test vector 6' => array('fooba',  '666F6F6261'),
+            'RFC 4648 base16 test vector 7' => array('foobar', '666F6F626172'),
+        );
     }
 
     /**
@@ -64,7 +64,7 @@ class Base16Test extends PHPUnit_Framework_TestCase
 
     public function testEncodeFullAlphabet()
     {
-        $this->assertSame('0123456789ABCDEF', $this->codec->encode(hex2bin('0123456789ABCDEF')));
+        $this->assertSame('0123456789ABCDEF', $this->codec->encode(pack('H*', '0123456789ABCDEF')));
     }
 
     /**

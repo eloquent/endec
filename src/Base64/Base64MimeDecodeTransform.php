@@ -62,7 +62,7 @@ class Base64MimeDecodeTransform extends Base64DecodeTransform
                 throw new InvalidEncodedDataException('base64mime', $e->data());
             }
 
-            return [$output, strlen($data)];
+            return array($output, strlen($data));
         }
 
         $chunks = preg_split(
@@ -99,7 +99,7 @@ class Base64MimeDecodeTransform extends Base64DecodeTransform
             }
         }
 
-        return [$output, $consumedBytes];
+        return array($output, $consumedBytes);
     }
 
     private static $instance;

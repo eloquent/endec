@@ -32,9 +32,10 @@
         }
     ],
     "require": {
-        "php": ">=5.4",
+        "php": ">=5.3",
+        "evenement/evenement": ">=1,<3",
         "icecave/isolator": "~2",
-        "react/stream": "~0.4.0"
+        "react/stream": ">=0.3,<0.5"
     },
     "require-dev": {
         "eloquent/liberator": "~2",

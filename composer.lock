@@ -3,31 +3,26 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "04e92a7a22712cdc7cd0bb27e98e593f",
+    "hash": "0a64650f92f5e9cfd9ffbfe8b70ecfbc",
     "packages": [
         {
             "name": "evenement/evenement",
-            "version": "v2.0.0",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/igorw/evenement.git",
-                "reference": "f6e843799fd4f4184d54d8fc7b5b3551c9fa803e"
+                "reference": "fa966683e7df3e5dd5929d984a44abfbd6bafe8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/igorw/evenement/zipball/f6e843799fd4f4184d54d8fc7b5b3551c9fa803e",
-                "reference": "f6e843799fd4f4184d54d8fc7b5b3551c9fa803e",
+                "url": "https://api.github.com/repos/igorw/evenement/zipball/fa966683e7df3e5dd5929d984a44abfbd6bafe8d",
+                "reference": "fa966683e7df3e5dd5929d984a44abfbd6bafe8d",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4.0"
+                "php": ">=5.3.0"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0-dev"
-                }
-            },
             "autoload": {
                 "psr-0": {
                     "Evenement": "src"
@@ -44,12 +39,11 @@
                     "homepage": "http://wiedler.ch/igor/"
                 }
             ],
-            "description": "Événement is a very simple event dispatching library for PHP",
+            "description": "Événement is a very simple event dispatching library for PHP 5.3",
             "keywords": [
-                "event-dispatcher",
-                "event-emitter"
+                "event-dispatcher"
             ],
-            "time": "2012-11-02 14:49:47"
+            "time": "2012-05-30 15:01:08"
         },
         {
             "name": "icecave/isolator",
@@ -105,35 +99,36 @@
         },
         {
             "name": "react/stream",
-            "version": "v0.4.0",
+            "version": "v0.3.3",
+            "target-dir": "React/Stream",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/stream.git",
-                "reference": "42bd0edc641901e6265a98aa84042b8e95e19540"
+                "reference": "b72900ab00513b591fb101faecad38f9c8eab8da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/stream/zipball/42bd0edc641901e6265a98aa84042b8e95e19540",
-                "reference": "42bd0edc641901e6265a98aa84042b8e95e19540",
+                "url": "https://api.github.com/repos/reactphp/stream/zipball/b72900ab00513b591fb101faecad38f9c8eab8da",
+                "reference": "b72900ab00513b591fb101faecad38f9c8eab8da",
                 "shasum": ""
             },
             "require": {
-                "evenement/evenement": "~2.0",
-                "php": ">=5.4.0"
+                "evenement/evenement": "1.0.*",
+                "php": ">=5.3.3"
             },
             "suggest": {
-                "react/event-loop": "0.4.*",
-                "react/promise": "~2.0"
+                "react/event-loop": "0.3.*",
+                "react/promise": "~1.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.4-dev"
+                    "dev-master": "0.3-dev"
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "React\\Stream\\": ""
+                "psr-0": {
+                    "React\\Stream": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -145,7 +140,7 @@
                 "pipe",
                 "stream"
             ],
-            "time": "2014-02-02 16:21:45"
+            "time": "2013-07-09 00:44:12"
         }
     ],
     "packages-dev": [
@@ -1243,7 +1238,7 @@
 
     ],
     "platform": {
-        "php": ">=5.4"
+        "php": ">=5.3"
     },
     "platform-dev": [
 

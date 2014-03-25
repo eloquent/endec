@@ -42,16 +42,16 @@ class Base32HexTest extends PHPUnit_Framework_TestCase
 
     public function encodingData()
     {
-        //                                      decoded   encoded
-        return [
-            'RFC 4648 base32 test vector 1' => ['',       ''],
-            'RFC 4648 base32 test vector 2' => ['f',      'CO======'],
-            'RFC 4648 base32 test vector 3' => ['fo',     'CPNG===='],
-            'RFC 4648 base32 test vector 4' => ['foo',    'CPNMU==='],
-            'RFC 4648 base32 test vector 5' => ['foob',   'CPNMUOG='],
-            'RFC 4648 base32 test vector 6' => ['fooba',  'CPNMUOJ1'],
-            'RFC 4648 base32 test vector 7' => ['foobar', 'CPNMUOJ1E8======'],
-        ];
+        //                                           decoded   encoded
+        return array(
+            'RFC 4648 base32 test vector 1' => array('',       ''),
+            'RFC 4648 base32 test vector 2' => array('f',      'CO======'),
+            'RFC 4648 base32 test vector 3' => array('fo',     'CPNG===='),
+            'RFC 4648 base32 test vector 4' => array('foo',    'CPNMU==='),
+            'RFC 4648 base32 test vector 5' => array('foob',   'CPNMUOG='),
+            'RFC 4648 base32 test vector 6' => array('fooba',  'CPNMUOJ1'),
+            'RFC 4648 base32 test vector 7' => array('foobar', 'CPNMUOJ1E8======'),
+        );
     }
 
     /**
@@ -66,7 +66,7 @@ class Base32HexTest extends PHPUnit_Framework_TestCase
     {
         $this->assertSame(
             '0123456789ABCDEFGHIJKLMNOPQRSTUV00======',
-            $this->codec->encode(hex2bin('00443214c74254b635cf84653a56d7c675be77df00'))
+            $this->codec->encode(pack('H*', '00443214c74254b635cf84653a56d7c675be77df00'))
         );
     }
 
