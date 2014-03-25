@@ -22,7 +22,7 @@
     <h1><a href="../../../Eloquent/Endec/Transform.html">Eloquent\Endec\Transform</a>\TransformStream</h1>
     </div>
         <div class="content">
-                <p>class    <strong>TransformStream</strong>        implements
+                <p>class    <strong>TransformStream</strong>        extends <abbr title="Evenement\EventEmitter">EventEmitter</abbr>        implements
         <a href="../../../Eloquent/Endec/Transform/TransformStreamInterface.html"><abbr title="Eloquent\Endec\Transform\TransformStreamInterface">TransformStreamInterface</abbr></a></p>
 
             <div class="description">
@@ -152,7 +152,7 @@
         <h2>Details</h2>
 
                         <h3 id="method___construct">
-        <div class="location">at line 32</div>
+        <div class="location">at line 30</div>
         <code>            public            
     <strong>__construct</strong>(<a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a> $transform, integer|null $bufferSize = null)</code>
     </h3>
@@ -183,7 +183,7 @@
     </div>
 
                 <h3 id="method_transform">
-        <div class="location">at line 52</div>
+        <div class="location">at line 50</div>
         <code>            public            <a href="../../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a>
     <strong>transform</strong>()</code>
     </h3>
@@ -208,7 +208,7 @@
     </div>
 
                 <h3 id="method_bufferSize">
-        <div class="location">at line 62</div>
+        <div class="location">at line 60</div>
         <code>            public            integer
     <strong>bufferSize</strong>()</code>
     </h3>
@@ -233,7 +233,7 @@
     </div>
 
                 <h3 id="method_isWritable">
-        <div class="location">at line 72</div>
+        <div class="location">at line 70</div>
         <code>            public            boolean
     <strong>isWritable</strong>()</code>
     </h3>
@@ -258,7 +258,7 @@
     </div>
 
                 <h3 id="method_isReadable">
-        <div class="location">at line 82</div>
+        <div class="location">at line 80</div>
         <code>            public            boolean
     <strong>isReadable</strong>()</code>
     </h3>
@@ -283,7 +283,7 @@
     </div>
 
                 <h3 id="method_write">
-        <div class="location">at line 94</div>
+        <div class="location">at line 92</div>
         <code>            public            boolean
     <strong>write</strong>(string $data)</code>
     </h3>
@@ -318,7 +318,7 @@
     </div>
 
                 <h3 id="method_end">
-        <div class="location">at line 111</div>
+        <div class="location">at line 109</div>
         <code>            public            
     <strong>end</strong>(string|null $data = null)</code>
     </h3>
@@ -344,7 +344,7 @@
     </div>
 
                 <h3 id="method_close">
-        <div class="location">at line 128</div>
+        <div class="location">at line 126</div>
         <code>            public            
     <strong>close</strong>()</code>
     </h3>
@@ -360,7 +360,7 @@
     </div>
 
                 <h3 id="method_pause">
-        <div class="location">at line 140</div>
+        <div class="location">at line 138</div>
         <code>            public            
     <strong>pause</strong>()</code>
     </h3>
@@ -376,7 +376,7 @@
     </div>
 
                 <h3 id="method_resume">
-        <div class="location">at line 148</div>
+        <div class="location">at line 146</div>
         <code>            public            
     <strong>resume</strong>()</code>
     </h3>
@@ -392,7 +392,7 @@
     </div>
 
                 <h3 id="method_pipe">
-        <div class="location">at line 162</div>
+        <div class="location">at line 160</div>
         <code>            public            <abbr title="React\Stream\WritableStreamInterface">WritableStreamInterface</abbr>
     <strong>pipe</strong>(<abbr title="React\Stream\WritableStreamInterface">WritableStreamInterface</abbr> $destination, array $options = array())</code>
     </h3>
