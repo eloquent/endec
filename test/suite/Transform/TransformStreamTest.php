@@ -13,7 +13,6 @@ namespace Eloquent\Endec\Transform;
 
 use Eloquent\Endec\Stream\TestWritableStream;
 use Exception;
-use Phake;
 use PHPUnit_Framework_TestCase;
 
 class TransformStreamTest extends PHPUnit_Framework_TestCase
@@ -22,7 +21,7 @@ class TransformStreamTest extends PHPUnit_Framework_TestCase
     {
         parent::setUp();
 
-        $this->transform = Phake::mock('Eloquent\Endec\Transform\DataTransformInterface');
+        $this->transform = new TestTransform;
         $this->stream = new TransformStream($this->transform, 2);
 
         $self = $this;
@@ -36,7 +35,6 @@ class TransformStreamTest extends PHPUnit_Framework_TestCase
         );
 
         $this->endsEmitted = $this->closesEmitted = 0;
-        $this->errorsEmitted = array();
         $this->stream->on(
             'end',
             function ($codec) use ($self) {
@@ -52,11 +50,11 @@ class TransformStreamTest extends PHPUnit_Framework_TestCase
         $this->stream->on(
             'error',
             function ($error, $codec) use ($self) {
-                $self->errorsEmitted[] = $error;
+                throw $error;
             }
         );
 
-        $this->transformClosure = function ($data, $isEnd = false) {
+        $this->transformClosure = function ($data, &$context, $isEnd = false) {
             $length = strlen($data);
             if ($isEnd) {
                 $consumedBytes = $length;
@@ -68,12 +66,11 @@ class TransformStreamTest extends PHPUnit_Framework_TestCase
         };
 
         $this->error = new Exception('You done goofed.');
-        $this->errorClosure = function ($data, $isEnd = false) use ($self) {
+        $this->errorClosure = function ($data, &$context, $isEnd = false) use ($self) {
             throw $self->error;
         };
 
-        Phake::when($this->transform)->transform(Phake::anyParameters())
-            ->thenGetReturnByLambda($this->transformClosure);
+        $this->transform->callbacks[] = $this->transformClosure;
     }
 
     public function testConstructor()
@@ -113,7 +110,6 @@ class TransformStreamTest extends PHPUnit_Framework_TestCase
         $this->assertSame(strtoupper($data), $this->output);
         $this->assertSame(1, $this->endsEmitted);
         $this->assertSame(1, $this->closesEmitted);
-        $this->assertSame(array(), $this->errorsEmitted);
     }
 
     /**
@@ -126,7 +122,6 @@ class TransformStreamTest extends PHPUnit_Framework_TestCase
         $this->assertSame(strtoupper($data), $this->output);
         $this->assertSame(1, $this->endsEmitted);
         $this->assertSame(1, $this->closesEmitted);
-        $this->assertSame(array(), $this->errorsEmitted);
     }
 
     public function testEndEmptyString()
@@ -147,7 +142,6 @@ class TransformStreamTest extends PHPUnit_Framework_TestCase
         $this->assertSame('FO', $this->output);
         $this->assertSame(1, $this->endsEmitted);
         $this->assertSame(1, $this->closesEmitted);
-        $this->assertSame(array(), $this->errorsEmitted);
     }
 
     public function testPauseResume()
@@ -178,10 +172,16 @@ class TransformStreamTest extends PHPUnit_Framework_TestCase
 
     public function testTransformFailure()
     {
-        Phake::when($this->transform)->transform(Phake::anyParameters())
-            ->thenGetReturnByLambda($this->transformClosure)
-            ->thenGetReturnByLambda($this->errorClosure)
-            ->thenGetReturnByLambda($this->transformClosure);
+        $self = $this;
+        $this->errorsEmitted = array();
+        $this->stream->removeAllListeners('error');
+        $this->stream->on(
+            'error',
+            function ($error, $codec) use ($self) {
+                $self->errorsEmitted[] = $error;
+            }
+        );
+        $this->transform->callbacks = array($this->transformClosure, $this->errorClosure, $this->transformClosure);
         $writeReturn = $this->stream->write('foo');
 
         $this->assertTrue($writeReturn);

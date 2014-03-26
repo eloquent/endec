@@ -40,6 +40,7 @@ class TransformStream extends EventEmitter implements TransformStreamInterface
 
         $this->isClosed = $this->isPaused = $this->isEnding = false;
         $this->buffer = '';
+        $this->context = null;
     }
 
     /**
@@ -191,8 +192,8 @@ class TransformStream extends EventEmitter implements TransformStreamInterface
             }
 
             try {
-                list($outputBuffer, $consumedBytes) =
-                    $this->transform->transform($this->buffer, $this->isEnding);
+                list($outputBuffer, $consumedBytes) = $this->transform
+                    ->transform($this->buffer, $this->context, $this->isEnding);
             } catch (Exception $e) {
                 $this->emit('error', array($e, $this));
 
@@ -219,6 +220,7 @@ class TransformStream extends EventEmitter implements TransformStreamInterface
         $this->isClosed = true;
         $this->isEnding = $this->isPaused = false;
         $this->buffer = '';
+        $this->context = null;
 
         $this->emit('end', array($this));
         $this->emit('close', array($this));
@@ -231,4 +233,5 @@ class TransformStream extends EventEmitter implements TransformStreamInterface
     private $isPaused;
     private $isEnding;
     private $buffer;
+    private $context;
 }

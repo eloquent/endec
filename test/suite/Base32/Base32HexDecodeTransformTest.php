@@ -29,63 +29,65 @@ class Base32HexDecodeTransformTest extends PHPUnit_Framework_TestCase
 
     public function transformData()
     {
-        //                                   input               output        bytesConsumed
+        //                                   input               output        bytesConsumed context
         return array(
-            'Empty'                 => array('',                 '',           0),
-            '1 byte'                => array('C',                '',           0),
-            '2 bytes'               => array('CP',               '',           0),
-            '3 bytes'               => array('CPN',              '',           0),
-            '4 bytes'               => array('CPNM',             '',           0),
-            '5 bytes'               => array('CPNMU',            '',           0),
-            '6 bytes'               => array('CPNMUO',           '',           0),
-            '7 bytes'               => array('CPNMUOJ',          '',           0),
-            '8 bytes'               => array('CPNMUOJ1',         'fooba',      8),
-            '9 bytes'               => array('CPNMUOJ1E',        'fooba',      8),
-            '10 bytes'              => array('CPNMUOJ1E9',       'fooba',      8),
-            '11 bytes'              => array('CPNMUOJ1E9H',      'fooba',      8),
-            '12 bytes'              => array('CPNMUOJ1E9H6',     'fooba',      8),
-            '13 bytes'              => array('CPNMUOJ1E9H62',    'fooba',      8),
-            '14 bytes'              => array('CPNMUOJ1E9H62U',   'fooba',      8),
-            '15 bytes'              => array('CPNMUOJ1E9H62UJ',  'fooba',      8),
-            '16 bytes'              => array('CPNMUOJ1E9H62UJH', 'foobarbazq', 16),
-            '16 bytes with padding' => array('CPNMUOJ1E8======', 'foobar',     16),
+            'Empty'                 => array('',                 '',           0,            null),
+            '1 byte'                => array('C',                '',           0,            null),
+            '2 bytes'               => array('CP',               '',           0,            null),
+            '3 bytes'               => array('CPN',              '',           0,            null),
+            '4 bytes'               => array('CPNM',             '',           0,            null),
+            '5 bytes'               => array('CPNMU',            '',           0,            null),
+            '6 bytes'               => array('CPNMUO',           '',           0,            null),
+            '7 bytes'               => array('CPNMUOJ',          '',           0,            null),
+            '8 bytes'               => array('CPNMUOJ1',         'fooba',      8,            null),
+            '9 bytes'               => array('CPNMUOJ1E',        'fooba',      8,            null),
+            '10 bytes'              => array('CPNMUOJ1E9',       'fooba',      8,            null),
+            '11 bytes'              => array('CPNMUOJ1E9H',      'fooba',      8,            null),
+            '12 bytes'              => array('CPNMUOJ1E9H6',     'fooba',      8,            null),
+            '13 bytes'              => array('CPNMUOJ1E9H62',    'fooba',      8,            null),
+            '14 bytes'              => array('CPNMUOJ1E9H62U',   'fooba',      8,            null),
+            '15 bytes'              => array('CPNMUOJ1E9H62UJ',  'fooba',      8,            null),
+            '16 bytes'              => array('CPNMUOJ1E9H62UJH', 'foobarbazq', 16,           null),
+            '16 bytes with padding' => array('CPNMUOJ1E8======', 'foobar',     16,           null),
         );
     }
 
     /**
      * @dataProvider transformData
      */
-    public function testTransform($input, $output, $bytesConsumed)
+    public function testTransform($input, $output, $bytesConsumed, $context)
     {
-        $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input));
+        $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input, $actualContext));
+        $this->assertSame($context, $actualContext);
     }
 
     public function transformEndData()
     {
-        //                                   input               output        bytesConsumed
+        //                                   input               output        bytesConsumed context
         return array(
-            'Empty'                 => array('',                 '',           0),
-            '2 bytes'               => array('CO',               'f',          2),
-            '4 bytes'               => array('CPNG',             'fo',         4),
-            '5 bytes'               => array('CPNMU',            'foo',        5),
-            '7 bytes'               => array('CPNMUOG',          'foob',       7),
-            '8 bytes'               => array('CPNMUOJ1',         'fooba',      8),
-            '8 bytes with padding'  => array('CO======',         'f',          8),
-            '10 bytes'              => array('CPNMUOJ1E8',       'foobar',     10),
-            '12 bytes'              => array('CPNMUOJ1E9H0',     'foobarb',    12),
-            '13 bytes'              => array('CPNMUOJ1E9H62',    'foobarba',   13),
-            '15 bytes'              => array('CPNMUOJ1E9H62UG',  'foobarbaz',  15),
-            '16 bytes'              => array('CPNMUOJ1E9H62UJH', 'foobarbazq', 16),
-            '16 bytes with padding' => array('CPNMUOJ1E8======', 'foobar',     16),
+            'Empty'                 => array('',                 '',           0,            null),
+            '2 bytes'               => array('CO',               'f',          2,            null),
+            '4 bytes'               => array('CPNG',             'fo',         4,            null),
+            '5 bytes'               => array('CPNMU',            'foo',        5,            null),
+            '7 bytes'               => array('CPNMUOG',          'foob',       7,            null),
+            '8 bytes'               => array('CPNMUOJ1',         'fooba',      8,            null),
+            '8 bytes with padding'  => array('CO======',         'f',          8,            null),
+            '10 bytes'              => array('CPNMUOJ1E8',       'foobar',     10,           null),
+            '12 bytes'              => array('CPNMUOJ1E9H0',     'foobarb',    12,           null),
+            '13 bytes'              => array('CPNMUOJ1E9H62',    'foobarba',   13,           null),
+            '15 bytes'              => array('CPNMUOJ1E9H62UG',  'foobarbaz',  15,           null),
+            '16 bytes'              => array('CPNMUOJ1E9H62UJH', 'foobarbazq', 16,           null),
+            '16 bytes with padding' => array('CPNMUOJ1E8======', 'foobar',     16,           null),
         );
     }
 
     /**
      * @dataProvider transformEndData
      */
-    public function testTransformEnd($input, $output, $bytesConsumed)
+    public function testTransformEnd($input, $output, $bytesConsumed, $context)
     {
-        $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input, true));
+        $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input, $actualContext, true));
+        $this->assertSame($context, $actualContext);
     }
 
     public function invalidTransformEndData()
@@ -108,7 +110,7 @@ class Base32HexDecodeTransformTest extends PHPUnit_Framework_TestCase
             'Eloquent\Endec\Exception\InvalidEncodedDataException',
             'The supplied data is not valid for base32hex encoding.'
         );
-        $this->transform->transform($input, true);
+        $this->transform->transform($input, $context, true);
     }
 
     public function testInstance()

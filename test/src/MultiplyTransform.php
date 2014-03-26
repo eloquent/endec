@@ -5,7 +5,7 @@ use Eloquent\Endec\Transform\AbstractDataTransform;
 
 class MultiplyTransform extends AbstractDataTransform
 {
-    public function transform($data, $isEnd = false)
+    public function transform($data, &$context, $isEnd = false)
     {
         $consumedBytes = $this->calculateConsumeBytes($data, $isEnd, 2);
         if (!$consumedBytes) {

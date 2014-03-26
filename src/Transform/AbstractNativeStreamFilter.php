@@ -26,6 +26,7 @@ abstract class AbstractNativeStreamFilter extends php_user_filter
     {
         $this->transform = $this->createTransform();
         $this->buffer = '';
+        $this->context = null;
 
         return true;
     }
@@ -55,7 +56,7 @@ abstract class AbstractNativeStreamFilter extends php_user_filter
 
             try {
                 list($outputBuffer, $thisConsumedBytes) = $this->transform
-                    ->transform($this->buffer, $isEnd);
+                    ->transform($this->buffer, $this->context, $isEnd);
             } catch (Exception\TransformExceptionInterface $e) {
                 return PSFS_ERR_FATAL;
             }
@@ -92,4 +93,5 @@ abstract class AbstractNativeStreamFilter extends php_user_filter
 
     private $transform;
     private $buffer;
+    private $context;
 }

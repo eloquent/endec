@@ -51,7 +51,8 @@ class Decoder implements DecoderInterface
      */
     public function decode($data)
     {
-        list($data) = $this->decodeTransform()->transform($data, true);
+        list($data) = $this->decodeTransform()
+            ->transform($data, $context, true);
 
         return $data;
     }

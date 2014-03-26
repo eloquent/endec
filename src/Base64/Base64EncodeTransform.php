@@ -41,15 +41,23 @@ class Base64EncodeTransform extends AbstractDataTransform
      * This method may transform only part of the supplied data. The return
      * value includes information about how much data was actually consumed. The
      * transform can be forced to consume all data by passing a boolean true as
-     * the second argument.
+     * the $isEnd argument.
      *
-     * @param string  $data  The data to transform.
-     * @param boolean $isEnd True if all supplied data must be transformed.
+     * The $context argument will initially be null, but any value assigned to
+     * this variable will persist until the stream transformation is complete.
+     * It can be used as a place to store state, such as a buffer.
      *
-     * @return tuple<string,integer>       A 2-tuple of the transformed data, and the number of bytes consumed.
-     * @throws TransformExceptionInterface If the data cannot be transformed.
+     * It is guaranteed that this method will be called with $isEnd = true once,
+     * and only once, at the end of the stream transformation.
+     *
+     * @param string  $data     The data to transform.
+     * @param mixed   &$context An arbitrary context value.
+     * @param boolean $isEnd    True if all supplied data must be transformed.
+     *
+     * @return tuple<string,integer>                 A 2-tuple of the transformed data, and the number of bytes consumed.
+     * @throws Exception\TransformExceptionInterface If the data cannot be transformed.
      */
-    public function transform($data, $isEnd = false)
+    public function transform($data, &$context, $isEnd = false)
     {
         $consumedBytes = $this->calculateConsumeBytes($data, $isEnd, 3);
         if (!$consumedBytes) {

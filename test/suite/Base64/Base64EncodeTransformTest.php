@@ -29,46 +29,48 @@ class Base64EncodeTransformTest extends PHPUnit_Framework_TestCase
 
     public function transformData()
     {
-        //                     input     output      bytesConsumed
+        //                     input     output      bytesConsumed context
         return array(
-            'Empty'   => array('',       '',         0),
-            '1 byte'  => array('f',      '',         0),
-            '2 bytes' => array('fo',     '',         0),
-            '3 bytes' => array('foo',    'Zm9v',     3),
-            '4 bytes' => array('foob',   'Zm9v',     3),
-            '5 bytes' => array('fooba',  'Zm9v',     3),
-            '6 bytes' => array('foobar', 'Zm9vYmFy', 6),
+            'Empty'   => array('',       '',         0,            null),
+            '1 byte'  => array('f',      '',         0,            null),
+            '2 bytes' => array('fo',     '',         0,            null),
+            '3 bytes' => array('foo',    'Zm9v',     3,            null),
+            '4 bytes' => array('foob',   'Zm9v',     3,            null),
+            '5 bytes' => array('fooba',  'Zm9v',     3,            null),
+            '6 bytes' => array('foobar', 'Zm9vYmFy', 6,            null),
         );
     }
 
     /**
      * @dataProvider transformData
      */
-    public function testTransform($input, $output, $bytesConsumed)
+    public function testTransform($input, $output, $bytesConsumed, $context)
     {
-        $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input));
+        $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input, $actualContext));
+        $this->assertSame($context, $actualContext);
     }
 
     public function transformEndData()
     {
-        //                     input     output      bytesConsumed
+        //                     input     output      bytesConsumed context
         return array(
-            'Empty'   => array('',       '',         0),
-            '1 byte'  => array('f',      'Zg==',     1),
-            '2 bytes' => array('fo',     'Zm8=',     2),
-            '3 bytes' => array('foo',    'Zm9v',     3),
-            '4 bytes' => array('foob',   'Zm9vYg==', 4),
-            '5 bytes' => array('fooba',  'Zm9vYmE=', 5),
-            '6 bytes' => array('foobar', 'Zm9vYmFy', 6),
+            'Empty'   => array('',       '',         0,            null),
+            '1 byte'  => array('f',      'Zg==',     1,            null),
+            '2 bytes' => array('fo',     'Zm8=',     2,            null),
+            '3 bytes' => array('foo',    'Zm9v',     3,            null),
+            '4 bytes' => array('foob',   'Zm9vYg==', 4,            null),
+            '5 bytes' => array('fooba',  'Zm9vYmE=', 5,            null),
+            '6 bytes' => array('foobar', 'Zm9vYmFy', 6,            null),
         );
     }
 
     /**
      * @dataProvider transformEndData
      */
-    public function testTransformEnd($input, $output, $bytesConsumed)
+    public function testTransformEnd($input, $output, $bytesConsumed, $context)
     {
-        $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input, true));
+        $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input, $actualContext, true));
+        $this->assertSame($context, $actualContext);
     }
 
     public function testInstance()
