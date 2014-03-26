@@ -29,48 +29,50 @@ class Base64UrlDecodeTransformTest extends PHPUnit_Framework_TestCase
 
     public function transformData()
     {
-        //                     input       output    bytesConsumed
+        //                     input       output    bytesConsumed context
         return array(
-            'Empty'   => array('',         '',       0),
-            '1 byte'  => array('Z',        '',       0),
-            '2 bytes' => array('Zm',       '',       0),
-            '3 bytes' => array('Zm9',      '',       0),
-            '4 bytes' => array('Zm9v',     'foo',    4),
-            '5 bytes' => array('Zm9vY',    'foo',    4),
-            '6 bytes' => array('Zm9vYm',   'foo',    4),
-            '7 bytes' => array('Zm9vYmF',  'foo',    4),
-            '8 bytes' => array('Zm9vYmFy', 'foobar', 8),
+            'Empty'   => array('',         '',       0,            null),
+            '1 byte'  => array('Z',        '',       0,            null),
+            '2 bytes' => array('Zm',       '',       0,            null),
+            '3 bytes' => array('Zm9',      '',       0,            null),
+            '4 bytes' => array('Zm9v',     'foo',    4,            null),
+            '5 bytes' => array('Zm9vY',    'foo',    4,            null),
+            '6 bytes' => array('Zm9vYm',   'foo',    4,            null),
+            '7 bytes' => array('Zm9vYmF',  'foo',    4,            null),
+            '8 bytes' => array('Zm9vYmFy', 'foobar', 8,            null),
         );
     }
 
     /**
      * @dataProvider transformData
      */
-    public function testTransform($input, $output, $bytesConsumed)
+    public function testTransform($input, $output, $bytesConsumed, $context)
     {
-        $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input));
+        $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input, $actualContext));
+        $this->assertSame($context, $actualContext);
     }
 
     public function transformEndData()
     {
-        //                     input       output    bytesConsumed
+        //                     input       output    bytesConsumed context
         return array(
-            'Empty'   => array('',         '',       0),
-            '2 bytes' => array('Zm',       'f',      2),
-            '3 bytes' => array('Zm9',      'fo',     3),
-            '4 bytes' => array('Zm9v',     'foo',    4),
-            '6 bytes' => array('Zm9vYm',   'foob',   6),
-            '7 bytes' => array('Zm9vYmF',  'fooba',  7),
-            '8 bytes' => array('Zm9vYmFy', 'foobar', 8),
+            'Empty'   => array('',         '',       0,            null),
+            '2 bytes' => array('Zm',       'f',      2,            null),
+            '3 bytes' => array('Zm9',      'fo',     3,            null),
+            '4 bytes' => array('Zm9v',     'foo',    4,            null),
+            '6 bytes' => array('Zm9vYm',   'foob',   6,            null),
+            '7 bytes' => array('Zm9vYmF',  'fooba',  7,            null),
+            '8 bytes' => array('Zm9vYmFy', 'foobar', 8,            null),
         );
     }
 
     /**
      * @dataProvider transformEndData
      */
-    public function testTransformEnd($input, $output, $bytesConsumed)
+    public function testTransformEnd($input, $output, $bytesConsumed, $context)
     {
-        $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input, true));
+        $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input, $actualContext, true));
+        $this->assertSame($context, $actualContext);
     }
 
     public function invalidTransformEndData()
@@ -93,7 +95,7 @@ class Base64UrlDecodeTransformTest extends PHPUnit_Framework_TestCase
             'Eloquent\Endec\Exception\InvalidEncodedDataException',
             'The supplied data is not valid for base64url encoding.'
         );
-        $this->transform->transform($input, true);
+        $this->transform->transform($input, $context, true);
     }
 
     public function testInstance()

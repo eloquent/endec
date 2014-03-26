@@ -29,63 +29,65 @@ class Base32DecodeTransformTest extends PHPUnit_Framework_TestCase
 
     public function transformData()
     {
-        //                                   input               output        bytesConsumed
+        //                                   input               output        bytesConsumed context
         return array(
-            'Empty'                 => array('',                 '',           0),
-            '1 byte'                => array('M',                '',           0),
-            '2 bytes'               => array('MZ',               '',           0),
-            '3 bytes'               => array('MZX',              '',           0),
-            '4 bytes'               => array('MZXW',             '',           0),
-            '5 bytes'               => array('MZXW6',            '',           0),
-            '6 bytes'               => array('MZXW6Y',           '',           0),
-            '7 bytes'               => array('MZXW6YT',          '',           0),
-            '8 bytes'               => array('MZXW6YTB',         'fooba',      8),
-            '9 bytes'               => array('MZXW6YTBO',        'fooba',      8),
-            '10 bytes'              => array('MZXW6YTBOJ',       'fooba',      8),
-            '11 bytes'              => array('MZXW6YTBOJR',      'fooba',      8),
-            '12 bytes'              => array('MZXW6YTBOJRG',     'fooba',      8),
-            '13 bytes'              => array('MZXW6YTBOJRGC',    'fooba',      8),
-            '14 bytes'              => array('MZXW6YTBOJRGC6',   'fooba',      8),
-            '15 bytes'              => array('MZXW6YTBOJRGC6T',  'fooba',      8),
-            '16 bytes'              => array('MZXW6YTBOJRGC6TR', 'foobarbazq', 16),
-            '16 bytes with padding' => array('MZXW6YTBOI======', 'foobar',     16),
+            'Empty'                 => array('',                 '',           0,            null),
+            '1 byte'                => array('M',                '',           0,            null),
+            '2 bytes'               => array('MZ',               '',           0,            null),
+            '3 bytes'               => array('MZX',              '',           0,            null),
+            '4 bytes'               => array('MZXW',             '',           0,            null),
+            '5 bytes'               => array('MZXW6',            '',           0,            null),
+            '6 bytes'               => array('MZXW6Y',           '',           0,            null),
+            '7 bytes'               => array('MZXW6YT',          '',           0,            null),
+            '8 bytes'               => array('MZXW6YTB',         'fooba',      8,            null),
+            '9 bytes'               => array('MZXW6YTBO',        'fooba',      8,            null),
+            '10 bytes'              => array('MZXW6YTBOJ',       'fooba',      8,            null),
+            '11 bytes'              => array('MZXW6YTBOJR',      'fooba',      8,            null),
+            '12 bytes'              => array('MZXW6YTBOJRG',     'fooba',      8,            null),
+            '13 bytes'              => array('MZXW6YTBOJRGC',    'fooba',      8,            null),
+            '14 bytes'              => array('MZXW6YTBOJRGC6',   'fooba',      8,            null),
+            '15 bytes'              => array('MZXW6YTBOJRGC6T',  'fooba',      8,            null),
+            '16 bytes'              => array('MZXW6YTBOJRGC6TR', 'foobarbazq', 16,           null),
+            '16 bytes with padding' => array('MZXW6YTBOI======', 'foobar',     16,           null),
         );
     }
 
     /**
      * @dataProvider transformData
      */
-    public function testTransform($input, $output, $bytesConsumed)
+    public function testTransform($input, $output, $bytesConsumed, $context)
     {
-        $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input));
+        $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input, $actualContext));
+        $this->assertSame($context, $actualContext);
     }
 
     public function transformEndData()
     {
-        //                                   input               output        bytesConsumed
+        //                                   input               output        bytesConsumed context
         return array(
-            'Empty'                 => array('',                 '',           0),
-            '2 bytes'               => array('MY',               'f',          2),
-            '4 bytes'               => array('MZXQ',             'fo',         4),
-            '5 bytes'               => array('MZXW6',            'foo',        5),
-            '7 bytes'               => array('MZXW6YQ',          'foob',       7),
-            '8 bytes'               => array('MZXW6YTB',         'fooba',      8),
-            '8 bytes with padding'  => array('MY======',         'f',          8),
-            '10 bytes'              => array('MZXW6YTBOI',       'foobar',     10),
-            '12 bytes'              => array('MZXW6YTBOJRA',     'foobarb',    12),
-            '13 bytes'              => array('MZXW6YTBOJRGC',    'foobarba',   13),
-            '15 bytes'              => array('MZXW6YTBOJRGC6Q',  'foobarbaz',  15),
-            '16 bytes'              => array('MZXW6YTBOJRGC6TR', 'foobarbazq', 16),
-            '16 bytes with padding' => array('MZXW6YTBOI======', 'foobar',     16),
+            'Empty'                 => array('',                 '',           0,            null),
+            '2 bytes'               => array('MY',               'f',          2,            null),
+            '4 bytes'               => array('MZXQ',             'fo',         4,            null),
+            '5 bytes'               => array('MZXW6',            'foo',        5,            null),
+            '7 bytes'               => array('MZXW6YQ',          'foob',       7,            null),
+            '8 bytes'               => array('MZXW6YTB',         'fooba',      8,            null),
+            '8 bytes with padding'  => array('MY======',         'f',          8,            null),
+            '10 bytes'              => array('MZXW6YTBOI',       'foobar',     10,           null),
+            '12 bytes'              => array('MZXW6YTBOJRA',     'foobarb',    12,           null),
+            '13 bytes'              => array('MZXW6YTBOJRGC',    'foobarba',   13,           null),
+            '15 bytes'              => array('MZXW6YTBOJRGC6Q',  'foobarbaz',  15,           null),
+            '16 bytes'              => array('MZXW6YTBOJRGC6TR', 'foobarbazq', 16,           null),
+            '16 bytes with padding' => array('MZXW6YTBOI======', 'foobar',     16,           null),
         );
     }
 
     /**
      * @dataProvider transformEndData
      */
-    public function testTransformEnd($input, $output, $bytesConsumed)
+    public function testTransformEnd($input, $output, $bytesConsumed, $context)
     {
-        $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input, true));
+        $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input, $actualContext, true));
+        $this->assertSame($context, $actualContext);
     }
 
     public function invalidTransformEndData()
@@ -108,7 +110,7 @@ class Base32DecodeTransformTest extends PHPUnit_Framework_TestCase
             'Eloquent\Endec\Exception\InvalidEncodedDataException',
             'The supplied data is not valid for base32 encoding.'
         );
-        $this->transform->transform($input, true);
+        $this->transform->transform($input, $context, true);
     }
 
     public function testInstance()
