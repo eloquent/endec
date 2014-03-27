@@ -61,17 +61,17 @@ class Base16DecodeTransform extends AbstractDataTransform
      */
     public function transform($data, &$context, $isEnd = false)
     {
-        $consumedBytes = $this->calculateConsumeBytes($data, $isEnd, 2);
-        if (!$consumedBytes) {
+        $consume = $this->blocksSize(strlen($data), 2, $isEnd);
+        if (!$consume) {
             return array('', 0);
         }
 
-        $consumedData = substr($data, 0, $consumedBytes);
+        $consumedData = substr($data, 0, $consume);
         if (!preg_match('/^([[:xdigit:]]{2})+$/', $consumedData)) {
             throw new InvalidEncodedDataException('base16', $consumedData);
         }
 
-        return array(pack('H*', $consumedData), $consumedBytes);
+        return array(pack('H*', $consumedData), $consume);
     }
 
     private static $instance;

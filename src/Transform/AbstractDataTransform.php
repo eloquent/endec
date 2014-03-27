@@ -20,21 +20,18 @@ abstract class AbstractDataTransform implements DataTransformInterface
      * Calculate the number of bytes to consume based on the encoding's block
      * size and the size of the available data.
      *
-     * @param string  $data      The data to consume.
+     * @param integer $size      The available data size.
+     * @param integer $blockSize The encoding block size.
      * @param boolean $isEnd     True if all data should be consumed.
-     * @param integer $chunkSize The encoding chunk size.
      *
      * @return integer The amount of data to consume in bytes.
      */
-    protected function calculateConsumeBytes($data, $isEnd, $chunkSize)
+    protected function blocksSize($size, $blockSize, $isEnd)
     {
-        $length = strlen($data);
         if ($isEnd) {
-            $consumedBytes = $length;
-        } else {
-            $consumedBytes = $length - ($length % $chunkSize);
+            return $size;
         }
 
-        return $consumedBytes;
+        return $size - ($size % $blockSize);
     }
 }

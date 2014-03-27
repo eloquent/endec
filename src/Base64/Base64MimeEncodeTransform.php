@@ -63,18 +63,19 @@ class Base64MimeEncodeTransform extends AbstractDataTransform
             $context = '';
         }
         $context .= $data;
+        $bufferSize = strlen($context);
 
         $output = '';
-        $consumedBytes = $this->calculateConsumeBytes($context, $isEnd, 57);
-        if ($consumedBytes) {
+        $consume = $this->blocksSize($bufferSize, 57, $isEnd);
+        if ($consume) {
             $output = chunk_split(
-                base64_encode(substr($context, 0, $consumedBytes))
+                base64_encode(substr($context, 0, $consume))
             );
 
-            if (strlen($context) === $consumedBytes) {
+            if ($bufferSize === $consume) {
                 $context = '';
             } else {
-                $context = substr($context, $consumedBytes);
+                $context = substr($context, $consume);
             }
         }
 

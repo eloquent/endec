@@ -59,15 +59,12 @@ class Base64EncodeTransform extends AbstractDataTransform
      */
     public function transform($data, &$context, $isEnd = false)
     {
-        $consumedBytes = $this->calculateConsumeBytes($data, $isEnd, 3);
-        if (!$consumedBytes) {
+        $consume = $this->blocksSize(strlen($data), 3, $isEnd);
+        if (!$consume) {
             return array('', 0);
         }
 
-        return array(
-            base64_encode(substr($data, 0, $consumedBytes)),
-            $consumedBytes
-        );
+        return array(base64_encode(substr($data, 0, $consume)), $consume);
     }
 
     private static $instance;
