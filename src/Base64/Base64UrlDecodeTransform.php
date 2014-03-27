@@ -61,20 +61,20 @@ class Base64UrlDecodeTransform extends AbstractDataTransform
      */
     public function transform($data, &$context, $isEnd = false)
     {
-        $consumedBytes = $this->calculateConsumeBytes($data, $isEnd, 4);
-        if (!$consumedBytes) {
+        $consume = $this->blocksSize(strlen($data), 4, $isEnd);
+        if (!$consume) {
             return array('', 0);
         }
 
-        $consumedData = substr($data, 0, $consumedBytes);
-        if (1 === $consumedBytes % 4) {
+        $consumedData = substr($data, 0, $consume);
+        if (1 === $consume % 4) {
             throw new InvalidEncodedDataException('base64url', $consumedData);
         }
 
         $outputBuffer = base64_decode(
             str_pad(
                 strtr($consumedData, '-_', '+/'),
-                $consumedBytes % 4,
+                $consume % 4,
                 '=',
                 STR_PAD_RIGHT
             ),
@@ -84,7 +84,7 @@ class Base64UrlDecodeTransform extends AbstractDataTransform
             throw new InvalidEncodedDataException('base64url', $consumedData);
         }
 
-        return array($outputBuffer, $consumedBytes);
+        return array($outputBuffer, $consume);
     }
 
     private static $instance;

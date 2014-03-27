@@ -61,12 +61,12 @@ class Base64DecodeTransform extends AbstractDataTransform
      */
     public function transform($data, &$context, $isEnd = false)
     {
-        $consumedBytes = $this->calculateConsumeBytes($data, $isEnd, 4);
-        if (!$consumedBytes) {
+        $consume = $this->blocksSize(strlen($data), 4, $isEnd);
+        if (!$consume) {
             return array('', 0);
         }
 
-        $consumedData = substr($data, 0, $consumedBytes);
+        $consumedData = substr($data, 0, $consume);
         if (1 === strlen(rtrim($consumedData, '=')) % 4) {
             throw new InvalidEncodedDataException('base64', $consumedData);
         }
@@ -76,7 +76,7 @@ class Base64DecodeTransform extends AbstractDataTransform
             throw new InvalidEncodedDataException('base64', $consumedData);
         }
 
-        return array($outputBuffer, $consumedBytes);
+        return array($outputBuffer, $consume);
     }
 
     private static $instance;

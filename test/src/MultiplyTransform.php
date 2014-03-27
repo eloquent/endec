@@ -7,7 +7,7 @@ class MultiplyTransform extends AbstractDataTransform
 {
     public function transform($data, &$context, $isEnd = false)
     {
-        $consumedBytes = $this->calculateConsumeBytes($data, $isEnd, 2);
+        $consumedBytes = $this->blocksSize(strlen($data), 2, $isEnd);
         if (!$consumedBytes) {
             return array('', 0);
         }
