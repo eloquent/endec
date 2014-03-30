@@ -41,14 +41,14 @@
                     
                 </td>
                 <td class="last">
-                    <a href="#method___construct">__construct</a>(<a href="../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a> $decodeTransform)
+                    <a href="#method___construct">__construct</a>(<abbr title="Eloquent\Confetti\TransformInterface">TransformInterface</abbr> $decodeTransform)
                     <p>Construct a new decoder.</p>
                 </td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    <a href="../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a>
+                    <abbr title="Eloquent\Confetti\TransformInterface">TransformInterface</abbr>
                 </td>
                 <td class="last">
                     <a href="#method_decodeTransform">decodeTransform</a>()
@@ -68,7 +68,7 @@
             </tr>
                     <tr>
                 <td class="type">
-                    <a href="../../Eloquent/Endec/Transform/TransformStreamInterface.html"><abbr title="Eloquent\Endec\Transform\TransformStreamInterface">TransformStreamInterface</abbr></a>
+                    <abbr title="Eloquent\Confetti\TransformStreamInterface">TransformStreamInterface</abbr>
                 </td>
                 <td class="last">
                     <a href="#method_createDecodeStream">createDecodeStream</a>(integer|null $bufferSize = null)
@@ -82,9 +82,9 @@
         <h2>Details</h2>
 
                         <h3 id="method___construct">
-        <div class="location">at line 29</div>
+        <div class="location">at line 28</div>
         <code>            public            
-    <strong>__construct</strong>(<a href="../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a> $decodeTransform)</code>
+    <strong>__construct</strong>(<abbr title="Eloquent\Confetti\TransformInterface">TransformInterface</abbr> $decodeTransform)</code>
     </h3>
     <div class="details">
         <p>Construct a new decoder.</p>
@@ -95,7 +95,7 @@
 
                     <table>
                     <tr>
-                <td><a href="../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a></td>
+                <td><abbr title="Eloquent\Confetti\TransformInterface">TransformInterface</abbr></td>
                 <td>$decodeTransform</td>
                 <td>The decode transform to use.</td>
             </tr>
@@ -108,8 +108,8 @@
     </div>
 
                 <h3 id="method_decodeTransform">
-        <div class="location">at line 39</div>
-        <code>            public            <a href="../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a>
+        <div class="location">at line 38</div>
+        <code>            public            <abbr title="Eloquent\Confetti\TransformInterface">TransformInterface</abbr>
     <strong>decodeTransform</strong>()</code>
     </h3>
     <div class="details">
@@ -122,7 +122,7 @@
 
                     <table>
         <tr>
-            <td><a href="../../Eloquent/Endec/Transform/DataTransformInterface.html"><abbr title="Eloquent\Endec\Transform\DataTransformInterface">DataTransformInterface</abbr></a></td>
+            <td><abbr title="Eloquent\Confetti\TransformInterface">TransformInterface</abbr></td>
             <td>The decode transform.</td>
         </tr>
     </table>
@@ -133,7 +133,7 @@
     </div>
 
                 <h3 id="method_decode">
-        <div class="location">at line 52</div>
+        <div class="location">at line 51</div>
         <code>            public            string
     <strong>decode</strong>(string $data)</code>
     </h3>
@@ -167,7 +167,7 @@
 
                     <table>
                     <tr>
-                <td><abbr title="TransformExceptionInterface">TransformExceptionInterface</abbr></td>
+                <td><abbr title="Exception\EncodingExceptionInterface">EncodingExceptionInterface</abbr></td>
                 <td>If the data cannot be decoded.</td>
             </tr>
             </table>
@@ -177,8 +177,8 @@
     </div>
 
                 <h3 id="method_createDecodeStream">
-        <div class="location">at line 67</div>
-        <code>            public            <a href="../../Eloquent/Endec/Transform/TransformStreamInterface.html"><abbr title="Eloquent\Endec\Transform\TransformStreamInterface">TransformStreamInterface</abbr></a>
+        <div class="location">at line 66</div>
+        <code>            public            <abbr title="Eloquent\Confetti\TransformStreamInterface">TransformStreamInterface</abbr>
     <strong>createDecodeStream</strong>(integer|null $bufferSize = null)</code>
     </h3>
     <div class="details">
@@ -201,7 +201,7 @@
 
                     <table>
         <tr>
-            <td><a href="../../Eloquent/Endec/Transform/TransformStreamInterface.html"><abbr title="Eloquent\Endec\Transform\TransformStreamInterface">TransformStreamInterface</abbr></a></td>
+            <td><abbr title="Eloquent\Confetti\TransformStreamInterface">TransformStreamInterface</abbr></td>
             <td>The newly created decode stream.</td>
         </tr>
     </table>
