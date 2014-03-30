@@ -11,9 +11,9 @@
 
 namespace Eloquent\Endec\Base32;
 
+use Eloquent\Confetti\TransformInterface;
 use Eloquent\Endec\Codec;
 use Eloquent\Endec\Encoding\CodecInterface;
-use Eloquent\Endec\Transform\DataTransformInterface;
 
 /**
  * A codec for the base32 encoding protocol.
@@ -39,12 +39,12 @@ class Base32 extends Codec
     /**
      * Construct a new base32 codec.
      *
-     * @param DataTransformInterface|null $encodeTransform The encode transform to use.
-     * @param DataTransformInterface|null $decodeTransform The decode transform to use.
+     * @param TransformInterface|null $encodeTransform The encode transform to use.
+     * @param TransformInterface|null $decodeTransform The decode transform to use.
      */
     public function __construct(
-        DataTransformInterface $encodeTransform = null,
-        DataTransformInterface $decodeTransform = null
+        TransformInterface $encodeTransform = null,
+        TransformInterface $decodeTransform = null
     ) {
         if (null === $encodeTransform) {
             $encodeTransform = Base32EncodeTransform::instance();

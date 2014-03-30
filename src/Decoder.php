@@ -11,10 +11,9 @@
 
 namespace Eloquent\Endec;
 
-use Eloquent\Endec\Transform\DataTransformInterface;
-use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
-use Eloquent\Endec\Transform\TransformStream;
-use Eloquent\Endec\Transform\TransformStreamInterface;
+use Eloquent\Confetti\TransformInterface;
+use Eloquent\Confetti\TransformStream;
+use Eloquent\Confetti\TransformStreamInterface;
 
 /**
  * A general-purpose decoder implementation for composing custom decoders.
@@ -24,9 +23,9 @@ class Decoder implements DecoderInterface
     /**
      * Construct a new decoder.
      *
-     * @param DataTransformInterface $decodeTransform The decode transform to use.
+     * @param TransformInterface $decodeTransform The decode transform to use.
      */
-    public function __construct(DataTransformInterface $decodeTransform)
+    public function __construct(TransformInterface $decodeTransform)
     {
         $this->decodeTransform = $decodeTransform;
     }
@@ -34,7 +33,7 @@ class Decoder implements DecoderInterface
     /**
      * Get the decode transform.
      *
-     * @return DataTransformInterface The decode transform.
+     * @return TransformInterface The decode transform.
      */
     public function decodeTransform()
     {
@@ -46,8 +45,8 @@ class Decoder implements DecoderInterface
      *
      * @param string $data The data to decode.
      *
-     * @return string                      The decoded data.
-     * @throws TransformExceptionInterface If the data cannot be decoded.
+     * @return string                               The decoded data.
+     * @throws Exception\EncodingExceptionInterface If the data cannot be decoded.
      */
     public function decode($data)
     {

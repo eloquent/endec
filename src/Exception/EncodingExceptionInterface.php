@@ -9,16 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Eloquent\Endec\Stream;
+namespace Eloquent\Endec\Exception;
 
-use React\Stream\WritableStream;
-
-class TestWritableStream extends WritableStream
+/**
+ * The interface used to identify encoding exceptions.
+ */
+interface EncodingExceptionInterface
 {
-    public function write($data)
-    {
-        $this->data .= $data;
-    }
-
-    public $data = '';
 }

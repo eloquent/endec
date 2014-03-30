@@ -11,9 +11,9 @@
 
 namespace Eloquent\Endec\Base64;
 
+use Eloquent\Confetti\TransformInterface;
 use Eloquent\Endec\Codec;
 use Eloquent\Endec\Encoding\CodecInterface;
-use Eloquent\Endec\Transform\DataTransformInterface;
 
 /**
  * A codec for the base64 encoding variant suitable for MIME message bodies.
@@ -39,12 +39,12 @@ class Base64Mime extends Codec
     /**
      * Construct a new base64mime codec.
      *
-     * @param DataTransformInterface|null $encodeTransform The encode transform to use.
-     * @param DataTransformInterface|null $decodeTransform The decode transform to use.
+     * @param TransformInterface|null $encodeTransform The encode transform to use.
+     * @param TransformInterface|null $decodeTransform The decode transform to use.
      */
     public function __construct(
-        DataTransformInterface $encodeTransform = null,
-        DataTransformInterface $decodeTransform = null
+        TransformInterface $encodeTransform = null,
+        TransformInterface $decodeTransform = null
     ) {
         if (null === $encodeTransform) {
             $encodeTransform = Base64MimeEncodeTransform::instance();

@@ -11,15 +11,15 @@
 
 namespace Eloquent\Endec\Base32;
 
-use Eloquent\Endec\Transform\DataTransformInterface;
-use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
+use Eloquent\Confetti\TransformInterface;
+use Exception;
 
 /**
  * An abstract base class for implementing base32 encode transforms.
  *
  * @link http://tools.ietf.org/html/rfc4648#section-6
  */
-abstract class AbstractBase32EncodeTransform implements DataTransformInterface
+abstract class AbstractBase32EncodeTransform implements TransformInterface
 {
     /**
      * Construct a new base32 encode transform.
@@ -50,8 +50,8 @@ abstract class AbstractBase32EncodeTransform implements DataTransformInterface
      * @param mixed   &$context An arbitrary context value.
      * @param boolean $isEnd    True if all supplied data must be transformed.
      *
-     * @return tuple<string,integer>                 A 2-tuple of the transformed data, and the number of bytes consumed.
-     * @throws Exception\TransformExceptionInterface If the data cannot be transformed.
+     * @return tuple<string,integer> A 2-tuple of the transformed data, and the number of bytes consumed.
+     * @throws Exception             If the data cannot be transformed.
      */
     public function transform($data, &$context, $isEnd = false)
     {

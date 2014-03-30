@@ -14,10 +14,6 @@ namespace Eloquent\Endec\Uri;
 use Eloquent\Liberator\Liberator;
 use PHPUnit_Framework_TestCase;
 
-/**
- * @covers \Eloquent\Endec\Uri\UriDecodeTransform
- * @covers \Eloquent\Endec\Transform\AbstractDataTransform
- */
 class UriDecodeTransformTest extends PHPUnit_Framework_TestCase
 {
     protected function setUp()

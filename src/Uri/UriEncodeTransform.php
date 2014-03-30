@@ -11,20 +11,20 @@
 
 namespace Eloquent\Endec\Uri;
 
-use Eloquent\Endec\Transform\DataTransformInterface;
-use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
+use Eloquent\Confetti\TransformInterface;
+use Exception;
 
 /**
  * Encodes data using URI percent encoding.
  *
  * @link http://tools.ietf.org/html/rfc3986#section-2.1
  */
-class UriEncodeTransform implements DataTransformInterface
+class UriEncodeTransform implements TransformInterface
 {
     /**
      * Get the static instance of this transform.
      *
-     * @return DataTransformInterface The transform.
+     * @return TransformInterface The transform.
      */
     public static function instance()
     {
@@ -54,8 +54,8 @@ class UriEncodeTransform implements DataTransformInterface
      * @param mixed   &$context An arbitrary context value.
      * @param boolean $isEnd    True if all supplied data must be transformed.
      *
-     * @return tuple<string,integer>                 A 2-tuple of the transformed data, and the number of bytes consumed.
-     * @throws Exception\TransformExceptionInterface If the data cannot be transformed.
+     * @return tuple<string,integer> A 2-tuple of the transformed data, and the number of bytes consumed.
+     * @throws Exception             If the data cannot be transformed.
      */
     public function transform($data, &$context, $isEnd = false)
     {

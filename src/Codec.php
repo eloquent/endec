@@ -11,10 +11,9 @@
 
 namespace Eloquent\Endec;
 
-use Eloquent\Endec\Transform\DataTransformInterface;
-use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
-use Eloquent\Endec\Transform\TransformStream;
-use Eloquent\Endec\Transform\TransformStreamInterface;
+use Eloquent\Confetti\TransformInterface;
+use Eloquent\Confetti\TransformStream;
+use Eloquent\Confetti\TransformStreamInterface;
 
 /**
  * A general-purpose codec implementation for composing custom codecs.
@@ -24,12 +23,12 @@ class Codec implements CodecInterface
     /**
      * Construct a new codec.
      *
-     * @param DataTransformInterface $encodeTransform The encode transform to use.
-     * @param DataTransformInterface $decodeTransform The decode transform to use.
+     * @param TransformInterface $encodeTransform The encode transform to use.
+     * @param TransformInterface $decodeTransform The decode transform to use.
      */
     public function __construct(
-        DataTransformInterface $encodeTransform,
-        DataTransformInterface $decodeTransform
+        TransformInterface $encodeTransform,
+        TransformInterface $decodeTransform
     ) {
         $this->encodeTransform = $encodeTransform;
         $this->decodeTransform = $decodeTransform;
@@ -38,7 +37,7 @@ class Codec implements CodecInterface
     /**
      * Get the encode transform.
      *
-     * @return DataTransformInterface The encode transform.
+     * @return TransformInterface The encode transform.
      */
     public function encodeTransform()
     {
@@ -48,7 +47,7 @@ class Codec implements CodecInterface
     /**
      * Get the decode transform.
      *
-     * @return DataTransformInterface The decode transform.
+     * @return TransformInterface The decode transform.
      */
     public function decodeTransform()
     {
@@ -60,8 +59,8 @@ class Codec implements CodecInterface
      *
      * @param string $data The data to encode.
      *
-     * @return string                      The encoded data.
-     * @throws TransformExceptionInterface If the data cannot be encoded.
+     * @return string                               The encoded data.
+     * @throws Exception\EncodingExceptionInterface If the data cannot be encoded.
      */
     public function encode($data)
     {
@@ -76,8 +75,8 @@ class Codec implements CodecInterface
      *
      * @param string $data The data to decode.
      *
-     * @return string                      The decoded data.
-     * @throws TransformExceptionInterface If the data cannot be decoded.
+     * @return string                               The decoded data.
+     * @throws Exception\EncodingExceptionInterface If the data cannot be decoded.
      */
     public function decode($data)
     {

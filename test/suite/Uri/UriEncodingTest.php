@@ -11,7 +11,7 @@
 
 namespace Eloquent\Endec\Uri;
 
-use Eloquent\Endec\Transform\TransformStream;
+use Eloquent\Confetti\TransformStream;
 use Eloquent\Liberator\Liberator;
 use PHPUnit_Framework_TestCase;
 

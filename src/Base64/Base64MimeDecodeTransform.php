@@ -11,9 +11,10 @@
 
 namespace Eloquent\Endec\Base64;
 
+use Eloquent\Confetti\TransformInterface;
+use Eloquent\Endec\Exception\EncodingExceptionInterface;
 use Eloquent\Endec\Exception\InvalidEncodedDataException;
-use Eloquent\Endec\Transform\DataTransformInterface;
-use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
+use Exception;
 
 /**
  * Decodes data using base64 encoding suitable for MIME message bodies.
@@ -25,7 +26,7 @@ class Base64MimeDecodeTransform extends Base64DecodeTransform
     /**
      * Get the static instance of this transform.
      *
-     * @return DataTransformInterface The transform.
+     * @return TransformInterface The transform.
      */
     public static function instance()
     {
@@ -55,8 +56,8 @@ class Base64MimeDecodeTransform extends Base64DecodeTransform
      * @param mixed   &$context An arbitrary context value.
      * @param boolean $isEnd    True if all supplied data must be transformed.
      *
-     * @return tuple<string,integer>                 A 2-tuple of the transformed data, and the number of bytes consumed.
-     * @throws Exception\TransformExceptionInterface If the data cannot be transformed.
+     * @return tuple<string,integer> A 2-tuple of the transformed data, and the number of bytes consumed.
+     * @throws Exception             If the data cannot be transformed.
      */
     public function transform($data, &$context, $isEnd = false)
     {
@@ -67,7 +68,7 @@ class Base64MimeDecodeTransform extends Base64DecodeTransform
                     $context,
                     true
                 );
-            } catch (TransformExceptionInterface $e) {
+            } catch (EncodingExceptionInterface $e) {
                 throw new InvalidEncodedDataException('base64mime', $e->data());
             }
 

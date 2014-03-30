@@ -11,8 +11,8 @@
 
 namespace Eloquent\Endec\Base16;
 
-use Eloquent\Endec\Transform\AbstractNativeStreamFilter;
-use Eloquent\Endec\Transform\DataTransformInterface;
+use Eloquent\Confetti\AbstractNativeStreamFilter;
+use Eloquent\Confetti\TransformInterface;
 
 /**
  * A native stream filter for base16 (hexadecimal) decoding.
@@ -24,7 +24,7 @@ class Base16DecodeNativeStreamFilter extends AbstractNativeStreamFilter
     /**
      * Create the transform.
      *
-     * @return DataTransformInterface The data transform.
+     * @return TransformInterface The data transform.
      */
     protected function createTransform()
     {

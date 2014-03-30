@@ -11,8 +11,8 @@
 
 namespace Eloquent\Endec\Uri;
 
-use Eloquent\Endec\Transform\AbstractNativeStreamFilter;
-use Eloquent\Endec\Transform\DataTransformInterface;
+use Eloquent\Confetti\AbstractNativeStreamFilter;
+use Eloquent\Confetti\TransformInterface;
 
 /**
  * A native stream filter for URI percent decoding.
@@ -24,7 +24,7 @@ class UriDecodeNativeStreamFilter extends AbstractNativeStreamFilter
     /**
      * Create the transform.
      *
-     * @return DataTransformInterface The data transform.
+     * @return TransformInterface The data transform.
      */
     protected function createTransform()
     {

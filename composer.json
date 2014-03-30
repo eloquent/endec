@@ -33,6 +33,7 @@
     ],
     "require": {
         "php": ">=5.3",
+        "eloquent/confetti": "dev-develop@dev",
         "evenement/evenement": ">=1,<3",
         "icecave/isolator": "~2",
         "react/stream": ">=0.3,<0.5"

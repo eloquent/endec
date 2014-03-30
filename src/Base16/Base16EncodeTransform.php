@@ -11,20 +11,20 @@
 
 namespace Eloquent\Endec\Base16;
 
-use Eloquent\Endec\Transform\DataTransformInterface;
-use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
+use Eloquent\Confetti\TransformInterface;
+use Exception;
 
 /**
  * Encodes data using base16 (hexadecimal) encoding.
  *
  * @link http://tools.ietf.org/html/rfc4648#section-8
  */
-class Base16EncodeTransform implements DataTransformInterface
+class Base16EncodeTransform implements TransformInterface
 {
     /**
      * Get the static instance of this transform.
      *
-     * @return DataTransformInterface The transform.
+     * @return TransformInterface The transform.
      */
     public static function instance()
     {
@@ -54,8 +54,8 @@ class Base16EncodeTransform implements DataTransformInterface
      * @param mixed   &$context An arbitrary context value.
      * @param boolean $isEnd    True if all supplied data must be transformed.
      *
-     * @return tuple<string,integer>                 A 2-tuple of the transformed data, and the number of bytes consumed.
-     * @throws Exception\TransformExceptionInterface If the data cannot be transformed.
+     * @return tuple<string,integer> A 2-tuple of the transformed data, and the number of bytes consumed.
+     * @throws Exception             If the data cannot be transformed.
      */
     public function transform($data, &$context, $isEnd = false)
     {

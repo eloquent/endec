@@ -11,7 +11,7 @@
 
 namespace Eloquent\Endec\Base32;
 
-use Eloquent\Endec\Transform\DataTransformInterface;
+use Eloquent\Confetti\TransformInterface;
 
 /**
  * Encodes data using base32hex encoding.
@@ -23,7 +23,7 @@ class Base32HexEncodeTransform extends AbstractBase32EncodeTransform
     /**
      * Get the static instance of this transform.
      *
-     * @return DataTransformInterface The transform.
+     * @return TransformInterface The transform.
      */
     public static function instance()
     {

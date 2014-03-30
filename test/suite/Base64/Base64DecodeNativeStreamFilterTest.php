@@ -14,10 +14,6 @@ namespace Eloquent\Endec\Base64;
 use Eloquent\Endec\Endec;
 use PHPUnit_Framework_TestCase;
 
-/**
- * @covers \Eloquent\Endec\Base64\Base64DecodeNativeStreamFilter
- * @covers \Eloquent\Endec\Transform\AbstractNativeStreamFilter
- */
 class Base64DecodeNativeStreamFilterTest extends PHPUnit_Framework_TestCase
 {
     protected function setUp()

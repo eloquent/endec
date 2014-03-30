@@ -13,7 +13,7 @@ use Eloquent\Endec\Base32\Base32;
 use Eloquent\Endec\Codec;
 use Eloquent\Endec\Encoder;
 use Eloquent\Endec\Endec;
-use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
+use Eloquent\Endec\Exception\EncodingExceptionInterface;
 
 class DocumentationTest extends PHPUnit_Framework_TestCase
 {
@@ -97,7 +97,7 @@ class DocumentationTest extends PHPUnit_Framework_TestCase
         $codec = new Base32;
         try {
             $codec->decode('!!!!!!!!');
-        } catch (TransformExceptionInterface $e) {
+        } catch (Exception $e) {
             echo 'Unable to decode';
         }
     }
@@ -163,13 +163,13 @@ class DocumentationTest extends PHPUnit_Framework_TestCase
 
         try {
             $encoder->encode('foobar');
-        } catch (TransformExceptionInterface $e) {
+        } catch (EncodingExceptionInterface $e) {
             echo 'Unable to encode non-digits';
         }
 
         try {
             $encoder->encode('123');
-        } catch (TransformExceptionInterface $e) {
+        } catch (EncodingExceptionInterface $e) {
             echo 'Unable to encode odd lengths';
         }
     }

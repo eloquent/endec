@@ -11,8 +11,7 @@
 
 namespace Eloquent\Endec;
 
-use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
-use Eloquent\Endec\Transform\TransformStreamInterface;
+use Eloquent\Confetti\TransformStreamInterface;
 
 /**
  * The interface implemented by encoders.
@@ -24,8 +23,8 @@ interface EncoderInterface
      *
      * @param string $data The data to encode.
      *
-     * @return string                      The encoded data.
-     * @throws TransformExceptionInterface If the data cannot be encoded.
+     * @return string                               The encoded data.
+     * @throws Exception\EncodingExceptionInterface If the data cannot be encoded.
      */
     public function encode($data);
 
