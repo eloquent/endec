@@ -14,10 +14,6 @@ namespace Eloquent\Endec\Uri;
 use Eloquent\Endec\Endec;
 use PHPUnit_Framework_TestCase;
 
-/**
- * @covers \Eloquent\Endec\Uri\UriEncodeNativeStreamFilter
- * @covers \Eloquent\Endec\Transform\AbstractNativeStreamFilter
- */
 class UriEncodeNativeStreamFilterTest extends PHPUnit_Framework_TestCase
 {
     protected function setUp()

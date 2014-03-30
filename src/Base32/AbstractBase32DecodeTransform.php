@@ -11,16 +11,17 @@
 
 namespace Eloquent\Endec\Base32;
 
+use Eloquent\Confetti\TransformInterface;
+use Eloquent\Endec\Exception\EncodingExceptionInterface;
 use Eloquent\Endec\Exception\InvalidEncodedDataException;
-use Eloquent\Endec\Transform\DataTransformInterface;
-use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
+use Exception;
 
 /**
  * An abstract base class for implementing base32 decode transforms.
  *
  * @link http://tools.ietf.org/html/rfc4648#section-6
  */
-abstract class AbstractBase32DecodeTransform implements DataTransformInterface
+abstract class AbstractBase32DecodeTransform implements TransformInterface
 {
     /**
      * Transform the supplied data.
@@ -41,8 +42,8 @@ abstract class AbstractBase32DecodeTransform implements DataTransformInterface
      * @param mixed   &$context An arbitrary context value.
      * @param boolean $isEnd    True if all supplied data must be transformed.
      *
-     * @return tuple<string,integer>                 A 2-tuple of the transformed data, and the number of bytes consumed.
-     * @throws Exception\TransformExceptionInterface If the data cannot be transformed.
+     * @return tuple<string,integer> A 2-tuple of the transformed data, and the number of bytes consumed.
+     * @throws Exception             If the data cannot be transformed.
      */
     public function transform($data, &$context, $isEnd = false)
     {
@@ -149,8 +150,8 @@ abstract class AbstractBase32DecodeTransform implements DataTransformInterface
      * @param string  $data  The data to be decoded.
      * @param integer $index The index into the data at which the relevant byte is located.
      *
-     * @return integer                     The relevant alphabet entry.
-     * @throws TransformExceptionInterface If there is no relevant alphabet entry.
+     * @return integer                    The relevant alphabet entry.
+     * @throws EncodingExceptionInterface If there is no relevant alphabet entry.
      */
     abstract protected function mapByte($data, $index);
 

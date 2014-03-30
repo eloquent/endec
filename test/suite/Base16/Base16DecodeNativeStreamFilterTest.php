@@ -14,10 +14,6 @@ namespace Eloquent\Endec\Base16;
 use Eloquent\Endec\Endec;
 use PHPUnit_Framework_TestCase;
 
-/**
- * @covers \Eloquent\Endec\Base16\Base16DecodeNativeStreamFilter
- * @covers \Eloquent\Endec\Transform\AbstractNativeStreamFilter
- */
 class Base16DecodeNativeStreamFilterTest extends PHPUnit_Framework_TestCase
 {
     protected function setUp()

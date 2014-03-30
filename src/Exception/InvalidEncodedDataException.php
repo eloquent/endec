@@ -11,14 +11,13 @@
 
 namespace Eloquent\Endec\Exception;
 
-use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
 use Exception;
 
 /**
  * The supplied data is not correctly encoded.
  */
 final class InvalidEncodedDataException extends Exception implements
-    TransformExceptionInterface
+    EncodingExceptionInterface
 {
     /**
      * Construct a new invalid encoded data exception.

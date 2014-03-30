@@ -11,8 +11,9 @@
 
 namespace Eloquent\Endec\Base32;
 
+use Eloquent\Confetti\TransformInterface;
+use Eloquent\Endec\Exception\EncodingExceptionInterface;
 use Eloquent\Endec\Exception\InvalidEncodedDataException;
-use Eloquent\Endec\Transform\DataTransformInterface;
 
 /**
  * Decodes data using base32hex encoding.
@@ -24,7 +25,7 @@ class Base32HexDecodeTransform extends AbstractBase32DecodeTransform
     /**
      * Get the static instance of this transform.
      *
-     * @return DataTransformInterface The transform.
+     * @return TransformInterface The transform.
      */
     public static function instance()
     {
@@ -41,8 +42,8 @@ class Base32HexDecodeTransform extends AbstractBase32DecodeTransform
      * @param string  $data  The data to be decoded.
      * @param integer $index The index into the data at which the relevant byte is located.
      *
-     * @return integer                     The relevant alphabet entry.
-     * @throws TransformExceptionInterface If there is no relevant alphabet entry.
+     * @return integer                    The relevant alphabet entry.
+     * @throws EncodingExceptionInterface If there is no relevant alphabet entry.
      */
     protected function mapByte($data, $index)
     {

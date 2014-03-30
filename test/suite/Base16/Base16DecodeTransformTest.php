@@ -14,10 +14,6 @@ namespace Eloquent\Endec\Base16;
 use Eloquent\Liberator\Liberator;
 use PHPUnit_Framework_TestCase;
 
-/**
- * @covers \Eloquent\Endec\Base16\Base16DecodeTransform
- * @covers \Eloquent\Endec\Transform\AbstractDataTransform
- */
 class Base16DecodeTransformTest extends PHPUnit_Framework_TestCase
 {
     protected function setUp()

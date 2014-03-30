@@ -11,10 +11,9 @@
 
 namespace Eloquent\Endec;
 
-use Eloquent\Endec\Transform\DataTransformInterface;
-use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
-use Eloquent\Endec\Transform\TransformStream;
-use Eloquent\Endec\Transform\TransformStreamInterface;
+use Eloquent\Confetti\TransformInterface;
+use Eloquent\Confetti\TransformStream;
+use Eloquent\Confetti\TransformStreamInterface;
 
 /**
  * A general-purpose encoder implementation for composing custom encoders.
@@ -24,9 +23,9 @@ class Encoder implements EncoderInterface
     /**
      * Construct a new encoder.
      *
-     * @param DataTransformInterface $encodeTransform The encode transform to use.
+     * @param TransformInterface $encodeTransform The encode transform to use.
      */
-    public function __construct(DataTransformInterface $encodeTransform)
+    public function __construct(TransformInterface $encodeTransform)
     {
         $this->encodeTransform = $encodeTransform;
     }
@@ -34,7 +33,7 @@ class Encoder implements EncoderInterface
     /**
      * Get the encode transform.
      *
-     * @return DataTransformInterface The encode transform.
+     * @return TransformInterface The encode transform.
      */
     public function encodeTransform()
     {
@@ -46,8 +45,8 @@ class Encoder implements EncoderInterface
      *
      * @param string $data The data to encode.
      *
-     * @return string                      The encoded data.
-     * @throws TransformExceptionInterface If the data cannot be encoded.
+     * @return string                               The encoded data.
+     * @throws Exception\EncodingExceptionInterface If the data cannot be encoded.
      */
     public function encode($data)
     {

@@ -14,10 +14,6 @@ namespace Eloquent\Endec\Base32;
 use Eloquent\Endec\Endec;
 use PHPUnit_Framework_TestCase;
 
-/**
- * @covers \Eloquent\Endec\Base32\Base32EncodeNativeStreamFilter
- * @covers \Eloquent\Endec\Transform\AbstractNativeStreamFilter
- */
 class Base32EncodeNativeStreamFilterTest extends PHPUnit_Framework_TestCase
 {
     protected function setUp()

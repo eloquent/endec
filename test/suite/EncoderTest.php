@@ -11,9 +11,9 @@
 
 namespace Eloquent\Endec;
 
-use Eloquent\Endec\Transform\TransformStream;
-use Phake;
+use Eloquent\Confetti\TransformStream;
 use PHPUnit_Framework_TestCase;
+use Phake;
 
 class EncoderTest extends PHPUnit_Framework_TestCase
 {
@@ -21,7 +21,7 @@ class EncoderTest extends PHPUnit_Framework_TestCase
     {
         parent::setUp();
 
-        $this->encodeTransform = Phake::mock('Eloquent\Endec\Transform\DataTransformInterface');
+        $this->encodeTransform = Phake::mock('Eloquent\Confetti\TransformInterface');
         $this->codec = new Encoder($this->encodeTransform);
 
         $transformCallback = function ($data, $isEnd = false) {
