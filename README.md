@@ -114,12 +114,12 @@ All exceptions thrown implement [TransformExceptionInterface]:
 
 ```php
 use Eloquent\Endec\Base32\Base32;
-use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
+use Eloquent\Endec\Exception\EncodingExceptionInterface;
 
 $codec = new Base32;
 try {
     $codec->decode('!!!!!!!!');
-} catch (TransformExceptionInterface $e) {
+} catch (EncodingExceptionInterface $e) {
     echo 'Unable to decode';
 }
 ```
@@ -209,145 +209,46 @@ accurately express requirements.
 
 ## Implementing a custom encoding
 
-At the heart of *Endec* lies the [DataTransformInterface] interface. A correctly
-implemented data transform allows *Endec* to utilize its logic for both
-string-based, and streaming transformations.
+Encoders and decoders are built upon [Confetti] transforms. For details on how
+to implement a transform, see the Confetti documentation for [implementing a
+transform].
 
-A simple data transform might look like the following:
+As an example, given the following transform:
 
 ```php
-use Eloquent\Endec\Transform\DataTransformInterface;
+use Eloquent\Confetti\TransformInterface;
 
-class Rot13Transform implements DataTransformInterface
+class Rot13Transform implements TransformInterface
 {
-    public function transform($data, $isEnd = false)
+    public function transform($data, &$context, $isEnd = false)
     {
         return array(str_rot13($data), strlen($data));
     }
 }
 ```
 
-The transform receives an arbitrary amount of data as a string, and returns an
-array where the first element is the transformed data, and the second element is
-the amount of data consumed in bytes. In this example, the data is always
-completely consumed.
-
-This transform can now be utilized like so:
-
-```php
-use Eloquent\Endec\Encoder;
-
-$encoder = new Encoder(new Rot13Transform);
-echo $encoder->encode('foobar'); // outputs 'sbbone'
-```
-
-Since rot13 is reciprocal, it could also be used to create a full codec:
+It is extremely simple to create a related encoder, decoder, or codec:
 
 ```php
 use Eloquent\Endec\Codec;
+use Eloquent\Endec\Decoder;
+use Eloquent\Endec\Encoder;
 
 $transform = new Rot13Transform;
+
+$encoder = new Encoder($transform);
+echo $encoder->encode('foobar'); // outputs 'sbbone'
+
+$decoder = new Decoder($transform);
+echo $decoder->decode('foobar'); // outputs 'sbbone'
+
 $codec = new Codec($transform, $transform);
-echo $codec->encode('foobar'); // outputs 'sbbone'
-echo $codec->decode('sbbone'); // outputs 'foobar'
+echo $codec->decode($codec->encode('foobar')); // outputs 'foobar'
 ```
 
-More complex transforms may not be able to consume data byte-by-byte. As an
-example, attempting to base64 encode each byte as it is received would result in
-invalid output filled with padding characters. Data transforms also have to deal
-with error conditions, such as attempting to decode invalid data.
-
-A more complex transform might be implemented like so:
-
-```php
-use Eloquent\Endec\Exception\InvalidEncodedDataException;
-use Eloquent\Endec\Transform\AbstractDataTransform;
-
-class MultiplyTransform extends AbstractDataTransform
-{
-    public function transform($data, $isEnd = false)
-    {
-        $consumedBytes = $this->calculateConsumeBytes($data, $isEnd, 2);
-        if (!$consumedBytes) {
-            return array('', 0);
-        }
-
-        $consumedData = substr($data, 0, $consumedBytes);
-        if (0 !== $consumedBytes % 2 || !ctype_digit($consumedData)) {
-            throw new InvalidEncodedDataException('multiply', $consumedData);
-        }
-
-        $output = '';
-        for ($i = 0; $i < $consumedBytes; $i += 2) {
-            $output .= $consumedData[$i] * $consumedData[$i + 1] . '|';
-        }
-
-        return array($output, $consumedBytes);
-    }
-}
-```
-
-This transform will now multiply pairs of numbers and append the result to the
-output buffer. The call to `AbstractDataTransform::calculateConsumeBytes()`
-ensures that data is only consumed in blocks of 2 bytes at a time. If a
-non-digit character is passed, or the data stream ends at an odd number of
-bytes, an exception is thrown to indicate the error.
-
-When used in an encoder, this transform functions like so:
-
-```php
-use Eloquent\Endec\Encoder;
-use Eloquent\Endec\Transform\Exception\TransformExceptionInterface;
-
-$encoder = new Encoder(new MultiplyTransform);
-echo $encoder->encode('0123456789'); // outputs '0|6|20|42|72|'
-
-try {
-    $encoder->encode('foobar');
-} catch (TransformExceptionInterface $e) {
-    echo 'Unable to encode non-digits';
-}
-
-try {
-    $encoder->encode('123');
-} catch (TransformExceptionInterface $e) {
-    echo 'Unable to encode odd lengths';
-}
-```
-
-### Custom stream filters
-
-PHP's stream filter system requires that each filter is implemented as an
-individual class. *Endec* includes an abstract class that greatly simplifies
-implementing stream filters.
-
-To create a stream filter for the multiply transform defined above would be as
-simple as the following:
-
-```php
-use Eloquent\Endec\Transform\AbstractNativeStreamFilter;
-
-class MultiplyNativeStreamFilter extends AbstractNativeStreamFilter
-{
-    protected function createTransform()
-    {
-        return new MultiplyTransform;
-    }
-}
-```
-
-Once the filter is registered, it can be used like any other stream filter:
-
-```php
-stream_filter_register('multiply', 'MultiplyNativeStreamFilter');
-
-$path = '/path/to/file';
-$stream = fopen($path, 'wb');
-stream_filter_append($stream, 'multiply');
-fwrite($stream, '0123456789');
-fclose($stream);
-echo file_get_contents($path); // outputs '0|6|20|42|72|'
-```
+Note that the codec takes the same tranform for encoding and decoding only
+because rot13 is reciprocal. Most codecs would require a separate encode and
+decode transform.
 
 <!-- References -->
 
@@ -358,12 +259,14 @@ echo file_get_contents($path); // outputs '0|6|20|42|72|'
 [Base64 with URL and filename safe alphabet]: http://tools.ietf.org/html/rfc4648#section-5
 [Base64]: http://tools.ietf.org/html/rfc4648#section-4
 [CodecInterface]: http://lqnt.co/endec/artifacts/documentation/api/Eloquent/Endec/CodecInterface.html
+[Confetti]: https://github.com/eloquent/confetti
 [convert.base64-decode]: http://php.net/filters.convert
 [convert.base64-encode]: http://php.net/filters.convert
 [DataTransformInterface]: http://lqnt.co/endec/artifacts/documentation/api/Eloquent/Endec/Transform/DataTransformInterface.html
 [DecoderInterface]: http://lqnt.co/endec/artifacts/documentation/api/Eloquent/Endec/DecoderInterface.html
 [EncoderInterface]: http://lqnt.co/endec/artifacts/documentation/api/Eloquent/Endec/EncoderInterface.html
 [ignore errors produced by the filter]: https://bugs.php.net/bug.php?id=66932
+[implementing a transform]: https://github.com/eloquent/confetti#implementing-a-transform
 [React]: http://reactphp.org/
 [ReadableStreamInterface]: https://github.com/reactphp/react/blob/v0.4.0/src/Stream/ReadableStreamInterface.php
 [RFC 2045]: http://tools.ietf.org/html/rfc2045
