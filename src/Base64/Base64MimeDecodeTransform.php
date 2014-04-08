@@ -12,9 +12,7 @@
 namespace Eloquent\Endec\Base64;
 
 use Eloquent\Confetti\TransformInterface;
-use Eloquent\Endec\Exception\EncodingExceptionInterface;
 use Eloquent\Endec\Exception\InvalidEncodedDataException;
-use Exception;
 
 /**
  * Decodes data using base64 encoding suitable for MIME message bodies.
@@ -56,23 +54,29 @@ class Base64MimeDecodeTransform extends Base64DecodeTransform
      * @param mixed   &$context An arbitrary context value.
      * @param boolean $isEnd    True if all supplied data must be transformed.
      *
-     * @return tuple<string,integer> A 2-tuple of the transformed data, and the number of bytes consumed.
-     * @throws Exception             If the data cannot be transformed.
+     * @return tuple<string,integer,mixed> A 3-tuple of the transformed data, the number of bytes consumed, and any resulting error.
      */
     public function transform($data, &$context, $isEnd = false)
     {
         if ($isEnd) {
-            try {
-                list($output) = parent::transform(
-                    preg_replace('{[^[:alnum:]+/=]+}', '', $data),
-                    $context,
-                    true
+            list($output, $consumed, $error) = parent::transform(
+                preg_replace('{[^[:alnum:]+/=]+}', '', $data),
+                $context,
+                true
+            );
+
+            if (null !== $error) {
+                return array(
+                    '',
+                    0,
+                    new InvalidEncodedDataException(
+                        'base64mime',
+                        $error->data()
+                    ),
                 );
-            } catch (EncodingExceptionInterface $e) {
-                throw new InvalidEncodedDataException('base64mime', $e->data());
             }
 
-            return array($output, strlen($data));
+            return array($output, strlen($data), $error);
         }
 
         $chunks = preg_split(
@@ -86,33 +90,38 @@ class Base64MimeDecodeTransform extends Base64DecodeTransform
         $buffer = '';
         $output = '';
         $lastFullyConsumed = -1;
-        $consumedBytes = 0;
+        $consumed = 0;
         for ($i = 0; $i < $numChunks; $i ++) {
             $buffer .= $chunks[$i][0];
-            list($thisOutput, $consumedBytes) = parent::transform(
+            list($thisOutput, $consumed, $error) = parent::transform(
                 $buffer,
                 $context
             );
+
+            if (null !== $error) {
+                return array('', 0, $error);
+            }
+
             $output .= $thisOutput;
 
-            if ($consumedBytes === strlen($buffer)) {
+            if ($consumed === strlen($buffer)) {
                 $buffer = '';
                 $lastFullyConsumed = $i;
             } else {
-                $buffer = substr($buffer, $consumedBytes);
+                $buffer = substr($buffer, $consumed);
             }
         }
 
         if ($lastFullyConsumed > -1) {
             if ($lastFullyConsumed < $numChunks - 1) {
-                $consumedBytes = $chunks[$lastFullyConsumed + 1][1];
+                $consumed = $chunks[$lastFullyConsumed + 1][1];
             } else {
-                $consumedBytes = $chunks[$lastFullyConsumed][1] +
+                $consumed = $chunks[$lastFullyConsumed][1] +
                     strlen($chunks[$lastFullyConsumed][0]);
             }
         }
 
-        return array($output, $consumedBytes);
+        return array($output, $consumed, null);
     }
 
     private static $instance;

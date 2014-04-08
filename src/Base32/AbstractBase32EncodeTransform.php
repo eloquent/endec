@@ -12,7 +12,6 @@
 namespace Eloquent\Endec\Base32;
 
 use Eloquent\Confetti\TransformInterface;
-use Exception;
 
 /**
  * An abstract base class for implementing base32 encode transforms.
@@ -50,17 +49,16 @@ abstract class AbstractBase32EncodeTransform implements TransformInterface
      * @param mixed   &$context An arbitrary context value.
      * @param boolean $isEnd    True if all supplied data must be transformed.
      *
-     * @return tuple<string,integer> A 2-tuple of the transformed data, and the number of bytes consumed.
-     * @throws Exception             If the data cannot be transformed.
+     * @return tuple<string,integer,mixed> A 3-tuple of the transformed data, the number of bytes consumed, and any resulting error.
      */
     public function transform($data, &$context, $isEnd = false)
     {
         $length = strlen($data);
-        $consumedBytes = intval($length / 5) * 5;
+        $consumed = intval($length / 5) * 5;
         $index = 0;
         $output = '';
 
-        while ($index < $consumedBytes) {
+        while ($index < $consumed) {
             $output .= $this->map5(
                 ord($data[$index++]),
                 ord($data[$index++]),
@@ -70,9 +68,9 @@ abstract class AbstractBase32EncodeTransform implements TransformInterface
             );
         }
 
-        if ($isEnd && $consumedBytes !== $length) {
-            $remaining = $length - $consumedBytes;
-            $consumedBytes = $length;
+        if ($isEnd && $consumed !== $length) {
+            $remaining = $length - $consumed;
+            $consumed = $length;
 
             if (1 === $remaining) {
                 $output .= $this->map1(
@@ -99,7 +97,7 @@ abstract class AbstractBase32EncodeTransform implements TransformInterface
             }
         }
 
-        return array($output, $consumedBytes);
+        return array($output, $consumed, null);
     }
 
     private function map1($a)

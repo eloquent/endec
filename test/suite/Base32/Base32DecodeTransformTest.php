@@ -29,7 +29,7 @@ class Base32DecodeTransformTest extends PHPUnit_Framework_TestCase
 
     public function transformData()
     {
-        //                                   input               output        bytesConsumed context
+        //                                   input               output        consumed context
         return array(
             'Empty'                 => array('',                 '',           0,            null),
             '1 byte'                => array('M',                '',           0,            null),
@@ -55,15 +55,15 @@ class Base32DecodeTransformTest extends PHPUnit_Framework_TestCase
     /**
      * @dataProvider transformData
      */
-    public function testTransform($input, $output, $bytesConsumed, $context)
+    public function testTransform($input, $output, $consumed, $context)
     {
-        $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input, $actualContext));
+        $this->assertSame(array($output, $consumed, null), $this->transform->transform($input, $actualContext));
         $this->assertSame($context, $actualContext);
     }
 
     public function transformEndData()
     {
-        //                                   input               output        bytesConsumed context
+        //                                   input               output        consumed context
         return array(
             'Empty'                 => array('',                 '',           0,            null),
             '2 bytes'               => array('MY',               'f',          2,            null),
@@ -84,9 +84,9 @@ class Base32DecodeTransformTest extends PHPUnit_Framework_TestCase
     /**
      * @dataProvider transformEndData
      */
-    public function testTransformEnd($input, $output, $bytesConsumed, $context)
+    public function testTransformEnd($input, $output, $consumed, $context)
     {
-        $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input, $actualContext, true));
+        $this->assertSame(array($output, $consumed, null), $this->transform->transform($input, $actualContext, true));
         $this->assertSame($context, $actualContext);
     }
 
@@ -106,11 +106,15 @@ class Base32DecodeTransformTest extends PHPUnit_Framework_TestCase
      */
     public function testTransformFailure($input)
     {
+        list($output, $consumed, $error) = $this->transform->transform($input, $context, true);
+
+        $this->assertSame('', $output);
+        $this->assertSame(0, $consumed);
         $this->setExpectedException(
             'Eloquent\Endec\Exception\InvalidEncodedDataException',
             'The supplied data is not valid for base32 encoding.'
         );
-        $this->transform->transform($input, $context, true);
+        throw $error;
     }
 
     public function testInstance()

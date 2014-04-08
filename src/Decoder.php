@@ -50,8 +50,12 @@ class Decoder implements DecoderInterface
      */
     public function decode($data)
     {
-        list($data) = $this->decodeTransform()
+        list($data, $consumed, $error) = $this->decodeTransform()
             ->transform($data, $context, true);
+
+        if (null !== $error) {
+            throw $error;
+        }
 
         return $data;
     }
