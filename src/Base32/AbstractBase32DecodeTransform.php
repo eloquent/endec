@@ -14,7 +14,6 @@ namespace Eloquent\Endec\Base32;
 use Eloquent\Confetti\TransformInterface;
 use Eloquent\Endec\Exception\EncodingExceptionInterface;
 use Eloquent\Endec\Exception\InvalidEncodedDataException;
-use Exception;
 
 /**
  * An abstract base class for implementing base32 decode transforms.
@@ -42,71 +41,78 @@ abstract class AbstractBase32DecodeTransform implements TransformInterface
      * @param mixed   &$context An arbitrary context value.
      * @param boolean $isEnd    True if all supplied data must be transformed.
      *
-     * @return tuple<string,integer> A 2-tuple of the transformed data, and the number of bytes consumed.
-     * @throws Exception             If the data cannot be transformed.
+     * @return tuple<string,integer,mixed> A 3-tuple of the transformed data, the number of bytes consumed, and any resulting error.
      */
     public function transform($data, &$context, $isEnd = false)
     {
         $paddedLength = strlen($data);
         $data = rtrim($data, '=');
         $length = strlen($data);
-        $consumedBytes = intval($length / 8) * 8;
+        $consumed = intval($length / 8) * 8;
         $index = 0;
         $output = '';
 
-        while ($index < $consumedBytes) {
-            $output .= $this->map8(
-                $this->mapByte($data, $index++),
-                $this->mapByte($data, $index++),
-                $this->mapByte($data, $index++),
-                $this->mapByte($data, $index++),
-                $this->mapByte($data, $index++),
-                $this->mapByte($data, $index++),
-                $this->mapByte($data, $index++),
-                $this->mapByte($data, $index++)
-            );
-        }
-
-        if (($isEnd || $paddedLength > $length) && $consumedBytes !== $length) {
-            $remaining = $length - $consumedBytes;
-            $consumedBytes = $length;
-
-            if (2 === $remaining) {
-                $output .= $this->map2(
+        try {
+            while ($index < $consumed) {
+                $output .= $this->map8(
                     $this->mapByte($data, $index++),
-                    $this->mapByte($data, $index)
+                    $this->mapByte($data, $index++),
+                    $this->mapByte($data, $index++),
+                    $this->mapByte($data, $index++),
+                    $this->mapByte($data, $index++),
+                    $this->mapByte($data, $index++),
+                    $this->mapByte($data, $index++),
+                    $this->mapByte($data, $index++)
                 );
-            } elseif (4 === $remaining) {
-                $output .= $this->map4(
-                    $this->mapByte($data, $index++),
-                    $this->mapByte($data, $index++),
-                    $this->mapByte($data, $index++),
-                    $this->mapByte($data, $index)
-                );
-            } elseif (5 === $remaining) {
-                $output .= $this->map5(
-                    $this->mapByte($data, $index++),
-                    $this->mapByte($data, $index++),
-                    $this->mapByte($data, $index++),
-                    $this->mapByte($data, $index++),
-                    $this->mapByte($data, $index)
-                );
-            } elseif (7 === $remaining) {
-                $output .= $this->map7(
-                    $this->mapByte($data, $index++),
-                    $this->mapByte($data, $index++),
-                    $this->mapByte($data, $index++),
-                    $this->mapByte($data, $index++),
-                    $this->mapByte($data, $index++),
-                    $this->mapByte($data, $index++),
-                    $this->mapByte($data, $index)
-                );
-            } else {
-                throw new InvalidEncodedDataException($this->key(), $data);
             }
+
+            if (($isEnd || $paddedLength > $length) && $consumed !== $length) {
+                $remaining = $length - $consumed;
+                $consumed = $length;
+
+                if (2 === $remaining) {
+                    $output .= $this->map2(
+                        $this->mapByte($data, $index++),
+                        $this->mapByte($data, $index)
+                    );
+                } elseif (4 === $remaining) {
+                    $output .= $this->map4(
+                        $this->mapByte($data, $index++),
+                        $this->mapByte($data, $index++),
+                        $this->mapByte($data, $index++),
+                        $this->mapByte($data, $index)
+                    );
+                } elseif (5 === $remaining) {
+                    $output .= $this->map5(
+                        $this->mapByte($data, $index++),
+                        $this->mapByte($data, $index++),
+                        $this->mapByte($data, $index++),
+                        $this->mapByte($data, $index++),
+                        $this->mapByte($data, $index)
+                    );
+                } elseif (7 === $remaining) {
+                    $output .= $this->map7(
+                        $this->mapByte($data, $index++),
+                        $this->mapByte($data, $index++),
+                        $this->mapByte($data, $index++),
+                        $this->mapByte($data, $index++),
+                        $this->mapByte($data, $index++),
+                        $this->mapByte($data, $index++),
+                        $this->mapByte($data, $index)
+                    );
+                } else {
+                    return array(
+                        '',
+                        0,
+                        new InvalidEncodedDataException($this->key(), $data)
+                    );
+                }
+            }
+        } catch (EncodingExceptionInterface $error) {
+            return array('', 0, $error);
         }
 
-        return array($output, $consumedBytes + $paddedLength - $length);
+        return array($output, $consumed + $paddedLength - $length, null);
     }
 
     private function map2($a, $b)

@@ -25,25 +25,25 @@ class UriEncodeTransformTest extends PHPUnit_Framework_TestCase
 
     public function transformData()
     {
-        //                            input     output                bytesConsumed context
+        //                            input     output                consumed context
         return array(
-            'Empty'          => array('',       '',                   0,            null),
+            'Empty'          => array('',       '',                   0,       null),
 
-            '1 byte safe'    => array('f',      'f',                  1,            null),
-            '2 bytes safe'   => array('fo',     'fo',                 2,            null),
-            '3 bytes safe'   => array('foo',    'foo',                3,            null),
-            '4 bytes safe'   => array('foob',   'foob',               4,            null),
-            '5 bytes safe'   => array('fooba',  'fooba',              5,            null),
-            '6 bytes safe'   => array('foobar', 'foobar',             6,            null),
+            '1 byte safe'    => array('f',      'f',                  1,       null),
+            '2 bytes safe'   => array('fo',     'fo',                 2,       null),
+            '3 bytes safe'   => array('foo',    'foo',                3,       null),
+            '4 bytes safe'   => array('foob',   'foob',               4,       null),
+            '5 bytes safe'   => array('fooba',  'fooba',              5,       null),
+            '6 bytes safe'   => array('foobar', 'foobar',             6,       null),
 
-            '1 byte unsafe'  => array('!',      '%21',                1,            null),
-            '2 bytes unsafe' => array('!@',     '%21%40',             2,            null),
-            '3 bytes unsafe' => array('!@#',    '%21%40%23',          3,            null),
-            '4 bytes unsafe' => array('!@#$',   '%21%40%23%24',       4,            null),
-            '5 bytes unsafe' => array('!@#$%',  '%21%40%23%24%25',    5,            null),
-            '6 bytes unsafe' => array('!@#$%^', '%21%40%23%24%25%5E', 6,            null),
+            '1 byte unsafe'  => array('!',      '%21',                1,       null),
+            '2 bytes unsafe' => array('!@',     '%21%40',             2,       null),
+            '3 bytes unsafe' => array('!@#',    '%21%40%23',          3,       null),
+            '4 bytes unsafe' => array('!@#$',   '%21%40%23%24',       4,       null),
+            '5 bytes unsafe' => array('!@#$%',  '%21%40%23%24%25',    5,       null),
+            '6 bytes unsafe' => array('!@#$%^', '%21%40%23%24%25%5E', 6,       null),
 
-            'Mixed safety'   => array('f!o@o#', 'f%21o%40o%23',       6,            null),
+            'Mixed safety'   => array('f!o@o#', 'f%21o%40o%23',       6,       null),
 
             'All reserved characters' => array(
                 ':/?#\[\]@!$&\'()*+,;=',
@@ -63,18 +63,18 @@ class UriEncodeTransformTest extends PHPUnit_Framework_TestCase
     /**
      * @dataProvider transformData
      */
-    public function testTransform($input, $output, $bytesConsumed, $context)
+    public function testTransform($input, $output, $consumed, $context)
     {
-        $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input, $actualContext));
+        $this->assertSame(array($output, $consumed, null), $this->transform->transform($input, $actualContext));
         $this->assertSame($context, $actualContext);
     }
 
     /**
      * @dataProvider transformData
      */
-    public function testTransformEnd($input, $output, $bytesConsumed, $context)
+    public function testTransformEnd($input, $output, $consumed, $context)
     {
-        $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input, $actualContext, true));
+        $this->assertSame(array($output, $consumed, null), $this->transform->transform($input, $actualContext, true));
         $this->assertSame($context, $actualContext);
     }
 

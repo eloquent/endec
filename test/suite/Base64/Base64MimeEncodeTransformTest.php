@@ -25,11 +25,11 @@ class Base64MimeEncodeTransformTest extends PHPUnit_Framework_TestCase
 
     public function transformData()
     {
-        //                      input                                                        output bytesConsumed context
+        //                      input                                                        output consumed context
         return array(
-            'Empty'    => array('',                                                          '',    0,            ''),
-            '1 byte'   => array('f',                                                         '',    1,            'f'),
-            '56 bytes' => array('12345678901234567890123456789012345678901234567890123456',  '',    56,           '12345678901234567890123456789012345678901234567890123456'),
+            'Empty'    => array('',                                                          '',    0,       ''),
+            '1 byte'   => array('f',                                                         '',    1,       'f'),
+            '56 bytes' => array('12345678901234567890123456789012345678901234567890123456',  '',    56,      '12345678901234567890123456789012345678901234567890123456'),
 
             '57 bytes' => array(
                 '123456789012345678901234567890123456789012345678901234567',
@@ -50,23 +50,23 @@ class Base64MimeEncodeTransformTest extends PHPUnit_Framework_TestCase
     /**
      * @dataProvider transformData
      */
-    public function testTransform($input, $output, $bytesConsumed, $context)
+    public function testTransform($input, $output, $consumed, $context)
     {
-        $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input, $actualContext));
+        $this->assertSame(array($output, $consumed, null), $this->transform->transform($input, $actualContext));
         $this->assertSame($context, $actualContext);
     }
 
     public function transformEndData()
     {
-        //                     input     output          bytesConsumed context
+        //                     input     output          consumed context
         return array(
-            'Empty'   => array('',       '',             0,            ''),
-            '1 byte'  => array('f',      "Zg==\r\n",     1,            ''),
-            '2 bytes' => array('fo',     "Zm8=\r\n",     2,            ''),
-            '3 bytes' => array('foo',    "Zm9v\r\n",     3,            ''),
-            '4 bytes' => array('foob',   "Zm9vYg==\r\n", 4,            ''),
-            '5 bytes' => array('fooba',  "Zm9vYmE=\r\n", 5,            ''),
-            '6 bytes' => array('foobar', "Zm9vYmFy\r\n", 6,            ''),
+            'Empty'   => array('',       '',             0,       ''),
+            '1 byte'  => array('f',      "Zg==\r\n",     1,       ''),
+            '2 bytes' => array('fo',     "Zm8=\r\n",     2,       ''),
+            '3 bytes' => array('foo',    "Zm9v\r\n",     3,       ''),
+            '4 bytes' => array('foob',   "Zm9vYg==\r\n", 4,       ''),
+            '5 bytes' => array('fooba',  "Zm9vYmE=\r\n", 5,       ''),
+            '6 bytes' => array('foobar', "Zm9vYmFy\r\n", 6,       ''),
 
             '56 bytes' => array(
                 '12345678901234567890123456789012345678901234567890123456',
@@ -95,9 +95,9 @@ class Base64MimeEncodeTransformTest extends PHPUnit_Framework_TestCase
     /**
      * @dataProvider transformEndData
      */
-    public function testTransformEnd($input, $output, $bytesConsumed, $context)
+    public function testTransformEnd($input, $output, $consumed, $context)
     {
-        $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input, $actualContext, true));
+        $this->assertSame(array($output, $consumed, null), $this->transform->transform($input, $actualContext, true));
         $this->assertSame($context, $actualContext);
     }
 

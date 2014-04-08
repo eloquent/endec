@@ -25,44 +25,44 @@ class Base16DecodeTransformTest extends PHPUnit_Framework_TestCase
 
     public function transformData()
     {
-        //                     input     output bytesConsumed context
+        //                     input     output consumed context
         return array(
-            'Empty'   => array('',       '',    0,            null),
-            '1 bytes' => array('6',      '',    0,            null),
-            '2 bytes' => array('66',     'f',   2,            null),
-            '3 bytes' => array('666',    'f',   2,            null),
-            '4 bytes' => array('666f',   'fo',  4,            null),
-            '5 bytes' => array('666f6',  'fo',  4,            null),
-            '6 bytes' => array('666f6f', 'foo', 6,            null),
+            'Empty'   => array('',       '',    0,       null),
+            '1 bytes' => array('6',      '',    0,       null),
+            '2 bytes' => array('66',     'f',   2,       null),
+            '3 bytes' => array('666',    'f',   2,       null),
+            '4 bytes' => array('666f',   'fo',  4,       null),
+            '5 bytes' => array('666f6',  'fo',  4,       null),
+            '6 bytes' => array('666f6f', 'foo', 6,       null),
         );
     }
 
     /**
      * @dataProvider transformData
      */
-    public function testTransform($input, $output, $bytesConsumed, $context)
+    public function testTransform($input, $output, $consumed, $context)
     {
-        $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input, $actualContext));
+        $this->assertSame(array($output, $consumed, null), $this->transform->transform($input, $actualContext));
         $this->assertSame($context, $actualContext);
     }
 
     public function transformEndData()
     {
-        //                     input     output bytesConsumed context
+        //                     input     output consumed context
         return array(
-            'Empty'   => array('',       '',    0,            null),
-            '2 bytes' => array('66',     'f',   2,            null),
-            '4 bytes' => array('666f',   'fo',  4,            null),
-            '6 bytes' => array('666f6f', 'foo', 6,            null),
+            'Empty'   => array('',       '',    0,       null),
+            '2 bytes' => array('66',     'f',   2,       null),
+            '4 bytes' => array('666f',   'fo',  4,       null),
+            '6 bytes' => array('666f6f', 'foo', 6,       null),
         );
     }
 
     /**
      * @dataProvider transformEndData
      */
-    public function testTransformEnd($input, $output, $bytesConsumed, $context)
+    public function testTransformEnd($input, $output, $consumed, $context)
     {
-        $this->assertSame(array($output, $bytesConsumed), $this->transform->transform($input, $actualContext, true));
+        $this->assertSame(array($output, $consumed, null), $this->transform->transform($input, $actualContext, true));
         $this->assertSame($context, $actualContext);
     }
 
@@ -82,11 +82,15 @@ class Base16DecodeTransformTest extends PHPUnit_Framework_TestCase
      */
     public function testTransformFailure($input)
     {
+        list($output, $consumed, $error) = $this->transform->transform($input, $context, true);
+
+        $this->assertSame('', $output);
+        $this->assertSame(0, $consumed);
         $this->setExpectedException(
             'Eloquent\Endec\Exception\InvalidEncodedDataException',
             'The supplied data is not valid for base16 encoding.'
         );
-        $this->transform->transform($input, $context, true);
+        throw $error;
     }
 
     public function testInstance()

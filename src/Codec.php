@@ -64,8 +64,12 @@ class Codec implements CodecInterface
      */
     public function encode($data)
     {
-        list($data) = $this->encodeTransform()
+        list($data, $consumed, $error) = $this->encodeTransform()
             ->transform($data, $context, true);
+
+        if (null !== $error) {
+            throw $error;
+        }
 
         return $data;
     }
@@ -80,8 +84,12 @@ class Codec implements CodecInterface
      */
     public function decode($data)
     {
-        list($data) = $this->decodeTransform()
+        list($data, $consumed, $error) = $this->decodeTransform()
             ->transform($data, $context, true);
+
+        if (null !== $error) {
+            throw $error;
+        }
 
         return $data;
     }

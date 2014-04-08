@@ -50,8 +50,12 @@ class Encoder implements EncoderInterface
      */
     public function encode($data)
     {
-        list($data) = $this->encodeTransform()
+        list($data, $consumed, $error) = $this->encodeTransform()
             ->transform($data, $context, true);
+
+        if (null !== $error) {
+            throw $error;
+        }
 
         return $data;
     }

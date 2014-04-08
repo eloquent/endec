@@ -14,7 +14,6 @@ namespace Eloquent\Endec\Base16;
 use Eloquent\Confetti\AbstractTransform;
 use Eloquent\Confetti\TransformInterface;
 use Eloquent\Endec\Exception\InvalidEncodedDataException;
-use Exception;
 
 /**
  * Decodes data using base16 (hexadecimal) encoding.
@@ -56,22 +55,25 @@ class Base16DecodeTransform extends AbstractTransform
      * @param mixed   &$context An arbitrary context value.
      * @param boolean $isEnd    True if all supplied data must be transformed.
      *
-     * @return tuple<string,integer> A 2-tuple of the transformed data, and the number of bytes consumed.
-     * @throws Exception             If the data cannot be transformed.
+     * @return tuple<string,integer,mixed> A 3-tuple of the transformed data, the number of bytes consumed, and any resulting error.
      */
     public function transform($data, &$context, $isEnd = false)
     {
         $consume = $this->blocksSize(strlen($data), 2, $isEnd);
         if (!$consume) {
-            return array('', 0);
+            return array('', 0, null);
         }
 
         $consumedData = substr($data, 0, $consume);
         if (!preg_match('/^([[:xdigit:]]{2})+$/', $consumedData)) {
-            throw new InvalidEncodedDataException('base16', $consumedData);
+            return array(
+                '',
+                0,
+                new InvalidEncodedDataException('base16', $consumedData)
+            );
         }
 
-        return array(pack('H*', $consumedData), $consume);
+        return array(pack('H*', $consumedData), $consume, null);
     }
 
     private static $instance;
