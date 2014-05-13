@@ -14,6 +14,7 @@ namespace Eloquent\Endec;
 use Eloquent\Confetti\TransformStream;
 use PHPUnit_Framework_TestCase;
 use Phake;
+use RuntimeException;
 
 class CodecTest extends PHPUnit_Framework_TestCase
 {
@@ -43,6 +44,14 @@ class CodecTest extends PHPUnit_Framework_TestCase
     public function testEncode()
     {
         $this->assertSame('sbbone', $this->codec->encode('foobar'));
+    }
+
+    public function testEncodeFailure()
+    {
+        Phake::when($this->encodeTransform)->transform(Phake::anyParameters())->thenReturn(array('', null, new RuntimeException));
+
+        $this->setExpectedException('RuntimeException');
+        $this->codec->encode('foobar');
     }
 
     public function testDecode()

@@ -93,6 +93,11 @@ class Base16DecodeTransformTest extends PHPUnit_Framework_TestCase
         throw $error;
     }
 
+    public function testBufferSize()
+    {
+        $this->assertSame(2, $this->transform->bufferSize());
+    }
+
     public function testInstance()
     {
         $className = get_class($this->transform);

@@ -11,7 +11,7 @@
 
 namespace Eloquent\Endec\Base32;
 
-use Eloquent\Confetti\TransformInterface;
+use Eloquent\Confetti\BufferedTransformInterface;
 use Eloquent\Endec\Exception\EncodingExceptionInterface;
 use Eloquent\Endec\Exception\InvalidEncodedDataException;
 
@@ -25,7 +25,7 @@ class Base32HexDecodeTransform extends AbstractBase32DecodeTransform
     /**
      * Get the static instance of this transform.
      *
-     * @return TransformInterface The transform.
+     * @return BufferedTransformInterface The transform.
      */
     public static function instance()
     {

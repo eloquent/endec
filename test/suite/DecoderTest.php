@@ -14,6 +14,7 @@ namespace Eloquent\Endec;
 use Eloquent\Confetti\TransformStream;
 use PHPUnit_Framework_TestCase;
 use Phake;
+use RuntimeException;
 
 class DecoderTest extends PHPUnit_Framework_TestCase
 {
@@ -22,7 +23,7 @@ class DecoderTest extends PHPUnit_Framework_TestCase
         parent::setUp();
 
         $this->decodeTransform = Phake::mock('Eloquent\Confetti\TransformInterface');
-        $this->codec = new Decoder($this->decodeTransform);
+        $this->decoder = new Decoder($this->decodeTransform);
 
         $transformCallback = function ($data, $isEnd = false) {
             return array(str_rot13($data), strlen($data), null);
@@ -33,16 +34,24 @@ class DecoderTest extends PHPUnit_Framework_TestCase
 
     public function testConstructor()
     {
-        $this->assertSame($this->decodeTransform, $this->codec->decodeTransform());
+        $this->assertSame($this->decodeTransform, $this->decoder->decodeTransform());
     }
 
     public function testDecode()
     {
-        $this->assertSame('foobar', $this->codec->decode('sbbone'));
+        $this->assertSame('foobar', $this->decoder->decode('sbbone'));
+    }
+
+    public function testDecodeFailure()
+    {
+        Phake::when($this->decodeTransform)->transform(Phake::anyParameters())->thenReturn(array('', null, new RuntimeException));
+
+        $this->setExpectedException('RuntimeException');
+        $this->decoder->decode('foobar');
     }
 
     public function testCreateDecodeStream()
     {
-        $this->assertEquals(new TransformStream($this->decodeTransform, 111), $this->codec->createDecodeStream(111));
+        $this->assertEquals(new TransformStream($this->decodeTransform, 111), $this->decoder->createDecodeStream(111));
     }
 }

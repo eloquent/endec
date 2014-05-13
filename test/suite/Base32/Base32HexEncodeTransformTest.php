@@ -81,6 +81,11 @@ class Base32HexEncodeTransformTest extends PHPUnit_Framework_TestCase
         $this->assertSame($context, $actualContext);
     }
 
+    public function testBufferSize()
+    {
+        $this->assertSame(5, $this->transform->bufferSize());
+    }
+
     public function testInstance()
     {
         $className = get_class($this->transform);

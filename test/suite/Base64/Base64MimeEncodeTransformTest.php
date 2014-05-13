@@ -101,6 +101,11 @@ class Base64MimeEncodeTransformTest extends PHPUnit_Framework_TestCase
         $this->assertSame($context, $actualContext);
     }
 
+    public function testBufferSize()
+    {
+        $this->assertSame(57, $this->transform->bufferSize());
+    }
+
     public function testInstance()
     {
         $className = get_class($this->transform);
