@@ -12,19 +12,20 @@
 namespace Eloquent\Endec\Uri;
 
 use Eloquent\Confetti\AbstractTransform;
-use Eloquent\Confetti\TransformInterface;
+use Eloquent\Confetti\BufferedTransformInterface;
 
 /**
  * Decodes data using URI percent encoding.
  *
  * @link http://tools.ietf.org/html/rfc3986#section-2.1
  */
-class UriDecodeTransform extends AbstractTransform
+class UriDecodeTransform extends AbstractTransform implements
+    BufferedTransformInterface
 {
     /**
      * Get the static instance of this transform.
      *
-     * @return TransformInterface The transform.
+     * @return BufferedTransformInterface The transform.
      */
     public static function instance()
     {
@@ -84,6 +85,20 @@ class UriDecodeTransform extends AbstractTransform
             $consumed,
             null
         );
+    }
+
+    /**
+     * Get the buffer size.
+     *
+     * This method is used to determine how much input is typically required
+     * before output can be produced. This can provide performance benefits by
+     * avoiding excessive method calls.
+     *
+     * @return integer The buffer size.
+     */
+    public function bufferSize()
+    {
+        return 3;
     }
 
     private static $instance;

@@ -11,14 +11,15 @@
 
 namespace Eloquent\Endec\Base32;
 
-use Eloquent\Confetti\TransformInterface;
+use Eloquent\Confetti\BufferedTransformInterface;
 
 /**
  * An abstract base class for implementing base32 encode transforms.
  *
  * @link http://tools.ietf.org/html/rfc4648#section-6
  */
-abstract class AbstractBase32EncodeTransform implements TransformInterface
+abstract class AbstractBase32EncodeTransform implements
+    BufferedTransformInterface
 {
     /**
      * Construct a new base32 encode transform.
@@ -98,6 +99,20 @@ abstract class AbstractBase32EncodeTransform implements TransformInterface
         }
 
         return array($output, $consumed, null);
+    }
+
+    /**
+     * Get the buffer size.
+     *
+     * This method is used to determine how much input is typically required
+     * before output can be produced. This can provide performance benefits by
+     * avoiding excessive method calls.
+     *
+     * @return integer The buffer size.
+     */
+    public function bufferSize()
+    {
+        return 5;
     }
 
     private function map1($a)

@@ -11,7 +11,7 @@
 
 namespace Eloquent\Endec\Base32;
 
-use Eloquent\Confetti\TransformInterface;
+use Eloquent\Confetti\BufferedTransformInterface;
 use Eloquent\Endec\Exception\EncodingExceptionInterface;
 use Eloquent\Endec\Exception\InvalidEncodedDataException;
 
@@ -20,7 +20,8 @@ use Eloquent\Endec\Exception\InvalidEncodedDataException;
  *
  * @link http://tools.ietf.org/html/rfc4648#section-6
  */
-abstract class AbstractBase32DecodeTransform implements TransformInterface
+abstract class AbstractBase32DecodeTransform implements
+    BufferedTransformInterface
 {
     /**
      * Transform the supplied data.
@@ -113,6 +114,20 @@ abstract class AbstractBase32DecodeTransform implements TransformInterface
         }
 
         return array($output, $consumed + $paddedLength - $length, null);
+    }
+
+    /**
+     * Get the buffer size.
+     *
+     * This method is used to determine how much input is typically required
+     * before output can be produced. This can provide performance benefits by
+     * avoiding excessive method calls.
+     *
+     * @return integer The buffer size.
+     */
+    public function bufferSize()
+    {
+        return 8;
     }
 
     private function map2($a, $b)

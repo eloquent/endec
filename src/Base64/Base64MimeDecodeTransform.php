@@ -11,7 +11,7 @@
 
 namespace Eloquent\Endec\Base64;
 
-use Eloquent\Confetti\TransformInterface;
+use Eloquent\Confetti\BufferedTransformInterface;
 use Eloquent\Endec\Exception\InvalidEncodedDataException;
 
 /**
@@ -24,7 +24,7 @@ class Base64MimeDecodeTransform extends Base64DecodeTransform
     /**
      * Get the static instance of this transform.
      *
-     * @return TransformInterface The transform.
+     * @return BufferedTransformInterface The transform.
      */
     public static function instance()
     {
@@ -97,10 +97,6 @@ class Base64MimeDecodeTransform extends Base64DecodeTransform
                 $buffer,
                 $context
             );
-
-            if (null !== $error) {
-                return array('', 0, $error);
-            }
 
             $output .= $thisOutput;
 

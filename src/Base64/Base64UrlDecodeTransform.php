@@ -12,7 +12,7 @@
 namespace Eloquent\Endec\Base64;
 
 use Eloquent\Confetti\AbstractTransform;
-use Eloquent\Confetti\TransformInterface;
+use Eloquent\Confetti\BufferedTransformInterface;
 use Eloquent\Endec\Exception\InvalidEncodedDataException;
 
 /**
@@ -20,12 +20,13 @@ use Eloquent\Endec\Exception\InvalidEncodedDataException;
  *
  * @link http://tools.ietf.org/html/rfc4648#section-5
  */
-class Base64UrlDecodeTransform extends AbstractTransform
+class Base64UrlDecodeTransform extends AbstractTransform implements
+    BufferedTransformInterface
 {
     /**
      * Get the static instance of this transform.
      *
-     * @return TransformInterface The transform.
+     * @return BufferedTransformInterface The transform.
      */
     public static function instance()
     {
@@ -91,6 +92,20 @@ class Base64UrlDecodeTransform extends AbstractTransform
         }
 
         return array($outputBuffer, $consume, null);
+    }
+
+    /**
+     * Get the buffer size.
+     *
+     * This method is used to determine how much input is typically required
+     * before output can be produced. This can provide performance benefits by
+     * avoiding excessive method calls.
+     *
+     * @return integer The buffer size.
+     */
+    public function bufferSize()
+    {
+        return 4;
     }
 
     private static $instance;

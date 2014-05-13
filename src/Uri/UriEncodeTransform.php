@@ -11,19 +11,19 @@
 
 namespace Eloquent\Endec\Uri;
 
-use Eloquent\Confetti\TransformInterface;
+use Eloquent\Confetti\BufferedTransformInterface;
 
 /**
  * Encodes data using URI percent encoding.
  *
  * @link http://tools.ietf.org/html/rfc3986#section-2.1
  */
-class UriEncodeTransform implements TransformInterface
+class UriEncodeTransform implements BufferedTransformInterface
 {
     /**
      * Get the static instance of this transform.
      *
-     * @return TransformInterface The transform.
+     * @return BufferedTransformInterface The transform.
      */
     public static function instance()
     {
@@ -58,6 +58,20 @@ class UriEncodeTransform implements TransformInterface
     public function transform($data, &$context, $isEnd = false)
     {
         return array(rawurlencode($data), strlen($data), null);
+    }
+
+    /**
+     * Get the buffer size.
+     *
+     * This method is used to determine how much input is typically required
+     * before output can be produced. This can provide performance benefits by
+     * avoiding excessive method calls.
+     *
+     * @return integer The buffer size.
+     */
+    public function bufferSize()
+    {
+        return 1;
     }
 
     private static $instance;

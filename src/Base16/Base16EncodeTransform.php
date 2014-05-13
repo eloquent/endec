@@ -11,19 +11,19 @@
 
 namespace Eloquent\Endec\Base16;
 
-use Eloquent\Confetti\TransformInterface;
+use Eloquent\Confetti\BufferedTransformInterface;
 
 /**
  * Encodes data using base16 (hexadecimal) encoding.
  *
  * @link http://tools.ietf.org/html/rfc4648#section-8
  */
-class Base16EncodeTransform implements TransformInterface
+class Base16EncodeTransform implements BufferedTransformInterface
 {
     /**
      * Get the static instance of this transform.
      *
-     * @return TransformInterface The transform.
+     * @return BufferedTransformInterface The transform.
      */
     public static function instance()
     {
@@ -58,6 +58,20 @@ class Base16EncodeTransform implements TransformInterface
     public function transform($data, &$context, $isEnd = false)
     {
         return array(strtoupper(bin2hex($data)), strlen($data), null);
+    }
+
+    /**
+     * Get the buffer size.
+     *
+     * This method is used to determine how much input is typically required
+     * before output can be produced. This can provide performance benefits by
+     * avoiding excessive method calls.
+     *
+     * @return integer The buffer size.
+     */
+    public function bufferSize()
+    {
+        return 1;
     }
 
     private static $instance;

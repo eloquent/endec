@@ -99,6 +99,11 @@ class Base64DecodeTransformTest extends PHPUnit_Framework_TestCase
         throw $error;
     }
 
+    public function testBufferSize()
+    {
+        $this->assertSame(4, $this->transform->bufferSize());
+    }
+
     public function testInstance()
     {
         $className = get_class($this->transform);
