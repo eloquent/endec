@@ -1,0 +1,50 @@
+{
+    "name": "eloquent/endec",
+    "description": "Versatile encoding implementations for PHP.",
+    "keywords": [
+        "encoding",
+        "decoding",
+        "encode",
+        "decode",
+        "codec",
+        "hex",
+        "base16",
+        "base32",
+        "base32hex",
+        "base64",
+        "base64url",
+        "stream",
+        "streaming",
+        "react"
+    ],
+    "homepage": "https://github.com/eloquent/endec",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Erin Millard",
+            "email": "ezzatron@gmail.com",
+            "homepage": "http://ezzatron.com/"
+        },
+        {
+            "name": "James Harris",
+            "email": "james.harris@icecave.com.au",
+            "homepage": "https://github.com/jmalloc"
+        }
+    ],
+    "require": {
+        "php": ">=5.3",
+        "eloquent/confetti": "~0.3.0",
+        "evenement/evenement": ">=1,<3",
+        "icecave/isolator": "~2",
+        "react/stream": ">=0.3,<0.5"
+    },
+    "require-dev": {
+        "eloquent/liberator": "~2",
+        "icecave/archer": "~1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Eloquent\\Endec\\": "src"
+        }
+    }
+}
