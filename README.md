@@ -2,7 +2,7 @@
 
 *Versatile encoding implementations for PHP.*
 
-[![The most recent stable version is 0.1.1][version-image]][Semantic versioning]
+[![The most recent stable version is 0.2.0][version-image]][Semantic versioning]
 [![Current build status image][build-image]][Current build status]
 [![Current coverage status image][coverage-image]][Current coverage status]
 
@@ -288,4 +288,4 @@ decode transform.
 [Current coverage status]: https://coveralls.io/r/eloquent/endec
 [eloquent/endec]: https://packagist.org/packages/eloquent/endec
 [Semantic versioning]: http://semver.org/
-[version-image]: http://img.shields.io/:semver-0.1.1-yellow.svg "This project uses semantic versioning"
+[version-image]: http://img.shields.io/:semver-0.2.0-yellow.svg "This project uses semantic versioning"
