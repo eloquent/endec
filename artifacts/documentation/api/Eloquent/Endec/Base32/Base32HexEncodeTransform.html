@@ -47,7 +47,17 @@
             </tr>
                     <tr>
                 <td class="type">
-                    static&nbsp;<abbr title="Eloquent\Confetti\TransformInterface">TransformInterface</abbr>
+                    integer
+                </td>
+                <td class="last">
+                    <a href="#method_bufferSize">bufferSize</a>()
+                    <p>Get the buffer size.</p>
+                </td>
+                <td><small>from&nbsp;<a href="../../../Eloquent/Endec/Base32/AbstractBase32EncodeTransform.html#method_bufferSize"><abbr title="Eloquent\Endec\Base32\AbstractBase32EncodeTransform">AbstractBase32EncodeTransform</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    static&nbsp;<abbr title="Eloquent\Confetti\BufferedTransformInterface">BufferedTransformInterface</abbr>
                 </td>
                 <td class="last">
                     <a href="#method_instance">instance</a>()
@@ -71,7 +81,7 @@
         <h2>Details</h2>
 
                         <h3 id="method_transform">
-        <div class="location">in <a href="../../../Eloquent/Endec/Base32/AbstractBase32EncodeTransform.html#method_transform"><abbr title="Eloquent\Endec\Base32\AbstractBase32EncodeTransform">AbstractBase32EncodeTransform</abbr></a> at line 54</div>
+        <div class="location">in <a href="../../../Eloquent/Endec/Base32/AbstractBase32EncodeTransform.html#method_transform"><abbr title="Eloquent\Endec\Base32\AbstractBase32EncodeTransform">AbstractBase32EncodeTransform</abbr></a> at line 55</div>
         <code>            public            <abbr title="Eloquent\Endec\Base32\tuple&lt;string,integer,mixed&gt;">tuple&lt;string,integer,mixed&gt;</abbr>
     <strong>transform</strong>(string $data, mixed $context, boolean $isEnd = false)</code>
     </h3>
@@ -124,9 +134,35 @@ and only once, at the end of the stream transformation.</p>
                     </div>
     </div>
 
+                <h3 id="method_bufferSize">
+        <div class="location">in <a href="../../../Eloquent/Endec/Base32/AbstractBase32EncodeTransform.html#method_bufferSize"><abbr title="Eloquent\Endec\Base32\AbstractBase32EncodeTransform">AbstractBase32EncodeTransform</abbr></a> at line 113</div>
+        <code>            public            integer
+    <strong>bufferSize</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Get the buffer size.</p>
+        <p>This method is used to determine how much input is typically required
+before output can be produced. This can provide performance benefits by
+avoiding excessive method calls.</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>integer</td>
+            <td>The buffer size.</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
                 <h3 id="method_instance">
         <div class="location">at line 28</div>
-        <code>        static    public            <abbr title="Eloquent\Confetti\TransformInterface">TransformInterface</abbr>
+        <code>        static    public            <abbr title="Eloquent\Confetti\BufferedTransformInterface">BufferedTransformInterface</abbr>
     <strong>instance</strong>()</code>
     </h3>
     <div class="details">
@@ -139,7 +175,7 @@ and only once, at the end of the stream transformation.</p>
 
                     <table>
         <tr>
-            <td><abbr title="Eloquent\Confetti\TransformInterface">TransformInterface</abbr></td>
+            <td><abbr title="Eloquent\Confetti\BufferedTransformInterface">BufferedTransformInterface</abbr></td>
             <td>The transform.</td>
         </tr>
     </table>
