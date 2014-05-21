@@ -1,5 +1,9 @@
 # Endec changelog
 
+## 0.2.1 (2014-05-21)
+
+- **[MAINTENANCE]** Updated Confetti
+
 ## 0.2.0 (2014-05-13)
 
 - **[NEW]** Provided transform buffering hints
